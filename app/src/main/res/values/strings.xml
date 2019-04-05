@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">SplashApp</string>
+
+    <string name="choice_type">Выберете тип страницы</string>
+    <string name="cit_ch">Гражданин</string>
+    <string name="org_ch">Организация</string>
+    <string name="title_activity_menu">О нас</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Луч надежды</string>
+    <string name="about_more">Здравствуйте! Приветсвуем вас в приложении "Луч надежды" v.0.0.1
+    Так как это самая дно версия нашего приложения, то скорее всего, если вы это видите, то
+    являетесь либо Сашей, либо Сережей. Ну или это опять я смотрю на этот глупый текст потому что
+    он съехал, чёрт бы побрал контейнеры андроид студио. В любом случае, это, пока что, бессмысленный текст
+    чтобы заполнить пространство. \n
+    Здесь вас ждут только баги, кривой интрефейс и полностью нерабочие функции. Максиимум
+    возможностей - потыкать на кнопочки.</string>
+    <string name="about_us">О нас</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Бесполезный клик</string>
+    <string name="title_activity_menu2">Вопросы и ответы</string>
+    <string name="nav_header_subtitle"></string>
+    <string name="title_activity_cit_prof">Профиль</string>
+    <string name="citname">Имя</string>
+    <string name="citname_txt">Иван</string>
+    <string name="citfam">Фамилия</string>
+    <string name="citfam_txt">Иванович</string>
+    <string name="citcity">Город</string>
+    <string name="citcity_txt">Кострома</string>
+    <string name="citnumb">Номер</string>
+    <string name="citnumb_txt">+7(123)567-89-10</string>
+    <string name="citbout">О себе</string>
+    <string name="citbout_txt">Обычный тестовый, несуществующий житель города Костромы. Жизнь моя полна
+    грусти, отчаянья и разочарования. Нормальный код для моего профиля никто не пишет, и вообще моё временное
+    обиталище - данное прилоежние, толком не делают, раздолбаи чертовы. Гореть им всем в аду. Но вот криворукий
+    разраб на моём "инфа о себе" хочет проверить скроллинг непонятно зачем, ведт у нас ограничение на символы,
+    ну да и чёрт с ним. А так я хочу спасать помогать животным, хотя бы в нашем городе. Жаль, что меня не существет
+    на самом деле. Текста всё ещё нехвататет, так что это дальше бессмысленный набор слов дура лучше бы код писала,
+    а не бесполезновые текстовые переменные в гребанной разметке. Ну дурак же а</string>
+    <string name="citedit">Редактировать</string>
+</resources>
