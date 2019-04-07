@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.text.method.ScrollingMovementMethod;
 
@@ -111,5 +112,28 @@ public class CitProf extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    public void CitEdit(View view)
+    {
+        Intent intent = new Intent(this, Citedit.class);
+
+        startActivity(intent);
+
+        /*EditText editText= (EditText) findViewById(R.id.editText2);
+        TextView textview= (TextView) findViewById(R.id.textView8);
+        editText.setText(textview.getText().toString());
+        editText= (EditText) findViewById(R.id.editText);
+        textview= (TextView) findViewById(R.id.textView9);
+        editText.setText(textview.getText().toString());
+        editText= (EditText) findViewById(R.id.editText3);
+        textview= (TextView) findViewById(R.id.textView10);
+        editText.setText(textview.getText().toString());
+        editText= (EditText) findViewById(R.id.editText4);
+        textview= (TextView) findViewById(R.id.textView11);
+        editText.setText(textview.getText().toString());
+        editText= (EditText) findViewById(R.id.editText5);
+        textview= (TextView) findViewById(R.id.textView13);
+        editText.setText(textview.getText().toString());*/
+
     }
 }

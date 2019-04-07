@@ -38,4 +38,7 @@
     на самом деле. Текста всё ещё нехвататет, так что это дальше бессмысленный набор слов дура лучше бы код писала,
     а не бесполезновые текстовые переменные в гребанной разметке. Ну дурак же а</string>
     <string name="citedit">Редактировать</string>
+    <string name="title_activity_citedit">Редактировать профиль</string>
+    <string name="citeditsave">Сохранить</string>
+    <string name="citeditcan">Отмена</string>
 </resources>
