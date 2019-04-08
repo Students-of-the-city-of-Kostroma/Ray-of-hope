@@ -41,4 +41,5 @@
     <string name="title_activity_citedit">Редактировать профиль</string>
     <string name="citeditsave">Сохранить</string>
     <string name="citeditcan">Отмена</string>
+    <string name="title_activity_list_of_org">Список организаций</string>
 </resources>

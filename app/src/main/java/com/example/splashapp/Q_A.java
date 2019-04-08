@@ -1,11 +1,13 @@
 package com.example.splashapp;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -153,7 +155,9 @@ public class Q_A extends AppCompatActivity
 
         if (id == R.id.nav_camera)
         {
-            // Handle the camera action
+            Intent intent = new Intent(this, ListOfOrg.class);
+            startActivity(intent);
+            finish();
         }
         else if (id == R.id.nav_gallery)
         {
@@ -175,9 +179,7 @@ public class Q_A extends AppCompatActivity
         }
         else if (id == R.id.nav_share)
         {
-            Intent intent = new Intent(this, Choice.class);
-            startActivity(intent);
-            finish();
+            Close();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -192,4 +194,37 @@ public class Q_A extends AppCompatActivity
     private String[] mSummerMonthsArray = new String[] { "Соре, с фантазией худо. Просто набито текстом" };
     private String[] mAutumnMonthsArray = new String[] { "ой,бл..." };
 
+
+    boolean ch=false;
+    public  void Close()
+    {
+        AlertDialog.Builder buil = new AlertDialog.Builder(Q_A.this);
+        buil.setMessage("Вы действительно хотите выйти из аккаунта?");
+        buil.setCancelable(false);
+        buil.setPositiveButton("Да", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        ch=true;
+                        ToChoice(ch);
+                        dialog.cancel();
+                    }
+                }
+        );
+        buil.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        AlertDialog al=buil.create();
+        al.show();
+    }
+    public  void ToChoice(boolean b)
+    {
+        if (b){
+            Intent intent = new Intent(this, Choice.class);
+            startActivity(intent);
+            finish();}
+    }
 }

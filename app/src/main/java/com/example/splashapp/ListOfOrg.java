@@ -3,23 +3,26 @@ package com.example.splashapp;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
+import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-public class N_menu extends AppCompatActivity
+public class ListOfOrg extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.menu_activity);
+        setContentView(R.layout.activity_list_of_org);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -45,9 +48,9 @@ public class N_menu extends AppCompatActivity
     }
 
     @Override
-    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.about, menu);
+        getMenuInflater().inflate(R.menu.list_of_org, menu);
         return true;
     }
 
@@ -59,7 +62,9 @@ public class N_menu extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-
+        if (id == R.id.action_settings) {
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -106,7 +111,7 @@ public class N_menu extends AppCompatActivity
     boolean ch=false;
     public  void Close()
     {
-        AlertDialog.Builder buil = new AlertDialog.Builder(N_menu.this);
+        AlertDialog.Builder buil = new AlertDialog.Builder(ListOfOrg.this);
         buil.setMessage("Вы действительно хотите выйти из аккаунта?");
         buil.setCancelable(false);
         buil.setPositiveButton("Да", new DialogInterface.OnClickListener() {

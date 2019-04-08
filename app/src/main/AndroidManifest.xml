@@ -10,9 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ListOfOrg"
+            android:label="@string/title_activity_list_of_org"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".Citedit"
             android:label="@string/title_activity_citedit"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CitProf"
             android:label="@string/title_activity_cit_prof"
