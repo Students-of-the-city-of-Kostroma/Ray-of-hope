@@ -1,9 +1,11 @@
 package com.example.splashapp;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.text.method.ScrollingMovementMethod;
 
@@ -81,7 +84,9 @@ public class CitProf extends AppCompatActivity
 
         if (id == R.id.nav_camera)
         {
-            // Handle the camera action
+            Intent intent = new Intent(this, ListOfOrg.class);
+            startActivity(intent);
+            finish();
         }
         else if (id == R.id.nav_gallery)
         {
@@ -103,13 +108,66 @@ public class CitProf extends AppCompatActivity
         }
         else if (id == R.id.nav_share)
         {
-            Intent intent = new Intent(this, Choice.class);
-            startActivity(intent);
-            finish();
+            Close();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    public void CitEdit(View view)
+    {
+        Intent intent = new Intent(this, Citedit.class);
+
+        startActivity(intent);
+
+        /*EditText editText= (EditText) findViewById(R.id.editText2);
+        TextView textview= (TextView) findViewById(R.id.textView8);
+        editText.setText(textview.getText().toString());
+        editText= (EditText) findViewById(R.id.editText);
+        textview= (TextView) findViewById(R.id.textView9);
+        editText.setText(textview.getText().toString());
+        editText= (EditText) findViewById(R.id.editText3);
+        textview= (TextView) findViewById(R.id.textView10);
+        editText.setText(textview.getText().toString());
+        editText= (EditText) findViewById(R.id.editText4);
+        textview= (TextView) findViewById(R.id.textView11);
+        editText.setText(textview.getText().toString());
+        editText= (EditText) findViewById(R.id.editText5);
+        textview= (TextView) findViewById(R.id.textView13);
+        editText.setText(textview.getText().toString());*/
+
+    }
+    boolean ch=false;
+    public  void Close()
+    {
+        AlertDialog.Builder buil = new AlertDialog.Builder(CitProf.this);
+        buil.setMessage("Вы действительно хотите выйти из аккаунта?");
+        buil.setCancelable(false);
+        buil.setPositiveButton("Да", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        ch=true;
+                        ToChoice(ch);
+                        dialog.cancel();
+                    }
+                }
+        );
+        buil.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        AlertDialog al=buil.create();
+        al.show();
+    }
+    public  void ToChoice(boolean b)
+    {
+        if (b){
+            Intent intent = new Intent(this, Choice.class);
+            startActivity(intent);
+            finish();}
     }
 }
