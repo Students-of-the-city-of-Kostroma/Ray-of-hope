@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SplashApp</string>
+    <string name="app_name">Луч надежды</string>
 
     <string name="choice_type">Выберете тип страницы</string>
     <string name="cit_ch">Гражданин</string>
@@ -42,4 +42,21 @@
     <string name="citeditsave">Сохранить</string>
     <string name="citeditcan">Отмена</string>
     <string name="title_activity_list_of_org">Список организаций</string>
+    <string name="title_activity_view_org">Организация</string>
+    <string name="ContactInfo">Контактная информация</string>
+    <string name="tx_ContactInfo">orgemail@mail.ru \n
+    +7 (109) 876-54-32 \n
+    г. Кострома, ул. Тестовая, д. 4</string>
+    <string name="tx_aboutOrg">Первая тестовая организация, наш профиль создан, чтоб примерно показать интерфес профиля!
+    Мы искренне надемся, что благадоря нашему малому вкладу, вроде "просто побыть образцом" это приложение в будущем станет
+    известным и дейтсивтельно поможет многим нуждающимся в помощи! Тут нужно ещё немного текста, простите, что он не несёт никакой смысловой
+    нагрузки, но наш криворукий разраб считает, что так надо. Просто полистайте его, он тут только для этого.</string>
+    <string name="doc">Документы</string>
+    <string name="tx_doc">https://docs.google.com/document/d/1GUKsUpdajgjGX1Ax1QW1OQ8lLHU0gPVcGIWZuk5Xp5g \n
+    https://github.com/SamuraSwordS/Competition-TELE2 \n
+    https://github.com/SamuraSwordS/Competition-TELE2/issues/3
+    </string>
+    <string name="needs">Нужды</string>
+    <string name="activity">Мероприятия</string>
+    <string name="event">События</string>
 </resources>
