@@ -144,5 +144,6 @@ public class ListOfOrg extends AppCompatActivity
     {
         Intent intent = new Intent(this, ViewOrg.class);
         startActivity(intent);
+        finish();
     }
 }

@@ -44,7 +44,7 @@ public class Q_A extends AppCompatActivity
         ArrayList<Map<String, String>> groupDataList = new ArrayList<>();
         // заполняем коллекцию групп из массива с названиями групп
 
-        for (String group : mGroupsArray) {
+        for (String group : qArray) {
             // заполняем список атрибутов для каждой группы
             map = new HashMap<>();
             map.put("groupName", group); // время года
@@ -64,9 +64,9 @@ public class Q_A extends AppCompatActivity
         // создаем коллекцию элементов для первой группы
         ArrayList<Map<String, String>> сhildDataItemList = new ArrayList<>();
         // заполняем список атрибутов для каждого элемента
-        for (String month : mWinterMonthsArray) {
+        for (String ans : answer1Array) {
             map = new HashMap<>();
-            map.put("monthName", month); // название месяца
+            map.put("answer", ans);
             сhildDataItemList.add(map);
         }
         // добавляем в коллекцию коллекций
@@ -74,33 +74,33 @@ public class Q_A extends AppCompatActivity
 
         // создаем коллекцию элементов для второй группы
         сhildDataItemList = new ArrayList<>();
-        for (String month : mSpringMonthsArray) {
+        for (String ans : answer2Array) {
             map = new HashMap<>();
-            map.put("monthName", month);
+            map.put("answer", ans);
             сhildDataItemList.add(map);
         }
         сhildDataList.add(сhildDataItemList);
 
         // создаем коллекцию элементов для третьей группы
         сhildDataItemList = new ArrayList<>();
-        for (String month : mSummerMonthsArray) {
+        for (String ans : answer3Array) {
             map = new HashMap<>();
-            map.put("monthName", month);
+            map.put("answer", ans);
             сhildDataItemList.add(map);
         }
         сhildDataList.add(сhildDataItemList);
 
         // создаем коллекцию элементов для четвертой группы
         сhildDataItemList = new ArrayList<>();
-        for (String month : mAutumnMonthsArray) {
+        for (String ans : answer4Array) {
             map = new HashMap<>();
-            map.put("monthName", month);
+            map.put("answer", ans);
             сhildDataItemList.add(map);
         }
         сhildDataList.add(сhildDataItemList);
 
         // список атрибутов элементов для чтения
-        String childFrom[] = new String[] { "monthName" };
+        String childFrom[] = new String[] { "answer" };
         // список ID view-элементов, в которые будет помещены атрибуты
         // элементов
         int childTo[] = new int[] { android.R.id.text1 };
@@ -134,9 +134,7 @@ public class Q_A extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -186,13 +184,13 @@ public class Q_A extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    private String[] mGroupsArray = new String[] { "Что это за фигня?", "Это же полный отстой, зачем?", "Почему вопросы такие тупые?",
+    private String[] qArray = new String[] { "Что это за фигня?", "Это же полный отстой, зачем?", "Почему вопросы такие тупые?",
             "А когда тынормально сделаешь?" };
 
-    private String[] mWinterMonthsArray = new String[] { "Тот самый список вопросов, который я собиралась запилить" };
-    private String[] mSpringMonthsArray = new String[] { "Наверное, это просто выглядит забавнее обычного ТекстВью" };
-    private String[] mSummerMonthsArray = new String[] { "Соре, с фантазией худо. Просто набито текстом" };
-    private String[] mAutumnMonthsArray = new String[] { "ой,бл..." };
+    private String[] answer1Array = new String[] { "Тот самый список вопросов, который я собиралась запилить" };
+    private String[] answer2Array = new String[] { "Наверное, это просто выглядит забавнее обычного ТекстВью" };
+    private String[] answer3Array = new String[] { "Соре, с фантазией худо. Просто набито текстом" };
+    private String[] answer4Array = new String[] { "ой,бл..." };
 
 
     boolean ch=false;
