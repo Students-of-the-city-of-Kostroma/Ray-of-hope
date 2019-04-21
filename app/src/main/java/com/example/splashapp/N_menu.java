@@ -78,8 +78,15 @@ public class N_menu extends AppCompatActivity
         }
         else if (id == R.id.nav_gallery)
         {
-            Intent intent = new Intent(this, CitProf.class);
-            startActivity(intent);
+            Choice perem=new Choice();
+            boolean cit=Choice.citezen;
+            if (cit) {
+                Intent intent = new Intent(this, CitProf.class);
+                startActivity(intent);
+            }
+            else { Intent intent = new Intent(this, MyOrgProf.class);
+                startActivity(intent);}
+
             finish();
         }
         else if (id == R.id.nav_slideshow)

@@ -20,11 +20,23 @@ public class Choice extends AppCompatActivity {
         setContentView(R.layout.choice);
 
     }
+    public static boolean citezen=true;
+
         public void CitChoice(View view)
         {
-            Intent intent = new Intent(this, N_menu.class);
-            startActivity(intent);
-            finish();
+            citezen=true;
+            Perehod();
         }
+        public void OrgChoice(View view)
+        {
+            citezen=false;
+            Perehod();
+        }
+    public  void Perehod()
+    {
+        Intent intent = new Intent(this, N_menu.class);
+        startActivity(intent);
+        finish();
+    }
 
 }

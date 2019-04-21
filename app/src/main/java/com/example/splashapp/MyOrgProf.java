@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
+import android.text.method.LinkMovementMethod;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,19 +17,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.text.method.ScrollingMovementMethod;
 
-
-public class CitProf extends AppCompatActivity
+public class MyOrgProf extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cit_prof);
+        setContentView(R.layout.activity_my_org_prof);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -37,11 +35,17 @@ public class CitProf extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+        TextView textview= (TextView) findViewById(R.id.textViewAboutOrg1);
+        textview.setMovementMethod(new ScrollingMovementMethod());
 
+        TextView textview1= (TextView) findViewById(R.id.textView16);
+        textview1.setMovementMethod(new ScrollingMovementMethod());
+
+        TextView textview2= (TextView) findViewById(R.id.textViewAboutOrg);
+        textview2.setMovementMethod(new ScrollingMovementMethod());
+        textview2.setMovementMethod(LinkMovementMethod.getInstance());
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        TextView textview= (TextView) findViewById(R.id.textView13);
-        textview.setMovementMethod(new ScrollingMovementMethod());
     }
 
     @Override
@@ -57,7 +61,7 @@ public class CitProf extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.cit_prof, menu);
+        getMenuInflater().inflate(R.menu.my_org_prof, menu);
         return true;
     }
 
@@ -122,33 +126,10 @@ public class CitProf extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    public void CitEdit(View view)
-    {
-        Intent intent = new Intent(this, Citedit.class);
-
-        startActivity(intent);
-
-        /*EditText editText= (EditText) findViewById(R.id.editText2);
-        TextView textview= (TextView) findViewById(R.id.textView8);
-        editText.setText(textview.getText().toString());
-        editText= (EditText) findViewById(R.id.editText);
-        textview= (TextView) findViewById(R.id.textView9);
-        editText.setText(textview.getText().toString());
-        editText= (EditText) findViewById(R.id.editText3);
-        textview= (TextView) findViewById(R.id.textView10);
-        editText.setText(textview.getText().toString());
-        editText= (EditText) findViewById(R.id.editText4);
-        textview= (TextView) findViewById(R.id.textView11);
-        editText.setText(textview.getText().toString());
-        editText= (EditText) findViewById(R.id.editText5);
-        textview= (TextView) findViewById(R.id.textView13);
-        editText.setText(textview.getText().toString());*/
-
-    }
     boolean ch=false;
     public  void Close()
     {
-        AlertDialog.Builder buil = new AlertDialog.Builder(CitProf.this);
+        AlertDialog.Builder buil = new AlertDialog.Builder(MyOrgProf.this);
         buil.setMessage("Вы действительно хотите выйти из аккаунта?");
         buil.setCancelable(false);
         buil.setPositiveButton("Да", new DialogInterface.OnClickListener() {
