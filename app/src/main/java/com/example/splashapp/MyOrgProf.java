@@ -158,4 +158,16 @@ public class MyOrgProf extends AppCompatActivity
             startActivity(intent);
             finish();}
     }
+//    public void Activisms (View view)
+//    {
+//        Intent intent = new Intent(this, ActivMer.class);
+//        startActivity(intent);
+//        finish();
+//    }
+//    public void Need (View view)
+//    {
+//        Intent intent = new Intent(this, NeedView.class);
+//        startActivity(intent);
+//        finish();
+//    }
 }

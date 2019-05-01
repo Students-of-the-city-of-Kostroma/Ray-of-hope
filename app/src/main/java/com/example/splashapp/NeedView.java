@@ -7,7 +7,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.text.method.ScrollingMovementMethod;
-import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -19,13 +18,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class ViewOrg extends AppCompatActivity
+public class NeedView extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_org);
+        setContentView(R.layout.activity_need_view);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -34,18 +33,11 @@ public class ViewOrg extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-        TextView textview= (TextView) findViewById(R.id.textViewAboutOrg1);
-        textview.setMovementMethod(new ScrollingMovementMethod());
-
-        TextView textview1= (TextView) findViewById(R.id.textView16);
-        textview1.setMovementMethod(new ScrollingMovementMethod());
-
-        TextView textview2= (TextView) findViewById(R.id.textViewAboutOrg);
-        textview2.setMovementMethod(new ScrollingMovementMethod());
-        textview2.setMovementMethod(LinkMovementMethod.getInstance());
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        TextView textview= (TextView) findViewById(R.id.aboutneed);
+        textview.setMovementMethod(new ScrollingMovementMethod());
     }
 
     @Override
@@ -61,7 +53,7 @@ public class ViewOrg extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.view_org, menu);
+        getMenuInflater().inflate(R.menu.need_view, menu);
         return true;
     }
 
@@ -94,15 +86,8 @@ public class ViewOrg extends AppCompatActivity
         }
         else if (id == R.id.nav_gallery)
         {
-            Choice perem=new Choice();
-            boolean cit=Choice.citezen;
-            if (cit) {
-                Intent intent = new Intent(this, CitProf.class);
-                startActivity(intent);
-            }
-            else { Intent intent = new Intent(this, MyOrgProf.class);
-                startActivity(intent);}
-
+            Intent intent = new Intent(this, CitProf.class);
+            startActivity(intent);
             finish();
         }
         else if (id == R.id.nav_slideshow)
@@ -126,22 +111,16 @@ public class ViewOrg extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    public void Activisms (View view)
+    public  void RetToOrg(View view)
     {
-        Intent intent = new Intent(this, ActivMer.class);
-        startActivity(intent);
-        finish();
-    }
-    public void Need (View view)
-    {
-        Intent intent = new Intent(this, NeedView.class);
+        Intent intent = new Intent(this, ViewOrg.class);
         startActivity(intent);
         finish();
     }
     boolean ch=false;
     public  void Close()
     {
-        AlertDialog.Builder buil = new AlertDialog.Builder(ViewOrg.this);
+        AlertDialog.Builder buil = new AlertDialog.Builder(NeedView.this);
         buil.setMessage("Вы действительно хотите выйти из аккаунта?");
         buil.setCancelable(false);
         buil.setPositiveButton("Да", new DialogInterface.OnClickListener() {

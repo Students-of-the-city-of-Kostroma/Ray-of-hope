@@ -10,9 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".NeedView"
+            android:label="@string/title_activity_need_view"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".MyOrgProf"
             android:label="@string/title_activity_my_org_prof"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ActivMer"
             android:label="@string/title_activity_activ_mer"
