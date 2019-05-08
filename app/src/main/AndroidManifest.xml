@@ -10,9 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".EventView"
+            android:label="@string/title_activity_event_view"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".NeedView"
             android:label="@string/title_activity_need_view"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MyOrgProf"
             android:label="@string/title_activity_my_org_prof"
