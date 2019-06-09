@@ -90,15 +90,6 @@ public class Q_A extends AppCompatActivity
         }
         сhildDataList.add(сhildDataItemList);
 
-        // создаем коллекцию элементов для четвертой группы
-        сhildDataItemList = new ArrayList<>();
-        for (String ans : answer4Array) {
-            map = new HashMap<>();
-            map.put("answer", ans);
-            сhildDataItemList.add(map);
-        }
-        сhildDataList.add(сhildDataItemList);
-
         // список атрибутов элементов для чтения
         String childFrom[] = new String[] { "answer" };
         // список ID view-элементов, в которые будет помещены атрибуты
@@ -191,13 +182,11 @@ public class Q_A extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    private String[] qArray = new String[] { "Что это за фигня?", "Это же полный отстой, зачем?", "Почему вопросы такие тупые?",
-            "А когда тынормально сделаешь?" };
+    private String[] qArray = new String[] { "Что это?", "Зачем?", "Почему именно это приложение?"};
 
-    private String[] answer1Array = new String[] { "Тот самый список вопросов, который я собиралась запилить" };
-    private String[] answer2Array = new String[] { "Наверное, это просто выглядит забавнее обычного ТекстВью" };
-    private String[] answer3Array = new String[] { "Соре, с фантазией худо. Просто набито текстом" };
-    private String[] answer4Array = new String[] { "ой,бл..." };
+    private String[] answer1Array = new String[] { "Приложение ''Луч надежды'', которое поможет скооперироваться волонтерам и нуждающимся!" };
+    private String[] answer2Array = new String[] { "Такое приложение действительно облегчит жизнь как организациям, так и людям." };
+    private String[] answer3Array = new String[] { "В отличии от просто социальных сетей, помощь и объединение волонтеров и организаций - основная задача нашего приложениям" };
 
 
     boolean ch=false;
