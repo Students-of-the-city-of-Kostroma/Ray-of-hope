@@ -23,3 +23,8 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'build'
+
+- task: AppCenterTest@1
+  inputs:
+    appFile: 
+      artifactsDirectory: '$(Build.ArtifactStagingDirectory)/AppCenterTest' 
