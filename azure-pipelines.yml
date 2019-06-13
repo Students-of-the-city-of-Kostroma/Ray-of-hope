@@ -24,6 +24,7 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'build'
 
+
 - task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: '$(Build.SourcesDirectory)' 
