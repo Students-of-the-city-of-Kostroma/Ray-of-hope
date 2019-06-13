@@ -1,27 +1,51 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-
-buildscript {
-    repositories {
-        google()
-        jcenter()
-        
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.1'
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
+buildscript{
+	repositories {
+		google()
+		jcenter()
+	}
+	dependencies {
+		classpath 'com.android.tools.build:gradle:3.3.1'
+	}
 }
 
 allprojects {
-    repositories {
-        google()
-        jcenter()
-        
-    }
+	repositories {
+		google()
+		jcenter()
+	}
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+repositories {
+	apply plugin: 'java'
+	apply plugin: 'findbugs'
+	mavenCentral()
+}
 
+dependencies {
+	testCompile "junit:junit:4.8.1"
+}
+
+sourceSets {
+	test
+}
+
+configurations {
+	testCompile { extendsFrom compile }
+	testRuntime { extendsFrom testCompile, runtime }
+}
+
+sourceSets {
+	test{
+		compileClasspath = sourceSets.main.output + configurations.testCompile
+		runtimeClasspath = output + sourceSets.main.output + configurations.testRuntime
+	}
+}
+
+task UT(type: Test) {
+	testClassesDir = sourceSets.test.output.resourcesDir
+	classpath = sourceSets.test.runtimeClasspath
+}
+
+task myClean(type: Delete) {
+	delete rootProject.buildDir
 }
