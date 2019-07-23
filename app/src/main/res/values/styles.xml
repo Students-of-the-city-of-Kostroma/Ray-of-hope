@@ -6,10 +6,13 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:alertDialogStyle">@style/CustomDialogTheme</item>
     </style>
 
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@drawable/splash_bacl</item>
+        <item name="android:alertDialogStyle">@style/CustomDialogTheme</item>
     </style>
 
     <style name="ChoiceTheme" parent="Theme.AppCompat.NoActionBar">
@@ -24,4 +27,20 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="CustomDialogTheme" parent="@android:style/Theme.Dialog">
+        <item name="android:bottomBright">@color/colorSYellow</item>
+        <item name="android:bottomDark">@color/colorSYellow</item>
+        <item name="android:bottomMedium">@color/colorSYellow</item>
+        <item name="android:centerBright">@color/colorSYellow</item>
+        <item name="android:centerDark">@color/colorSYellow</item>
+        <item name="android:centerMedium">@color/colorSYellow</item>
+        <item name="android:fullBright">@color/colorSYellow</item>
+        <item name="android:fullDark">@color/colorSYellow</item>
+        <item name="android:topBright">@color/colorSYellow</item>
+        <item name="android:topDark">@color/colorSYellow</item>
+        <item name="android:background">@color/colorSYellow</item>
+    </style>
+    <style name="MyThemeDialog">
+        <item name="android:alertDialogStyle">@style/CustomDialogTheme</item>
+    </style>
 </resources>

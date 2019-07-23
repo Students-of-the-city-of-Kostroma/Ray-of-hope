@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegOrg"></activity>
         <activity
             android:name=".EventView"
             android:label="@string/title_activity_event_view"
@@ -55,6 +54,9 @@
         <activity
             android:name=".Choice"
             android:theme="@style/ChoiceTheme" />
+        <activity
+            android:name=".RegOrg"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".MainActivity"
             android:theme="@style/SplashTheme">
