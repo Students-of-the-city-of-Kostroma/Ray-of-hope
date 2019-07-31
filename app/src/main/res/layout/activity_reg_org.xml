@@ -115,6 +115,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/buttonstyle"
+        android:onClick="Registr"
         android:text="Зарегистрироваться"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
