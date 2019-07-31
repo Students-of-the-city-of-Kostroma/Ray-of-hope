@@ -30,7 +30,10 @@ public class Choice extends AppCompatActivity {
         public void OrgChoice(View view)
         {
             citezen=false;
-            Perehod();
+            //Perehod();
+            Intent intent = new Intent(this, RegOrg.class);
+            startActivity(intent);
+            finish();
         }
     public  void Perehod()
     {
