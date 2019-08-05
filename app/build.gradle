@@ -1,12 +1,18 @@
 apply plugin: 'com.android.application'
 
+
+def keystorePropertiesFile = rootProject.file("local.properties")
+
+def keystoreProperties = new Properties()
+
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 android {
     signingConfigs {
         config {
-            keyAlias 'Ray-of-Hope'
-            keyPassword 'RayofHope'
-            storeFile file('C:/Users/admin/Desktop/proj/1/Ray-of-hope/app/releases_key.jks')
-            storePassword 'RayofHope'
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
         }
     }
     compileSdkVersion 28
@@ -22,15 +28,18 @@ android {
             targetCompatibility JavaVersion.VERSION_1_8
             testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         }
+        signingConfig signingConfigs.config
     }
-    signingConfigs { debug { storeFile file("debug.releases_key") }
-        myConfig { storeFile file("other.releases_key")
-             } }
     buildTypes {
         release {
             signingConfig signingConfigs.config
             debuggable true
         }
+        debug {
+            signingConfig signingConfigs.config
+        }
+    }
+    productFlavors {
     }
 }
 
