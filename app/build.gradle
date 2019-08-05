@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'Ray-of-Hope'
+            keyPassword 'RayofHope'
+            storeFile file('C:/Users/admin/Desktop/proj/releases_key.jks')
+            storePassword 'RayofHope'
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.splashapp"
@@ -15,25 +23,9 @@ android {
             testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         }
     }
-    signingConfigs {
-        release {
-            Properties properties = new Properties()
-            properties.load(project.rootProject.file('local.properties').newDataInputStream())
-            storeFile file(properties.getProperty('storeFile'))
-            keyAlias properties.getProperty('keyAlias')
-            storePassword properties.getProperty('storePassword')
-            keyPassword properties.getProperty('keyPassword')
-        }
-    }
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
-        }
-        debug {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
 }
