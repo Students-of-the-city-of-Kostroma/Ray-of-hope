@@ -5,7 +5,7 @@ android {
         config {
             keyAlias 'Ray-of-Hope'
             keyPassword 'RayofHope'
-            storeFile file('C:/Users/admin/Desktop/proj/releases_key.jks')
+            storeFile file('C:/Users/admin/Desktop/proj/1/Ray-of-hope/app/releases_key.jks')
             storePassword 'RayofHope'
         }
     }
@@ -23,11 +23,9 @@ android {
             testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         }
     }
-    signingConfigs { debug { storeFile file("debug.keystore") }
-        myConfig { storeFile file("other.keystore")
-            storePassword "android"
-            keyAlias "androidotherkey"
-            keyPassword "android" } }
+    signingConfigs { debug { storeFile file("debug.releases_key") }
+        myConfig { storeFile file("other.releases_key")
+             } }
     buildTypes {
         release {
             signingConfig signingConfigs.config
