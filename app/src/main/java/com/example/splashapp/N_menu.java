@@ -20,15 +20,9 @@ public class N_menu extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_activity);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
+
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -141,5 +135,18 @@ public class N_menu extends AppCompatActivity
             Intent intent = new Intent(this, Choice.class);
             startActivity(intent);
             finish();}
+    }
+    public  void GoBack(View view)
+    {
+        Choice perem=new Choice();
+        boolean cit=Choice.citezen;
+        if (cit) {
+            Intent intent = new Intent(this, CitProf.class);
+            startActivity(intent);
+        }
+        else { Intent intent = new Intent(this, MyOrgProf.class);
+            startActivity(intent);}
+
+        finish();
     }
 }
