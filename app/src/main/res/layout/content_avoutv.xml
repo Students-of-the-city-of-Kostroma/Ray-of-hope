@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".N_menu"
-    tools:showIn="@layout/app_bar_menu"
+    tools:context=".AboutView"
+    tools:showIn="@layout/app_bar_aboutv"
     android:background="@color/colorSYellow">
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
