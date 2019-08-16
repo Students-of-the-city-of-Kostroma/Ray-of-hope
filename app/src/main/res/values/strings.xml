@@ -27,8 +27,9 @@
     <string name="citnumb">Номер</string>
     <string name="citnumb_txt">+7(123)567-89-10</string>
     <string name="citbout">О себе</string>
+    <string name="orgabout">Описание</string>
     <string name="citbout_txt">Хочу помогать людям и быть полезным обществу. Могу быть авто волонтёром. Люблю кататься на лыжах.</string>
-    <string name="citedit">Редактировать</string>
+    <string name="citedit">🖊 Редактировать профиль</string>
     <string name="title_activity_citedit">Редактировать профиль</string>
     <string name="citeditsave">Сохранить</string>
     <string name="citeditcan">Отмена</string>

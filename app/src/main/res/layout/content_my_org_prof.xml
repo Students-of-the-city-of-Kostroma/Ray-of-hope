@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorSYellow"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".ViewOrg"
-    android:background="@color/colorGrey"
     tools:showIn="@layout/app_bar_my_org_prof">
 
     <ImageView
@@ -15,13 +15,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
-        android:layout_marginBottom="495dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/buttonstyle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintHorizontal_bias="0.085"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -30,30 +31,31 @@
 
     <TextView
         android:id="@+id/textViewAboutOrg"
-        android:layout_width="0dp"
-        android:layout_height="78dp"
+        android:layout_width="343dp"
+        android:layout_height="72dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
+        android:layout_marginBottom="8dp"
         android:autoLink="web"
         android:linksClickable="true"
         android:maxLines="4"
         android:scrollbars="vertical"
-        android:text="@string/tx_doc"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.714" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewAboutOrg1"
+        app:layout_constraintVertical_bias="0.614"
+        tools:text="блаблабла" />
 
     <TextView
         android:id="@+id/textViewAboutOrg1"
-        android:layout_width="0dp"
-        android:layout_height="98dp"
+        android:layout_width="342dp"
+        android:layout_height="75dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="8dp"
@@ -63,39 +65,41 @@
         android:maxLines="5"
         android:scrollbars="vertical"
         android:text="@string/tx_aboutOrg"
-        android:textColor="#FFFFFF"
+        android:textColor="@android:color/darker_gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.431" />
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        app:layout_constraintVertical_bias="0.022" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="189dp"
         android:layout_height="27dp"
-        android:text="@string/ContactInfo"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:textColor="#00FFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.144"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.064" />
+        tools:text="Название" />
 
     <TextView
         android:id="@+id/textView16"
-        android:layout_width="163dp"
-        android:layout_height="98dp"
+        android:layout_width="180dp"
+        android:layout_height="118dp"
+        android:layout_marginTop="8dp"
         android:text="@string/tx_ContactInfo"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@android:color/darker_gray"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintHorizontal_bias="0.822"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.127" />
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <TextView
         android:id="@+id/textView17"
@@ -108,91 +112,128 @@
         app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.581" />
+        app:layout_constraintVertical_bias="0.663" />
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="125dp"
         android:layout_height="24dp"
-        android:text="@string/about_us"
+        android:layout_marginTop="8dp"
+        android:text="@string/orgabout"
         android:textColor="#00FFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.324" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="98dp"
-        android:layout_height="88dp"
-        android:background="@color/colorGrey"
+        android:layout_width="83dp"
+        android:layout_height="41dp"
+        android:background="@drawable/buttonstyle"
         android:onClick="Need"
         android:text="@string/needs"
-        android:textColor="@color/colorBlue"
-        android:textSize="15sp"
+        android:textColor="@color/colorSYellow"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintHorizontal_bias="0.024"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.933" />
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="142dp"
-        android:layout_height="90dp"
+        android:layout_width="121dp"
+        android:layout_height="41dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:background="@color/colorGrey"
+        android:background="@drawable/buttonstyle"
         android:onClick="Activisms"
         android:text="@string/activity"
-        android:textColor="@color/colorBlue"
-        android:textSize="15sp"
+        android:textColor="@color/colorSYellow"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.936" />
+        app:layout_constraintVertical_bias="0.933" />
 
     <Button
         android:id="@+id/button9"
-        android:layout_width="92dp"
-        android:layout_height="89dp"
+        android:layout_width="79dp"
+        android:layout_height="41dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:background="@color/colorGrey"
+        android:background="@drawable/buttonstyle"
         android:text="@string/event"
-        android:textColor="@color/colorBlue"
-        android:textSize="15sp"
+        android:textColor="@color/colorSYellow"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.948"
+        app:layout_constraintHorizontal_bias="0.974"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.935" />
+        app:layout_constraintVertical_bias="0.933" />
 
     <Button
         android:id="@+id/buttonOrgEdit"
-        android:layout_width="158dp"
+        android:layout_width="228dp"
         android:layout_height="51dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/transparent"
+        android:text="@string/citedit"
+        android:textColor="@color/colorBlue"
+        app:layout_constraintBottom_toTopOf="@+id/button8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="0dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="262dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Контакты"
+        android:textColor="#00FFFF"
+        app:layout_constraintBottom_toTopOf="@+id/textViewAboutOrg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAboutOrg1"
+        app:layout_constraintVertical_bias="0.812"
+        tools:text="Контакты" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="76dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@color/colorGrey"
-        android:text="@string/citedit"
-        android:textColor="@color/colorBlue"
-        app:layout_constraintBottom_toTopOf="@+id/textViewAboutOrg1"
+        android:background="@drawable/ic_launcher_background"
+        app:layout_constraintBottom_toTopOf="@+id/buttonOrgEdit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.932"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.325" />
+        app:layout_constraintTop_toBottomOf="@+id/textView17"
+        app:layout_constraintVertical_bias="0.833">
+
+    </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>
