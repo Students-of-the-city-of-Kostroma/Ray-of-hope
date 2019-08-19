@@ -100,7 +100,7 @@ public class EventView extends AppCompatActivity
         }
         else if (id == R.id.nav_manage)
         {
-            Intent intent = new Intent(this, N_menu.class);
+            Intent intent = new Intent(this, AboutView.class);
             startActivity(intent);
             finish();
         }

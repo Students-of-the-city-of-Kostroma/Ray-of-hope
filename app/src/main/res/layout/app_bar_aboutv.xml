@@ -4,22 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".N_menu">
+    tools:context=".AboutView">
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppTheme.AppBarOverlay"/>
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorBlue"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:title="@string/about_us" />
-
-    </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_menu" />
+    <include layout="@layout/content_avoutv" />
 
 </android.support.design.widget.CoordinatorLayout>

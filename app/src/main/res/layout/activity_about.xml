@@ -7,10 +7,10 @@
     android:background="@color/colorGrey"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".About"
-    tools:showIn="@layout/app_bar_menu">
+    tools:showIn="@layout/app_bar_aboutv">
 
     <include
-        layout="@layout/app_bar_menu"
+        layout="@layout/app_bar_aboutv"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

@@ -37,7 +37,7 @@ public class Choice extends AppCompatActivity {
         }
     public  void Perehod()
     {
-        Intent intent = new Intent(this, N_menu.class);
+        Intent intent = new Intent(this, AboutView.class);
         startActivity(intent);
         finish();
     }

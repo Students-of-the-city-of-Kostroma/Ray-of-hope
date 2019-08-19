@@ -6,29 +6,21 @@ import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
-public class N_menu extends AppCompatActivity
+public class AboutView extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.menu_activity);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
+        setContentView(R.layout.aboutv_activity);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
+
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -97,7 +89,7 @@ public class N_menu extends AppCompatActivity
         }
         else if (id == R.id.nav_manage)
         {
-            Intent intent = new Intent(this, N_menu.class);
+            Intent intent = new Intent(this, AboutView.class);
             startActivity(intent);
             finish();
         }
@@ -113,7 +105,7 @@ public class N_menu extends AppCompatActivity
     boolean ch=false;
     public  void Close()
     {
-        AlertDialog.Builder buil = new AlertDialog.Builder(N_menu.this);
+        AlertDialog.Builder buil = new AlertDialog.Builder(AboutView.this);
         buil.setMessage("Вы действительно хотите выйти из аккаунта?");
         buil.setCancelable(false);
         buil.setPositiveButton("Да", new DialogInterface.OnClickListener() {
@@ -141,5 +133,18 @@ public class N_menu extends AppCompatActivity
             Intent intent = new Intent(this, Choice.class);
             startActivity(intent);
             finish();}
+    }
+    public  void GoBack(View view)
+    {
+        Choice perem=new Choice();
+        boolean cit=Choice.citezen;
+        if (cit) {
+            Intent intent = new Intent(this, CitProf.class);
+            startActivity(intent);
+        }
+        else { Intent intent = new Intent(this, MyOrgProf.class);
+            startActivity(intent);}
+
+        finish();
     }
 }

@@ -27,7 +27,7 @@ public class RegOrg extends AppCompatActivity {
 
     public void EnterToOrg(View view)
     {
-        Intent intent = new Intent(this, N_menu.class);
+        Intent intent = new Intent(this, AboutView.class);
         startActivity(intent);
         finish();
     }
