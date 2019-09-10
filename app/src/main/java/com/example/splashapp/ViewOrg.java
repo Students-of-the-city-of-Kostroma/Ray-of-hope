@@ -34,13 +34,13 @@ public class ViewOrg extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-        TextView textview= (TextView) findViewById(R.id.textViewAboutOrg1);
+        TextView textview= (TextView) findViewById(R.id.textView24);
         textview.setMovementMethod(new ScrollingMovementMethod());
 
-        TextView textview1= (TextView) findViewById(R.id.textView16);
+        TextView textview1= (TextView) findViewById(R.id.textView22);
         textview1.setMovementMethod(new ScrollingMovementMethod());
 
-        TextView textview2= (TextView) findViewById(R.id.textViewAboutOrg);
+        TextView textview2= (TextView) findViewById(R.id.textView20);
         textview2.setMovementMethod(new ScrollingMovementMethod());
         textview2.setMovementMethod(LinkMovementMethod.getInstance());
 
