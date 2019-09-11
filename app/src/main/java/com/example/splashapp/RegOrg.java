@@ -35,7 +35,7 @@ public class RegOrg extends AppCompatActivity {
     public  void Registr(View view)
     {
 
-        //почта
+
         String[] input=new String[4];
         EditText edit = (EditText)findViewById(R.id.editText6);
         boolean Error = false;
@@ -50,8 +50,8 @@ public class RegOrg extends AppCompatActivity {
             Error=true;
         }
         edit = (EditText)findViewById(R.id.editText7);
-        input[1] = edit.getText().toString();
-        result = input[1].matches("([0-9].{10,12}$)");//ИНН, 10 цифр для юрлиц, 12 цифр для физлиц и ИП
+        input[2] = edit.getText().toString();
+        result = input[2].matches("([0-9].{9,12}$)");//ИНН, 10 цифр для юрлиц, 12 цифр для физлиц и ИП
         if(result==false){
             Toast toast = Toast.makeText(RegOrg.this, "Некорректный ИНН",Toast.LENGTH_LONG);
             toast.setGravity(Gravity.RIGHT, 0, -70);
@@ -59,8 +59,8 @@ public class RegOrg extends AppCompatActivity {
             Error=true;
         }
         edit = (EditText)findViewById(R.id.editText8);
-        input[2] = edit.getText().toString();
-        result = input[2].matches("([a-zA-Z0-9]+(?:[._+-][a-zA-Z0-9]+)*)@([a-zA-Z0-9]+(?:[.-][a-zA-Z0-9]+)*[.][a-zA-Z]{2,})");
+        input[1] = edit.getText().toString();
+        result = input[1].matches("([a-zA-Z0-9]+(?:[._+-][a-zA-Z0-9]+)*)@([a-zA-Z0-9]+(?:[.-][a-zA-Z0-9]+)*[.][a-zA-Z]{2,})");
         if(result==false){
             Toast toast = Toast.makeText(RegOrg.this, "Неправильный E-mail",Toast.LENGTH_LONG);
             toast.setGravity(Gravity.RIGHT, 0, 00);
@@ -86,6 +86,7 @@ public class RegOrg extends AppCompatActivity {
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
                                         dialog.cancel();
+                                        new CallDB().execute(input);
                                     }
                                 });
                 AlertDialog alert = builder.create();
