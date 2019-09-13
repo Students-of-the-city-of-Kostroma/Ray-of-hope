@@ -17,15 +17,22 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import javax.net.ssl.HttpsURLConnection;
+
 public class CallDB extends AsyncTask<String , Void ,String> {
 
 
     public CallDB(){}
 
     @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+    }
+
+    @Override
     protected String doInBackground(String... params) {
 
-
+        String response = "";
         OutputStream out = null;
         try {
 
@@ -36,6 +43,7 @@ public class CallDB extends AsyncTask<String , Void ,String> {
             conn.setRequestMethod("POST");
             conn.setDoInput(true);
             conn.setDoOutput(true);
+
 
             Uri.Builder builder = new Uri.Builder()
                     .appendQueryParameter("name", params[0])
@@ -52,15 +60,25 @@ public class CallDB extends AsyncTask<String , Void ,String> {
             writer.close();
             os.close();
 
-            conn.connect();
+            int responseCode = conn.getResponseCode();
+
+            if (responseCode == HttpsURLConnection.HTTP_OK) {
+                String line;
+                BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                while ((line = br.readLine()) != null) {
+                    response += line;
+                }
+            } else {
+                response = "";
 
 
-        } catch (Exception e) {
+            }
+        }catch (Exception e) {
 
             System.out.println(e.getMessage());
 
         }
-        return null;
+        return response;
     }
 }
 
