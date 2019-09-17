@@ -46,6 +46,8 @@ public class RegOrg extends AppCompatActivity {
         EditText edit = (EditText)findViewById(R.id.editText6);
         boolean Error = false;
 
+        EditText edit1=(EditText)findViewById(R.id.editText11);
+        String PW = edit1.getText().toString();
 
         input[0] = edit.getText().toString();
 
@@ -59,74 +61,81 @@ public class RegOrg extends AppCompatActivity {
         input[3] = edit.getText().toString();
         CallDB_RegOrg RO=new CallDB_RegOrg();
 
-        RO.execute(input);
-        String  Ret=" ";
-        try {
-            Ret=RO.get(5, TimeUnit.SECONDS);
 
-            boolean errors = Ret.contains("name");
-            if(errors==true){
-                Toast toast = Toast.makeText(RegOrg.this, "Неккоректное название", Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.RIGHT, 0, -150);
-                toast.show();
-                Error=true;
-            }
-            errors = Ret.contains("INN");
-            if(errors==true){
-                Toast toast = Toast.makeText(RegOrg.this, "Некорректный ИНН", Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.RIGHT, 0, -70);
-                toast.show();
-                Error=true;
-            }
-            errors = Ret.contains("email");
-            if(errors==true){
-                Toast toast = Toast.makeText(RegOrg.this, "Неправильный E-mail", Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.RIGHT, 0, -0);
-                toast.show();
-                Error=true;
-            }
+        if(PW.equals(input[3])) {
 
-            errors = Ret.contains("password");
-            if(errors==true){
-                Toast toast = Toast.makeText(RegOrg.this, "Минимум 6 знаков:\\nцифры и латинские\\nбуквы\"", Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.RIGHT, 0, 70);
-                toast.show();
-                Error=true;
-            }
-            errors = Ret.contains("empty");
-            if(errors==true){
-                Toast toast = Toast.makeText(RegOrg.this, "Заполните все поля", Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.CENTER, 0, 100);
-                toast.show();
-                Error=true;
-            }
+            RO.execute(input);
+            String Ret = " ";
+            try {
+                Ret = RO.get(5, TimeUnit.SECONDS);
 
-            if (Error==false)
-            {
-                AlertDialog.Builder builder = new AlertDialog.Builder(RegOrg.this, R.style.AlertDialogCustom);
-                builder.setMessage("На указанную почту отправленно письмо для подтверждения")
-                        .setTitle("Подтверждение почты")
-                        .setCancelable(false)
-                        .setPositiveButton("ОК",
-                                new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int id) {
-                                        dialog.cancel();
+                boolean errors = Ret.contains("name");
+                if (errors == true) {
+                    Toast toast = Toast.makeText(RegOrg.this, "Неккоректное название", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.RIGHT, 0, -150);
+                    toast.show();
+                    Error = true;
+                }
+                errors = Ret.contains("INN");
+                if (errors == true) {
+                    Toast toast = Toast.makeText(RegOrg.this, "Некорректный ИНН", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.RIGHT, 0, -70);
+                    toast.show();
+                    Error = true;
+                }
+                errors = Ret.contains("email");
+                if (errors == true) {
+                    Toast toast = Toast.makeText(RegOrg.this, "Неправильный E-mail", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.RIGHT, 0, -0);
+                    toast.show();
+                    Error = true;
+                }
 
-                                    }
-                                });
-                AlertDialog alert = builder.create();
-                alert.show();
+                errors = Ret.contains("password");
+                if (errors == true) {
+                    Toast toast = Toast.makeText(RegOrg.this, "Минимум 6 знаков:\\nцифры и латинские\\nбуквы\"", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.RIGHT, 0, 70);
+                    toast.show();
+                    Error = true;
+                }
+                errors = Ret.contains("empty");
+                if (errors == true) {
+                    Toast toast = Toast.makeText(RegOrg.this, "Заполните все поля", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER, 0, 100);
+                    toast.show();
+                    Error = true;
+                }
+
+                if (Error == false) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(RegOrg.this, R.style.AlertDialogCustom);
+                    builder.setMessage("На указанную почту отправленно письмо для подтверждения")
+                            .setTitle("Подтверждение почты")
+                            .setCancelable(false)
+                            .setPositiveButton("ОК",
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int id) {
+                                            dialog.cancel();
+
+                                        }
+                                    });
+                    AlertDialog alert = builder.create();
+                    alert.show();
+                }
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            } catch (TimeoutException e) {
+                e.printStackTrace();
             }
-
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
         }
-        catch (TimeoutException e) {
-            e.printStackTrace();
+        else
+        {
+            Toast toast = Toast.makeText(RegOrg.this, "Пароли не совпадают", Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.RIGHT, 0, 70);
+            toast.show();
         }
-
 
     }
 }
