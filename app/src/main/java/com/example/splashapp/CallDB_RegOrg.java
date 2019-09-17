@@ -1,10 +1,14 @@
 package com.example.splashapp;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
-
+import android.view.Gravity;
+import android.widget.Toast;
+import com.example.splashapp.RegOrg;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -19,14 +23,20 @@ import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
-public class CallDB extends AsyncTask<String , Void ,String> {
+public class CallDB_RegOrg extends AsyncTask<String , Void ,String> {
 
 
-    public CallDB(){}
+
+    public CallDB_RegOrg(){}
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
+    }
+
+    @Override
+    protected void onPostExecute(String result) {
+        super.onPostExecute(result);
     }
 
     @Override
