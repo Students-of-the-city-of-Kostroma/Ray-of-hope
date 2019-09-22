@@ -1,26 +1,18 @@
 package com.example.splashapp;
 
-import android.content.Context;
+
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.os.AsyncTask;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
 
 
 public class RegOrg extends AppCompatActivity {
@@ -33,7 +25,7 @@ public class RegOrg extends AppCompatActivity {
 
     public void EnterToOrg(View view)
     {
-        Intent intent = new Intent(this, AboutView.class);
+        Intent intent = new Intent(this, LoginOrgActivity.class);
         startActivity(intent);
         finish();
     }
