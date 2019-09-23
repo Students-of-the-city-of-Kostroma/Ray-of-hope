@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.json.JSONObject;
+
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -80,7 +82,7 @@ public class LoginOrgActivity extends AppCompatActivity {
                 Error = true;
             }
 
-            errors = Ret.contains("password"); //Не работает, на будущее
+            errors = Ret.equals("password"); //Не работает, на будущее
             if (errors == true) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginOrgActivity.this, R.style.AlertDialogCustom);
                 builder.setMessage("Неверный пароль")
@@ -101,7 +103,8 @@ public class LoginOrgActivity extends AppCompatActivity {
             if (Error == false) {
 
                 Intent intent = new Intent(this, MyOrgProf.class);
-                MyEmail=input[0];
+                JSONObject json = new JSONObject(Ret);
+                MyEmail=json.get("email").toString();
                 startActivity(intent);
                 finish();
             }
@@ -111,6 +114,8 @@ public class LoginOrgActivity extends AppCompatActivity {
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (TimeoutException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
