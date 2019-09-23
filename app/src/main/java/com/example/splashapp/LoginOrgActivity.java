@@ -21,7 +21,7 @@ public class LoginOrgActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_org);
     }
-
+    public static String MyEmail;
 
     public void LoginOrg(View view)
     {
@@ -80,7 +80,7 @@ public class LoginOrgActivity extends AppCompatActivity {
                 Error = true;
             }
 
-            errors = Ret.contains("password"); //Не работает, в функции нет отдельно проверки на пароль
+            errors = Ret.contains("password"); //Не работает, на будущее
             if (errors == true) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginOrgActivity.this, R.style.AlertDialogCustom);
                 builder.setMessage("Неверный пароль")
@@ -101,6 +101,7 @@ public class LoginOrgActivity extends AppCompatActivity {
             if (Error == false) {
 
                 Intent intent = new Intent(this, MyOrgProf.class);
+                MyEmail=input[0];
                 startActivity(intent);
                 finish();
             }
