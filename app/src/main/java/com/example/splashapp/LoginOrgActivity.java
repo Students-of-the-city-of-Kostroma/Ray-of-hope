@@ -1,17 +1,15 @@
 package com.example.splashapp;
 
+import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
-
+import com.example.splashapp.Dialogs.OkDialog;
 import org.json.JSONObject;
-
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -46,26 +44,15 @@ public class LoginOrgActivity extends AppCompatActivity {
             boolean errors = Ret.contains("not_found_org");
             if (errors == true) {
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(LoginOrgActivity.this, R.style.AlertDialogCustom);
-                builder.setMessage("Пользователь не найден")
-                        .setTitle("Ошибка")
-                        .setCancelable(false)
-                        .setPositiveButton("ОК",
-                                new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int id) {
-                                        dialog.cancel();
-
-                                    }
-                                });
-                AlertDialog alert = builder.create();
-                alert.show();
-
+                OkDialog okDialog = new OkDialog();
+                okDialog.setMess("Пользователь не найден");
+                okDialog.show(getFragmentManager(), "okDialog");
                 Error = true;
             }
 
             errors = Ret.contains("empty");
             if (errors == true) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(LoginOrgActivity.this, R.style.AlertDialogCustom);
+                AlertDialog.Builder builder = new AlertDialog.Builder(LoginOrgActivity.this, R.drawable.custom_dialog);
                 builder.setMessage("Заполните все поля")
                         .setTitle("Ошибка")
                         .setCancelable(false)
