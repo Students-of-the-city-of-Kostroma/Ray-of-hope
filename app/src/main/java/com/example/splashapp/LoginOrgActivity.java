@@ -21,7 +21,7 @@ public class LoginOrgActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_org);
     }
-    public static String MyEmail;
+    public static String MyOrgId;
 
     public void LoginOrg(View view)
     {
@@ -52,38 +52,17 @@ public class LoginOrgActivity extends AppCompatActivity {
 
             errors = Ret.contains("empty");
             if (errors == true) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(LoginOrgActivity.this, R.drawable.custom_dialog);
-                builder.setMessage("Заполните все поля")
-                        .setTitle("Ошибка")
-                        .setCancelable(false)
-                        .setPositiveButton("ОК",
-                                new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int id) {
-                                        dialog.cancel();
-
-                                    }
-                                });
-                AlertDialog alert = builder.create();
-                alert.show();
-
+                OkDialog okDialog = new OkDialog();
+                okDialog.setMess("Заполните все поля");
+                okDialog.show(getFragmentManager(), "okDialog");
                 Error = true;
             }
 
-            errors = Ret.equals("password"); //Не работает, на будущее
+            errors = Ret.contains("password_error"); //Не работает, т.к. нет на php
             if (errors == true) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(LoginOrgActivity.this, R.style.AlertDialogCustom);
-                builder.setMessage("Неверный пароль")
-                        .setTitle("Ошибка")
-                        .setCancelable(false)
-                        .setPositiveButton("ОК",
-                                new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int id) {
-                                        dialog.cancel();
-                                    }
-                                });
-                AlertDialog alert = builder.create();
-                alert.show();
-
+                OkDialog okDialog = new OkDialog();
+                okDialog.setMess("Неверный пароль");
+                okDialog.show(getFragmentManager(), "okDialog");
                 Error = true;
             }
 
@@ -91,7 +70,7 @@ public class LoginOrgActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(this, MyOrgProf.class);
                 JSONObject json = new JSONObject(Ret);
-                MyEmail=json.get("email").toString();
+                MyOrgId=json.get("id").toString();
                 startActivity(intent);
                 finish();
             }
