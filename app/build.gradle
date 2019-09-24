@@ -20,7 +20,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 3
-        versionName "v.0.0.20190922"
+        versionName "v.0.0.20190924"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         compileOptions {
             sourceCompatibility JavaVersion.VERSION_1_8
