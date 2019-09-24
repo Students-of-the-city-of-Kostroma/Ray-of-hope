@@ -7,6 +7,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +15,8 @@ import android.widget.TextView;
 
 import com.example.splashapp.R;
 
-public class OkDialog extends DialogFragment implements View.OnClickListener {
-    @Override
+public class OkDialog extends DialogFragment  {
+
     public void onClick(View view) {
         dismiss();
     }
@@ -41,7 +42,7 @@ public class OkDialog extends DialogFragment implements View.OnClickListener {
         if(head!=null)
             ((TextView)v.findViewById(R.id.head)).setText(head);
 
-        v.findViewById(R.id.ok).setOnClickListener(this);
+        v.findViewById(R.id.ok).setOnClickListener(this::onClick);
         return v;
     }
 }

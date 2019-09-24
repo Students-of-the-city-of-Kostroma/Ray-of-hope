@@ -36,7 +36,6 @@
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:background="@android:color/transparent"
-            android:onClick="onClick"
             android:text="@string/ok"
             android:textColor="@color/colorButtonBlue"
             android:textSize="18sp" />
