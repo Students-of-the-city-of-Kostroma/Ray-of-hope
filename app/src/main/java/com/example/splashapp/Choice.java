@@ -31,7 +31,7 @@ public class Choice extends AppCompatActivity {
         {
             citezen=false;
             //Perehod();
-            Intent intent = new Intent(this, RegOrg.class);
+            Intent intent = new Intent(this, LoginOrgActivity.class);
             startActivity(intent);
             finish();
         }

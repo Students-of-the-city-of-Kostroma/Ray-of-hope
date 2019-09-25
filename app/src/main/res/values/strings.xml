@@ -16,8 +16,13 @@
         Площадка ориентированная под нужды благотворительных организаций… \n \n
         Площадка на которой граждане увидят информацию в одном месте и смогут помочь просто нажав на кнопку… \n \n
         Площадка, чтобы творить добро! \n \n
-        Площадка, которую освещает луч надежды!
-</string>
+        Площадка, которую освещает луч надежды!</string>
+    <string name="ok">Ок</string>
+    <string name="header">Ошибка</string>
+    <string name="message">Неизвестная ошибка</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="maybe">Maybe</string>
     <string name="about_us">О нас</string>
     <string name="back">&lt; Назад</string>
     <string name="nav_header_desc">Navigation header</string>
