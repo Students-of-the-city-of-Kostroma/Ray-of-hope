@@ -2,12 +2,16 @@ package com.example.splashapp;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.text.method.LinkMovementMethod;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Base64;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,10 +21,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import org.json.JSONObject;
+
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 
 public class MyOrgProf extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+
+    public static Organization MyOrg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +41,52 @@ public class MyOrgProf extends AppCompatActivity
         setContentView(R.layout.activity_my_org_prof);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        String moID=LoginOrgActivity.MyOrgId;
+
+
+        CallDB_MyProfOrg RO=new CallDB_MyProfOrg();
+        RO.execute(moID);
+        String Ret = "";
+        try {
+            Ret = RO.get(5, TimeUnit.SECONDS);
+
+            JSONObject json = new JSONObject(Ret);
+            String name=json.get("org_name").toString();
+            String avatar=json.get("org_avatar").toString();
+            byte[] decodedString = Base64.decode(avatar,Base64.DEFAULT);
+            final Bitmap decodedByte =
+                    BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+
+            String city=json.get("org_city_name").toString();
+            String activity=json.get("org_activity").toString();
+            String description=json.get("org_description").toString();
+            String contacts=json.get("org_contacts").toString();
+            //String docs=json.get("org_docs_links").toString();
+            MyOrg=new Organization(moID, city, description, contacts, name, null, null);
+            TextView textview= (TextView) findViewById(R.id.textView25);
+            textview.setText(MyOrg.getName());
+
+            textview= (TextView) findViewById(R.id.textView22);
+            textview.setText(MyOrg.getAbout());
+
+            textview= (TextView) findViewById(R.id.textView20);
+            textview.setText(MyOrg.getNumber());
+
+            textview= (TextView) findViewById(R.id.textView24);
+            textview.setText(activity+"\n"+MyOrg.getCity());
+
+           // ImageView imageView = (ImageView) findViewById(R.id.imageView12);
+          //  imageView.setImageBitmap(decodedByte);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

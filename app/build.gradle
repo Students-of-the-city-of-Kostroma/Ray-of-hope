@@ -54,4 +54,5 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:28.0.0'
     implementation files('libs/validation-api-2.0.1.Final.jar')
     testImplementation 'junit:junit:4.12'
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
 }

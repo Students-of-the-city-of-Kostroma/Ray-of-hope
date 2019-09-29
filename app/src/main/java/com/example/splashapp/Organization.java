@@ -1,16 +1,18 @@
 package com.example.splashapp;
 
+import android.media.Image;
+
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
 public class Organization extends User {
-    private String name;
+    private String name,city;
     private List<String> documents;
 
-    public Organization(@NotNull int id, @NotNull String email, @NotNull String about,
-                        String imageName, String number,
-                        @NotNull String name, @NotNull List<String> documents) {
-        super(id, email, about, imageName, number);
+    public Organization(@NotNull String id, String city, String about,
+                         String number,
+                        @NotNull String name, List<String> documents,Image avatar) {
+        super(id, city, about, avatar, number);
         this.name = name;
         this.documents = documents;
     }
@@ -19,8 +21,16 @@ public class Organization extends User {
         return name;
     }
 
-    public void setName(@NotNull String name) {
-        this.name = name;
+    public void setCity(@NotNull String city) {
+        this.name = city;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setName(@NotNull String city) {
+        this.city = city;
     }
 
     public List<String> getDocuments() {
