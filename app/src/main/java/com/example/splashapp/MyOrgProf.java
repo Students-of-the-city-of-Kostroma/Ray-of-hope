@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.method.LinkMovementMethod;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Base64;
@@ -24,15 +26,19 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
 public class MyOrgProf extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-
+    private GalleryAdapter adapter;
     public static Organization MyOrg;
 
     @Override
@@ -52,18 +58,24 @@ public class MyOrgProf extends AppCompatActivity
             Ret = RO.get(5, TimeUnit.SECONDS);
 
             JSONObject json = new JSONObject(Ret);
-            String name=json.get("org_name").toString();
-            String avatar=json.get("org_avatar").toString();
-            byte[] decodedString = Base64.decode(avatar,Base64.DEFAULT);
-            final Bitmap decodedByte =
-                    BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+            String name=json.get("name").toString();
+            String avatar=json.get("avatar").toString();
+            String city=json.get("city_name").toString();
+            String activity=json.get("type_of_activity").toString();
+            String description=json.get("description").toString();
+            String contacts=json.get("number_phone").toString();
 
-            String city=json.get("org_city_name").toString();
-            String activity=json.get("org_activity").toString();
-            String description=json.get("org_description").toString();
-            String contacts=json.get("org_contacts").toString();
-            //String docs=json.get("org_docs_links").toString();
-            MyOrg=new Organization(moID, city, description, contacts, name, null, null);
+            String docslink1=json.get("docs_links").toString();
+            docslink1=docslink1.substring(1);
+            docslink1=docslink1.substring(0,docslink1.length()-1);
+            String[] docslink = docslink1.split(",", -1);
+
+            String docsprev1=json.get("docs_preview").toString();
+            docsprev1=docsprev1.substring(1);
+            docsprev1=docsprev1.substring(0,docsprev1.length()-1);
+            String[] docsprev = docsprev1.split(",", -1);
+
+            MyOrg=new Organization(moID, city, description,"Телефон: "+ contacts, name, null, avatar);
             TextView textview= (TextView) findViewById(R.id.textView25);
             textview.setText(MyOrg.getName());
 
@@ -74,10 +86,34 @@ public class MyOrgProf extends AppCompatActivity
             textview.setText(MyOrg.getNumber());
 
             textview= (TextView) findViewById(R.id.textView24);
-            textview.setText(activity+"\n"+MyOrg.getCity());
+            textview.setText(MyOrg.getCity());
 
-           // ImageView imageView = (ImageView) findViewById(R.id.imageView12);
-          //  imageView.setImageBitmap(decodedByte);
+            textview= (TextView) findViewById(R.id.textView16);
+            textview.setText(activity);
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageView12);
+            Picasso.get().load(avatar).into(imageView);
+
+            ArrayList<String> dcprev = new ArrayList<>();
+            ArrayList<String> dclink = new ArrayList<>();
+
+            for (int i=0;i<docslink.length;i++)
+            {
+                docslink[i]=docslink[i].substring(1);
+                docslink[i]=docslink[i].substring(0,docslink[i].length()-1);
+                dclink.add(docslink[i]);
+                docsprev[i]=docsprev[i].substring(1);
+                docsprev[i]=docsprev[i].substring(0,docsprev[i].length()-1);
+                dcprev.add(docsprev[i]);
+            }
+
+            RecyclerView recyclerView = findViewById(R.id.frameLayout);
+            LinearLayoutManager horizontalLayoutManager
+                    = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+            recyclerView.setLayoutManager(horizontalLayoutManager);
+            adapter = new GalleryAdapter(this, dcprev, dclink);
+            //adapter.setClickListener(this);
+            recyclerView.setAdapter(adapter);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
