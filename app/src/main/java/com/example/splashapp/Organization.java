@@ -11,9 +11,10 @@ public class Organization extends User {
 
     public Organization(@NotNull String id, String city, String about,
                          String number,
-                        @NotNull String name, List<String> documents,Image avatar) {
-        super(id, city, about, avatar, number);
+                        @NotNull String name, List<String> documents,String avatar) {
+        super(id, about, avatar, number);
         this.name = name;
+        this.city = city;
         this.documents = documents;
     }
 
@@ -22,7 +23,7 @@ public class Organization extends User {
     }
 
     public void setCity(@NotNull String city) {
-        this.name = city;
+        this.city = city;
     }
 
     public String getCity() {

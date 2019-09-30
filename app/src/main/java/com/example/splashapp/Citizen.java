@@ -9,10 +9,10 @@ public class Citizen extends User {
     private String firstName, lastName, city;
 
     public Citizen(@NotNull String id, @NotNull String email, @NotNull String about,
-                   Image image, String number,
+                   String image, String number,
                    @NotNull String firstName, @NotNull String lastName,
                    String city) {
-        super(id, email, about, image, number);
+        super(id, about, image, number);
         this.firstName = firstName;
         this.lastName = lastName;
         this.city = city;

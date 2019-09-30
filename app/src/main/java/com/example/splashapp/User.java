@@ -6,12 +6,11 @@ import javax.validation.constraints.NotNull;
 public abstract class User extends Identified {
     private String email, about,
             number;
-    Image image;
+    String image;
 
-    public User(@NotNull String id, String email, @NotNull String about,
-                Image image, String number) {
+    public User(@NotNull String id,@NotNull String about,
+                String image, String number) {
         super(id);
-        this.email = email;
         this.image = image;
         this.about = about;
         this.number = number;
@@ -33,13 +32,11 @@ public abstract class User extends Identified {
         this.about = about;
     }
 
-    public Image getImageName() {
+    public String getImageName() {
         return image;
     }
 
-    public void setImageName(Image imageName) {
-        this.image = imageName;
-    }
+    public void setImageName(String imageName) { this.image = imageName; }
 
     public String getNumber() {
         return number;
