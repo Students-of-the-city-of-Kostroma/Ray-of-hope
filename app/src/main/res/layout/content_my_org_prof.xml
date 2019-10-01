@@ -88,7 +88,6 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:background="@drawable/rounded_edittext"
         app:layout_constraintBottom_toTopOf="@+id/buttonOrgEdit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -108,8 +107,8 @@
             android:id="@+id/imageView5"
             android:layout_width="34dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginLeft="100dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
             android:layout_marginTop="3dp"
             android:layout_marginBottom="3dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -175,8 +174,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:layout_marginEnd="100dp"
-            android:layout_marginRight="100dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
             android:layout_marginBottom="3dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -207,12 +206,12 @@
 
     <TextView
         android:id="@+id/textView20"
-        android:layout_width="120dp"
-        android:layout_height="42dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:text="@string/citnumb_txt"
         app:layout_constraintBottom_toTopOf="@+id/textView19"
         app:layout_constraintEnd_toEndOf="parent"
@@ -240,22 +239,22 @@
 
     <TextView
         android:id="@+id/textView22"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/tx_aboutOrg"
-        android:maxLines = "3"
+        android:maxLines="3"
         android:minLines="3"
+        android:text=".........................."
         app:layout_constraintBottom_toTopOf="@+id/textView21"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView23"
-        tools:text="@string/tx_aboutOrg" />
+        tools:text="........................" />
 
     <TextView
         android:id="@+id/textView23"
@@ -306,7 +305,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView10"
         app:layout_constraintTop_toBottomOf="@+id/textView25"
-        tools:text="Город" />
+        tools:text="Город"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:freezesText="true"
+        />
 
     <TextView
         android:id="@+id/textView16"
@@ -340,7 +347,14 @@
         app:layout_constraintStart_toEndOf="@+id/imageView12"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        tools:text="Какая-то организация" />
+        tools:text="Какая-то организация"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:freezesText="true"/>
 
     <ImageView
         android:id="@+id/imageView10"

@@ -12,8 +12,8 @@ public abstract class User extends Identified {
                 String image, String number) {
         super(id);
         this.image = image;
-        this.about = about;
-        this.number = number;
+        this.about = about.replaceAll("null", " ");
+        this.number = number.replaceAll("null", " ");
     }
 
     public String getEmail() {

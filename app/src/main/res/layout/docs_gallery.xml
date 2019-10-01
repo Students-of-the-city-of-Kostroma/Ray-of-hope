@@ -9,6 +9,7 @@
     <ImageView
         android:id="@+id/docprev"
         android:layout_width="100dp"
-        android:layout_height="100dp"/>
+        android:layout_height="wrap_content"
+        android:background="@drawable/doc_round" />
 
 </LinearLayout>

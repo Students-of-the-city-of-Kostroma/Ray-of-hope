@@ -1,6 +1,8 @@
 package com.example.splashapp;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +18,7 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ViewHold
     private List<String> Image;
     private List<String> Link;
     private Context context;
-
+    private ItemClickListener mClickListener;
 
     public GalleryAdapter(Context context,List<String> Image,List<String> Link)
     {
@@ -37,7 +39,7 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ViewHold
     public void onBindViewHolder(ViewHolder  holder, int position) {
         String im=Image.get(position);
         String li=Link.get(position);
-
+        holder.link=li;
         Picasso.get().load(im).into(holder.imageView);
     }
 
@@ -46,7 +48,7 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ViewHold
         return Image.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public String link;
         public ImageView imageView;
 
@@ -54,6 +56,27 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ViewHold
         {
             super(itemView);
             imageView =(ImageView) itemView.findViewById(R.id.docprev);
+            itemView.setOnClickListener(this);
         }
+        @Override
+        public void onClick(View view) {
+            if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
+        }
+    }
+
+    public String getImage(int id) {
+        return Image.get(id);
+    }
+
+    public String getLink(int id) {
+        return Link.get(id);
+    }
+
+    public void setClickListener(ItemClickListener itemClickListener) {
+        this.mClickListener = itemClickListener;
+    }
+
+    public interface ItemClickListener {
+        void onItemClick(View view, int position);
     }
 }
