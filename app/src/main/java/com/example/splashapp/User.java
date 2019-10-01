@@ -1,17 +1,19 @@
 package com.example.splashapp;
+import android.media.Image;
+
 import javax.validation.constraints.NotNull;
 
 public abstract class User extends Identified {
     private String email, about,
-            number, imageName;
+            number;
+    String image;
 
-    public User(@NotNull int id, @NotNull String email, @NotNull String about,
-                String imageName, String number) {
+    public User(@NotNull String id,@NotNull String about,
+                String image, String number) {
         super(id);
-        this.email = email;
-        this.imageName = imageName;
-        this.about = about;
-        this.number = number;
+        this.image = image;
+        this.about = about.replaceAll("null", " ");
+        this.number = number.replaceAll("null", " ");
     }
 
     public String getEmail() {
@@ -31,12 +33,10 @@ public abstract class User extends Identified {
     }
 
     public String getImageName() {
-        return imageName;
+        return image;
     }
 
-    public void setImageName(String imageName) {
-        this.imageName = imageName;
-    }
+    public void setImageName(String imageName) { this.image = imageName; }
 
     public String getNumber() {
         return number;

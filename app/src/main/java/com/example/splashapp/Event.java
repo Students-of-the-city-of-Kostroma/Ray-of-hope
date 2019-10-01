@@ -7,7 +7,7 @@ import java.util.List;
 public class Event extends Activism {
     private List<User> willGo;
 
-    public Event(@NotNull int id, @NotNull String name, @NotNull String description, @NotNull Date postDate,
+    public Event(@NotNull String id, @NotNull String name, @NotNull String description, @NotNull Date postDate,
                  @NotNull Date date,
                  List<User> willGo) {
         super(id, name, description, postDate, date);

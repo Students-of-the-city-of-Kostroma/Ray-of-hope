@@ -4,17 +4,17 @@ package com.example.splashapp;
 import javax.validation.constraints.NotNull;
 
 public abstract class Identified {
-    private int id;
+    private String id;
 
-    public Identified(@NotNull int id) {
+    public Identified(@NotNull String id) {
         this.id = id;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(@NotNull int id) {
+    public void setId(@NotNull String id) {
         this.id = id;
     }
 }

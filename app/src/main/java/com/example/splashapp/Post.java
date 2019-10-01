@@ -7,7 +7,7 @@ public abstract class Post extends Identified {
     private String name, description;
     private Date postDate;
 
-    public Post(int id, @NotNull String name, @NotNull String description, @NotNull Date postDate) {
+    public Post(String id, @NotNull String name, @NotNull String description, @NotNull Date postDate) {
         super(id);
         this.name = name;
         this.description = description;

@@ -1,33 +1,23 @@
 package com.example.splashapp;
 
-import android.content.Context;
-import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.support.v7.app.AlertDialog;
-import android.util.Log;
-import android.view.Gravity;
-import android.widget.Toast;
-import com.example.splashapp.RegOrg;
-import java.io.BufferedOutputStream;
+
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
-public class CallDB_RegOrg extends AsyncTask<String , Void ,String> {
+public class CallDB_MyProfOrg extends AsyncTask<String , Void ,String> {
 
-
-
-    public CallDB_RegOrg(){}
+    public CallDB_MyProfOrg(){}
 
     @Override
     protected void onPreExecute() {
@@ -50,16 +40,14 @@ public class CallDB_RegOrg extends AsyncTask<String , Void ,String> {
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setReadTimeout(10000);
             conn.setConnectTimeout(15000);
-            conn.setRequestMethod("POST");
+            conn.setRequestMethod("GET");
             conn.setDoInput(true);
             conn.setDoOutput(true);
 
 
             Uri.Builder builder = new Uri.Builder()
-                    .appendQueryParameter("name", params[0])
-                    .appendQueryParameter("email", params[1])
-                    .appendQueryParameter("INN", params[2])
-                    .appendQueryParameter("password", params[3]);
+                    .appendQueryParameter("profile_org_info", "1")
+                    .appendQueryParameter("org_id", params[0]);
             String query = builder.build().getEncodedQuery();
 
             OutputStream os = conn.getOutputStream();
@@ -79,16 +67,16 @@ public class CallDB_RegOrg extends AsyncTask<String , Void ,String> {
                     response += line;
                 }
             } else {
-                response = "";
+                response = "error";
 
 
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
 
             System.out.println(e.getMessage());
 
         }
         return response;
+
     }
 }
-

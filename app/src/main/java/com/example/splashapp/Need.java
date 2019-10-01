@@ -6,7 +6,7 @@ public class Need extends Post {
     private String whatNeed;
     private int percent;
 
-    public Need(@NotNull int id, @NotNull String name, @NotNull String description, @NotNull Date postDate,
+    public Need(@NotNull String id, @NotNull String name, @NotNull String description, @NotNull Date postDate,
                 @NotNull String whatNeed, @NotNull int percent) {
         super(id, name, description, postDate);
         this.whatNeed = whatNeed;

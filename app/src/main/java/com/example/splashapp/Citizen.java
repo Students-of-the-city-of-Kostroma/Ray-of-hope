@@ -1,16 +1,18 @@
 package com.example.splashapp;
 
+import android.media.Image;
+
 import javax.validation.constraints.NotNull;
 
 public class Citizen extends User {
 
     private String firstName, lastName, city;
 
-    public Citizen(@NotNull int id, @NotNull String email, @NotNull String about,
-                   String imageName, String number,
+    public Citizen(@NotNull String id, @NotNull String email, @NotNull String about,
+                   String image, String number,
                    @NotNull String firstName, @NotNull String lastName,
                    String city) {
-        super(id, email, about, imageName, number);
+        super(id, about, image, number);
         this.firstName = firstName;
         this.lastName = lastName;
         this.city = city;
