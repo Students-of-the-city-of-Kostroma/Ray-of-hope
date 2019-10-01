@@ -152,7 +152,7 @@ public class MyOrgProf extends AppCompatActivity
 
             ArrayList<String> dcprev = new ArrayList<>();
             ArrayList<String> dclink = new ArrayList<>();
-
+            try {
             for (int i = 0; i < docslink.length; i++) {
                 docslink[i] = docslink[i].substring(1);
                 docslink[i] = docslink[i].substring(0, docslink[i].length() - 1);
@@ -160,6 +160,9 @@ public class MyOrgProf extends AppCompatActivity
                 docsprev[i] = docsprev[i].substring(1);
                 docsprev[i] = docsprev[i].substring(0, docsprev[i].length() - 1);
                 dcprev.add(docsprev[i]);
+            }
+            }catch (Exception e) {
+                e.printStackTrace();
             }
 
             MyOrg = new Organization(id, city, description, contacts, name, avatar, adress, activity ,dclink, dcprev);
