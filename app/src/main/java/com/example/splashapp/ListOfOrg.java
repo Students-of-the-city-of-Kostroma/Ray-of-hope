@@ -15,9 +15,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class ListOfOrg extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    public static String testId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -150,6 +153,10 @@ public class ListOfOrg extends AppCompatActivity
     public void ChoiceOrg(View view)
     {
         Intent intent = new Intent(this, ViewOrg.class);
+        Button b=(Button)view;
+        testId=b.getText().toString();
+        int k=testId.lastIndexOf(" ")+1;
+        testId=testId.substring(k);
         startActivity(intent);
         finish();
     }
