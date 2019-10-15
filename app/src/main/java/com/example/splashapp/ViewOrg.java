@@ -131,9 +131,7 @@ public class ViewOrg extends AppCompatActivity
             String activity = json.get("type_of_activity_name").toString();
             String description = json.get("description").toString();
             String contacts = "Телефон: " + json.get("number_phone").toString();
-            String adress = "Адрес: " + json.get("address_region").toString()+" " + json.get("address_city").toString()+" "
-                    + json.get("address_street").toString()+" " + json.get("address_house").toString()
-                    + json.get("address_housing").toString()+" " + json.get("address_building").toString()+" " + json.get("address_office").toString();
+            String adress = "Адрес: " + json.get("address").toString();
 
             String docslink1 = json.get("docs_links").toString();
             docslink1 = docslink1.substring(1);
@@ -151,10 +149,10 @@ public class ViewOrg extends AppCompatActivity
             for (int i = 0; i < docslink.length; i++) {
                 docslink[i] = docslink[i].substring(1);
                 docslink[i] = docslink[i].substring(0, docslink[i].length() - 1);
-                dclink.add(docslink[i]);
+                dclink.add("http://"+docslink[i]);
                 docsprev[i] = docsprev[i].substring(1);
                 docsprev[i] = docsprev[i].substring(0, docsprev[i].length() - 1);
-                dcprev.add(docsprev[i]);
+                dcprev.add("http://"+docsprev[i]);
             }
             }catch (Exception e) {
                 e.printStackTrace();
@@ -190,10 +188,14 @@ public class ViewOrg extends AppCompatActivity
 
     @Override
     public void onItemClick(View view, int position) {
+        try{
         String url=adapter.getLink(position);
         Intent browserIntent = new
                 Intent(Intent.ACTION_VIEW, Uri.parse(url));
         this.startActivity(browserIntent);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     @Override
     public void onBackPressed() {
