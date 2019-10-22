@@ -337,4 +337,17 @@ public class ViewOrg extends AppCompatActivity
 
         finish();
     }
+    public  void ToMenu(View view)
+    {
+        Intent intent = new Intent(this, Another.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public  void ToListOfOrg(View view)
+    {
+        Intent intent = new Intent(this, ListOfOrg.class);
+        startActivity(intent);
+        finish();
+    }
 }

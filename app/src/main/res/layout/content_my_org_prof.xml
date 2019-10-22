@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorSYellow"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".ViewOrg"
     tools:showIn="@layout/app_bar_my_org_prof">
 
@@ -147,6 +146,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="3dp"
+            android:onClick="ToListOfOrg"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/imageView8"
             app:layout_constraintStart_toEndOf="@+id/imageView6"
@@ -181,6 +181,7 @@
             android:layout_marginEnd="55dp"
             android:layout_marginRight="55dp"
             android:layout_marginBottom="3dp"
+            android:onClick="ToMenu"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView8"
