@@ -185,7 +185,7 @@
             android:layout_marginEnd="55dp"
             android:layout_marginRight="55dp"
             android:layout_marginBottom="3dp"
-            android:onClick="ToMenu"
+            android:onClick="openMenu"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView8"

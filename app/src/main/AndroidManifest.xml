@@ -10,7 +10,9 @@
         android:supportsRtl="true"
         android:testOnly="false"
         android:theme="@style/AppTheme">
-        <activity android:name=".Another"></activity>
+        <activity
+            android:name=".Another"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".DownMenu" />
         <activity
             android:name=".LoginOrgActivity"

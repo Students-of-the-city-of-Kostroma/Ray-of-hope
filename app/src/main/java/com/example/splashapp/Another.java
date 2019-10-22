@@ -52,6 +52,11 @@ public class Another extends AppCompatActivity {
         Intent intent = new Intent(this, AboutView.class);
         startActivity(intent);
     }
-
+    public  void ToListOfOrg(View view)
+    {
+        Intent intent = new Intent(this, ListOfOrg.class);
+        startActivity(intent);
+        finish();
+    }
 
 }
