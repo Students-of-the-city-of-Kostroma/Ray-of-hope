@@ -6,17 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class Another extends AppCompatActivity {
+public class MenuView extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_another);
-
-        TextView textview= (TextView) findViewById(R.id.textView17);
-        textview.setText(MyOrgProf.MyOrg.getName());
     }
-    public  void ToMyProf(View view)
+    public  void goToMyProfile(View view)
     {
         boolean cit=Choice.citezen;
         if (cit) {
@@ -29,30 +26,30 @@ public class Another extends AppCompatActivity {
         finish();
     }
 
-    public  void ToComm(View view)
+    public  void goToComment(View view)
     {
 
     }
-    public  void ToMark(View view)
+    public  void goToMarker(View view)
     {
 
     }
-    public  void ToSetting(View view)
+    public  void goToSetting(View view)
     {
 
     }
-    public  void ToFAQ(View view)
+    public  void goToFAQ(View view)
     {
         Intent intent = new Intent(this, Q_A.class);
         startActivity(intent);
         finish();
     }
-    public  void ToAbout(View view)
+    public  void goToAbout(View view)
     {
         Intent intent = new Intent(this, AboutView.class);
         startActivity(intent);
     }
-    public  void ToListOfOrg(View view)
+    public  void goToListOfOrg(View view)
     {
         Intent intent = new Intent(this, ListOfOrg.class);
         startActivity(intent);

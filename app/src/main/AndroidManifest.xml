@@ -11,7 +11,7 @@
         android:testOnly="false"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Another"
+            android:name=".MenuView"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".DownMenu" />
         <activity

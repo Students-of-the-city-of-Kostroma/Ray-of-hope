@@ -265,7 +265,7 @@ public class ViewOrg extends AppCompatActivity
     }
     public  void openMenu(View view)
     {
-        Intent intent = new Intent(this, Another.class);
+        Intent intent = new Intent(this, MenuView.class);
         startActivity(intent);
         finish();
     }
