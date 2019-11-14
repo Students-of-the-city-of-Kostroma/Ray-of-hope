@@ -42,13 +42,13 @@ public class ViewOrg extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        String orgId=ListOfOrg.testId;
+        String orgId=ListOfOrg.selectedId;
 
 
         CallDB_ProfOrg RO=new CallDB_ProfOrg();
         if (orgId==null) {
             loadId();
-            orgId=ListOfOrg.testId;
+            orgId=ListOfOrg.selectedId;
         }
         else saveId();
 
@@ -115,13 +115,13 @@ public class ViewOrg extends AppCompatActivity
     void loadId() {
         sPref = getPreferences(MODE_PRIVATE);
         String savedText = sPref.getString(sv_id, "");
-        ListOfOrg.testId=savedText;
+        ListOfOrg.selectedId=savedText;
     }
 
     void saveId() {
         sPref = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor ed = sPref.edit();
-        ed.putString(sv_id, ListOfOrg.testId);
+        ed.putString(sv_id, ListOfOrg.selectedId);
         ed.commit();
     }
     @Override

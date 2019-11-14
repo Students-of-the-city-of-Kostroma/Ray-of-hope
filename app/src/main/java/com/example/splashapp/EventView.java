@@ -52,12 +52,6 @@ public class EventView extends AppCompatActivity{
         }
     }
 
-    public  void RetToOrg(View view)
-    {
-        Intent intent = new Intent(this, ViewOrg.class);
-        startActivity(intent);
-        finish();
-    }
     boolean ch=false;
     public  void Close()
     {

@@ -49,7 +49,7 @@ public class NeedView extends AppCompatActivity {
             super.onBackPressed();
         }
     }
-    
+
     boolean ch=false;
     public  void Close()
     {
