@@ -1,5 +1,5 @@
 <div class="navbar-wrapper"><div class="navbar">
-	<a id="avatar-link" href="https://rayofhope-opensource.000webhostapp.com/#header" style="
+	<a id="avatar-link" href=$_SERVER['HTTP_HOST']."/#header" style="
 ">
 	   <svg class="logo" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 1999 1466" xmlns:xlink="http://www.w3.org/1999/xlink">
 	       <defs>
@@ -14,20 +14,20 @@
 </a>
 	<div class="nav-links">
 		<li class="nav-link">
-			<a id="about-button" href="http://rayofhope-opensource.hostingerapp.com//#about">О нас</a>
+			<a id="about-button" href="/#about">О нас</a>
 		</li>
 		<li id="login" class="nav-link sub">
 			<a>Вход</a>
 			<ul class="sub-menu">
 				<a href="#">Гражданин</a>
-				<a href="http://rayofhope-opensource.hostingerapp.com//login/org">Организация</a>
+				<a href="/login/org">Организация</a>
 			</ul>
 		</li>
 		<li id="reg" class="nav-link sub">
 			<a>Регистрация</a>
 			<ul class="sub-menu">
 				<a href="#">Гражданин</a>
-				<a href="http://rayofhope-opensource.hostingerapp.com//registration/org">Организация</a>
+				<a href="/registration/org">Организация</a>
 			</ul>
 		</li>
 	</div>

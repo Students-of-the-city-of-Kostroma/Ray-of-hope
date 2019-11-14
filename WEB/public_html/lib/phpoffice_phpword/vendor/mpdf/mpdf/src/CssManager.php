@@ -2264,8 +2264,8 @@ class CssManager
 
 			// WriteHTML parses all paths to full URLs; may be local file name
 			// DOCUMENT_ROOT is not returned on IIS
-			if (!empty($tr['scheme']) && $tr['host'] && !empty($_SERVER['DOCUMENT_ROOT'])) {
-				$localpath = $_SERVER['DOCUMENT_ROOT'] . $tr['path'];
+			if (!empty($tr['scheme']) && $tr['host'] && !empty($_SERVER['HTTP_HOST'])) {
+				$localpath = $_SERVER['HTTP_HOST'] . $tr['path'];
 			} elseif ($docroot) {
 				$localpath = $docroot . $tr['path'];
 			} else {

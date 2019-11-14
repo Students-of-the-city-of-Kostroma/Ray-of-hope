@@ -21,5 +21,5 @@ if (isset($_SESSION['logged_org'])) : ?>
 </body>
 </html>
 <?php else : ?>
-<?php header("Location: http://rayofhope-opensource.000webhostapp.com/login/org"); ?>
+<?php header("Location: /login/org"); ?>
 <?php endif; ?>

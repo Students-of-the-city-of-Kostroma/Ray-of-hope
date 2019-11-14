@@ -1,0 +1,259 @@
+[29-Sep-2019 17:19:48 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'id10080061_admin'@'localhost' (using password: YES) in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 444
+[29-Sep-2019 17:19:48 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 66
+[29-Sep-2019 17:19:48 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 67
+[29-Sep-2019 17:19:48 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'id10080061_ray_of_hope_admin'@'localhost' (using password: YES) in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 16
+[29-Sep-2019 17:19:48 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 21
+[29-Sep-2019 17:19:48 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 22
+[29-Sep-2019 17:19:48 UTC] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 11
+[29-Sep-2019 17:19:48 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'id10080061_ray_of_hope_admin'@'localhost' (using password: YES) in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 16
+[29-Sep-2019 17:19:48 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 30
+[29-Sep-2019 17:19:48 UTC] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 11
+[29-Sep-2019 17:19:55 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'id10080061_ray_of_hope_admin'@'localhost' (using password: YES) in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 16
+[29-Sep-2019 17:19:55 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 21
+[29-Sep-2019 17:19:55 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 22
+[29-Sep-2019 17:19:55 UTC] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 11
+[29-Sep-2019 17:19:55 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'id10080061_ray_of_hope_admin'@'localhost' (using password: YES) in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 16
+[29-Sep-2019 17:19:55 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 30
+[29-Sep-2019 17:19:55 UTC] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 11
+[29-Sep-2019 17:21:26 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'id10080061_admin'@'localhost' (using password: YES) in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 444
+[29-Sep-2019 17:21:26 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 66
+[29-Sep-2019 17:21:26 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 67
+[29-Sep-2019 17:21:26 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'id10080061_ray_of_hope_admin'@'localhost' (using password: YES) in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 16
+[29-Sep-2019 17:21:26 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 21
+[29-Sep-2019 17:21:26 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 22
+[29-Sep-2019 17:21:26 UTC] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 11
+[29-Sep-2019 17:21:26 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'id10080061_ray_of_hope_admin'@'localhost' (using password: YES) in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 16
+[29-Sep-2019 17:21:26 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 30
+[29-Sep-2019 17:21:26 UTC] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 11
+[29-Sep-2019 17:21:28 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'id10080061_ray_of_hope_admin'@'localhost' (using password: YES) in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 16
+[29-Sep-2019 17:21:28 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 21
+[29-Sep-2019 17:21:28 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 22
+[29-Sep-2019 17:21:28 UTC] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 11
+[29-Sep-2019 17:21:28 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'id10080061_ray_of_hope_admin'@'localhost' (using password: YES) in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 16
+[29-Sep-2019 17:21:28 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 30
+[29-Sep-2019 17:21:28 UTC] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 11
+[29-Sep-2019 17:21:42 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'id10080061_admin'@'localhost' (using password: YES) in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 444
+[29-Sep-2019 17:21:42 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 66
+[29-Sep-2019 17:21:42 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 67
+[29-Sep-2019 17:21:42 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'id10080061_ray_of_hope_admin'@'localhost' (using password: YES) in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 16
+[29-Sep-2019 17:21:42 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 21
+[29-Sep-2019 17:21:42 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 22
+[29-Sep-2019 17:21:42 UTC] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 11
+[29-Sep-2019 17:21:42 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'id10080061_ray_of_hope_admin'@'localhost' (using password: YES) in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 16
+[29-Sep-2019 17:21:42 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 30
+[29-Sep-2019 17:21:42 UTC] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 11
+[29-Sep-2019 17:21:46 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'id10080061_ray_of_hope_admin'@'localhost' (using password: YES) in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 16
+[29-Sep-2019 17:21:46 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 21
+[29-Sep-2019 17:21:46 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 22
+[29-Sep-2019 17:21:46 UTC] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 11
+[29-Sep-2019 17:21:46 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'id10080061_ray_of_hope_admin'@'localhost' (using password: YES) in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 16
+[29-Sep-2019 17:21:46 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 30
+[29-Sep-2019 17:21:46 UTC] PHP Warning:  mysqli::close(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 11
+[29-Sep-2019 17:24:31 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'id10080061_admin'@'localhost' (using password: YES) in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 444
+[29-Sep-2019 17:24:31 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 66
+[29-Sep-2019 17:24:31 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 67
+[30-Sep-2019 12:46:14 UTC] PHP Notice:  Undefined variable: INN in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 521
+[30-Sep-2019 12:46:14 UTC] PHP Notice:  Undefined variable: mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 13
+[30-Sep-2019 12:46:14 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php:13
+Stack trace:
+#0 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(533): Database->emailIsFree('sdsdf@sdf.fgh')
+#1 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(513): reg_org2('6449013711', '111111', 'sdsdf@sdf.fgh', 'dsfdgdfg')
+#2 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 13
+[30-Sep-2019 12:47:11 UTC] PHP Notice:  Undefined variable: mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 13
+[30-Sep-2019 12:47:11 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php:13
+Stack trace:
+#0 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(533): Database->emailIsFree('sdfsdf@df.fgh')
+#1 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(513): reg_org2('6449013711', '111111', 'sdfsdf@df.fgh', 'sdfsdf')
+#2 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 13
+[30-Sep-2019 12:48:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Database::reg_org() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php:545
+Stack trace:
+#0 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(513): reg_org2('6449013711', '111111', 'dsfsdf@sdg.fgh', 'sdfsdfdsf')
+#1 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 545
+[30-Sep-2019 12:48:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method System::generate_hash() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php:20
+Stack trace:
+#0 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(545): Database->addOrg('6449013711', '444444', 'fsdfsdf@dsfd.fg...', 'sdfsdfsd')
+#1 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(513): reg_org2('6449013711', '444444', 'fsdfsdf@dsfd.fg...', 'sdfsdfsd')
+#2 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 20
+[30-Sep-2019 12:51:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method System::generate_hash() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php:20
+Stack trace:
+#0 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(545): Database->addOrg('6449013711', '555555', 'dsfsd@dg.dfgdfg', 'sdfsdfsd')
+#1 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(513): reg_org2('6449013711', '555555', 'dsfsd@dg.dfgdfg', 'sdfsdfsd')
+#2 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 20
+[30-Sep-2019 12:53:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method System::generate_hash() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php:21
+Stack trace:
+#0 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(545): Database->addOrg('6449013711', '555555', 'sdfsdf@dfg.gj', '\xD1\x8B\xD0\xB2\xD0\xB0\xD1\x8B\xD0\xB2\xD0\xB0\xD1\x8B\xD0...')
+#1 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(513): reg_org2('6449013711', '555555', 'sdfsdf@dfg.gj', '\xD1\x8B\xD0\xB2\xD0\xB0\xD1\x8B\xD0\xB2\xD0\xB0\xD1\x8B\xD0...')
+#2 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 21
+[30-Sep-2019 12:54:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method System::generate_hash() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php:21
+Stack trace:
+#0 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(545): Database->addOrg('6449013711', '555555', 'sdfsdf@fdg.fgj', 'dsfsdfsd')
+#1 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(513): reg_org2('6449013711', '555555', 'sdfsdf@fdg.fgj', 'dsfsdfsd')
+#2 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 21
+[30-Sep-2019 12:57:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method System::generate_hash() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php:21
+Stack trace:
+#0 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(545): Database->addOrg('6449013711', '555555', 'dfgdfg@fdg.ru', 'dfgdfgfd')
+#1 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(513): reg_org2('6449013711', '555555', 'dfgdfg@fdg.ru', 'dfgdfgfd')
+#2 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 21
+[30-Sep-2019 12:58:52 UTC] PHP Fatal error:  Cannot declare class System, because the name is already in use in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/System.php on line 2
+[30-Sep-2019 13:00:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method System::generate_hash() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php:21
+Stack trace:
+#0 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(545): Database->addOrg('6449013711', '5555555', 'sdfsdf@fdg.hgj', 'ghgjghj')
+#1 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(513): reg_org2('6449013711', '5555555', 'sdfsdf@fdg.hgj', 'ghgjghj')
+#2 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 21
+[30-Sep-2019 17:32:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getCityList() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php:344
+Stack trace:
+#0 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 344
+[30-Sep-2019 17:32:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getCityList() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php:344
+Stack trace:
+#0 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 344
+[30-Sep-2019 17:32:52 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getCityList() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php:344
+Stack trace:
+#0 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 344
+[30-Sep-2019 17:32:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getCityList() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php:344
+Stack trace:
+#0 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 344
+[30-Sep-2019 17:32:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getCityList() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php:344
+Stack trace:
+#0 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 344
+[30-Sep-2019 17:32:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getCityList() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php:344
+Stack trace:
+#0 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 344
+[30-Sep-2019 17:32:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getCityList() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php:344
+Stack trace:
+#0 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 344
+[30-Sep-2019 17:32:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getCityList() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php:344
+Stack trace:
+#0 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 344
+[30-Sep-2019 17:32:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getCityList() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php:344
+Stack trace:
+#0 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 344
+[30-Sep-2019 17:32:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getCityList() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php:344
+Stack trace:
+#0 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 344
+[30-Sep-2019 17:32:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getCityList() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php:344
+Stack trace:
+#0 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 344
+[30-Sep-2019 17:32:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getCityList() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php:344
+Stack trace:
+#0 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 344
+[30-Sep-2019 17:32:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getCityList() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php:344
+Stack trace:
+#0 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 344
+[30-Sep-2019 17:32:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getCityList() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php:344
+Stack trace:
+#0 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 344
+[30-Sep-2019 17:32:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getCityList() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php:344
+Stack trace:
+#0 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 344
+[30-Sep-2019 17:32:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getCityList() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php:344
+Stack trace:
+#0 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 344
+[30-Sep-2019 17:32:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getCityList() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php:344
+Stack trace:
+#0 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 344
+[30-Sep-2019 17:34:21 UTC] PHP Notice:  Undefined index: document in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 232
+[30-Sep-2019 17:34:29 UTC] PHP Notice:  Undefined index: document in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 232
+[30-Sep-2019 17:34:31 UTC] PHP Notice:  Undefined index: document in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 232
+[30-Sep-2019 19:28:24 UTC] PHP Notice:  Undefined variable: mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 120
+[30-Sep-2019 19:28:24 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 120
+[30-Sep-2019 19:34:33 UTC] PHP Notice:  Undefined variable: org_id in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 120
+[30-Sep-2019 19:40:45 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php:103
+Stack trace:
+#0 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(348): Database->editOrg()
+#1 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 103
+[30-Sep-2019 19:45:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getCityList() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php:354
+Stack trace:
+#0 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 354
+[30-Sep-2019 19:45:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getCityList() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php:354
+Stack trace:
+#0 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 354
+[30-Sep-2019 19:45:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getCityList() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php:354
+Stack trace:
+#0 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 354
+[30-Sep-2019 19:45:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getCityList() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php:354
+Stack trace:
+#0 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 354
+[01-Oct-2019 12:26:02 UTC] PHP Notice:  Undefined variable: mysqli in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 154
+[01-Oct-2019 12:26:02 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 154
+[02-Oct-2019 13:20:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method System::generate_hash() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php:179
+Stack trace:
+#0 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(483): Database->addOrg('7714698320', '555555', 'dfgdfg@dfgfh.gh...', '\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0...')
+#1 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(447): reg_org('7714698320', '555555', 'dfgdfg@dfgfh.gh...', '\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0...')
+#2 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 179
+[02-Oct-2019 13:21:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method System::generate_hash() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php:179
+Stack trace:
+#0 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(483): Database->addOrg('7714698320', '555555', 'dfgdfg@dfgfh.gh...', '\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0...')
+#1 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(447): reg_org('7714698320', '555555', 'dfgdfg@dfgfh.gh...', '\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0...')
+#2 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 179
+[02-Oct-2019 13:21:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method System::generate_hash() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php:179
+Stack trace:
+#0 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(483): Database->addOrg('7714698320', '555555', 'dfgdfg@dfgfh.gh...', '\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0...')
+#1 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(447): reg_org('7714698320', '555555', 'dfgdfg@dfgfh.gh...', '\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0...')
+#2 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 179
+[02-Oct-2019 13:21:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method System::generate_hash() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php:179
+Stack trace:
+#0 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(483): Database->addOrg('7714698320', '555555', 'dfgdfg@dfgfh.gh...', '\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0...')
+#1 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(447): reg_org('7714698320', '555555', 'dfgdfg@dfgfh.gh...', '\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0...')
+#2 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 179
+[02-Oct-2019 13:21:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method System::generate_hash() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php:179
+Stack trace:
+#0 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(483): Database->addOrg('7714698320', '555555', 'dfgdfg@dfgfh.gh...', '\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0...')
+#1 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(447): reg_org('7714698320', '555555', 'dfgdfg@dfgfh.gh...', '\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0...')
+#2 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 179
+[02-Oct-2019 13:21:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method System::generate_hash() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php:179
+Stack trace:
+#0 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(483): Database->addOrg('500100732259', '555555', 'dfgdfg@dfgfh.gh...', '\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0...')
+#1 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(447): reg_org('500100732259', '555555', 'dfgdfg@dfgfh.gh...', '\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0\xB2\xD0\xB0\xD0\xBF\xD0...')
+#2 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 179
+[02-Oct-2019 16:57:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method System::generate_hash() in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php:179
+Stack trace:
+#0 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(483): Database->addOrg('500100732259', '555555', 'shsdsdg@sdfsf.f...', 'sdfsdfsdf')
+#1 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(447): reg_org('500100732259', '555555', 'shsdsdg@sdfsf.f...', 'sdfsdfsdf')
+#2 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 179
+[02-Oct-2019 17:02:13 UTC] PHP Warning:  require_once(/functions/classes/System.php): failed to open stream: No such file or directory in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 2
+[02-Oct-2019 17:02:13 UTC] PHP Fatal error:  require_once(): Failed opening required '/functions/classes/System.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 2
+[03-Oct-2019 12:20:29 UTC] PHP Notice:  Undefined property: Database::$login_org_check in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 368
+[03-Oct-2019 12:21:15 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Database::login_org_check(), 0 passed in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php on line 368 and exactly 2 expected in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php:10
+Stack trace:
+#0 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/functions.php(368): Database->login_org_check()
+#1 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 10
+[03-Oct-2019 12:21:50 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, integer given in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 19

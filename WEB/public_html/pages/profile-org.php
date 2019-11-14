@@ -1,14 +1,13 @@
-<?php
-require_once "../functions/functions.php";
-require_once "../functions/classes/Database.php";
+<?php 
+//require_once "../functions/functions.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/functions/functions.php";
+//require_once "../functions/classes/Database.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/functions/classes/Database.php";
 if (isset($_SESSION['logged_org']) && isset($_GET['id_view_org'])) : ?>
 <?php 
-$id_view_org=$_GET['id_view_org'];
-$mysqli=connectBD();   
-#$orgInfo=mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT `name`, `avatar`, `city`, `docs`, `description`, `contacts`, `type_of_activity` FROM `accounts_organization2` WHERE `id` = '$id_view_org'")); 
-$db=new Database();#новое
-$orgInfo=$db->orgInfo($id_view_org);#новое
-#closeBD($mysqli);
+$id_view_org=$_GET['id_view_org'];  
+$db=new Database();
+$orgInfo=$db->orgInfo($id_view_org);
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -16,38 +15,33 @@ $orgInfo=$db->orgInfo($id_view_org);#новое
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="../assets/css/normalize.css" rel="stylesheet">
-    <link href="../assets/css/styles2.css" rel="stylesheet">
+    <link href="../assets/css/styles2_copy4.css" rel="stylesheet">
     <script src="../assets/js/jquery-3.4.1.min.js"></script>
     <script src="../assets/js/nav-mark.js"></script>
-    <script src="../assets/js/profile_org.js"></script>
+    <script src="../assets/js/jquery.maskedinput2.min.js"></script>
     <title><?php echo $orgInfo['name']; ?></title>
 </head>
 <body>
     <?php include 'header2.php'; ?>
     <?php include '../dialog-wrapper.php'; ?>
+    <?php include 'newpost.php'; ?>
     <div class="container">
         <div class="frame profileInfo">
             <div class="info">
                 <div class="avatar-name-activity-city">
                     <div class="avatar-wrapper">
                         <div class="avatar-doublewrapper">
-                            <img src="https://rayofhope-opensource.000webhostapp.com/user_data/avatar/<?php if (is_null($orgInfo['avatar'])){ echo "noavatar"; } else{ echo $orgInfo['id']; } ?>.jpg" alt="avatar" class="avatar">
+                            <img src="<?php echo $orgInfo['avatar']; ?>" alt="avatar" class="avatar">
                         </div>
                     </div>  
                     <div class="name-activity-city">
                         <div class="name wrapper"><?php echo $orgInfo['name']; ?></div>
                         <?php 
                         if (isset($orgInfo['type_of_activity'])){
-                            echo "<div class=\"activity-wrapper\"><div class=\"ico-wrapper\"><img class=\"ico activity\" src=\"../assets/img/ico_activity.png\"></div><span>".$orgInfo['type_of_activity']."</span></div>";
+                            echo "<div class=\"activity-wrapper\"><div class=\"ico-wrapper\"><img class=\"ico activity\" src=\"../assets/img/ico_activity.png\"></div><span>".$orgInfo['type_of_activity_name']."</span></div>";
                         }   
-                        #if (isset($orgInfo['city']))
                         if (isset($orgInfo['city_name']))
                         {
-                            #$city_id=$orgInfo['city'];
-                            #$mysqli=connectBD();  
-                            #$city_name = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT `name` FROM `geo_city` WHERE `id` = '$city_id'"))['name'];
-                            #closeBD($mysqli);  
-                            #echo "<div class=\"city-wrapper\"><div class=\"ico-wrapper\"><img class=\"ico city\" src=\"../assets/img/ico_city.png\"></div><span>".$city_name."</span></div>";
                             echo "<div class=\"city-wrapper\"><div class=\"ico-wrapper\"><img class=\"ico city\" src=\"../assets/img/ico_city.png\"></div><span>".$orgInfo['city_name']."</span></div>";
                         }
                         ?>
@@ -56,23 +50,25 @@ $orgInfo=$db->orgInfo($id_view_org);#новое
                 <div class="description-contacts-buttons">
                     <?php 
                     if (isset($orgInfo['description']) && $orgInfo['description']!=""){
-                        echo "<div class=\"description-wrapper\"><span class=\"title\">Описание:</span><span class=\"text\">".$orgInfo['description']."</span></div>";
+                        echo "<div class=\"description-wrapper\"><span class=\"title\">Описание:</span><div class=\"description-wrapper2\"><span data-min=\"".$orgInfo['description']."\" data-full=\"".$orgInfo['description']."\" class=\"text\">".$orgInfo['description']."</span><span class=\"moreTextBtn noclick\">Больше</span></div></div>";
                     }
                     ?> 
                     <div class="contacts-wrapper">
-                        <span class="title">Контакты:</span>
                         <?php
-                        if (isset($orgInfo['number_phone'])){
+                        if (isset($orgInfo['address']) || isset($orgInfo['number_phone'])){
+                            echo "<span class=\"title\">Контакты:</span>";
+                            if (isset($orgInfo['address'])){
                             echo "<div class=\"home-city-wrapper\">
                             <img class=\"ico\" src=\"../assets/img/home_city_icon.png\">
-                            <span class=\"home-city\">".$orgInfo['city_name']."</span>
-                        </div>";
-                        }
-                        if (isset($orgInfo['number_phone'])){
+                            <span class=\"home-city\">".$orgInfo['address']."</span>
+                            </div>";
+                            }
+                            if (isset($orgInfo['number_phone'])){
                             echo "<div class=\"phone-wrapper\">
                             <img class=\"ico\" src=\"../assets/img/phone_icon.png\">
                             <span class=\"phone-number\">".$orgInfo['number_phone']."</span>
-                        </div>";
+                            </div>";
+                            }
                         }
                         ?>
                     </div>
@@ -80,7 +76,7 @@ $orgInfo=$db->orgInfo($id_view_org);#новое
                     <div class="buttons-wrapper">
                         <?php 
                         if ($_GET['id_view_org']==$_SESSION['logged_org']){
-                            echo "<a href=\"https://rayofhope-opensource.000webhostapp.com/edit\" class=\"edit-profile-link\"><img class=\"edit-icon\" src=\"../assets/img/edit_profile_icon.png\"><span>Редактировать профиль</span></a>";
+                            echo "<a href=\"/edit\" class=\"edit-profile-link\"><img class=\"edit-icon\" src=\"../assets/img/edit_profile_icon.png\"><span>Редактировать профиль</span></a>";
                         }
                         else{
                             echo "
@@ -153,13 +149,119 @@ $orgInfo=$db->orgInfo($id_view_org);#новое
                 ?>
             </div>
             <div class="posts-wrapper">
-                <div class="frame post">
+                <div class="frame post occurrence">
+                    <div class="avatar_name_date_delete">
+                        <a href="" class="avatar_name">
+                            <img href="" src="<?php echo $orgInfo['avatar']; ?>" class="post_avatar">
+                            <span class="post_name"><?php echo $orgInfo['name']; ?></span>
+                        </a>
+                        <div class="date_delete">
+                            <span class="post_date">1 июля в 22:33</span>
+                            <button class="post_delete">
+                                <img src="/assets/img/delete_post_icon.png">
+                            </button>
+                        </div>
+                    </div>
+                    <span class="post_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia </span>
+                    <div class="post_img_list">
+                        <img src="../user_data/docs/2/doc_5d62586c21b5b.jpg" class="post_img">
+                    </div>
+                    <div class="post_comments_bookmarks">
+                        <a href="" class="post_comments">
+                            <img src="/assets/img/comments_icon.png" class="post_comments_icon">
+                            <span class="post_comments_count">27</span>
+                        </a>
+                        <button class="post_bookmarks">
+                            <img src="/assets/img/bookmarks_icon.png">
+                        </button>
+                    </div>
+                </div>
+                <div class="frame post event">
+                    <div class="avatar_name_date_delete">
+                        <a href="" class="avatar_name">
+                            <img href="" src="<?php echo $orgInfo['avatar']; ?>" class="post_avatar">
+                            <span class="post_name"><?php echo $orgInfo['name']; ?></span>
+                        </a>
+                        <div class="date_delete">
+                            <span class="post_date">1 июля в 22:33</span>
+                            <button class="post_delete">
+                                <img src="/assets/img/delete_post_icon.png">
+                            </button>
+                        </div>
+                    </div>
+                    <span class="post_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia </span>
+                    <div class="post_img_list">
+                        <img src="/user_data/docs/2/doc_5d62586c21e28.jpg" class="post_img">
+                    </div>
+                    <div class="location_date">
+                        <img src="/assets/img/ico_city.png">
+                        <div class="location_date_wrapper">
+                            <span class="date">27 июля в 13:00</span>
+                            <span class="location">Совесткая улица, 13</span>
+                        </div>
+                    </div>
+                    <div class="post_comments_bookmarks">
+                        <a href="" class="post_comments">
+                            <img src="/assets/img/comments_icon.png" class="post_comments_icon">
+                            <span class="post_comments_count">27</span>
+                        </a>
+                        <button class="post_bookmarks">
+                            <img src="/assets/img/bookmarks_icon.png">
+                        </button>
+                    </div>
+                </div>
+                <div class="frame post need">
+                    <div class="avatar_name_date_delete">
+                        <a href="" class="avatar_name">
+                            <img href="" src="<?php echo $orgInfo['avatar']; ?>" class="post_avatar">
+                            <span class="post_name"><?php echo $orgInfo['name']; ?></span>
+                        </a>
+                        <div class="date_delete">
+                            <span class="post_date">1 июля в 22:33</span>
+                            <button class="post_delete">
+                                <img src="/assets/img/delete_post_icon.png">
+                            </button>
+                        </div>
+                    </div>
+                    <span class="post_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia </span>
+                    <div class="post_img_list">
+                        <img src="/user_data/docs/2/doc_5d62586c21e28.jpg" class="post_img">
+                    </div>
+                    <div class="progress">
+                        <div class="count">
+                            <span class="collected_count">27943</span>
+                            <span class="need_count">100000</span>
+                        </div>
+                        <div class="bar">
+                            <div class="line_full">
+                                <div class="line_collected">
+                                    <!--
+                                    <button class="marker">
+                                        <div class="marker_hint"></div>
+                                    </button>
+                                    -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post_comments_bookmarks">
+                        <a href="" class="post_comments">
+                            <img src="/assets/img/comments_icon.png" class="post_comments_icon">
+                            <span class="post_comments_count">27</span>
+                        </a>
+                        <button class="post_bookmarks">
+                            <img src="/assets/img/bookmarks_icon.png">
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    
+    <script src="../assets/js/newpost26.js"></script>
+    <script src="../assets/js/profile_org.js"></script>
 </body>
 </html>
 <?php else : ?>
-<?php header("Location: https://rayofhope-opensource.000webhostapp.com/login/org"); ?>
+<?php header("Location: /login/org"); ?>
 <?php endif; ?>

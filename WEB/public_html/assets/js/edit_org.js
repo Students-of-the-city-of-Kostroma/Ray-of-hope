@@ -1,3 +1,5 @@
+let addressArray=[];
+var address=null;
 var avatar;
 var queue={};
 var previewQueue={};
@@ -171,32 +173,6 @@ function previewDOC(file, item_id){
 window.JsFile;
     
 $(document).ready(function () {
-    var data2 = new FormData();
-    data2.append( 'city_hints', 1 );
-    data2.append( 'request_city', "моск" );
-	$.ajax({
-	    type: 'POST',
-        data: data2,
-        cache: false,
-        dataType: 'json',
-        processData : false,
-        contentType : false,
-		url: "../../functions/functions.php",
-		success: function (response) {
-		    response.forEach(function(v) {
-		        console.log(v);
-		    });
-		},
-		error: function(request, status, error)
-		{
-		    console.log(request);
-		    console.log(status);
-		    console.log(error);
-		}
-	});
-    
-    
-    
     var pdfjsLib = window['pdfjs-dist/build/pdf'];
     pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
     
@@ -208,8 +184,10 @@ $(document).ready(function () {
     
     document.getElementById('docUpload').addEventListener('change', previewDocs, false);
     
-    // обработка и отправка AJAX запроса при клике на кнопку upload_files
+    // обработка и отправка AJAX запроса 
     $('.saveButton').on( 'click', function( event ){
+        var data = new FormData();
+        data.append( 'address', ($('#address').val()==="" || $('#address').val()===null)?null:$('#address').val());
         var name = $('input.name').val().trim()==='' ? null : $('input.name').val();
         if (name===null){open_dialog("Ошибка","Введите название");return;}
         var city= $('input.city')[0].hasAttribute("id_city") ? $('input.city').attr("id_city") : null;
@@ -218,9 +196,9 @@ $(document).ready(function () {
         var city_name= (city===null)?"":$('input.city').val();
         var activity = $('select.activity').val();
         var description=$('textarea.description').val();
-        var contacts=$('textarea.contacts').val();
+        var number_phone=$('input.phone').val()==""?null:$('input.phone').val();
         
-        var data = new FormData();
+        
         
         //заполняем массив документов из очереди 
         for (var id in queue) {
@@ -237,7 +215,7 @@ $(document).ready(function () {
         data.append( 'city_name', city_name );
         data.append( 'activity', activity );
         data.append( 'description', description );
-        data.append( 'contacts', contacts );
+        data.append( 'number_phone', number_phone );
         
         $.ajax({
             url: '../../functions/functions.php',
@@ -253,11 +231,8 @@ $(document).ready(function () {
                     if (jQuery.inArray("description", response) != -1){
                         open_dialog("Ошибка", "Максимальная длинна описания: 255 символов");
                     }
-                    if (jQuery.inArray("contacts", response) != -1){
-                        open_dialog("Ошибка", "Максимальная длинна контактной информации: 255 символов");
-                    }
                     else{
-                        open_dialog("Ошибка", "Не удалось изменить информацию");
+                        open_dialog("Ошибка", response);
                     }
                 }
                 else{
@@ -286,6 +261,17 @@ $(document).ready(function () {
 	        }
 	    }
 	);
+	
+	$("#address").keyup(
+	    function () {
+	        $(this).removeAttr("id_addressArrayElem");
+	        if(globalTimeout !== null) clearTimeout(globalTimeout); 
+	        if ($(this).val().length >= 1){
+	            lobalTimeout = setTimeout(getAddresList,250); 
+	        }
+	    }
+	);
+	
 	$("input.city").click(
 		function () {
 		    if ($('.city-list').html()!==''){
@@ -312,6 +298,10 @@ $(document).mouseup(function (e) {
     if (container.has(e.target).length === 0){
         hideCityList();
     }
+    container = $(".addres-list");
+    if (container.has(e.target).length === 0){
+        hideAddressList();
+    }
 });
 $(document).on('click','.city-item', function(){
     var select_city_id = $(this).attr("data-city_id");
@@ -319,15 +309,59 @@ $(document).on('click','.city-item', function(){
     $('input.city').val($(this).children(".city-name").html());
     hideCityList();
 });
+$(document).on('click','.address-item', function(){
+    var select_addres_id = $(this).attr("data-addressarrayelemid");
+    address=addressArray[select_addres_id];
+    $('input.address').attr({"data-addressarrayelemid":select_addres_id});
+    $('input.address').val($(this).children(".address-value").html());
+    hideAddressList();
+});
 function hideCityList(){
     $('.city-list').css({"display":"none"});
     $('input.city').removeAttr("style");
     $('.city.wrapper').removeClass('line-city-list');
 }
+function hideAddressList(){
+    $('.address-list').css({"display":"none"});
+    $('input.address').removeAttr("style");
+    $('.address.wrapper').removeClass('line-city-list');
+}
+function openAddressList(){
+    $('.address-list').css({"display":"block"});
+    $('input.addres').css({"border": "none","padding":"1px calc(0.9375vw + 0.0520833333vw)"});
+    $('.address.wrapper').addClass('line-city-list');
+}
 function openCityList(){
     $('.city-list').css({"display":"block"});
     $('input.city').css({"border": "none","padding":"1px calc(0.9375vw + 0.0520833333vw)"});
     $('.city.wrapper').addClass('line-city-list');
+}
+function getAddresList(){
+    globalTimeout = null;
+    var ajax;
+    var data = new FormData();
+    data.append( 'city_hints', 1 );
+    data.append( 'request_city',  $("#address").val());
+    
+    ajax = $.ajax ({    
+        type: "POST",
+        url:"../../functions/functions.php",
+        processData: false,
+        contentType: false,
+        dataType: 'json',
+        data: data,
+        beforeSend: function(){
+            if (ajax){ 
+                ajax.abort(); 
+            }
+        },
+        success: function(results) {
+            showAddressList(results);
+        },
+        error: function(xhr, status, error) {
+            (xhr.responseText + '|\n' + status + '|\n' +error);
+        }
+    });
 }
 function getSityList(){
     globalTimeout = null;
@@ -353,9 +387,23 @@ function getSityList(){
 function showCityList(json){
     $('.city-list').empty();
     for (var i in json){
-        $('.city-list').append("<div data-city_id='" + json[i].id + "' class='city-item'><span class='city-name'>" + json[i].name + "</span><span class='city-region'>" + json[i].region + "</span></div>");
+        $('.city-list').append("<div data-city_id='" + json[i].city_id + "' class='city-item'><span class='city-name'>" + json[i].city_name + "</span><span class='city-region'>" + json[i].region_name + "</span></div>");
         }
     if ($('.city-list').html()!==''){
         openCityList();
+    }
+}
+function showAddressList(json){
+    addressArray=[];
+    $('.address-list').empty();
+    for (var i in json['suggestions']){
+        addressArray.push(json['suggestions'][i]);
+    }
+    addressArray.forEach(function(item, i, addressArray) {
+        $('.address-list').append("<div data-addressArrayElemId='" + i + "' class='address-item'><span class='address-value'>" + item['value'] + "</span></div>");
+    });
+    
+    if ($('.address-list').html()!==''){
+        openAddressList();
     }
 }

@@ -1,5 +1,8 @@
 <?php
 require_once "../functions/functions.php";
+require_once "../functions/classes/Database.php";
+$db=new Database();
+$activityList=$db->getActivityList();
 
 if (isset($_SESSION['logged_org'])) : ?>
 <!DOCTYPE html>
@@ -23,7 +26,7 @@ if (isset($_SESSION['logged_org'])) : ?>
             <div class="info">
                 <div class="avatar-name-activity">
                     <div class="avatar-wrapper">
-                        <div class="avatar-doublewrapper"><img src="https://rayofhope-opensource.000webhostapp.com/user_data/avatar/<?php if (is_null($_SESSION['org_avatar'])){ echo "noavatar"; } else{ echo $_SESSION['logged_org']; } ?>.jpg" alt="" class="avatar"></div>
+                        <div class="avatar-doublewrapper"><img src="<?php echo $_SESSION['org_avatar']; ?>" alt="" class="avatar"></div>
                         <input name="file" id="file" type="file" class="upload_photo">
                         <label for="file" class="upload_photo"></label> 
                     </div>  
@@ -41,18 +44,12 @@ if (isset($_SESSION['logged_org'])) : ?>
                                     else{
                                         echo '<option disabled value="">Вид деятельности</option>';
                                     }
-                                    $options=array(); 
-                                    $options[]="Другое";
-                                    $options[]="Дети";
-                                    $options[]="Пенсионеры";
-                                    $options[]="Животные";
-                                    $options[]="Онокбольные";
-                                    foreach ($options as $opt){
-                                        if ($opt == $_SESSION['org_activity']){
-                                            echo '<option selected value="'.$opt.'">'.$opt.'</option>';
+                                    foreach ($activityList as $activity){
+                                        if ($activity['id'] == $_SESSION['org_activity']){
+                                            echo '<option selected value="'.$activity['id'].'">'.$activity['name'].'</option>';
                                             continue;
                                         }
-                                        echo '<option value="'.$opt.'">'.$opt.'</option>';
+                                        echo '<option  value="'.$activity['id'].'">'.$activity['name'].'</option>';
                                     }
                                 ?>
                             </select>
@@ -70,9 +67,16 @@ if (isset($_SESSION['logged_org'])) : ?>
                         <div class="imput-title">Описание</div>
                         <textarea name="description" class="description" type="text" placeholder="Введите описание..." ><?php echo $_SESSION['org_description']; ?></textarea>
                 </div>                
-                <div class="contacts wrapper">
-                        <div class="imput-title">Контакты</div>
-                        <textarea name="contacts" class="contacts" type="text" placeholder="Введите контактную информацию..."><?php echo $_SESSION['org_contacts']; ?></textarea>
+                <div class="phone wrapper">
+                        <div class="imput-title">Телефон</div>
+                        <input value="<?php if (!(is_null($_SESSION['number_phone']))) echo $_SESSION['number_phone']; ?>" id="phone" name="phone" class="phone" type="number" placeholder="Введите номер телефона...">
+                </div>
+                <div class="address wrapper">
+                    <div class="dropdown">
+                        <div class="address-list" style="display: none;"></div>
+                    </div>
+                    <div class="imput-title" style="z-index: 1;">Адрес</div>
+                    <input value="<?php if(!is_null($_SESSION['address'])) {echo $_SESSION['address'];} ?>" id="address" name="address" class="address" type="text" placeholder="Введите адрес...">
                 </div>
                 <div class="buttons">
                     <button class="payInfoButton">Платёжная информация</button>

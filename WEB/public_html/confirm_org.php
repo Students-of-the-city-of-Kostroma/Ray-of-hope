@@ -1,31 +1,35 @@
 <?php
+require_once $_SERVER['DOCUMENT_ROOT']."/functions/functions.php";
 if (isset($_GET['email'])&&isset($_GET['hash'])){
-require_once "functions/functions.php";
 $email = $_GET['email'];
 $hash = $_GET['hash'];
-if (checkHash($email,$hash)){
-    activateUserOrg($email);
-    $mysqli=connectBD();    
-    
-    $orgInfo=mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT `id`, `name`, `avatar`, `city`, `description`, `contacts`, `type_of_activity` FROM `accounts_organization2` WHERE `email` = '$email'"));
-    
-    
-    $_SESSION['logged_org'] = $orgInfo['id'];
-    $_SESSION['org_avatar'] = $orgInfo['avatar']; 
-    $_SESSION['org_name'] = $orgInfo['name'];
-    $_SESSION['org_city'] = $orgInfo['city'];
-    
-    $city_id=$_SESSION['org_city'];
-    $_SESSION['org_city_name'] =(mysqli_num_rows(mysqli_query($mysqli, "SELECT `name` FROM `geo_city` WHERE `id` = '$city_id'"))>0) ? mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT `name` FROM `geo_city` WHERE `id` = '$city_id'"))['name'] : null;
-    
-    $_SESSION['org_docs'] =(mysqli_num_rows(mysqli_query($mysqli, "SELECT `docs` FROM `accounts_organization2` WHERE `id` = `email` = '$email'"))>0) ? mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT `docs` FROM `accounts_organization2` WHERE `email` = '$email'"))['docs'] : null;
-    
-    $_SESSION['org_activity'] = $orgInfo['type_of_activity'];
-    $_SESSION['org_description'] = $orgInfo['description'];
-    $_SESSION['org_contacts'] = $orgInfo['contacts'];
-    
-    closeBD($mysqli);
-    header("Location: edit");
+$db = new Database();
+if ($db->checkHash($email,$hash)){
+    $db->activateUserOrg($email); 
+    $info=array();
+    if ($db->login_org_check($_POST["email_or_inn"], $_POST["password"])){
+        $id=$db->email2id($_POST["email_or_inn"]);
+        $info=$db->orgInfo($id);
+        if (!isset($info['not_found_org'])){
+        $_SESSION['logged_org']=$info['id'];
+        $_SESSION['org_avatar'] = $info['avatar']; 
+        $_SESSION['type_of_activity'] = $info['type_of_activity']; 
+        $_SESSION['type_of_activity_name'] = $info['type_of_activity_name']; 
+        $_SESSION['number_phone'] = $info['number_phone']; 
+        $_SESSION['org_name'] = $info['name'];
+        $_SESSION['org_city'] = $info['city_id'];
+        $_SESSION['org_city_name'] = $info['city_name'];
+        $_SESSION['org_docs'] = $info['docs'];;
+        $_SESSION['org_activity'] = $info['type_of_activity'];
+        $_SESSION['org_description'] = $info['description'];
+        $_SESSION['number_phone'] = $info['number_phone'];
+        $_SESSION['successful_authorization']=1;
+        header("Location: edit");
+        }
+    }
+    else{
+        $_SESSION['error_authorization']=1;
+    }
 }
 else{
     $_SESSION['error_activate']=1;

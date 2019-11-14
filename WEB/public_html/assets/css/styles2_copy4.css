@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Segoe';
     src: url('../fonts/SegoeUI.eot');
-    src: local('Ã¢ËœÂº'), url('../fonts/SegoeUI.woff') format('woff'), url('../fonts/SegoeUI.ttf') format('truetype');
+    src: local('ÃƒÂ¢Ã‹Å“Ã‚Âº'), url('../fonts/SegoeUI.woff') format('woff'), url('../fonts/SegoeUI.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -9,7 +9,7 @@
 @font-face {
     font-family: 'SegoeLight';
     src: url('../fonts/SegoeUI-Light.eot');
-    src: local('Ã¢ËœÂº'), url('../fonts/SegoeUI-Light.woff') format('woff'), url('../fonts/SegoeUI-Light.ttf') format('truetype');
+    src: local('ÃƒÂ¢Ã‹Å“Ã‚Âº'), url('../fonts/SegoeUI-Light.woff') format('woff'), url('../fonts/SegoeUI-Light.ttf') format('truetype');
     font-weight: lighter;
     font-style: normal;
 }
@@ -17,7 +17,7 @@
 @font-face {
     font-family: 'SegoeSB';
     src: url('../fonts/SegoeUI-SemiBold.eot');
-    src: local('Ã¢ËœÂº'), url('../fonts/SegoeUI-SemiBold.woff') format('woff'), url('../fonts/SegoeUI-SemiBold.ttf') format('truetype');
+    src: local('ÃƒÂ¢Ã‹Å“Ã‚Âº'), url('../fonts/SegoeUI-SemiBold.woff') format('woff'), url('../fonts/SegoeUI-SemiBold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
@@ -382,7 +382,7 @@ a:hover {
     margin-left: 1.97916667vw;
 }
 
-.name.wrapper, .city.wrapper, .description.wrapper, .phone.wrapper, .address.wrapper, .date.wrapper, .time.wrapper {
+.name.wrapper, .city.wrapper, .description.wrapper, .countnuzhd.wrapper, .phone.wrapper, .address.wrapper, .date.wrapper, .time.wrapper {
     position: relative;
 }
 
@@ -397,7 +397,7 @@ a:hover {
     margin-left: 0.8325vw;
 }
 
-input.time, input.date, input.name, input.city, textarea.description, textarea.contacts, input.phone, input.address {
+input.time, input.date, input.name, input.city, textarea.description, textarea.contacts, input.phone, input.address, input.countnuzhd {
     height: 2.34375vw;
     border-radius: 0.78125vw;
     border: 0.0520833333vw solid #d9d9d9;
@@ -439,10 +439,7 @@ input.address {
     height: 2.34375vw;
 }
 
-.description.wrapper,
-.phone.wrapper,
-.address.wrapper,
-.buttons {
+.countnuzhd.wrapper, .description.wrapper, .phone.wrapper, .address.wrapper, .buttons {
     margin-top: 1.71875vw;
 }
 
@@ -1310,7 +1307,6 @@ textarea.text_newpost {
 
 .meropr-time {
     margin-top: 1.25vw;
-    margin-bottom: 1.25vw;
     display: flex;
 }
 
@@ -1350,9 +1346,7 @@ label.add_photo_newpost {
     margin-top: 1.25vw;
 }
 
-.imagelist_newpost {
-    display: none;
-}
+.imagelist_newpost>img {max-width: 49%;border-radius: 0.25vw;margin-top: 1vw;}
 
 .text_newpost[placeholder]:empty:before {
     content: attr(placeholder);
@@ -1366,4 +1360,7 @@ button.listtypepost_item.active {
 
 input.time {
     width: 7.39583333333vw;
+}
+.newpost_controls.meropr {
+    display: none;
 }
