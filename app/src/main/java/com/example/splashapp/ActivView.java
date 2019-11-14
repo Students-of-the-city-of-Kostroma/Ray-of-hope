@@ -3,8 +3,6 @@ package com.example.splashapp;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
@@ -14,11 +12,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.TextView;
 
-public class ActivMer extends AppCompatActivity
+public class ActivView extends AppCompatActivity
        {
 
     @Override
@@ -36,7 +32,6 @@ public class ActivMer extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
         TextView textview= (TextView) findViewById(R.id.aboutmer);
         textview.setMovementMethod(new ScrollingMovementMethod());
     }
@@ -61,7 +56,7 @@ public class ActivMer extends AppCompatActivity
     boolean ch=false;
     public  void Close()
     {
-        AlertDialog.Builder buil = new AlertDialog.Builder(ActivMer.this);
+        AlertDialog.Builder buil = new AlertDialog.Builder(ActivView.this);
         buil.setMessage("Вы действительно хотите выйти из аккаунта?");
         buil.setCancelable(false);
         buil.setPositiveButton("Да", new DialogInterface.OnClickListener() {

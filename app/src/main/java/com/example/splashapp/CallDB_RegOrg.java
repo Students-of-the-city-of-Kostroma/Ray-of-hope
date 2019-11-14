@@ -26,7 +26,7 @@ import javax.net.ssl.HttpsURLConnection;
 public class CallDB_RegOrg extends AsyncTask<String , Void ,String> {
 
 
-
+    private M_Organization Organization;
     public CallDB_RegOrg(){}
 
     @Override

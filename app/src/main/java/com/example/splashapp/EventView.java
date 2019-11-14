@@ -18,9 +18,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class EventView extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class EventView extends AppCompatActivity{
 
+
+    private M_Event thisPost;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +38,6 @@ public class EventView extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
         TextView textview= (TextView) findViewById(R.id.aboutevent);
         textview.setMovementMethod(new ScrollingMovementMethod());
     }
@@ -52,67 +52,6 @@ public class EventView extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.event_view, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_camera)
-        {
-            Intent intent = new Intent(this, ListOfOrg.class);
-            startActivity(intent);
-            finish();
-        }
-        else if (id == R.id.nav_gallery)
-        {
-            Intent intent = new Intent(this, CitProf.class);
-            startActivity(intent);
-            finish();
-        }
-        else if (id == R.id.nav_slideshow)
-        {
-            Intent intent = new Intent(this, Q_A.class);
-            startActivity(intent);
-            finish();
-        }
-        else if (id == R.id.nav_manage)
-        {
-            Intent intent = new Intent(this, AboutView.class);
-            startActivity(intent);
-            finish();
-        }
-        else if (id == R.id.nav_share)
-        {
-            Close();
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
     public  void RetToOrg(View view)
     {
         Intent intent = new Intent(this, ViewOrg.class);

@@ -2,6 +2,7 @@ package com.example.splashapp;
 
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.provider.ContactsContract;
 
 import org.json.JSONObject;
 
@@ -15,9 +16,10 @@ import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
-public class CallDB_MyProfOrg extends AsyncTask<String , Void ,String> {
+public class CallDB_ProfOrg extends AsyncTask<String , Void ,String> {
 
-    public CallDB_MyProfOrg(){}
+    private M_Organization Organization;
+    public CallDB_ProfOrg(){}
 
     @Override
     protected void onPreExecute() {

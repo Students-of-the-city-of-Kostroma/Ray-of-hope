@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.view.View;
 
-public class Citedit extends AppCompatActivity {
+public class CitEdit extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

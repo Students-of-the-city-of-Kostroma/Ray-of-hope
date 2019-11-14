@@ -21,9 +21,9 @@ import android.widget.TextView;
 import android.text.method.ScrollingMovementMethod;
 
 
-public class CitProf extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class CitProf extends AppCompatActivity{
 
+    private M_Citizen MyCit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +39,6 @@ public class CitProf extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
         TextView textview= (TextView) findViewById(R.id.textView13);
         textview.setMovementMethod(new ScrollingMovementMethod());
     }
@@ -54,77 +53,10 @@ public class CitProf extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.cit_prof, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_camera)
-        {
-            Intent intent = new Intent(this, ListOfOrg.class);
-            startActivity(intent);
-            finish();
-        }
-        else if (id == R.id.nav_gallery)
-        {
-            Choice perem=new Choice();
-            boolean cit=Choice.citezen;
-            if (cit) {
-                Intent intent = new Intent(this, CitProf.class);
-                startActivity(intent);
-            }
-            else { Intent intent = new Intent(this, MyOrgProf.class);
-                startActivity(intent);}
-
-            finish();
-        }
-        else if (id == R.id.nav_slideshow)
-        {
-            Intent intent = new Intent(this, Q_A.class);
-            startActivity(intent);
-            finish();
-        }
-        else if (id == R.id.nav_manage)
-        {
-            Intent intent = new Intent(this, AboutView.class);
-            startActivity(intent);
-            finish();
-        }
-        else if (id == R.id.nav_share)
-        {
-            Close();
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
     public void CitEdit(View view)
     {
-        Intent intent = new Intent(this, Citedit.class);
+        Intent intent = new Intent(this, CitEdit.class);
 
         startActivity(intent);
 
@@ -176,5 +108,11 @@ public class CitProf extends AppCompatActivity
             Intent intent = new Intent(this, Choice.class);
             startActivity(intent);
             finish();}
+    }
+    public  void openMenu(View view)
+    {
+        Intent intent = new Intent(this, MenuView.class);
+        startActivity(intent);
+        finish();
     }
 }
