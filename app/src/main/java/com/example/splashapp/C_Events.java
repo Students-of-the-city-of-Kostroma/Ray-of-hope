@@ -25,5 +25,8 @@ public class C_Events extends ControllerPost{
     public  M_Event AddComment(M_Post Events, M_Comment comment) { return null; }
 
     @Override
+    public  M_Event DeleteComment(M_Post Events, M_Comment comment) { return null; }
+
+    @Override
     public  M_Event RefreshList(M_Post Events, M_Comment comment){ return null; }
 }

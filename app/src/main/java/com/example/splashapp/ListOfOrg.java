@@ -19,7 +19,7 @@ import android.widget.Button;
 
 public class ListOfOrg extends AppCompatActivity  {
 
-    public static String testId;
+    public static String selectedId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,9 +84,9 @@ public class ListOfOrg extends AppCompatActivity  {
     {
         Intent intent = new Intent(this, ViewOrg.class);
         Button b=(Button)view;
-        testId=b.getText().toString();
-        int k=testId.lastIndexOf(" ")+1;
-        testId=testId.substring(k);
+        selectedId=b.getText().toString();
+        int k=selectedId.lastIndexOf(" ")+1;
+        selectedId=selectedId.substring(k);
         startActivity(intent);
         finish();
     }

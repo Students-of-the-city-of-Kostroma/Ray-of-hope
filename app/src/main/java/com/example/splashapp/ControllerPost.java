@@ -12,6 +12,8 @@ public abstract class ControllerPost {
 
     public abstract M_Post AddComment(M_Post MPost, M_Comment comment);
 
+    public abstract M_Post DeleteComment(M_Post MPost, M_Comment comment);
+
     public abstract M_Post RefreshList(M_Post MPost, M_Comment comment);
 
 }

@@ -23,5 +23,8 @@ public class C_Needs extends ControllerPost{
     public  M_Need AddComment(M_Post Needs, M_Comment comment) { return null; }
 
     @Override
+    public  M_Need DeleteComment(M_Post Needs, M_Comment comment) { return null; }
+
+    @Override
     public  M_Need RefreshList(M_Post Needs, M_Comment comment){ return null; }
 }

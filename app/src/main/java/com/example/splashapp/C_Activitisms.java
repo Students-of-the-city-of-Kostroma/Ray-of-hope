@@ -25,6 +25,9 @@ public class C_Activitisms extends ControllerPost{
     public  M_Activism AddComment(M_Post Activitisms, M_Comment comment) { return null; }
 
     @Override
+    public  M_Activism DeleteComment(M_Post Activitisms, M_Comment comment) { return null; }
+
+    @Override
     public  M_Activism RefreshList(M_Post Activitisms, M_Comment comment){ return null; }
 } 
 
