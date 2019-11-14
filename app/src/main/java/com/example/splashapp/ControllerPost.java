@@ -4,10 +4,14 @@ public abstract class ControllerPost {
 
     public ControllerPost() { }
 
-    public abstract Post Add(Post post);
+    public abstract M_Post Add(M_Post MPost);
 
-    public abstract Post Update(Post post);
+    public abstract M_Post Update(M_Post MPost);
 
-    public abstract Post Delete(Post post);
+    public abstract M_Post Delete(M_Post MPost);
+
+    public abstract M_Post AddComment(M_Post MPost, M_Comment comment);
+
+    public abstract M_Post RefreshList(M_Post MPost, M_Comment comment);
 
 }

@@ -2,7 +2,7 @@ package com.example.splashapp;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
-public class Need extends Post {
+public class Need extends M_Post {
     private String whatNeed;
     private int percent;
 

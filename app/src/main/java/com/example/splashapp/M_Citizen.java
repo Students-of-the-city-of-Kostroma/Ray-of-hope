@@ -1,10 +1,8 @@
 package com.example.splashapp;
 
-import android.media.Image;
-
 import javax.validation.constraints.NotNull;
 
-public class Citizen extends User {
+public class Citizen extends M_User {
 
     private String firstName, lastName, city;
 

@@ -1,11 +1,9 @@
 package com.example.splashapp;
 
-import android.media.Image;
-
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
-public class Organization extends User {
+public class Organization extends M_User {
     private String name,city, adress, typeactivity;
     private List<String> documentsL, documentsP;
 
