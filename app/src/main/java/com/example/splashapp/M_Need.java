@@ -2,12 +2,12 @@ package com.example.splashapp;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
-public class Need extends M_Post {
+public class M_Need extends M_Post {
     private String whatNeed;
     private int percent;
 
-    public Need(@NotNull String id, @NotNull String name, @NotNull String description, @NotNull Date postDate,
-                @NotNull String whatNeed, @NotNull int percent) {
+    public M_Need(@NotNull String id, @NotNull String name, @NotNull String description, @NotNull Date postDate,
+                  @NotNull String whatNeed, @NotNull int percent) {
         super(id, name, description, postDate);
         this.whatNeed = whatNeed;
         this.percent = percent;

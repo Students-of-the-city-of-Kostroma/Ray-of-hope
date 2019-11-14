@@ -3,17 +3,26 @@ import android.media.Image;
 
 import javax.validation.constraints.NotNull;
 
-public abstract class User extends Identified {
+public abstract class M_User  {
     private String email, about,
             number;
     String image;
+    private String id;
 
-    public User(@NotNull String id,@NotNull String about,
-                String image, String number) {
-        super(id);
+    public M_User(@NotNull String id, @NotNull String about,
+                  String image, String number) {
+        this.id=id;
         this.image = image;
         this.about = about.replaceAll("null", " ");
         this.number = number.replaceAll("null", " ");
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(@NotNull String id) {
+        this.id = id;
     }
 
     public String getEmail() {

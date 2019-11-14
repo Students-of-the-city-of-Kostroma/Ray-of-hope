@@ -3,15 +3,24 @@ package com.example.splashapp;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
-public abstract class Post extends Identified {
+public abstract class M_Post {
     private String name, description;
+    private String id;
     private Date postDate;
 
-    public Post(String id, @NotNull String name, @NotNull String description, @NotNull Date postDate) {
-        super(id);
+    public M_Post(String id, @NotNull String name, @NotNull String description, @NotNull Date postDate) {
+        this.id=id;
         this.name = name;
         this.description = description;
         this.postDate = postDate;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(@NotNull String id) {
+        this.id = id;
     }
 
     public String getName() {

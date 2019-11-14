@@ -2,14 +2,14 @@ package com.example.splashapp;
 
 import javax.validation.constraints.NotNull;
 
-public class Citizen extends M_User {
+public class M_Citizen extends M_User {
 
     private String firstName, lastName, city;
 
-    public Citizen(@NotNull String id, @NotNull String email, @NotNull String about,
-                   String image, String number,
-                   @NotNull String firstName, @NotNull String lastName,
-                   String city) {
+    public M_Citizen(@NotNull String id, @NotNull String email, @NotNull String about,
+                     String image, String number,
+                     @NotNull String firstName, @NotNull String lastName,
+                     String city) {
         super(id, about, image, number);
         this.firstName = firstName;
         this.lastName = lastName;
