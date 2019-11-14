@@ -30,7 +30,7 @@
             android:label="@string/title_activity_my_org_prof"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ActivMer"
+            android:name=".ActivView"
             android:label="@string/title_activity_activ_mer"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
