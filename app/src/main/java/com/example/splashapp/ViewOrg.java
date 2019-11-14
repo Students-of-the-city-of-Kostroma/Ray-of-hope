@@ -58,7 +58,7 @@ public class ViewOrg extends AppCompatActivity
         try {
             Ret = RO.get(5, TimeUnit.SECONDS);
 
-            C_Organization.decodeJSON(Ret,orgId);
+            Org=C_Organization.decodeJSON(Ret,orgId);
 
             TextView textview= (TextView) findViewById(R.id.textView25);
             textview.setText(Org.getName());

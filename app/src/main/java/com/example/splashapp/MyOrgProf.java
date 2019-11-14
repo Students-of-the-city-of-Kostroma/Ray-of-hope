@@ -58,7 +58,7 @@ public class MyOrgProf extends AppCompatActivity
         try {
             Ret = RO.get(5, TimeUnit.SECONDS);
 
-            C_Organization.decodeJSON(Ret,moID);
+            MyOrg=C_Organization.decodeJSON(Ret,moID);
 
             TextView textview= (TextView) findViewById(R.id.textView25);
             textview.setText(MyOrg.getName());
