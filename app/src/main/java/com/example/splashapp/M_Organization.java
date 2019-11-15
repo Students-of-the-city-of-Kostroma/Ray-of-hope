@@ -1,17 +1,15 @@
 package com.example.splashapp;
 
-import android.media.Image;
-
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
-public class Organization extends User {
+public class M_Organization extends M_User {
     private String name,city, adress, typeactivity;
     private List<String> documentsL, documentsP;
 
-    public Organization(@NotNull String id, String city, String about,
-                         String number,
-                        @NotNull String name, String avatar, String adress,String typeactivity,List<String> documentsL,List<String> documentsP) {
+    public M_Organization(@NotNull String id, String city, String about,
+                          String number,
+                          @NotNull String name, String avatar, String adress, String typeactivity, List<String> documentsL, List<String> documentsP) {
         super(id, about, avatar, number);
         this.name = name;
         this.city = city;
