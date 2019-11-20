@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Ноя 17 2019 г., 19:11
+-- Время создания: Ноя 21 2019 г., 21:01
 -- Версия сервера: 10.2.27-MariaDB
 -- Версия PHP: 7.2.23
 
@@ -49,11 +49,39 @@ END IF;
 END IF;
 END$$
 
-CREATE DEFINER=`u238693555_ahel`@`127.0.0.1` PROCEDURE `createEvent` (IN `input_author` INT, IN `input_publication_date` DATE, IN `input_title` VARCHAR(255), IN `input_description` VARCHAR(255), IN `input_applications` VARCHAR(255), IN `input_type_note` INT, IN `input_start_date` DATE, IN `input_end_date` DATE, OUT `result` BOOLEAN, IN `input_id` INT(11))  NO SQL
+CREATE DEFINER=`u238693555_ahel`@`127.0.0.1` PROCEDURE `create_event` (IN `in_author` VARCHAR(255), IN `in_publication_date` DATE, IN `in_description` VARCHAR(255), IN `in_applications` VARCHAR(255), IN `in_start_date` DATE, IN `in_end_date` DATE, IN `in_address` VARCHAR(255))  NO SQL
     DETERMINISTIC
 BEGIN
-INSERT INTO note(id, author, publication_date, title, description, applications, type_note) VALUES (input_id, input_author, input_publication_date, input_title, input_description, input_applications, input_type_note, input_start_date, input_end_date);
-set result = 1;
+SET @author = (SELECT user.id FROM user JOIN email on user.email=email.id WHERE email.email = in_author);
+IF @author IS NULL THEN
+SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Данный пользователь не существует';
+END IF;
+SET @id_note = (SELECT count(*)+1 from note);
+INSERT INTO note(id, author, publication_date, description, applications, type_note) VALUES (@id_note, @author, in_publication_date, in_description, in_applications, 1);
+SET @id_event = (SELECT count(*)+1 from event);
+INSERT INTO event(id, note, start_date, end_date, address) VALUES (@id_event, @id_note, in_start_date, in_end_date, in_address);
+END$$
+
+CREATE DEFINER=`u238693555_ahel`@`127.0.0.1` PROCEDURE `create_need` (IN `in_author` VARCHAR(255), IN `in_publication_date` DATE, IN `in_description` VARCHAR(255), IN `in_applications` VARCHAR(255), IN `in_need_items` VARCHAR(255), IN `in_need_count` INT(11), IN `in_collected_count` INT(11))  NO SQL
+BEGIN
+SET @author = (SELECT user.id FROM user JOIN email on user.email=email.id WHERE email.email = in_author);
+IF @author IS NULL THEN
+SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Данный пользователь не существует';
+END IF;
+SET @id_note = (SELECT count(*)+1 from note);
+INSERT INTO note(id, author, publication_date, description, applications, type_note) VALUES (@id_note, @author, in_publication_date, in_description, in_applications, 2);
+SET @id_event = (SELECT count(*)+1 from event);
+INSERT INTO need(id, note, need_items, need_count, collected_count) VALUES (@id_event, @id_note, in_need_items, in_need_count, in_collected_count);
+END$$
+
+CREATE DEFINER=`u238693555_ahel`@`127.0.0.1` PROCEDURE `create_note` (IN `in_author` VARCHAR(255), IN `in_publication_date` VARCHAR(255), IN `in_description` VARCHAR(255), IN `in_applications` VARCHAR(255))  NO SQL
+BEGIN
+SET @author = (SELECT user.id FROM user JOIN email on user.email=email.id WHERE email.email = in_author);
+IF @author IS NULL THEN
+SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Данный пользователь не существует';
+END IF;
+SET @id_note = (SELECT count(*)+1 from note);
+INSERT INTO note(id, author, publication_date, description, applications, type_note) VALUES (@id_note, @author, in_publication_date, in_description, in_applications, 3);
 END$$
 
 CREATE DEFINER=`u238693555_ahel`@`127.0.0.1` PROCEDURE `registration_civilian` (IN `in_name` VARCHAR(255), IN `in_subname` VARCHAR(255), IN `in_email` VARCHAR(255), IN `in_password` VARCHAR(255), IN `in_hash` VARCHAR(255))  NO SQL
@@ -1320,6 +1348,34 @@ INSERT INTO `civilian` (`user`, `city`, `subname`, `name`, `second name`) VALUES
 (20, 44, '123', '123', '123'),
 (22, NULL, 'test_X', 'Test_X', NULL);
 
+--
+-- Триггеры `civilian`
+--
+DELIMITER $$
+CREATE TRIGGER `delete_civilian` AFTER DELETE ON `civilian` FOR EACH ROW BEGIN
+SET @user = (SELECT email FROM (SELECT user.id, email.email FROM user JOIN email WHERE user.email =  email.id) as user_email WHERE user_email.id = OLD.user);
+INSERT into Logs (date, user, comment)
+VALUES (CURRENT_TIMESTAMP(), @user, 'Удаление записи из таблицы civilian');
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `insert_civilian` BEFORE INSERT ON `civilian` FOR EACH ROW BEGIN
+SET @user = (SELECT email FROM (SELECT user.id, email.email FROM user JOIN email WHERE user.email =  email.id) as user_email WHERE user_email.id = NEW.user);
+INSERT into Logs (date, user, comment)
+VALUES (CURRENT_TIMESTAMP(), @user, 'Добавление записи в таблицу civilian');
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `update_civilian` BEFORE UPDATE ON `civilian` FOR EACH ROW BEGIN
+SET @user = (SELECT email FROM (SELECT user.id, email.email FROM user JOIN email WHERE user.email =  email.id) as user_email WHERE user_email.id = NEW.user);
+INSERT into Logs (date, user, comment)
+VALUES (CURRENT_TIMESTAMP(), @user, 'Изменение записи в таблице update_civilian');
+END
+$$
+DELIMITER ;
+
 -- --------------------------------------------------------
 
 --
@@ -1395,7 +1451,33 @@ INSERT INTO `email` (`id`, `email`, `status`, `hash`) VALUES
 (18, 'sdfsdf@dffg.ghjghj', 0, '9d117b08fe0d544a4c5b1fe7d500ceb7'),
 (19, 'nartsg.yurij@gmail.com', 0, 'eb9e7195b7a6c0c515a1e4ae46512d25'),
 (20, 'kv944451@gmail.com', 0, 'asdfghjkl'),
-(21, 'sdsd123123dsdsd', 0, '12345');
+(21, 'sdsd123123dsdsd', 0, '12345'),
+(22, 'aleksandrandreevand@gmail.com', 0, '8aeb9b8a99cdcfe56548103d8fee0e5c');
+
+--
+-- Триггеры `email`
+--
+DELIMITER $$
+CREATE TRIGGER `delete_email` BEFORE DELETE ON `email` FOR EACH ROW BEGIN
+INSERT into Logs (date, user, comment)
+VALUES (CURRENT_TIMESTAMP(), OLD.email, 'Удаление записи из таблицы email');
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `insert_email` BEFORE INSERT ON `email` FOR EACH ROW BEGIN
+INSERT into Logs (date, user, comment)
+VALUES (CURRENT_TIMESTAMP(), NEW.email, 'Добавление записи в таблицу email');
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `update_email` BEFORE UPDATE ON `email` FOR EACH ROW BEGIN
+INSERT into Logs (date, user, comment)
+VALUES (CURRENT_TIMESTAMP(), NEW.email, 'Изменение записи в таблице email');
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -1446,7 +1528,31 @@ INSERT INTO `Logs` (`date`, `user`, `comment`) VALUES
 ('2019-11-14 00:00:00', 'sad2', 'Изменение записи в таблице comment'),
 ('2019-11-17 18:46:33', '0', 'Удаление записи из таблицы comment'),
 ('2019-11-17 18:53:56', '2', 'Добавление записи в таблицу comment'),
-('2019-11-17 19:01:54', 'shtaubstas@gmail.com', 'Удаление записи из таблицы comment');
+('2019-11-17 19:01:54', 'shtaubstas@gmail.com', 'Удаление записи из таблицы comment'),
+('2019-11-18 19:12:07', 'kv94441@gmail.com', 'Добавление записи в таблицу note'),
+('2019-11-20 17:14:13', 'aleksandrandreevand@gmail.com', 'Добавление записи в таблицу email'),
+('2019-11-20 19:52:05', 'kv94441@gmail.com', 'Добавление записи в таблицу note'),
+('2019-11-20 19:53:42', 'kv94441@gmail.com', 'Добавление записи в таблицу note'),
+('2019-11-20 19:54:12', 'kv94441@gmail.com', 'Добавление записи в таблицу note'),
+('2019-11-20 19:55:32', 'kv94441@gmail.com', 'Добавление записи в таблицу note'),
+('2019-11-20 19:58:00', 'kv94441@gmail.com', 'Добавление записи в таблицу note'),
+('2019-11-20 19:58:28', 'kv94441@gmail.com', 'Добавление записи в таблицу note'),
+('2019-11-20 20:01:40', 'kv94441@gmail.com', 'Добавление записи в таблицу note'),
+('2019-11-20 20:02:56', 'kv94441@gmail.com', 'Добавление записи в таблицу note'),
+('2019-11-20 20:04:05', 'kv94441@gmail.com', 'Добавление записи в таблицу note'),
+('2019-11-20 20:05:18', 'kv94441@gmail.com', 'Добавление записи в таблицу note'),
+('2019-11-21 19:40:12', 'kv94441@gmail.com', 'Добавление записи в таблицу note'),
+('2019-11-21 19:45:26', 'kv94441@gmail.com', 'Добавление записи в таблицу note'),
+('2019-11-21 20:55:25', '4', 'Добавление записи в таблицу note'),
+('2019-11-21 20:55:47', '4', 'Обновление записи в таблице note'),
+('2019-11-21 20:55:53', '4', 'Удаление записи из таблицы note'),
+('2019-11-21 20:57:51', '4', 'Добавление записи в таблицу note'),
+('2019-11-21 20:58:07', '4', 'Добавление записи в таблицу note'),
+('2019-11-21 20:58:22', '4', 'Обновление записи в таблице note'),
+('2019-11-21 20:58:29', '4', 'Удаление записи из таблицы note'),
+('2019-11-21 21:00:49', 'kv94441@gmail.com', 'Удаление записи из таблицы note'),
+('2019-11-21 21:01:09', 'kv94441@gmail.com', 'Добавление записи в таблицу note'),
+('2019-11-21 21:01:22', 'kv94441@gmail.com', 'Обновление записи в таблице note');
 
 -- --------------------------------------------------------
 
@@ -1484,6 +1590,13 @@ CREATE TABLE `need` (
   `collected_count` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Дамп данных таблицы `need`
+--
+
+INSERT INTO `need` (`id`, `note`, `need_items`, `need_count`, `collected_count`) VALUES
+(1, 2, '1', 2, 3);
+
 -- --------------------------------------------------------
 
 --
@@ -1498,6 +1611,44 @@ CREATE TABLE `note` (
   `applications` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `type_note` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Дамп данных таблицы `note`
+--
+
+INSERT INTO `note` (`id`, `author`, `publication_date`, `description`, `applications`, `type_note`) VALUES
+(1, 4, '2019-11-18', NULL, NULL, 1),
+(2, 4, '2002-02-03', '123', '123', 2),
+(3, 4, '2002-02-13', 'vsdvgsdgsdg', 'sdfsfsdfsdf', 3),
+(4, 4, '2019-11-18', 'swedfcvghbjng', NULL, 3);
+
+--
+-- Триггеры `note`
+--
+DELIMITER $$
+CREATE TRIGGER `delete_note` AFTER DELETE ON `note` FOR EACH ROW BEGIN
+SET @author = (SELECT email.email FROM user JOIN email on user.email=email.id WHERE user.id = OLD.author);
+INSERT into Logs (date, user, comment)
+VALUES (CURRENT_TIMESTAMP(), @author, 'Удаление записи из таблицы note');
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `insert_note` BEFORE INSERT ON `note` FOR EACH ROW BEGIN
+SET @author = (SELECT email.email FROM user JOIN email on user.email=email.id WHERE user.id = NEW.author);
+INSERT into Logs (date, user, comment)
+VALUES (CURRENT_TIMESTAMP(), @author, 'Добавление записи в таблицу note');
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `update_note` BEFORE UPDATE ON `note` FOR EACH ROW BEGIN
+SET @author = (SELECT email.email FROM user JOIN email on user.email=email.id WHERE user.id = NEW.author);
+INSERT into Logs (date, user, comment)
+VALUES (CURRENT_TIMESTAMP(), @author, 'Обновление записи в таблице note');
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -1533,7 +1684,8 @@ INSERT INTO `organization` (`user_id`, `INN`, `address`, `name`, `number_phone`,
 (11, '7806298113', NULL, 'Мне', 2147483647, NULL, 1, NULL),
 (18, '5036032527', NULL, 'gdfgfdg', NULL, NULL, NULL, NULL),
 (19, '5001007322', NULL, 'ghfhgfh', NULL, NULL, NULL, NULL),
-(21, '4401115906', NULL, 'test_org', NULL, NULL, NULL, NULL);
+(21, '4401115906', NULL, 'test_org', NULL, NULL, NULL, NULL),
+(23, '3015099975', NULL, 'Облако9', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1697,6 +1849,15 @@ CREATE TABLE `type_note` (
   `description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
+--
+-- Дамп данных таблицы `type_note`
+--
+
+INSERT INTO `type_note` (`id`, `name`, `description`) VALUES
+(1, 'event', NULL),
+(2, 'need', NULL),
+(3, 'note', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -1751,7 +1912,8 @@ INSERT INTO `user` (`id`, `type_of_account`, `avatar`, `description`, `email`, `
 (19, 1, NULL, NULL, 18, '555555'),
 (20, 1, NULL, NULL, 19, '12345678'),
 (21, 1, NULL, NULL, 20, 'asdfghjkl'),
-(22, 2, NULL, NULL, 21, '12vfghbj345@awezsxdfcgvhbjnk');
+(22, 2, NULL, NULL, 21, '12vfghbj345@awezsxdfcgvhbjnk'),
+(23, 1, NULL, NULL, 22, '12345678');
 
 --
 -- Индексы сохранённых таблиц
@@ -1904,25 +2066,25 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT для таблицы `email`
 --
 ALTER TABLE `email`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT для таблицы `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `need`
 --
 ALTER TABLE `need`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `note`
 --
 ALTER TABLE `note`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT для таблицы `token`
@@ -1940,7 +2102,7 @@ ALTER TABLE `type_account`
 -- AUTO_INCREMENT для таблицы `type_note`
 --
 ALTER TABLE `type_note`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `type_of_activity`
@@ -1952,7 +2114,7 @@ ALTER TABLE `type_of_activity`
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
@@ -1981,7 +2143,6 @@ ALTER TABLE `comment`
 -- Ограничения внешнего ключа таблицы `event`
 --
 ALTER TABLE `event`
-  ADD CONSTRAINT `event_ibfk_1` FOREIGN KEY (`address`) REFERENCES `address` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `event_ibfk_2` FOREIGN KEY (`note`) REFERENCES `note` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
