@@ -66,6 +66,14 @@ public class LoginOrgActivity extends AppCompatActivity {
                 Error = true;
             }
 
+            errors = Ret.contains("Error");
+            if (errors == true) {
+                OkDialog okDialog = new OkDialog();
+                okDialog.setMess(Ret);
+                okDialog.show(getFragmentManager(), "okDialog");
+                Error = true;
+            }
+
             if (Error == false) {
 
                 Intent intent = new Intent(this, MyOrgProf.class);
