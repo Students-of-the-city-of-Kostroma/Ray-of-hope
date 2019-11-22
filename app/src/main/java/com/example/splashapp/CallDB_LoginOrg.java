@@ -67,7 +67,12 @@ public class CallDB_LoginOrg extends AsyncTask<String , Void ,String> {
                     response += line;
                 }
             } else {
-                response = "";
+                if (responseCode>=500)
+                {
+                    response = "Error: Проблемы с сервером";
+                }
+                else
+                    response = "Error";
 
 
             }
