@@ -16,9 +16,9 @@ $orgInfo=$db->orgInfo($id_view_org);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="../assets/css/normalize.css" rel="stylesheet">
     <link href="../assets/css/styles2_copy4.css" rel="stylesheet">
-    <script src="../assets/js/jquery-3.4.1.min.js"></script>
-    <script src="../assets/js/nav-mark.js"></script>
-    <script src="../assets/js/jquery.maskedinput2.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../assets/js/nav-mark.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.maskedinput2.min.js"></script>
     <title><?php echo $orgInfo['name']; ?></title>
 </head>
 <body>
@@ -258,8 +258,8 @@ $orgInfo=$db->orgInfo($id_view_org);
         </div>
     </div>
     
-    <script src="../assets/js/newpost26.js"></script>
-    <script src="../assets/js/profile_org.js"></script>
+    <script type="text/javascript" src="../assets/js/newpost26.js"></script>
+    <script type="text/javascript" src="../assets/js/profile_org.js"></script>
 </body>
 </html>
 <?php else : ?>
