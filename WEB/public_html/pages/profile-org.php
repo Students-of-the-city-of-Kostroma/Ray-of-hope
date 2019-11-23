@@ -17,7 +17,7 @@ $orgInfo=$db->orgInfo($id_view_org);
     <link href="../assets/css/normalize.css" rel="stylesheet">
     <link href="../assets/css/styles2_copy4.css" rel="stylesheet">
     <?php 
-    isset($_SERVER['HTTPS']){
+    if (isset($_SERVER['HTTPS'])){
         echo "<script type=\"text/javascript\" src=\"https://code.jquery.com/jquery-3.4.1.min.js\"></script>";
     }
     else{
