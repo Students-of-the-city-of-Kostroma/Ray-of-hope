@@ -9,24 +9,24 @@ public class C_Events extends ControllerPost{
     public C_Events() { }
 
     @Override
-    public M_Event Add(M_Post Events) {
-        return null;
+    public boolean Add(M_Post Events) {
+        return true;
     }
 
     @Override
-    public M_Event Update(M_Post Events) { return null; }
+    public boolean Update(M_Post Events) { return true; }
 
     @Override
-    public M_Event Delete(M_Post Events) {
-        return null;
+    public boolean Delete(M_Post Events) {
+        return true;
     }
 
     @Override
-    public  M_Event AddComment(M_Post Events, M_Comment comment) { return null; }
+    public  boolean AddComment(M_Post Events, M_Comment comment) { return true; }
 
     @Override
-    public  M_Event DeleteComment(M_Post Events, M_Comment comment) { return null; }
+    public  boolean DeleteComment(M_Post Events, M_Comment comment) { return true; }
 
     @Override
-    public  M_Event RefreshList(M_Post Events, M_Comment comment){ return null; }
+    public  boolean RefreshList(M_Post Events, M_Comment comment){ return true; }
 }
