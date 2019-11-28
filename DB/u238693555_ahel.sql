@@ -26,7 +26,7 @@ DELIMITER $$
 --
 -- Процедуры
 --
-CREATE DEFINER=`u238693555_ahel`@`127.0.0.1` PROCEDURE `authorization_civilian` (IN `in_login` VARCHAR(255), IN `in_password` VARCHAR(255))  NO SQL
+CREATE DEFINER=`ray_of_hope`@`127.0.0.1` PROCEDURE `authorization_civilian` (IN `in_login` VARCHAR(255), IN `in_password` VARCHAR(255))  NO SQL
 BEGIN
 SET @is_succes = (SELECT EXISTS(SELECT email.id FROM email JOIN user on email.id = user.email WHERE email.email = in_login AND password = in_password));
 IF @is_succes = 0 THEN
@@ -34,7 +34,7 @@ SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Неверно введен логи
 END IF;
 END$$
 
-CREATE DEFINER=`u238693555_ahel`@`127.0.0.1` PROCEDURE `authorization_organization` (IN `in_login` VARCHAR(255), IN `in_password` VARCHAR(255), IN `login_is_INN` BINARY)  NO SQL
+CREATE DEFINER=`ray_of_hope`@`127.0.0.1` PROCEDURE `authorization_organization` (IN `in_login` VARCHAR(255), IN `in_password` VARCHAR(255), IN `login_is_INN` BINARY)  NO SQL
 BEGIN
 IF login_is_INN = 1 THEN
 SET @is_succes = (SELECT EXISTS(SELECT organization.user_id FROM organization JOIN user on organization.user_id = user.id WHERE INN = in_login AND password = in_password));
@@ -49,7 +49,7 @@ END IF;
 END IF;
 END$$
 
-CREATE DEFINER=`u238693555_ahel`@`127.0.0.1` PROCEDURE `create_event` (IN `in_author` VARCHAR(255), IN `in_publication_date` DATE, IN `in_description` VARCHAR(255), IN `in_applications` VARCHAR(255), IN `in_start_date` DATE, IN `in_end_date` DATE, IN `in_address` VARCHAR(255))  NO SQL
+CREATE DEFINER=`ray_of_hope`@`127.0.0.1` PROCEDURE `create_event` (IN `in_author` VARCHAR(255), IN `in_publication_date` DATE, IN `in_description` VARCHAR(255), IN `in_applications` VARCHAR(255), IN `in_start_date` DATE, IN `in_end_date` DATE, IN `in_address` VARCHAR(255))  NO SQL
     DETERMINISTIC
 BEGIN
 SET @author = (SELECT user.id FROM user JOIN email on user.email=email.id WHERE email.email = in_author);
@@ -62,7 +62,7 @@ SET @id_event = (SELECT count(*)+1 from event);
 INSERT INTO event(id, note, start_date, end_date, address) VALUES (@id_event, @id_note, in_start_date, in_end_date, in_address);
 END$$
 
-CREATE DEFINER=`u238693555_ahel`@`127.0.0.1` PROCEDURE `create_need` (IN `in_author` VARCHAR(255), IN `in_publication_date` DATE, IN `in_description` VARCHAR(255), IN `in_applications` VARCHAR(255), IN `in_need_items` VARCHAR(255), IN `in_need_count` INT(11), IN `in_collected_count` INT(11))  NO SQL
+CREATE DEFINER=`ray_of_hope`@`127.0.0.1` PROCEDURE `create_need` (IN `in_author` VARCHAR(255), IN `in_publication_date` DATE, IN `in_description` VARCHAR(255), IN `in_applications` VARCHAR(255), IN `in_need_items` VARCHAR(255), IN `in_need_count` INT(11), IN `in_collected_count` INT(11))  NO SQL
 BEGIN
 SET @author = (SELECT user.id FROM user JOIN email on user.email=email.id WHERE email.email = in_author);
 IF @author IS NULL THEN
@@ -74,7 +74,7 @@ SET @id_event = (SELECT count(*)+1 from event);
 INSERT INTO need(id, note, need_items, need_count, collected_count) VALUES (@id_event, @id_note, in_need_items, in_need_count, in_collected_count);
 END$$
 
-CREATE DEFINER=`u238693555_ahel`@`127.0.0.1` PROCEDURE `create_note` (IN `in_author` VARCHAR(255), IN `in_publication_date` VARCHAR(255), IN `in_description` VARCHAR(255), IN `in_applications` VARCHAR(255))  NO SQL
+CREATE DEFINER=`ray_of_hope`@`127.0.0.1` PROCEDURE `create_note` (IN `in_author` VARCHAR(255), IN `in_publication_date` VARCHAR(255), IN `in_description` VARCHAR(255), IN `in_applications` VARCHAR(255))  NO SQL
 BEGIN
 SET @author = (SELECT user.id FROM user JOIN email on user.email=email.id WHERE email.email = in_author);
 IF @author IS NULL THEN
@@ -84,7 +84,7 @@ SET @id_note = (SELECT count(*)+1 from note);
 INSERT INTO note(id, author, publication_date, description, applications, type_note) VALUES (@id_note, @author, in_publication_date, in_description, in_applications, 3);
 END$$
 
-CREATE DEFINER=`u238693555_ahel`@`127.0.0.1` PROCEDURE `registration_civilian` (IN `in_name` VARCHAR(255), IN `in_subname` VARCHAR(255), IN `in_email` VARCHAR(255), IN `in_password` VARCHAR(255), IN `in_hash` VARCHAR(255))  NO SQL
+CREATE DEFINER=`ray_of_hope`@`127.0.0.1` PROCEDURE `registration_civilian` (IN `in_name` VARCHAR(255), IN `in_subname` VARCHAR(255), IN `in_email` VARCHAR(255), IN `in_password` VARCHAR(255), IN `in_hash` VARCHAR(255))  NO SQL
 BEGIN
 	SET @check_email =(SELECT EXISTS(SELECT email.email FROM email 		WHERE email.email = in_email));
 	IF @check_email = 1 THEN
@@ -103,7 +103,7 @@ BEGIN
 	INSERT INTO civilian (user, subname, name) VALUES (@id_user, in_name, in_subname);
 END$$
 
-CREATE DEFINER=`u238693555_ahel`@`127.0.0.1` PROCEDURE `registration_organization` (IN `in_INN` VARCHAR(10), IN `in_name` VARCHAR(255), IN `in_email` VARCHAR(255), IN `in_hash` VARCHAR(255), IN `in_password` VARCHAR(255))  MODIFIES SQL DATA
+CREATE DEFINER=`ray_of_hope`@`127.0.0.1` PROCEDURE `registration_organization` (IN `in_INN` VARCHAR(10), IN `in_name` VARCHAR(255), IN `in_email` VARCHAR(255), IN `in_hash` VARCHAR(255), IN `in_password` VARCHAR(255))  MODIFIES SQL DATA
 BEGIN
 	SET @check_email =(SELECT EXISTS(SELECT email.email FROM email 		WHERE email.email = in_email));
 	IF @check_email = 1 THEN
@@ -130,7 +130,7 @@ END$$
 --
 -- Функции
 --
-CREATE DEFINER=`u238693555_ahel`@`127.0.0.1` FUNCTION `checkINN` (`inINN` VARCHAR(10)) RETURNS INT(11) READS SQL DATA
+CREATE DEFINER=`ray_of_hope`@`127.0.0.1` FUNCTION `checkINN` (`inINN` VARCHAR(10)) RETURNS INT(11) READS SQL DATA
 BEGIN
 DECLARE my_inn varchar(10) default NULL;
 SELECT INN INTO my_inn FROM organization WHERE organization.INN=inINN;
@@ -1521,8 +1521,8 @@ CREATE TABLE `Logs` (
 --
 
 INSERT INTO `Logs` (`date`, `user`, `comment`) VALUES
-('2019-11-06 00:00:00', 'u238693555_ahel@127.0.0.1', 'Удаление записи из таблицы комментарии'),
-('2019-11-14 00:00:00', 'u238693555_ahel@127.0.0.1', 'Добавление записи в таблицу comment'),
+('2019-11-06 00:00:00', 'root@127.0.0.1', 'Удаление записи из таблицы комментарии'),
+('2019-11-14 00:00:00', 'root@127.0.0.1', 'Добавление записи в таблицу comment'),
 ('2019-11-14 00:00:00', '2', 'Удаление записи из таблицы comment'),
 ('2019-11-14 00:00:00', 'sad', 'Добавление записи в таблицу comment'),
 ('2019-11-14 00:00:00', 'sad2', 'Изменение записи в таблице comment'),
