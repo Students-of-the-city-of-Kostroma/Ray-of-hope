@@ -54,4 +54,14 @@ public abstract class M_User  {
     public void setNumber(String number) {
         this.number = number;
     }
+
+    public boolean ValidationEmail(String email)
+    {
+        return true;
+    }
+
+    public boolean ValidationPassword(String password)
+    {
+        return true;
+    }
 }

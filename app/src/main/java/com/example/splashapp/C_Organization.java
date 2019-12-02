@@ -24,6 +24,8 @@ public class C_Organization extends ControllerUser {
     @Override
     public  M_User getDateProfile (){ return null; }
 
+    public void  RefreshList(List<M_Organization> ListChat) {}
+
     public static M_Organization decodeJSON(String Ret, String id)
     {
         try {
