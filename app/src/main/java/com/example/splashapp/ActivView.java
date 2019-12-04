@@ -85,4 +85,11 @@ public class ActivView extends AppCompatActivity
             startActivity(intent);
             finish();}
     }
+
+    public  void openMenu(View view)
+    {
+        Intent intent = new Intent(this, MenuView.class);
+        startActivity(intent);
+        finish();
+    }
 }
