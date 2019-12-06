@@ -28,8 +28,46 @@
                             </div>
                         </div>
                         <div class="variable_block">
-                            <div class="imput-title">Количество</div>
-                            <input id="countnuzhd" name="countnuzhd" class="countnuzhd" type="number" placeholder="Введите количество...">
+                            <div class="variant nuzhda">
+                                <div class="imput-title">Количество</div>
+                                <input id="countnuzhd" name="countnuzhd" class="countnuzhd" type="number" placeholder="Введите количество...">
+                            </div>
+                            <div class="variant meropriyatie" style="display: none;">
+                                <div class="address meropr wrapper" id="address_meropr_wrapper">
+                                    <div class="dropdown" style="z-index: 1;">
+                                        <div class="address-list" style="display: none;">
+                                            <div v-for="addr in addresses" class="address-item">
+                                                <span class="address-value">{{addr.value}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="imput-title" style="z-index: 3;">Место</div>
+                                    <input style="z-index: 2;" disabled id="address" name="address" class="address" type="text" placeholder="Введите место...">
+                                </div>
+                                <div class="meropr-time">
+                                    <div class="start-time">
+                                        <div class="date wrapper">
+                                            <div class="imput-title">Дата начала</div>
+                                            <input disabled class="date" placeholder="дд/мм/гггг" name="date-start" type="text">
+                                        </div>
+                                        <div class="time wrapper">
+                                            <div class="imput-title">Время начала</div>
+                                            <input disabled class="time" placeholder="чч/мм" name="time-start" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="end-time">
+                                        <div class="date wrapper">
+                                            <div class="imput-title">Дата завершения</div>
+                                            <input disabled class="date" placeholder="дд/мм/гггг" name="date-end" type="text">
+                                        </div>
+                                        <div class="time wrapper">
+                                            <div class="imput-title">Время завершения</div>
+                                            <input disabled class="time" placeholder="чч/мм" name="time-end" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="buttons-newpost">
                             <input multiple name="file" id="file" type="file" class="add-image">

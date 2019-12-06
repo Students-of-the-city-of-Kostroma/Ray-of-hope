@@ -63,160 +63,83 @@ function hide_dialog() {
 }
 
 $("input[name='typepost']").change(function() {
-    var variable_block = $('.variable_block').html('');
-    variable_block.html('');
+    $('.variant input').attr('disabled', true);
+    $('.variant').hide();
     if ($("input[value='nuzhd']").prop("checked")) {
-        let title = document.createElement('div');
-        title.className = "imput-title";
-        title.innerHTML = 'Количество';
-        variable_block.append(title);
-        let countnuzhd = document.createElement('input');
-        countnuzhd.id = "countnuzhd";
-        countnuzhd.name = "countnuzhd";
-        countnuzhd.className = "countnuzhd";
-        countnuzhd.type = "number";
-        countnuzhd.placeholder = "Введите количество...";
-        variable_block.append(countnuzhd);
+        $('.variant.nuzhda input').removeAttr('disabled');
+        $('.variant.nuzhda').show();
     } else {
         if ($("input[value='meropr']").prop("checked")) {
-            let address_meropr_wrapper = document.createElement('div');
-            address_meropr_wrapper.classList.add("address", "meropr", "wrapper");
-            address_meropr_wrapper.id = "address_meropr_wrapper";
-            let dropdown = document.createElement('div');
-            dropdown.classList.add("dropdown");
-            let address_list = document.createElement('div');
-            address_list.classList.add("address-list");
-            address_list.style = "display: none;";
-            dropdown.append(address_list);
-            address_meropr_wrapper.append(dropdown);
-            let imput_title = document.createElement('div');
-            imput_title.classList.add("imput-title");
-            imput_title.classList.style = "z-index: 1;";
-            imput_title.innerHTML = "Место";
-            imput_title.style = "z-index: 1;";
-            address_meropr_wrapper.append(imput_title);
-            let address = document.createElement('input');
-            address.id = "address";
-            address.name = "address";
-            address.className = "address";
-            address.type = "text";
-            address.placeholder = "Введите место...";
-            address_meropr_wrapper.append(address);
-
-            let meropr_time = document.createElement('div');
-            meropr_time.classList.add("meropr-time");
-
-            let start_time = document.createElement('div');
-            start_time.classList.add("start-time");
-            let date_wrapper = document.createElement('div');
-            date_wrapper.classList.add("date", "wrapper");
-            let imput_title2 = document.createElement('div');
-            imput_title2.classList.add("imput-title");
-            imput_title2.innerHTML = "Дата начала";
-            let date_start = document.createElement('input');
-            date_start.classList.add("date");
-            date_start.placeholder = "дд/мм/гггг";
-            date_start.name = "date-start";
-            date_start.type = "text";
-            date_wrapper.append(imput_title2);
-            date_wrapper.append(date_start);
-            let time_wrapper = document.createElement('div');
-            time_wrapper.classList.add("time", "wrapper");
-            let imput_title3 = document.createElement('div');
-            imput_title3.classList.add("imput-title");
-            imput_title3.innerHTML = "Время начала";
-            let time_start = document.createElement('input');
-            time_start.classList.add("time");
-            time_start.placeholder = "чч/мм";
-            time_start.name = "time-start";
-            time_start.type = "text";
-            time_wrapper.append(imput_title3);
-            time_wrapper.append(time_start);
-            start_time.append(date_wrapper);
-            start_time.append(time_wrapper);
-
-            let end_time = document.createElement('div');
-            end_time.classList.add("end-time");
-            let date_wrapper2 = document.createElement('div');
-            date_wrapper2.classList.add("date", "wrapper");
-            let imput_title4 = document.createElement('div');
-            imput_title4.classList.add("imput-title");
-            imput_title4.innerHTML = "Дата завершения";
-            let date_end = document.createElement('input');
-            date_end.classList.add("date");
-            date_end.placeholder = "дд/мм/гггг";
-            date_end.name = "date-end";
-            date_end.type = "text";
-            date_wrapper2.append(imput_title4);
-            date_wrapper2.append(date_end);
-            let time_wrapper2 = document.createElement('div');
-            time_wrapper2.classList.add("time", "wrapper");
-            let imput_title5 = document.createElement('div');
-            imput_title5.classList.add("imput-title");
-            imput_title5.innerHTML = "Время завершения";
-            let time_end = document.createElement('input');
-            time_end.classList.add("time");
-            time_end.placeholder = "чч/мм";
-            time_end.name = "time-end";
-            time_end.type = "text";
-            time_wrapper2.append(imput_title5);
-            time_wrapper2.append(time_end);
-            end_time.append(date_wrapper2);
-            end_time.append(time_wrapper2);
-
-            meropr_time.append(start_time);
-            meropr_time.append(end_time);
-            variable_block.append(address_meropr_wrapper);
-            variable_block.append(meropr_time);
-
+            $('.variant.meropriyatie input').removeAttr('disabled');
+            $('.variant.meropriyatie').show();
         }
     }
 });
 
+var globalTimeout = null;
+
+$(document).ready(function() {
+    $("#address").keyup(
+        function() {
+            if (globalTimeout !== null) clearTimeout(globalTimeout);
+            if ($(this).val().length >= 1) {
+                lobalTimeout = setTimeout(getAddresList, 250);
+            }
+            if ($('.address-list')[0].childNodes.length) {
+                $('.address-list').show();
+            } else {
+                if ($('.address-list').is(':visible')) {
+                    $('.address-list').hide();
+                }
+            }
+            console.log(Address.addresses);
+        }
+    );
+});
 
 function getAddresList() {
     globalTimeout = null;
-    var ajax;
-    var data = new FormData();
-    data.append('city_hints', 1);
-    data.append('request_city', $("#address").val());
+    if ($("#address").val() !== "") {
+        var ajax;
+        var data = new FormData();
+        data.append('city_hints', 1);
+        data.append('request_city', $("#address").val());
 
-    ajax = $.ajax({
-        type: "POST",
-        url: "../../functions/functions.php",
-        processData: false,
-        contentType: false,
-        dataType: 'json',
-        data: data,
-        beforeSend: function() {
-            if (ajax) {
-                ajax.abort();
+        ajax = $.ajax({
+            type: "POST",
+            url: "../../functions/functions.php",
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            data: data,
+            beforeSend: function() {
+                if (ajax) {
+                    ajax.abort();
+                }
+            },
+            success: function(results) {
+                Address.addresses = [];
+                for (var i in results['suggestions']) {
+                    let elem = {
+                        index: i,
+                        value: results['suggestions'][i]['value']
+                    };
+                    Address.addresses.push(elem);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.log(xhr.responseText + '|\n' + status + '|\n' + error);
             }
-        },
-        success: function(results) {
-            for (var i in results['suggestions']) {
-                let elem = {
-                    index: i,
-                    value: json['suggestions'][i]
-                };
-                Address.addresses.push(elem);
-            }
-        },
-        error: function(xhr, status, error) {
-            console.log(xhr.responseText + '|\n' + status + '|\n' + error);
-        }
-    });
+        });
+    } else {
+        Address.addresses = [];
+    }
 }
 
 
-if ($('#address_meropr_wrapper').length) {
-    var Address = new Vue({
-        el: '#address_meropr_wrapper',
-        data: {
-            addresses: [{
-                index: '0',
-                value: 'sdfsdf'
-            }]
-        }
-    });
-}
+var Address = new Vue({
+    el: '#address_meropr_wrapper',
+    data: {
+        addresses: []
+    }
+});
