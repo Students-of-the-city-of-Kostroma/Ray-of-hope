@@ -33,7 +33,6 @@ $('#file').on('change', function() {
 });
 
 function previewImg(file) {
-    console.log(file.type);
     if (!(file.type == "image/jpeg")) {
         open_dialog("Ошибка", "Неверный тип файлов.<br><span>Загрузите изображение в формате jpg</span>");
         return;
@@ -63,6 +62,10 @@ function hide_dialog() {
 }
 
 $("input[name='typepost']").change(function() {
+    inputs = document.querySelectorAll('.variant input');
+    inputs.forEach(function(input) {
+        input.value = '';
+    });
     $('.variant input').attr('disabled', true);
     $('.variant').hide();
     if ($("input[value='nuzhd']").prop("checked")) {
@@ -83,7 +86,9 @@ $(document).ready(function() {
         function() {
             if (globalTimeout !== null) clearTimeout(globalTimeout);
             if ($(this).val().length >= 1) {
-                lobalTimeout = setTimeout(getAddresList, 250);
+                globalTimeout = setTimeout(getAddresList, 50);
+            } else {
+                Address.addresses = [];
             }
             if ($('.address-list')[0].childNodes.length) {
                 $('.address-list').show();
@@ -92,48 +97,43 @@ $(document).ready(function() {
                     $('.address-list').hide();
                 }
             }
-            console.log(Address.addresses);
         }
     );
 });
 
 function getAddresList() {
     globalTimeout = null;
-    if ($("#address").val() !== "") {
-        var ajax;
-        var data = new FormData();
-        data.append('city_hints', 1);
-        data.append('request_city', $("#address").val());
+    var ajax;
+    var data = new FormData();
+    data.append('city_hints', 1);
+    data.append('request_city', $("#address").val());
 
-        ajax = $.ajax({
-            type: "POST",
-            url: "../../functions/functions.php",
-            processData: false,
-            contentType: false,
-            dataType: 'json',
-            data: data,
-            beforeSend: function() {
-                if (ajax) {
-                    ajax.abort();
-                }
-            },
-            success: function(results) {
-                Address.addresses = [];
-                for (var i in results['suggestions']) {
-                    let elem = {
-                        index: i,
-                        value: results['suggestions'][i]['value']
-                    };
-                    Address.addresses.push(elem);
-                }
-            },
-            error: function(xhr, status, error) {
-                console.log(xhr.responseText + '|\n' + status + '|\n' + error);
+    ajax = $.ajax({
+        type: "POST",
+        url: "../../functions/functions.php",
+        processData: false,
+        contentType: false,
+        dataType: 'json',
+        data: data,
+        beforeSend: function() {
+            if (ajax) {
+                ajax.abort();
             }
-        });
-    } else {
-        Address.addresses = [];
-    }
+        },
+        success: function(results) {
+            Address.addresses = [];
+            for (var i in results['suggestions']) {
+                let elem = {
+                    index: i,
+                    value: results['suggestions'][i]['value']
+                };
+                Address.addresses.push(elem);
+            }
+        },
+        error: function(xhr, status, error) {
+            console.log(xhr.responseText + '|\n' + status + '|\n' + error);
+        }
+    });
 }
 
 
