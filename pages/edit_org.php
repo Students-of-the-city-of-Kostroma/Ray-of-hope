@@ -1,6 +1,6 @@
 <?php
-require_once "../functions/functions.php";
-require_once "../functions/classes/Database.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/functions/functions.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/functions/classes/Database.php";
 $db=new Database();
 $activityList=$db->getActivityList();
 
@@ -10,17 +10,17 @@ if (isset($_SESSION['logged_org'])) : ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="../assets/css/normalize.css" rel="stylesheet">
-    <link href="../assets/css/styles2.css" rel="stylesheet">
-    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    <link href="/assets/css/normalize.css" rel="stylesheet">
+    <link href="/assets/css/styles2.css" rel="stylesheet">
+    <script src="/assets/js/jquery-3.4.1.min.js"></script>
     <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
-    <script src="../assets/js/nav-mark.js"></script>
-    <script src="../assets/js/edit_org.js"></script>
+    <script src="/assets/js/nav-mark.js"></script>
+    <script src="/assets/js/edit_org.js"></script>
     <title>Редактирование профиля</title>
 </head>
 <body>
     <?php include 'header2.php'; ?>
-    <?php include '../dialog-wrapper.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/dialog-wrapper.php'; ?>
     <div class="container">
         <div class="frame editProfile">
             <div class="info">
@@ -90,7 +90,7 @@ if (isset($_SESSION['logged_org'])) : ?>
                     <?php     
                         if (isset($_SESSION['org_docs'])){
                             
-                        $dir  = '../user_data/docs/'.$_SESSION['logged_org'];
+                        $dir  = $_SERVER['DOCUMENT_ROOT'].'/user_data/docs/'.$_SESSION['logged_org'];
                         $catalog=opendir($dir);
                         $list=array();
                         while($file=readdir($catalog)){
@@ -104,15 +104,15 @@ if (isset($_SESSION['logged_org'])) : ?>
                         $org_id=$_SESSION['logged_org'];
                         
                         for ($i=0;$i<count($list);$i++){
-                            if (!is_dir("../user_data/docs/".$org_id."/".array_values($list)[$i])){
+                            if (!is_dir("/user_data/docs/".$org_id."/".array_values($list)[$i])){
                                 
-                                $path_parts = pathinfo("../user_data/docs/".$org_id."/".array_values($list)[$i]);
+                                $path_parts = pathinfo("/user_data/docs/".$org_id."/".array_values($list)[$i]);
                                 if ($path_parts['extension']=="pdf" || $path_parts['extension']=="docx"){
-                                    echo "<div class=\"listDocItem\"><a target=\"_blank\" href=\"../user_data/docs/".$org_id."/".array_values($list)[$i]."\"><img src=\"../user_data/docs/".$org_id."/preview/".$path_parts['filename'].".png\"></a></div>";
+                                    echo "<div class=\"listDocItem\"><a target=\"_blank\" href=\"/user_data/docs/".$org_id."/".array_values($list)[$i]."\"><img src=\"/user_data/docs/".$org_id."/preview/".$path_parts['filename'].".png\"></a></div>";
                                     continue;
                                 }
                                 if ($path_parts['extension']=="jpg"){
-                                    echo "<div class=\"listDocItem\"><a target=\"_blank\" href=\"../user_data/docs/".$org_id."/".array_values($list)[$i]."\"><img src=\"../user_data/docs/".$org_id."/".array_values($list)[$i]."\"></a></div>";
+                                    echo "<div class=\"listDocItem\"><a target=\"_blank\" href=\"/user_data/docs/".$org_id."/".array_values($list)[$i]."\"><img src=\"/user_data/docs/".$org_id."/".array_values($list)[$i]."\"></a></div>";
                                     continue;
                                 }
                             }

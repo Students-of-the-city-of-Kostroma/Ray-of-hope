@@ -1,0 +1,10 @@
+[21-Oct-2019 12:47:26 UTC] PHP Fatal error:  Uncaught Error: Using $this when not in object context in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php:231
+Stack trace:
+#0 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/confirm_org.php(7): Database::checkHash('shtaubstas@gmai...', '8800d4213dae2c5...')
+#1 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 231
+[21-Oct-2019 12:47:34 UTC] PHP Fatal error:  Uncaught Error: Using $this when not in object context in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php:231
+Stack trace:
+#0 /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/confirm_org.php(7): Database::checkHash('shtaubstas@gmai...', '8800d4213dae2c5...')
+#1 {main}
+  thrown in /home/u238693555/domains/rayofhope-opensource.hostingerapp.com/public_html/functions/classes/Database.php on line 231

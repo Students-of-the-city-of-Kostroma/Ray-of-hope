@@ -1,7 +1,7 @@
 <?php 
-//require_once "../functions/functions.php";
+//require_once "/functions/functions.php";
 require_once $_SERVER['DOCUMENT_ROOT']."/functions/functions.php";
-//require_once "../functions/classes/Database.php";
+//require_once "/functions/classes/Database.php";
 require_once $_SERVER['DOCUMENT_ROOT']."/functions/classes/Database.php";
 if (isset($_SESSION['logged_org']) && isset($_GET['id_view_org'])) : ?>
 <?php 
@@ -14,8 +14,8 @@ $orgInfo=$db->orgInfo($id_view_org);
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="../assets/css/normalize.css" rel="stylesheet">
-    <link href="../assets/css/styles2_copy4.css" rel="stylesheet">
+    <link href="/assets/css/normalize.css" rel="stylesheet">
+    <link href="/assets/css/styles2_copy4.css" rel="stylesheet">
     <?php 
     if (isset($_SERVER['HTTPS'])){
         echo "<script type=\"text/javascript\" src=\"https://code.jquery.com/jquery-3.4.1.min.js\"></script>";
@@ -24,13 +24,13 @@ $orgInfo=$db->orgInfo($id_view_org);
         echo "<script type=\"text/javascript\" src=\"http://code.jquery.com/jquery-3.4.1.min.js\"></script>";
     }
     ?>
-    <script type="text/javascript" src="../assets/js/nav-mark.js"></script>
-    <script type="text/javascript" src="../assets/js/jquery.maskedinput2.min.js"></script>
+    <script type="text/javascript" src="/assets/js/nav-mark2.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.maskedinput2.min.js"></script>
     <title><?php echo $orgInfo['name']; ?></title>
 </head>
 <body>
     <?php include 'header2.php'; ?>
-    <?php include '../dialog-wrapper.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/dialog-wrapper.php'; ?>
     <?php include 'newpost.php'; ?>
     <div class="container">
         <div class="frame profileInfo">
@@ -45,11 +45,11 @@ $orgInfo=$db->orgInfo($id_view_org);
                         <div class="name wrapper"><?php echo $orgInfo['name']; ?></div>
                         <?php 
                         if (isset($orgInfo['type_of_activity'])){
-                            echo "<div class=\"activity-wrapper\"><div class=\"ico-wrapper\"><img class=\"ico activity\" src=\"../assets/img/ico_activity.png\"></div><span>".$orgInfo['type_of_activity_name']."</span></div>";
+                            echo "<div class=\"activity-wrapper\"><div class=\"ico-wrapper\"><img class=\"ico activity\" src=\"/assets/img/ico_activity.png\"></div><span>".$orgInfo['type_of_activity_name']."</span></div>";
                         }   
                         if (isset($orgInfo['city_name']))
                         {
-                            echo "<div class=\"city-wrapper\"><div class=\"ico-wrapper\"><img class=\"ico city\" src=\"../assets/img/ico_city.png\"></div><span>".$orgInfo['city_name']."</span></div>";
+                            echo "<div class=\"city-wrapper\"><div class=\"ico-wrapper\"><img class=\"ico city\" src=\"/assets/img/ico_city.png\"></div><span>".$orgInfo['city_name']."</span></div>";
                         }
                         ?>
                     </div>
@@ -66,13 +66,13 @@ $orgInfo=$db->orgInfo($id_view_org);
                             echo "<span class=\"title\">Контакты:</span>";
                             if (isset($orgInfo['address'])){
                             echo "<div class=\"home-city-wrapper\">
-                            <img class=\"ico\" src=\"../assets/img/home_city_icon.png\">
+                            <img class=\"ico\" src=\"/assets/img/home_city_icon.png\">
                             <span class=\"home-city\">".$orgInfo['address']."</span>
                             </div>";
                             }
                             if (isset($orgInfo['number_phone'])){
                             echo "<div class=\"phone-wrapper\">
-                            <img class=\"ico\" src=\"../assets/img/phone_icon.png\">
+                            <img class=\"ico\" src=\"/assets/img/phone_icon.png\">
                             <span class=\"phone-number\">".$orgInfo['number_phone']."</span>
                             </div>";
                             }
@@ -83,16 +83,16 @@ $orgInfo=$db->orgInfo($id_view_org);
                     <div class="buttons-wrapper">
                         <?php 
                         if ($_GET['id_view_org']==$_SESSION['logged_org']){
-                            echo "<a href=\"/edit\" class=\"edit-profile-link\"><img class=\"edit-icon\" src=\"../assets/img/edit_profile_icon.png\"><span>Редактировать профиль</span></a>";
+                            echo "<a href=\"/edit\" class=\"edit-profile-link\"><img class=\"edit-icon\" src=\"/assets/img/edit_profile_icon.png\"><span>Редактировать профиль</span></a>";
                         }
                         else{
                             echo "
                             <button id=\"add-to-favorites\">
-                            <img class=\"add-to-favorites-icon\" src=\"../assets/img/plus_new_post_icon.png\">
+                            <img class=\"add-to-favorites-icon\" src=\"/assets/img/plus_new_post_icon.png\">
                             <span>В любимые</span>
                             </button>
                             <button id=\"mess\">
-                            <img class=\"mess-icon\" src=\"../assets/img/mess_icon.png\">
+                            <img class=\"mess-icon\" src=\"/assets/img/mess_icon.png\">
                             <span>Написать</span>
                             </button>
                             <button id=\"donate\">
@@ -107,7 +107,7 @@ $orgInfo=$db->orgInfo($id_view_org);
                     <?php     
                         if (isset($orgInfo['docs'])){
                             echo "<div class=\"list-doc\">";
-                            $dir  = '../user_data/docs/'.$id_view_org;
+                            $dir  = $_SERVER['DOCUMENT_ROOT'].'/user_data/docs/'.$id_view_org;
                             $catalog=opendir($dir);
                             $list=array();
                             while($file=readdir($catalog)){
@@ -119,14 +119,14 @@ $orgInfo=$db->orgInfo($id_view_org);
                             closedir($catalog);
                             ksort($list); //сортированный по дате массив файлов
                             for ($i=0;$i<count($list);$i++){
-                                if (!is_dir("../user_data/docs/".$id_view_org."/".array_values($list)[$i])){
-                                $path_parts = pathinfo("../user_data/docs/".$id_view_org."/".array_values($list)[$i]);
+                                if (!is_dir("/user_data/docs/".$id_view_org."/".array_values($list)[$i])){
+                                $path_parts = pathinfo("/user_data/docs/".$id_view_org."/".array_values($list)[$i]);
                                 if ($path_parts['extension']=="pdf" || $path_parts['extension']=="docx"){
-                                    echo "<div class=\"listDocItem\"><a target=\"_blank\" href=\"../user_data/docs/".$id_view_org."/".array_values($list)[$i]."\"><img src=\"../user_data/docs/".$id_view_org."/preview/".$path_parts['filename'].".png\"></a></div>";
+                                    echo "<div class=\"listDocItem\"><a target=\"_blank\" href=\"/user_data/docs/".$id_view_org."/".array_values($list)[$i]."\"><img src=\"/user_data/docs/".$id_view_org."/preview/".$path_parts['filename'].".png\"></a></div>";
                                     continue;
                                 }
                                 if ($path_parts['extension']=="jpg"){
-                                    echo "<div class=\"listDocItem\"><a target=\"_blank\" href=\"../user_data/docs/".$id_view_org."/".array_values($list)[$i]."\"><img src=\"../user_data/docs/".$id_view_org."/".array_values($list)[$i]."\"></a></div>";
+                                    echo "<div class=\"listDocItem\"><a target=\"_blank\" href=\"/user_data/docs/".$id_view_org."/".array_values($list)[$i]."\"><img src=\"/user_data/docs/".$id_view_org."/".array_values($list)[$i]."\"></a></div>";
                                     continue;
                                 }
                             }
@@ -151,7 +151,7 @@ $orgInfo=$db->orgInfo($id_view_org);
                 <?php
                 if ($_GET['id_view_org']==$_SESSION['logged_org'])
                 {
-                    echo "<div class=\"frame newPost\"><button class=\"new_post\"><img src=\"../assets/img/plus_new_post_icon.png\"><span class=\"new_post\">Новый пост</span></button></div>";
+                    echo "<div class=\"frame newPost\"><button class=\"new_post\"><img src=\"/assets/img/plus_new_post_icon.png\"><span class=\"new_post\">Новый пост</span></button></div>";
                 }
                 ?>
             </div>
@@ -171,7 +171,7 @@ $orgInfo=$db->orgInfo($id_view_org);
                     </div>
                     <span class="post_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia </span>
                     <div class="post_img_list">
-                        <img src="../user_data/docs/2/doc_5d62586c21b5b.jpg" class="post_img">
+                        <img src="/user_data/docs/2/doc_5d62586c21b5b.jpg" class="post_img">
                     </div>
                     <div class="post_comments_bookmarks">
                         <a href="" class="post_comments">
@@ -265,8 +265,8 @@ $orgInfo=$db->orgInfo($id_view_org);
         </div>
     </div>
     
-    <script type="text/javascript" src="../assets/js/newpost26.js"></script>
-    <script type="text/javascript" src="../assets/js/profile_org.js"></script>
+    <script type="text/javascript" src="/assets/js/newpost26.js"></script>
+    <script type="text/javascript" src="/assets/js/profile_org.js"></script>
 </body>
 </html>
 <?php else : ?>

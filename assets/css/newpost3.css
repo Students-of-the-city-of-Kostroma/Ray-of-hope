@@ -105,6 +105,7 @@ span.moreTextBtn.noclick {
     overflow: hidden;
     margin-top: 0.520833333vw;
 }
+
 .post {
     margin-bottom: 1.04166666667vw;
     padding: 1.40625vw;
@@ -136,9 +137,10 @@ a.avatar_name {
     align-items: center;
 }
 
-.date_delete {margin-left: auto;display: flex;align-items: center;}
-
-div.post_text {
+.date_delete {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
 }
 
 span.post_text {
@@ -190,6 +192,7 @@ img.post_img {
     border-radius: 0.52083333333vw;
     width: 100%;
 }
+
 .location_date {
     display: flex;
     align-items: center;
@@ -214,6 +217,7 @@ span.location {
     margin-top: 0.2vw;
     color: #a1a1a1;
 }
+
 .progress {
     margin-top: 1.09375vw;
 }
@@ -231,7 +235,9 @@ span.collected_count {
     color: #007bf5;
 }
 
-.bar {margin-top: 0.57291666666vw;}
+.bar {
+    margin-top: 0.57291666666vw;
+}
 
 .line_full {
     width: 100%;
@@ -256,6 +262,7 @@ span.collected_count {
     border-radius: 100%;
     margin-left: auto;
 }
+
 .newpost-wrapper {
     z-index: 9999;
     position: fixed;
@@ -276,13 +283,22 @@ span.collected_count {
 span.titlenewpost {
     color: #a1a1a1;
 }
-.titlenewpost-close {position: relative;display: flex;/* align-items: center; */width: 100%;justify-content: center;}
+
+.titlenewpost-close {
+    position: relative;
+    display: flex;
+    /* align-items: center; */
+    width: 100%;
+    justify-content: center;
+}
 
 label.add_photo_newpost>img {
     width: 100%;
 }
 
-.closenewpost>img {width: 0.83333333333vw;}
+.closenewpost>img {
+    width: 0.83333333333vw;
+}
 
 button.closenewpost {
     display: flex;
@@ -290,14 +306,15 @@ button.closenewpost {
     right: 0;
 }
 
-button.listtypepost_item {
+label.listtypepost_item {
     margin-bottom: 2.03125vw;
     color: #a1a1a1;
+    display: block;
+    cursor: pointer;
 }
 
 .listtypepost-contentnewpost {
     margin-top: 2.08333333333vw;
-    display: flex;
 }
 
 .contentnewpost {
@@ -313,6 +330,7 @@ textarea.text_newpost {
     height: -webkit-fill-available;
     display: block;
 }
+
 .text_newpost::-webkit-scrollbar-thumb {
     background: #f2f2f2;
     border-radius: 0.23vw;
@@ -340,7 +358,8 @@ input.date {
     width: 6.71875vw;
 }
 
-.end-time, .start-time {
+.end-time,
+.start-time {
     display: flex;
 }
 
@@ -367,7 +386,10 @@ label.add_photo_newpost {
     margin-top: 1.25vw;
 }
 
-.send-newpost {margin-left: auto;color: #007bf5;}
+.send-newpost {
+    margin-left: auto;
+    color: #007bf5;
+}
 
 .address.meropr.wrapper {
     margin-top: 1.25vw;
@@ -385,10 +407,23 @@ label.add_photo_newpost {
     cursor: text;
 }
 
-button.listtypepost_item.active {
-    color: black;
-}
-
 input.time {
     width: 7.39583333333vw;
+}
+
+.typepost_radio>input {
+    display: none;
+}
+
+form#newpost_form {
+    display: flex;
+}
+
+.variable_block {
+    margin-top: 1.25vw;
+    position: relative;
+}
+
+input:checked+label {
+    color: black;
 }

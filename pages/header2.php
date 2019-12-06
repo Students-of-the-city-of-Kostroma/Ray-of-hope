@@ -1,6 +1,6 @@
 <div class="nav-wrapper">
     <div class="navbar">
-	<a href="#" class="logo_link"><img class="logo" src="../assets/img/logo_header2.png" alt="Луч надежды"></a>
+	<a href="#" class="logo_link"><img class="logo" src="/assets/img/logo_header2.png" alt="Луч надежды"></a>
 	<div class="nav-links">
         <a id="nav-avatar" class="avatar-link <?php  if (stripos($_SERVER['REQUEST_URI'], "/organisation/")!==false && $_SERVER['REQUEST_URI']=="/organisation/".$_SESSION['logged_org']) {echo "active";} ?>" href="/organisation/<?php echo $_SESSION['logged_org']?>"><img class="avatar" src="<?php echo $_SESSION['org_avatar']; ?>" alt="Мой профиль"></a>
 		<li id="nav-feed" class="nav-link">

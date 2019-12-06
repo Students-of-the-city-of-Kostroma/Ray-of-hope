@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="../assets/css/normalize.css" rel="stylesheet">
-    <link href="../assets/css/styles.css" rel="stylesheet">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
-    <script src="../assets/js/script.js"></script>
-	<script src="../assets/js/nav-mark.js"></script>
-    <script src="../assets/js/ajax.js"></script>
+    <link href="/assets/css/normalize.css" rel="stylesheet">
+    <link href="/assets/css/styles.css" rel="stylesheet">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/assets/js/script2.js"></script>
+	<script src="/assets/js/nav-mark2.js"></script>
+    <script src="/assets/js/ajax.js"></script>
     <title>Авторизация организации</title>
 </head>
 <body>
-    <?php include '../header.php'; ?>
-    <?php include '../dialog-wrapper.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/dialog-wrapper.php'; ?>
     <section class="login-org">
         <div class="container">
             <form method="post" id="ajax_form" action="">
