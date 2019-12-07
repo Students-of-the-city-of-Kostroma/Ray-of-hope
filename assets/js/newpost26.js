@@ -1,16 +1,20 @@
 $(".date").mask("99/99/9999");
 $(".time").mask("99/99");
-$('button.new_post').click(function() {
-    if ($('.newpost-wrapper').hasClass('open')) {
-        $('.newpost-wrapper').css('display', 'none');
-        $('.newpost-wrapper').removeClass('open');
-        document.body.style.overflow = 'visible';
-    } else {
-        $('.newpost-wrapper').css('display', 'block');
-        $('.newpost-wrapper').addClass('open');
-        document.body.style.overflow = 'hidden';
-    }
+$(document).ready(function() {
+    $('button.new_post').click(function() {
+        console.log('нажатие');
+        if ($('.newpost-wrapper').hasClass('open')) {
+            $('.newpost-wrapper').css('display', 'none');
+            $('.newpost-wrapper').removeClass('open');
+            document.body.style.overflow = 'visible';
+        } else {
+            $('.newpost-wrapper').css('display', 'block');
+            $('.newpost-wrapper').addClass('open');
+            document.body.style.overflow = 'hidden';
+        }
+    });
 });
+
 
 $('.closenewpost').click(function() {
     if ($('.newpost-wrapper').hasClass('open')) {

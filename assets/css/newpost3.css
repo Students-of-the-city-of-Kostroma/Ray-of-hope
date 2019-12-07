@@ -426,4 +426,5 @@ form#newpost_form {
 
 input:checked+label {
     color: black;
+    font-family: inherit !important;
 }
