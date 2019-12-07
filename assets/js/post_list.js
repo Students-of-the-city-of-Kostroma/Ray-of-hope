@@ -46,5 +46,10 @@ var Posts = new Vue({
                 }
             });
         }
+    },
+    methods: {
+        progressWidth: function(index) {
+            return this.posts[index].need_collected_count * 100 / this.posts[index].need_count + '%';
+        }
     }
 });

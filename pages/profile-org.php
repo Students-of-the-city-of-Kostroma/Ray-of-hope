@@ -181,8 +181,7 @@ if (isset($_SESSION['logged_org']) && isset($_GET['id_view_org'])) : ?>
                             </div>
                             <div class="bar">
                                 <div class="line_full">
-                                    <div class="line_collected">
-                                    </div>
+                                    <div class="line_collected" :style="{width: progressWidth(index)}"></div>
                                 </div>
                             </div>
                         </div>
