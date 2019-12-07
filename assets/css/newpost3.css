@@ -423,7 +423,7 @@ form#newpost_form {
     position: relative;
 }
 
-input:checked+label {
+input.input_newpost:checked+label {
     color: black;
     font-family: inherit !important;
 }

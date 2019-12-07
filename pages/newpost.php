@@ -12,11 +12,11 @@
                 <form id="newpost_form">
                     <div class="listtypepost">
                         <div class="typepost_radio">
-                            <input id="nuzhd_inpt" name="typepost" type="radio" value="nuzhd" checked>
+                            <input class="input_newpost" id="nuzhd_inpt" name="typepost" type="radio" value="nuzhd" checked>
                             <label for="nuzhd_inpt" class="listtypepost_item">Нужда</label>
-                            <input id="meropr_inpt" name="typepost" type="radio" value="meropr">
+                            <input class="input_newpost" id="meropr_inpt" name="typepost" type="radio" value="meropr">
                             <label for="meropr_inpt" class="listtypepost_item">Мероприятие</label>
-                            <input id="sobit_inpt" name="typepost" type="radio" value="sobit">
+                            <input class="input_newpost" id="sobit_inpt" name="typepost" type="radio" value="sobit">
                             <label for="sobit_inpt" class="listtypepost_item">Событие</label>
                         </div>
                     </div>
