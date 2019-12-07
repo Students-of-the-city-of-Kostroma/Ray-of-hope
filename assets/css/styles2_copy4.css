@@ -1,7 +1,7 @@
-@font-face {
+﻿@font-face {
     font-family: 'Segoe';
     src: url('../fonts/SegoeUI.eot');
-    src: local('ÃƒÂ¢Ã‹Å“Ã‚Âº'), url('../fonts/SegoeUI.woff') format('woff'), url('../fonts/SegoeUI.ttf') format('truetype');
+    src: local('ÃƒÆ’Ã‚Â¢Ãƒâ€¹Ã…â€œÃƒâ€šÃ‚Âº'), url('../fonts/SegoeUI.woff') format('woff'), url('../fonts/SegoeUI.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -9,7 +9,7 @@
 @font-face {
     font-family: 'SegoeLight';
     src: url('../fonts/SegoeUI-Light.eot');
-    src: local('ÃƒÂ¢Ã‹Å“Ã‚Âº'), url('../fonts/SegoeUI-Light.woff') format('woff'), url('../fonts/SegoeUI-Light.ttf') format('truetype');
+    src: local('ÃƒÆ’Ã‚Â¢Ãƒâ€¹Ã…â€œÃƒâ€šÃ‚Âº'), url('../fonts/SegoeUI-Light.woff') format('woff'), url('../fonts/SegoeUI-Light.ttf') format('truetype');
     font-weight: lighter;
     font-style: normal;
 }
@@ -17,7 +17,7 @@
 @font-face {
     font-family: 'SegoeSB';
     src: url('../fonts/SegoeUI-SemiBold.eot');
-    src: local('ÃƒÂ¢Ã‹Å“Ã‚Âº'), url('../fonts/SegoeUI-SemiBold.woff') format('woff'), url('../fonts/SegoeUI-SemiBold.ttf') format('truetype');
+    src: local('ÃƒÆ’Ã‚Â¢Ãƒâ€¹Ã…â€œÃƒâ€šÃ‚Âº'), url('../fonts/SegoeUI-SemiBold.woff') format('woff'), url('../fonts/SegoeUI-SemiBold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
@@ -308,7 +308,7 @@ a:hover {
     display: block;
     position: absolute;
     content: "";
-    height: 2px;
+    height: 0.10416666666vw;
     background-color: #007bf5;
     transition: .1s ease-in-out;
     width: 62%;
@@ -334,7 +334,7 @@ a:hover {
     display: block;
     position: absolute;
     content: "";
-    height: 2px;
+    height: 0.10416666666vw;
     background-color: #007bf5;
     transition: .1s ease-in-out;
     width: 62%;
@@ -1420,4 +1420,7 @@ input.time {
 
 .newpost_controls.meropr {
     display: none;
+}
+button.new_post>img {
+    width: 1.0980966325vw;
 }
