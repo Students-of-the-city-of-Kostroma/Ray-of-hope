@@ -4,7 +4,7 @@ namespace app\models;
 
 use yii\db\ActiveRecord;
 
-class RegistrationSitizen extends ActiveRecord
+class RegistrationCitizen extends ActiveRecord
 {
     public static function tableName()
         {

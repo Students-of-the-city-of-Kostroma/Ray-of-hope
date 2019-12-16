@@ -6,14 +6,25 @@
 $this->title = 'Регистрация гражданина';
 ?>
 
+<?php
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+?>
+
+
+
 <section class="registration-org">
     <div class="container">
-        <form method="post" id="ajax_form" action="">
+
+        <form method="post" id="ajax_form" action="/index.php?r=registration-citizen%2Fcreate">
+            <input type="hidden" name="_csrf" value="<?= \Yii::$app->request->getCsrfToken()?>">
             <p class="form-title">РЕГИСТРАЦИЯ ГРАЖДАНИНА</p>
             <div class="wrapper-textbox">
                 <div id="name" class="hint name"></div>
                 <img id="name" src="/assets/img/ico1.svg" alt="Некорректное имя" class="ico-in-textbox znak name" onmouseover="showHint(this)" onmouseout="hideHint(this)">
+
                 <input name="name" type="text" placeholder="Имя">
+
             </div>
             <div class="wrapper-textbox">
                 <div id="email" class="hint email"></div>
@@ -28,7 +39,7 @@ $this->title = 'Регистрация гражданина';
             <div class="wrapper-textbox">
                 <input name="password_2" type="password" placeholder="Повторите пароль">
             </div>
-            <input type="button" id="registr-button" value="Зарегистрироваться">
+            <input type="submit" id="registr-button" value="Зарегистрироваться">
         </form>
     </div>
 </section>
