@@ -192,4 +192,22 @@ function getCityList($request){
     echo json_encode($json_array, JSON_UNESCAPED_UNICODE);
 }
 
+if (isset($_POST['newPost'])){
+    $db=new Database();
+    $newPost=$db->newPost();
+    echo json_encode($newPost);
+}
+if (isset($_POST['deletePost'])){
+    $db=new Database();
+    $result=$db->deletePost($_POST['deletePost']);
+    echo $result;
+}
+
+
+if (isset($_POST['getPosts'])){
+    $db=new Database();
+    $posts =  isset($_POST['start_id']) ? $db->getPosts($_POST['getPosts'], $_POST['start_id']) : $db->getPosts($_POST['getPosts']);
+    echo json_encode($posts);
+}
+
 ?>

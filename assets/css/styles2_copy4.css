@@ -1,4 +1,4 @@
-﻿@font-face {
+@font-face {
     font-family: 'Segoe';
     src: url('../fonts/SegoeUI.eot');
     src: local('ÃƒÆ’Ã‚Â¢Ãƒâ€¹Ã…â€œÃƒâ€šÃ‚Âº'), url('../fonts/SegoeUI.woff') format('woff'), url('../fonts/SegoeUI.ttf') format('truetype');
@@ -63,8 +63,8 @@
 }
 
 .dialog-wrapper {
-    z-index: 9999;
-    position: absolute;
+    z-index: 10000;
+    position: fixed;
     top: 0;
     display: none;
     width: 100%;
@@ -561,6 +561,9 @@ textarea.contacts::-moz-placeholder {
 
 select:invalid,
 select option[value=""],
+input.countnuzhd::placeholder,
+input.date::placeholder,
+input.time::placeholder,
 input.name::placeholder,
 input.city::placeholder,
 input.address::placeholder,

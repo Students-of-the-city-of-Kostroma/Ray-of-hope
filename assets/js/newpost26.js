@@ -2,7 +2,6 @@ $(".date").mask("99/99/9999");
 $(".time").mask("99/99");
 $(document).ready(function() {
     $('button.new_post').click(function() {
-        console.log('нажатие');
         if ($('.newpost-wrapper').hasClass('open')) {
             $('.newpost-wrapper').css('display', 'none');
             $('.newpost-wrapper').removeClass('open');
@@ -18,7 +17,11 @@ $(document).ready(function() {
 
 $('.closenewpost').click(function() {
     if ($('.newpost-wrapper').hasClass('open')) {
+        $('.imagelist_newpost').html("");
+        images_newpost = [];
         $("#newpost_form")[0].reset();
+        $("input[value=1]").prop("checked");
+        changeTypePost();
         $('.text_newpost').html("");
         $('.newpost-wrapper').css('display', 'none');
         $('.newpost-wrapper').removeClass('open');
@@ -26,12 +29,16 @@ $('.closenewpost').click(function() {
     }
 });
 
-
+var images_newpost = [];
 $('#file').on('change', function() {
-    $('.imagelist_newpost').html("");
-    if (this.files.length > 0) { $('.imagelist_newpost').css('display', 'flex'); }
     for (var i = 0; i < this.files.length; i++) {
-        previewImg(this.files[i]);
+        if (images_newpost.length < 5) {
+            images_newpost.push(this.files[i]);
+            previewImg(this.files[i]);
+        } else {
+            open_dialog('Ошибка', 'Можно загрузить не больше 5 изображений');
+            break;
+        }
     }
 
 });
@@ -66,26 +73,64 @@ function hide_dialog() {
 }
 
 $("input[name='typepost']").change(function() {
+    changeTypePost();
+});
+
+function changeTypePost() {
     inputs = document.querySelectorAll('.variant input');
     inputs.forEach(function(input) {
         input.value = '';
     });
     $('.variant input').attr('disabled', true);
     $('.variant').hide();
-    if ($("input[value='nuzhd']").prop("checked")) {
+    if ($("input[value=2]").prop("checked")) {
         $('.variant.nuzhda input').removeAttr('disabled');
         $('.variant.nuzhda').show();
     } else {
-        if ($("input[value='meropr']").prop("checked")) {
+        if ($("input[value=1]").prop("checked")) {
             $('.variant.meropriyatie input').removeAttr('disabled');
             $('.variant.meropriyatie').show();
         }
     }
-});
+}
 
 var globalTimeout = null;
 
+function sendAjaxNewPost(data, url) {
+    $.ajax({
+        processData: false,
+        contentType: false,
+        cashe: false,
+        dataType: "json",
+        url: url,
+        type: "POST",
+        data: data,
+        success: function(response) {
+            Posts.posts.unshift(response);
+        },
+        error: function(response) {
+            console.log('Ошибка. Данные не отправлены.');
+        }
+    });
+};
+
 $(document).ready(function() {
+    $("#newpost_form").submit(function(e) {
+        e.preventDefault();
+    });
+
+    $('#send-newpost').click(function() {
+        var newpost_data = new FormData($("#newpost_form")[0]);
+        newpost_data.delete('newpost_images');
+        newpost_data.append('text', $('.text_newpost').text());
+        newpost_data.append('newPost', 1);
+
+        images_newpost.forEach(function callback(image, index) {
+            newpost_data.append("newpost_images_" + index, image);
+        });
+        sendAjaxNewPost(newpost_data, '/functions/functions.php');
+    });
+
     $("#address").keyup(
         function() {
             if (globalTimeout !== null) clearTimeout(globalTimeout);

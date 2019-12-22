@@ -395,9 +395,9 @@ label.add_photo_newpost {
 }
 
 .imagelist_newpost {
-    display: none;
     justify-content: space-between;
     flex-wrap: wrap;
+    display: flex;
 }
 
 .text_newpost[placeholder]:empty:before {
@@ -416,6 +416,7 @@ input.time {
 
 form#newpost_form {
     display: flex;
+    margin-top: 2.08333333333vw;
 }
 
 .variable_block {
