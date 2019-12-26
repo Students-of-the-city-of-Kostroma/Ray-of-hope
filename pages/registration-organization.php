@@ -15,8 +15,8 @@
 
 
 <body>
-    <?php include '/header.php'; ?>
-    <?php include '/dialog-wrapper.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/header.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/dialog-wrapper.php'; ?>
     <section class="registration-org">
         <div class="container">
             <form method="post" id="ajax_form" action="">
