@@ -20,79 +20,148 @@ class RegistrationCitizenController extends Controller
         return $this ->render('../registration/registration-citizen');
     }
 
+    public function actionProfile()
+    {
+        // do some session
+
+        return $this->render('succesfuly');
+
+
+        # return $this ->render('../registration/registration-citizen');
+    }
+
+
     public function actionCreate()
     {
-# echo 111;die();
-
-
-        ?>
-        <script>console.log('2')</script>
-        <?php
-
-
         $request = Yii::$app->request;
-        $model =  new Citizen();
 
+        $citizenInputToValidate =  new Citizen();
 
-        $model->name = $request->post('name');
-        $model->email = $request->post('email');
-        $model->password = $request->post('password');
-        $model->password_repeat = $request->post('password');
+        // заполняем модель данными из запроса
+        // $citizenInputToValidate->attributes = $request->post();
 
+        $citizenInputToValidate->name = $request->post('name');
+        $citizenInputToValidate->email = $request->post('email');
+        $citizenInputToValidate->password = $request->post('password');
+        $citizenInputToValidate->password_repeat = $request->post('password_2');
 
-        ?>
-        <script>
-            console.log("<?= $model->name; ?>" );
-            console.log("<?= $model->email; ?>");
-            console.log("<?= $model->password; ?>" );
-        </script>
-        <?php
+        // формируем массив для ответов
+        $resolveToUser = [
+            'newUrl' => null,
+            'errors' => [
+                'isEmpty' => false,
+                'isEmailCorrected' => false,
+                'isPassCorrected' => false,
+                'isPassEqual' => false,
+                'isRegistered' => false,
+            ],
 
-        if ($model -> validate()){
+        ];
 
-            ?>
-            <script>console.log('2')</script>
-            <?php
+        // если модель валидна
+        if ($citizenInputToValidate->validate()) {
 
-            # do some useful code
+            // ищем, есть ли нужный нам email
             $emailCheck = Emails::find()
-                ->where(['email' => $model->email])
+                ->where(['email' => $citizenInputToValidate ->email])
                 ->all();
 
-//            $query = RegistrationSitizen::find()
-//                ->where(['email' => $emailCheck->id])
-//                ->where(['password' => $model->password])
-//                ->all();
+            // если email не найден -- можно продолжать регаться
+            if (count($emailCheck) === 0) {
 
-            if (count($emailCheck) == 0)
-            {
-                $newSitizenInfo = new Emails();
+                $newSitizenEmail = new Emails();
 
-                $newSitizenInfo->email = $model->email;
+                $newSitizenEmail->email = $citizenInputToValidate->email;
 
-                $newSitizenInfo->hash = md5($model->password);
+                $hashToEmail = md5($citizenInputToValidate->email);
 
-                $newSitizenInfo->save();
+                $newSitizenEmail->hash = $hashToEmail;
 
-                $newSitizen = new RegistrationCitizen();
+                // отправляем письмо с hash для регистрации
 
-                $newSitizen->email = $newSitizenInfo->id;
-                $newSitizen->password = $model->password;
-                $newSitizen->type_of_account = 1;
-                $newSitizen->save();
+                $newSitizenEmail->save();
 
-                return $this->render('succesfuly', ['model' => $model]);
+                $newSitizenAllInfo = new RegistrationCitizen();
+
+                $newSitizenAllInfo->email = $newSitizenEmail->id;
+                $newSitizenAllInfo->password = md5($citizenInputToValidate->password);
+                $newSitizenAllInfo->type_of_account = 1;
+                $newSitizenAllInfo->save();
+
+                //$json = $this->formatJson( false, true, false, "/index.php?r=registration-citizen%2Fprofile");
+
+                // перенаправляем на нужную страницу
+                $resolveToUser['newUrl'] = "/index.php?r=registration-citizen%2Fprofile";
+
+                $json = json_encode($resolveToUser);
+
+                return $json;
             }
 
-            # end of doing some useful code
+            // если уже зарегистрирован человек
+            $resolveToUser['errors']['isRegistered'] = true;
 
-            return $this->render('unsuccesfuly', ['model' => $model]);
+            $json = json_encode($resolveToUser);
+            return $json;
+
         }
+        // модель не валидна
         else
         {
-            //header('Location: /index.php?r=registration%2Fcitizen');
-            # return $this ->render('../registration/registration-citizen');
-            return Yii::$app->response->redirect(['registration/citizen']);
+            $errors = $citizenInputToValidate->errors;
+
+            /**
+             * Типы ошибок в последовательности
+             *
+             * Заполните все поля
+             * Возникает когда хоть в одном есть слово blank
+             * email password password_repeat name
+             * isEmpty = true
+             *
+             * Email не корректный
+             * Свойство email это "Email is not a valid email address."
+             * isEmailCorrected = true
+             *
+             * Пароль не корректный
+             * Свойство password это "Password should contain at least 6 characters."
+             * isPassCorrected = true
+             *
+             * Пароли не совпадают
+             * Свойство password это "Password must be equal to \"Password Repeat\"."
+             * isPassEquals = true
+             */
+
+            // заполните все поля
+            $f = false;
+            foreach ($errors as $value){
+                if (strripos($value[0], 'blank') !== false)
+                    $f = true;
+            }
+
+
+            if (!$f){
+                if (!(array_key_exists('email', $errors))){
+                    if ($errors['password'][0] !== "Password should contain at least 6 characters."){
+                        $resolveToUser['errors']['isPassEquals'] = true;
+                    }
+                    else {
+                        $resolveToUser['errors']['isPassCorrected'] = true;
+                    }
+                }
+                else {
+                    $resolveToUser['errors']['isEmailCorrected'] = true;
+                }
+            }
+            else {
+                $resolveToUser['errors']['isEmpty'] = true;
+            }
+
+
+            $json = json_encode($resolveToUser);
+
+            return $json;
         }
+
     }
+
 }
