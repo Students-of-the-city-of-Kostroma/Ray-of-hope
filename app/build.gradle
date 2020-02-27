@@ -19,8 +19,8 @@ android {
         applicationId "com.example.splashapp"
         minSdkVersion 15
         targetSdkVersion 28
-        versionCode 9
-        versionName "v.0.0.20191120"
+        versionCode 10
+        versionName "v.0.0.20200227"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         compileOptions {
             sourceCompatibility JavaVersion.VERSION_1_8

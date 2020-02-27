@@ -46,7 +46,7 @@ public class CallDB_RegOrg extends AsyncTask<String , Void ,String> {
         OutputStream out = null;
         try {
 
-            URL url = new URL("http://rayofhope-opensource.hostingerapp.com/functions/functions.php");
+            URL url = new URL("http:///192.168.1.56/functions/functions.php"); //ip-шник своей машины
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setReadTimeout(10000);
             conn.setConnectTimeout(15000);
