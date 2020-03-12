@@ -4,7 +4,7 @@ return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=ray_of_hope',
     'username' => 'root',
-    'password' => '',
+    'password' => 'pass',
     'charset' => 'utf8',
 
     // Schema cache options (for production environment)
