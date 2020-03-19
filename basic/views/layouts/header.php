@@ -59,7 +59,7 @@ AppAsset::register($this);
 			<a>Регистрация</a>
 			<ul class="sub-menu">
 				<a href="/index.php?r=registration%2Fcitizen">Гражданин</a>
-				<a href="/index.php?r=registration%2Forganization">Организация</a>
+				<a href="/index.php?r=registration%2Forganisation">Организация</a>
 			</ul>
 		</li>
 	</div>

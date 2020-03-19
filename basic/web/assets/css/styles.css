@@ -219,7 +219,8 @@ input[type="text"],
 }
 
 #login-citizen-button,
-#registr-sitizen-button,
+#registr-citizen-button,
+#registr-org-button,
 #login-button {
     cursor: pointer;
     width: 19.53125vw;

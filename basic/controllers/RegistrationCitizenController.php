@@ -2,10 +2,11 @@
 
 namespace app\controllers;
 
-use app\models\Emails;
+use app\models\EmailDB;
+use app\models\UserDB;
+use app\models\CitizenDB;
 use yii\web\Controller;
 use app\models\Citizen;
-use app\models\RegistrationCitizen;
 use Yii;
 
 
@@ -15,10 +16,10 @@ class RegistrationCitizenController extends Controller
     public $layout = 'outside';
 
 
-    public function actionIndex()
-    {
-        return $this ->render('../registration/registration-citizen');
-    }
+    // public function actionIndex()
+    // {
+    //     return $this ->render('../registration/registration-citizen');
+    // }
 
     public function actionProfile()
     {
@@ -62,31 +63,39 @@ class RegistrationCitizenController extends Controller
         if ($citizenInputToValidate->validate()) {
 
             // ищем, есть ли нужный нам email
-            $emailCheck = Emails::find()
-                ->where(['email' => $citizenInputToValidate ->email])
+            $emailCheck = EmailDB::find()
+                ->where(['email' => $citizenInputToValidate->email])
                 ->all();
 
             // если email не найден -- можно продолжать регаться
             if (count($emailCheck) === 0) {
 
-                $newSitizenEmail = new Emails();
+                $newCitizenEmail = new EmailDB();
 
-                $newSitizenEmail->email = $citizenInputToValidate->email;
+                $newCitizenEmail->email = $citizenInputToValidate->email;
 
                 $hashToEmail = md5($citizenInputToValidate->email);
 
-                $newSitizenEmail->hash = $hashToEmail;
+                $newCitizenEmail->hash = $hashToEmail;
 
                 // отправляем письмо с hash для регистрации
 
-                $newSitizenEmail->save();
+                $newCitizenEmail->save();
 
-                $newSitizenAllInfo = new RegistrationCitizen();
+                $newCitizenAllInfo = new UserDB();
 
-                $newSitizenAllInfo->email = $newSitizenEmail->id;
-                $newSitizenAllInfo->password = md5($citizenInputToValidate->password);
-                $newSitizenAllInfo->type_of_account = 1;
-                $newSitizenAllInfo->save();
+                $newCitizenAllInfo->email = $newCitizenEmail->id;
+                $newCitizenAllInfo->password = md5($citizenInputToValidate->password);
+                $newCitizenAllInfo->type_of_account = 1;
+
+                $newCitizenAllInfo->save();
+
+                $newCitizen = new CitizenDB();
+                
+                $newCitizen->user = $newCitizenAllInfo->id;
+                $newCitizen->name = $citizenInputToValidate->name;
+
+                $newCitizen->save();
 
                 //$json = $this->formatJson( false, true, false, "/index.php?r=registration-citizen%2Fprofile");
 
@@ -102,8 +111,8 @@ class RegistrationCitizenController extends Controller
             $resolveToUser['errors']['isRegistered'] = true;
 
             $json = json_encode($resolveToUser);
+            
             return $json;
-
         }
         // модель не валидна
         else
@@ -161,6 +170,7 @@ class RegistrationCitizenController extends Controller
 
             return $json;
         }
+
 
     }
 

@@ -14,9 +14,9 @@ class RegistrationController extends Controller
         return $this->render('registration-citizen');
     }
 
-    public function actionOrganization()
+    public function actionOrganisation()
     {
-        return $this->render('registration-organization');
+        return $this->render('registration-organisation');
     }
 
 }
