@@ -1,0 +1,16 @@
+{
+    // Используйте IntelliSense, чтобы узнать о возможных атрибутах.
+    // Наведите указатель мыши, чтобы просмотреть описания существующих атрибутов.
+    // Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "port": 9222,
+            "url": "http://rayofhope.com/index.php?r=registration%2Forganisation",
+            "webRoot": "${workspaceFolder}/assets/js/ajax.js"
+        }
+    ]
+}

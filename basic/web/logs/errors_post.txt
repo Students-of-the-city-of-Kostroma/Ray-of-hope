@@ -1,0 +1,76 @@
+a:2:{s:3:"INN";a:1:{i:0;s:15:"Inn is invalid.";}s:8:"password";a:1:{i:0;s:46:"Password should contain at least 6 characters.";}}
+a:2:{s:3:"INN";a:1:{i:0;s:15:"Inn is invalid.";}s:8:"password";a:1:{i:0;s:46:"Password should contain at least 6 characters.";}}
+a:2:{s:3:"INN";a:1:{i:0;s:15:"Inn is invalid.";}s:8:"password";a:1:{i:0;s:46:"Password should contain at least 6 characters.";}}
+a:2:{s:3:"INN";a:1:{i:0;s:15:"Inn is invalid.";}s:8:"password";a:1:{i:0;s:46:"Password should contain at least 6 characters.";}}
+a:2:{s:3:"INN";a:1:{i:0;s:15:"Inn is invalid.";}s:8:"password";a:1:{i:0;s:46:"Password should contain at least 6 characters.";}}
+Inn is invalid.Inn is invalid.Inn is invalid.Inn is invalid.
+Inn is invalid.
+Inn is invalid.
+Inn is invalid.Inn is invalid.Inn is invalid.Inn is invalid.Inn is invalid.
+Inn is invalid.
+Inn is invalid.
+a:1:{s:8:"password";a:1:{i:0;s:46:"Password should contain at least 6 characters.";}}
+a:1:{s:8:"password";a:1:{i:0;s:46:"Password should contain at least 6 characters.";}}
+a:1:{s:8:"password";a:1:{i:0;s:46:"Password should contain at least 6 characters.";}}
+a:1:{s:8:"password";a:1:{i:0;s:46:"Password should contain at least 6 characters.";}}
+a:1:{s:8:"password";a:1:{i:0;s:46:"Password should contain at least 6 characters.";}}
+a:1:{s:8:"password";a:1:{i:0;s:46:"Password should contain at least 6 characters.";}}
+a:1:{s:8:"password";a:1:{i:0;s:46:"Password should contain at least 6 characters.";}}
+a:1:{s:8:"password";a:1:{i:0;s:46:"Password should contain at least 6 characters.";}}
+a:1:{s:8:"password";a:1:{i:0;s:46:"Password should contain at least 6 characters.";}}
+
+
+no
+no
+no
+no
+no
+no
+no
+no
+no
+a:2:{s:3:"INN";a:1:{i:0;s:15:"Inn is invalid.";}s:8:"password";a:1:{i:0;s:46:"Password should contain at least 6 characters.";}}
+{"INN":["Inn is invalid."],"password":["Password should contain at least 6 characters."]}{"INN":["Inn is invalid."],"password":["Password should contain at least 6 characters."]}{"INN":["Inn is invalid."],"password":["Password should contain at least 6 characters."]}
+
+{"INN":["Inn is invalid."],"password":["Password should contain at least 6 characters."]}
+
+{"INN":["Inn is invalid."],"password":["Password should contain at least 6 characters."]}
+
+{"INN":["Inn is invalid."],"password":["Password should contain at least 6 characters."]}
+
+{"password":["Password should contain at least 6 characters."]}
+
+{"password":["Password must be equal to \"Password Repeat\"."]}
+
+{"password":["Password must be equal to \"Password Repeat\"."]}
+
+{"password":["Password must be equal to \"Password Repeat\"."]}
+
+{"password":["Password must be equal to \"Password Repeat\"."]}
+
+{"name":["Name cannot be blank."],"email":["Email cannot be blank."],"INN":["Inn cannot be blank."],"password":["Password cannot be blank."],"password_repeat":["Password Repeat cannot be blank."]}
+
+{"password":["Password should contain at least 6 characters."]}
+
+{"password":["Password cannot be blank."],"password_repeat":["Password Repeat cannot be blank."]}
+
+{"INN":["Inn cannot be blank."],"password":["Password cannot be blank."],"password_repeat":["Password Repeat cannot be blank."]}
+
+{"INN":["Inn cannot be blank."]}
+
+{"password":["Password cannot be blank."],"password_repeat":["Password Repeat cannot be blank."]}
+
+{"password":["Password must be equal to \"Password Repeat\"."]}
+
+{"password":["Password must be equal to \"Password Repeat\"."]}
+
+{"password":["Password cannot be blank."],"password_repeat":["Password Repeat cannot be blank."]}
+
+{"password":["Password must be equal to \"Password Repeat\"."]}
+
+{"password":["Password must be equal to \"Password Repeat\"."]}
+
+{"password":["Password must be equal to \"Password Repeat\"."]}
+
+{"password":["Password must be equal to \"Password Repeat\"."]}
+

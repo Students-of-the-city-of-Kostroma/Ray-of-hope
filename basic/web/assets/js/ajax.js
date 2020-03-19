@@ -1,12 +1,22 @@
 $(document).ready(function() {
 
-    $("#registr-sitizen-button").click(
+    $("#registr-citizen-button").click(
         function() {
             hide_hints();
-            sendAjaxSitizenReg('ajax_form', "/index.php?r=registration-citizen%2Fcreate");
+            sendAjaxCitizenReg('ajax_form', "/index.php?r=registration-citizen%2Fcreate");
             return false;
         }
     );
+    
+    $("#registr-org-button").click(
+        function() {
+            hide_hints();
+            sendAjaxOrgReg('ajax_form', "/index.php?r=registration-organisation%2Fcreate");
+            return false;
+        }
+    );
+
+
     $("#login-button").click(
         function() {
             hide_hints();
@@ -96,7 +106,7 @@ function sendAjaxLogin(ajax_form, url) {
     });
 }
 
-function sendAjaxSitizenReg(ajax_form, url) {
+function sendAjaxCitizenReg(ajax_form, url) {
 
     // if ($('input[name = "password"]')[0].value == $('input[name="password_2"]')[0].value) {
 
@@ -216,4 +226,98 @@ function sendAjaxSitizenReg(ajax_form, url) {
     // } else {
     //     open_dialog("Ошибка", "Пароли не совпадают");
     // }
+}
+
+
+function sendAjaxOrgReg(ajax_form, url) {
+
+    // if ($('input[name = "password"]')[0].value == $('input[name="password_2"]')[0].value) {
+
+        $.ajax({
+            url: url,
+            type: "POST",
+            dataType: "html",
+
+            data: $("#" + ajax_form).serialize(),
+            success: function(response) {
+                var result = $.parseJSON(response);
+
+                /**
+                 * Структура json для регистрации пользователей
+                 *
+                 * - ошибки
+                 * -- errors
+                 * - заполнены ли все поля
+                 * -- isEmpty
+                 *
+                 * - корректны ли поля
+                 * -- isCorrected
+                 *
+                 * - совпадают ли пароли
+                 * -- isPassEqual
+                 *
+                 * - есть ли email в БД (зарегистрирован ли пользак)
+                 * -- isRegistered
+                 *
+                 * - страница перенаправления
+                 * -- newUrl
+                 *
+                 */
+
+                console.log(result);
+
+                // если есть ошибки
+                if (result['newUrl'] !== null) {
+                    open_dialog("Поздравляем", "Регистрация прошла успешна");
+                    setTimeout(function () {
+                        document.location.href = result['newUrl'];
+                    },1000);
+
+                }
+                else {
+                    // если все поля заполнены
+                    if (result['errors']['isEmpty'] == false) {
+                        // если email корректен
+                        if (result['errors']['isEmailCorrected'] == false) {
+                            // если ИНН корректен
+                            if (result['errors']['isINNCorrected'] == false) {
+                                // если ИНН зарегистрирован
+                                if (result['errors']['isINNinFNS'] == false) {
+                                    // если пароль корректен
+                                    if (result['errors']['isPassCorrected'] == false) {
+                                        // если пароли совпадают
+                                        if (result['errors']['isPassEqual'] == false) {
+
+                                            if (result['errors']['isINNRegistered'] == false) {
+
+                                                open_dialog("Ошибка", "Email уже зарегистрирован");
+
+                                            } else {
+                                                open_dialog("Ошибка", "ИНН уже зарегистрирован в системе");
+                                            }                
+                                        } else {
+                                            open_dialog("Ошибка", "Пароли не совпадают");
+                                        }
+                                    } else {
+                                        open_dialog("Ошибка", "Пароль некорректен");
+                                    }
+                                }else {
+                                    open_dialog("Ошибка", "ИНН не зарегистрирован");
+                                }
+                            } else {
+                                open_dialog("Ошибка", "ИНН некорректен");
+                            }
+                        } else {
+                            open_dialog("Ошибка", "Email некорректен");
+                        }
+                    } else {
+                        open_dialog("Ошибка", "Заполните все поля");
+                    }
+            }
+
+            },
+            error: function(response) {
+                open_dialog("Ошибка", "Ошибка сервера");
+            }
+        });
 }
