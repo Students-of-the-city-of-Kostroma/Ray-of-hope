@@ -19255,3 +19255,429 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1584538330.193
     'REQUEST_TIME' => 1584538330
 ]
+2020-04-13 13:18:32 [127.0.0.1][-][bc720d04c050ec8d3a81dab048231387][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: isCorrect in /opt/lampp/htdocs/basic/controllers/AuthorizationCitizenController.php:150
+Stack trace:
+#0 /opt/lampp/htdocs/basic/controllers/AuthorizationCitizenController.php(150): yii\base\ErrorHandler->handleError(8, 'Undefined index...', '/opt/lampp/htdo...', 150, Array)
+#1 [internal function]: app\controllers\AuthorizationCitizenController->actionCreate()
+#2 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#5 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('authorization-c...', Array)
+#6 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /opt/lampp/htdocs/basic/web/index.php(12): yii\base\Application->run()
+#8 {main}
+2020-04-13 13:18:32 [127.0.0.1][-][bc720d04c050ec8d3a81dab048231387][info][application] $_GET = [
+    'r' => 'authorization-citizen/create'
+]
+
+$_POST = [
+    '_csrf' => 'RZ8JyI5WKrUzL--1wFqYLmL_DfCunukQ5IDzG_69KIYg026v6nscjFlwicSHCspXBM53nur4gmWG1LFCiuph4A=='
+    'email' => ''
+    'password' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '383d91ad0539bd8e909107395a664caf922df16c087d43cb392dd4e8d120fc83a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"eLggd-69j_fqGPRyf1znDfkubTBYtWIf\";}'
+    'PHPSESSID' => 'bc720d04c050ec8d3a81dab048231387'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'XpRKiJllwpxRoo5DtmW5VgAAAAA'
+    'HTTP_HOST' => 'rayofhope.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '115'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ORIGIN' => 'http://rayofhope.com'
+    'HTTP_REFERER' => 'http://rayofhope.com/index.php?r=authorization%2Fcitizen'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru,en-US;q=0.9,en;q=0.8,ru-RU;q=0.7'
+    'HTTP_COOKIE' => '_csrf=383d91ad0539bd8e909107395a664caf922df16c087d43cb392dd4e8d120fc83a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22eLggd-69j_fqGPRyf1znDfkubTBYtWIf%22%3B%7D; PHPSESSID=bc720d04c050ec8d3a81dab048231387'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Unix) OpenSSL/1.1.1d PHP/7.3.15 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'rayofhope.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/basic/web/index.php'
+    'REMOTE_PORT' => '56756'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=authorization-citizen%2Fcreate'
+    'REQUEST_URI' => '/index.php?r=authorization-citizen%2Fcreate'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1586776712.066
+    'REQUEST_TIME' => 1586776712
+]
+2020-04-13 13:18:48 [127.0.0.1][-][bc720d04c050ec8d3a81dab048231387][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: isCorrect in /opt/lampp/htdocs/basic/controllers/AuthorizationCitizenController.php:150
+Stack trace:
+#0 /opt/lampp/htdocs/basic/controllers/AuthorizationCitizenController.php(150): yii\base\ErrorHandler->handleError(8, 'Undefined index...', '/opt/lampp/htdo...', 150, Array)
+#1 [internal function]: app\controllers\AuthorizationCitizenController->actionCreate()
+#2 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#5 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('authorization-c...', Array)
+#6 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /opt/lampp/htdocs/basic/web/index.php(12): yii\base\Application->run()
+#8 {main}
+2020-04-13 13:18:48 [127.0.0.1][-][bc720d04c050ec8d3a81dab048231387][info][application] $_GET = [
+    'r' => 'authorization-citizen/create'
+]
+
+$_POST = [
+    '_csrf' => 'RZ8JyI5WKrUzL--1wFqYLmL_DfCunukQ5IDzG_69KIYg026v6nscjFlwicSHCspXBM53nur4gmWG1LFCiuph4A=='
+    'email' => ''
+    'password' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '383d91ad0539bd8e909107395a664caf922df16c087d43cb392dd4e8d120fc83a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"eLggd-69j_fqGPRyf1znDfkubTBYtWIf\";}'
+    'PHPSESSID' => 'bc720d04c050ec8d3a81dab048231387'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'XpRKmDFBgLTlw@cB0oIXDAAAAAE'
+    'HTTP_HOST' => 'rayofhope.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '115'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ORIGIN' => 'http://rayofhope.com'
+    'HTTP_REFERER' => 'http://rayofhope.com/index.php?r=authorization%2Fcitizen'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru,en-US;q=0.9,en;q=0.8,ru-RU;q=0.7'
+    'HTTP_COOKIE' => '_csrf=383d91ad0539bd8e909107395a664caf922df16c087d43cb392dd4e8d120fc83a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22eLggd-69j_fqGPRyf1znDfkubTBYtWIf%22%3B%7D; PHPSESSID=bc720d04c050ec8d3a81dab048231387'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Unix) OpenSSL/1.1.1d PHP/7.3.15 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'rayofhope.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/basic/web/index.php'
+    'REMOTE_PORT' => '56910'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=authorization-citizen%2Fcreate'
+    'REQUEST_URI' => '/index.php?r=authorization-citizen%2Fcreate'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1586776728.795
+    'REQUEST_TIME' => 1586776728
+]
+2020-04-13 13:18:53 [127.0.0.1][-][bc720d04c050ec8d3a81dab048231387][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: isCorrect in /opt/lampp/htdocs/basic/controllers/AuthorizationCitizenController.php:150
+Stack trace:
+#0 /opt/lampp/htdocs/basic/controllers/AuthorizationCitizenController.php(150): yii\base\ErrorHandler->handleError(8, 'Undefined index...', '/opt/lampp/htdo...', 150, Array)
+#1 [internal function]: app\controllers\AuthorizationCitizenController->actionCreate()
+#2 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#5 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('authorization-c...', Array)
+#6 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /opt/lampp/htdocs/basic/web/index.php(12): yii\base\Application->run()
+#8 {main}
+2020-04-13 13:18:53 [127.0.0.1][-][bc720d04c050ec8d3a81dab048231387][info][application] $_GET = [
+    'r' => 'authorization-citizen/create'
+]
+
+$_POST = [
+    '_csrf' => 'ImbZ2UaoziUOlG54wRozp6nMmo3EBDvlo_44Zaq717lHKr6-IoX4HGTLCAmGSmHez_3g44BiUJDBqno83uye3w=='
+    'email' => ''
+    'password' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '383d91ad0539bd8e909107395a664caf922df16c087d43cb392dd4e8d120fc83a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"eLggd-69j_fqGPRyf1znDfkubTBYtWIf\";}'
+    'PHPSESSID' => 'bc720d04c050ec8d3a81dab048231387'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'XpRKnTbUwDxJyJ5o66KPWwAAAAY'
+    'HTTP_HOST' => 'rayofhope.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '115'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ORIGIN' => 'http://rayofhope.com'
+    'HTTP_REFERER' => 'http://rayofhope.com/index.php?r=authorization%2Fcitizen'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru,en-US;q=0.9,en;q=0.8,ru-RU;q=0.7'
+    'HTTP_COOKIE' => '_csrf=383d91ad0539bd8e909107395a664caf922df16c087d43cb392dd4e8d120fc83a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22eLggd-69j_fqGPRyf1znDfkubTBYtWIf%22%3B%7D; PHPSESSID=bc720d04c050ec8d3a81dab048231387'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Unix) OpenSSL/1.1.1d PHP/7.3.15 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'rayofhope.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/basic/web/index.php'
+    'REMOTE_PORT' => '56942'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=authorization-citizen%2Fcreate'
+    'REQUEST_URI' => '/index.php?r=authorization-citizen%2Fcreate'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1586776733.083
+    'REQUEST_TIME' => 1586776733
+]
+2020-04-13 13:21:31 [127.0.0.1][-][bc720d04c050ec8d3a81dab048231387][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: isCorrect in /opt/lampp/htdocs/basic/controllers/AuthorizationCitizenController.php:150
+Stack trace:
+#0 /opt/lampp/htdocs/basic/controllers/AuthorizationCitizenController.php(150): yii\base\ErrorHandler->handleError(8, 'Undefined index...', '/opt/lampp/htdo...', 150, Array)
+#1 [internal function]: app\controllers\AuthorizationCitizenController->actionCreate()
+#2 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#5 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('authorization-c...', Array)
+#6 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /opt/lampp/htdocs/basic/web/index.php(12): yii\base\Application->run()
+#8 {main}
+2020-04-13 13:21:30 [127.0.0.1][-][bc720d04c050ec8d3a81dab048231387][info][application] $_GET = [
+    'r' => 'authorization-citizen/create'
+]
+
+$_POST = [
+    '_csrf' => 'ME5IrIMiT18yHPiSn6gMBUaieRt4lCBpsx00px7YYVRVAi_L5w95ZlhDnuPY-F58IJMDdTzySxzRSXb-ao8oMg=='
+    'email' => ''
+    'password' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '383d91ad0539bd8e909107395a664caf922df16c087d43cb392dd4e8d120fc83a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"eLggd-69j_fqGPRyf1znDfkubTBYtWIf\";}'
+    'PHPSESSID' => 'bc720d04c050ec8d3a81dab048231387'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'XpRLOjFBgLTlw@cB0oIXEgAAAAE'
+    'HTTP_HOST' => 'rayofhope.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '115'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ORIGIN' => 'http://rayofhope.com'
+    'HTTP_REFERER' => 'http://rayofhope.com/index.php?r=authorization%2Fcitizen'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru,en-US;q=0.9,en;q=0.8,ru-RU;q=0.7'
+    'HTTP_COOKIE' => '_csrf=383d91ad0539bd8e909107395a664caf922df16c087d43cb392dd4e8d120fc83a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22eLggd-69j_fqGPRyf1znDfkubTBYtWIf%22%3B%7D; PHPSESSID=bc720d04c050ec8d3a81dab048231387'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Unix) OpenSSL/1.1.1d PHP/7.3.15 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'rayofhope.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/basic/web/index.php'
+    'REMOTE_PORT' => '58368'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=authorization-citizen%2Fcreate'
+    'REQUEST_URI' => '/index.php?r=authorization-citizen%2Fcreate'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1586776890.988
+    'REQUEST_TIME' => 1586776890
+]
+2020-04-13 13:30:38 [127.0.0.1][-][bc720d04c050ec8d3a81dab048231387][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: isCorrect in /opt/lampp/htdocs/basic/controllers/AuthorizationCitizenController.php:150
+Stack trace:
+#0 /opt/lampp/htdocs/basic/controllers/AuthorizationCitizenController.php(150): yii\base\ErrorHandler->handleError(8, 'Undefined index...', '/opt/lampp/htdo...', 150, Array)
+#1 [internal function]: app\controllers\AuthorizationCitizenController->actionCreate()
+#2 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#5 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('authorization-c...', Array)
+#6 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /opt/lampp/htdocs/basic/web/index.php(12): yii\base\Application->run()
+#8 {main}
+2020-04-13 13:30:38 [127.0.0.1][-][bc720d04c050ec8d3a81dab048231387][info][application] $_GET = [
+    'r' => 'authorization-citizen/create'
+]
+
+$_POST = [
+    '_csrf' => 'ME5IrIMiT18yHPiSn6gMBUaieRt4lCBpsx00px7YYVRVAi_L5w95ZlhDnuPY-F58IJMDdTzySxzRSXb-ao8oMg=='
+    'email' => ''
+    'password' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '383d91ad0539bd8e909107395a664caf922df16c087d43cb392dd4e8d120fc83a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"eLggd-69j_fqGPRyf1znDfkubTBYtWIf\";}'
+    'PHPSESSID' => 'bc720d04c050ec8d3a81dab048231387'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'XpRNXpllwpxRoo5DtmW5WAAAAAA'
+    'HTTP_HOST' => 'rayofhope.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '115'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ORIGIN' => 'http://rayofhope.com'
+    'HTTP_REFERER' => 'http://rayofhope.com/index.php?r=authorization%2Fcitizen'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru,en-US;q=0.9,en;q=0.8,ru-RU;q=0.7'
+    'HTTP_COOKIE' => '_csrf=383d91ad0539bd8e909107395a664caf922df16c087d43cb392dd4e8d120fc83a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22eLggd-69j_fqGPRyf1znDfkubTBYtWIf%22%3B%7D; PHPSESSID=bc720d04c050ec8d3a81dab048231387'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Unix) OpenSSL/1.1.1d PHP/7.3.15 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'rayofhope.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/basic/web/index.php'
+    'REMOTE_PORT' => '34748'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=authorization-citizen%2Fcreate'
+    'REQUEST_URI' => '/index.php?r=authorization-citizen%2Fcreate'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1586777438.725
+    'REQUEST_TIME' => 1586777438
+]
+2020-04-13 13:36:18 [127.0.0.1][-][bc720d04c050ec8d3a81dab048231387][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: isCorrect in /opt/lampp/htdocs/basic/controllers/AuthorizationCitizenController.php:156
+Stack trace:
+#0 /opt/lampp/htdocs/basic/controllers/AuthorizationCitizenController.php(156): yii\base\ErrorHandler->handleError(8, 'Undefined index...', '/opt/lampp/htdo...', 156, Array)
+#1 [internal function]: app\controllers\AuthorizationCitizenController->actionCreate()
+#2 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#5 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('authorization-c...', Array)
+#6 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /opt/lampp/htdocs/basic/web/index.php(12): yii\base\Application->run()
+#8 {main}
+2020-04-13 13:36:18 [127.0.0.1][-][bc720d04c050ec8d3a81dab048231387][info][application] $_GET = [
+    'r' => 'authorization-citizen/create'
+]
+
+$_POST = [
+    '_csrf' => 'ME5IrIMiT18yHPiSn6gMBUaieRt4lCBpsx00px7YYVRVAi_L5w95ZlhDnuPY-F58IJMDdTzySxzRSXb-ao8oMg=='
+    'email' => ''
+    'password' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '383d91ad0539bd8e909107395a664caf922df16c087d43cb392dd4e8d120fc83a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"eLggd-69j_fqGPRyf1znDfkubTBYtWIf\";}'
+    'PHPSESSID' => 'bc720d04c050ec8d3a81dab048231387'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'XpROsjFBgLTlw@cB0oIXEwAAAAE'
+    'HTTP_HOST' => 'rayofhope.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '115'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.162 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ORIGIN' => 'http://rayofhope.com'
+    'HTTP_REFERER' => 'http://rayofhope.com/index.php?r=authorization%2Fcitizen'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru,en-US;q=0.9,en;q=0.8,ru-RU;q=0.7'
+    'HTTP_COOKIE' => '_csrf=383d91ad0539bd8e909107395a664caf922df16c087d43cb392dd4e8d120fc83a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22eLggd-69j_fqGPRyf1znDfkubTBYtWIf%22%3B%7D; PHPSESSID=bc720d04c050ec8d3a81dab048231387'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Unix) OpenSSL/1.1.1d PHP/7.3.15 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'rayofhope.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/basic/web/index.php'
+    'REMOTE_PORT' => '37532'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=authorization-citizen%2Fcreate'
+    'REQUEST_URI' => '/index.php?r=authorization-citizen%2Fcreate'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1586777778.288
+    'REQUEST_TIME' => 1586777778
+]

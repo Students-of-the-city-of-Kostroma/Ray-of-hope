@@ -74,3 +74,23 @@ a:2:{s:3:"INN";a:1:{i:0;s:15:"Inn is invalid.";}s:8:"password";a:1:{i:0;s:46:"Pa
 
 {"password":["Password must be equal to \"Password Repeat\"."]}
 
+{"name":["Name cannot be blank."],"email":["Email cannot be blank."],"INN":["Inn cannot be blank."],"password":["Password cannot be blank."],"password_repeat":["Password Repeat cannot be blank."]}
+
+{"name":["Name cannot be blank."],"INN":["Inn cannot be blank."],"password":["Password cannot be blank."],"password_repeat":["Password Repeat cannot be blank."]}
+
+{"INN":["Inn cannot be blank."],"password":["Password cannot be blank."],"password_repeat":["Password Repeat cannot be blank."]}
+
+{"password":["Password cannot be blank."],"password_repeat":["Password Repeat cannot be blank."]}
+
+{"password":["Password should contain at least 6 characters."]}
+
+{"name":["Name cannot be blank."],"email":["Email cannot be blank."],"password":["Password cannot be blank."],"password_repeat":["Password Repeat cannot be blank."]}
+
+{"name":["Name cannot be blank."],"email":["Email cannot be blank."],"password":["Password cannot be blank."],"password_repeat":["Password Repeat cannot be blank."]}
+
+{"name":["Name cannot be blank."],"email":["Email cannot be blank."],"password":["Password cannot be blank."],"password_repeat":["Password Repeat cannot be blank."]}
+
+{"name":["Name cannot be blank."],"email":["Email cannot be blank."],"INN":["Inn cannot be blank."],"password":["Password cannot be blank."],"password_repeat":["Password Repeat cannot be blank."]}
+
+{"name":["Name cannot be blank."],"email":["Email cannot be blank."],"INN":["Inn cannot be blank."],"password":["Password cannot be blank."],"password_repeat":["Password Repeat cannot be blank."]}
+
