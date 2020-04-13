@@ -51,8 +51,8 @@ AppAsset::register($this);
 		<li id="login" class="nav-link sub">
 			<a>Вход</a>
 			<ul class="sub-menu">
-				<a href="#">Гражданин</a>
-				<a href="#">Организация</a>
+				<a href="/index.php?r=authorization%2Fcitizen">Гражданин</a>
+				<a href="/index.php?r=authorization%2Forganisation">Организация</a>
 			</ul>
 		</li>
 		<li id="reg" class="nav-link sub">

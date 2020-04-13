@@ -27,7 +27,7 @@ $(document).ready(function() {
     $("#login-citizen-button").click(
         function() {
             hide_hints();
-            sendAjaxLoginCityzen('ajax_form', '../../functions/functions.php');
+            sendAjaxLoginCityzen('ajax_form', "/index.php?r=authorization-citizen%2Fcreate");
             return false;
         }
     );
@@ -53,30 +53,130 @@ function hide_dialog() {
 }
 
 function sendAjaxLoginCityzen(ajax_form, url) {
-    var data = $("#" + ajax_form).serialize() + "&login_citizen=1";
+   
+    
     $.ajax({
         url: url,
         type: "POST",
         dataType: "html",
-        data: data,
+
+        data: $("#" + ajax_form).serialize(),
         success: function(response) {
-            result = $.parseJSON(response);
-            if (result.length !== 0) {
-                if (jQuery.inArray("empty", result) != -1) {
-                    open_dialog("Ошибка", "Заполните все поля");
-                } else {
-                    if (jQuery.inArray("not_found_cityzen", result) != -1) {
-                        open_dialog("Ошибка", "Неправильный логин и/или пароль");
-                    }
-                }
-            } else {
-                window.location.href = "/feed";
+            var result = $.parseJSON(response);
+
+            /**
+             * Структура json для регистрации пользователей
+             *
+             * - ошибки
+             * -- errors
+             * - заполнены ли все поля
+             * -- isEmpty
+             *
+             * - корректны ли поля
+             * -- isCorrected
+             *
+             * - совпадают ли пароли
+             * -- isPassEqual
+             *
+             * - есть ли email в БД (зарегистрирован ли пользак)
+             * -- isRegistered
+             *
+             * - страница перенаправления
+             * -- newUrl
+             *
+             */
+
+            console.log(result);
+
+            // если есть ошибки
+            if (result['newUrl'] !== null) {
+                open_dialog("Поздравляем", "Вы авторизировались");
+                setTimeout(function () {
+                    document.location.href = result['newUrl'];
+                },1000);
+
             }
+            else {
+                if (result['errors']['isEmpty'] == false) {
+                    open_dialog("Ошибка", "Неверно указан логин или пароль");
+                }
+
+                else {
+                    open_dialog("Ошибка", "Заполните все поля");
+                }
+
+                // // если все поля заполнены
+                // if (result['errors']['isEmpty'] == false) {
+                //     // если email корректен
+                //     if (result['errors']['isEmailCorrected'] == false) {
+                //         // если ИНН корректен
+                //         if (result['errors']['isINNCorrected'] == false) {
+                //             // если ИНН зарегистрирован
+                //             if (result['errors']['isINNinFNS'] == false) {
+                //                 // если пароль корректен
+                //                 if (result['errors']['isPassCorrected'] == false) {
+                //                     // если пароли совпадают
+                //                     if (result['errors']['isPassEqual'] == false) {
+
+                //                         if (result['errors']['isINNRegistered'] == false) {
+
+                //                             open_dialog("Ошибка", "Email уже зарегистрирован");
+
+                //                         } else {
+                //                             open_dialog("Ошибка", "ИНН уже зарегистрирован в системе");
+                //                         }                
+                //                     } else {
+                //                         open_dialog("Ошибка", "Пароли не совпадают");
+                //                     }
+                //                 } else {
+                //                     open_dialog("Ошибка", "Пароль некорректен");
+                //                 }
+                //             }else {
+                //                 open_dialog("Ошибка", "ИНН не зарегистрирован");
+                //             }
+                //         } else {
+                //             open_dialog("Ошибка", "ИНН некорректен");
+                //         }
+                //     } else {
+                //         open_dialog("Ошибка", "Email некорректен");
+                //     }
+                // } else {
+                //     open_dialog("Ошибка", "Заполните все поля");
+                // }
+        }
+
         },
         error: function(response) {
-            open_dialog("Ошибка", "Данные не отправлены");
+            open_dialog("Ошибка", "Ошибка сервера");
         }
     });
+
+    // var data = $("#" + ajax_form).serialize() + "&login_citizen=1";
+    // $.ajax({
+    //     url: url,
+    //     type: "POST",
+    //     dataType: "html",
+    //     data: data,
+    //     success: function(response) {
+    //         result = $.parseJSON(response);
+    //         if (result.length !== 0) {
+    //             if (jQuery.inArray("empty", result) != -1) {
+    //                 open_dialog("Ошибка", "Заполните все поля");
+    //             } else {
+    //                 if (jQuery.inArray("not_found_cityzen", result) != -1) {
+    //                     open_dialog("Ошибка", "Неправильный логин и/или пароль");
+    //                 }
+    //             }
+    //         } else {
+    //             window.location.href = "/feed";
+    //         }
+    //     },
+    //     error: function(response) {
+    //         open_dialog("Ошибка", "Данные не отправлены");
+    //     }
+    // });
+
+
 }
 
 function sendAjaxLogin(ajax_form, url) {

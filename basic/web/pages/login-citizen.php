@@ -17,6 +17,8 @@
 <body>
     <?php include '../header.php'; ?>
     <?php include '../dialog-wrapper.php'; ?>
+
+    
     <section class="login-org">
         <div class="container">
             <form method="post" id="ajax_form" action="">
