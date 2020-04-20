@@ -220,8 +220,8 @@ input[type="text"],
 
 #login-citizen-button,
 #registr-citizen-button,
-#registr-org-button,
-#login-button {
+#registr-organisation-button,
+#login-organisation-button {
     cursor: pointer;
     width: 19.53125vw;
     font-size: 1.25vw;

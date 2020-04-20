@@ -17,10 +17,10 @@ $(document).ready(function() {
     );
 
 
-    $("#login-button").click(
+    $("#login-organisation-button").click(
         function() {
             hide_hints();
-            sendAjaxLogin('ajax_form', '../../functions/functions.php');
+            sendAjaxLogin('ajax_form', '/index.php?r=authorization-organisation%2Fcreate');
             return false;
         }
     );
@@ -180,28 +180,51 @@ function sendAjaxLoginCityzen(ajax_form, url) {
 }
 
 function sendAjaxLogin(ajax_form, url) {
-    var data = $("#" + ajax_form).serialize() + "&login_org=1";
+
     $.ajax({
         url: url,
         type: "POST",
         dataType: "html",
-        data: data,
+
+        data: $("#" + ajax_form).serialize(),
         success: function(response) {
-            result = $.parseJSON(response);
-            if (!('successful_authorization' in result)) {
-                if ('empty' in result) {
-                    open_dialog("Ошибка", "Заполните все поля");
-                } else {
-                    if ('not_found_org' in result || 'login_or_password_error' in result) {
-                        open_dialog("Ошибка", "Неправильный логин и/или пароль");
-                    }
-                }
-            } else {
-                window.location.href = "/feed";
+            var result = $.parseJSON(response);
+
+            /**
+             * Структура json для регистрации пользователей
+             *
+             * - ошибки
+             * -- errors
+             * - заполнены ли все поля
+             * -- isEmpty
+             *
+             * - корректны ли поля
+             * -- isCorrected
+             */
+
+            console.log(result);
+
+            // если есть ошибки
+            if (result['newUrl'] !== null) {
+                open_dialog("Поздравляем", "Вы авторизировались");
+                setTimeout(function () {
+                    document.location.href = result['newUrl'];
+                },1000);
+
             }
+            else {
+                if (result['errors']['isEmpty'] == false) {
+                    open_dialog("Ошибка", "Неверно указан логин или пароль");
+                }
+
+                else {
+                    open_dialog("Ошибка", "Заполните все поля");
+                }
+        }
+
         },
         error: function(response) {
-            open_dialog("Ошибка", "Данные не отправлены");
+            open_dialog("Ошибка", "Ошибка сервера");
         }
     });
 }
