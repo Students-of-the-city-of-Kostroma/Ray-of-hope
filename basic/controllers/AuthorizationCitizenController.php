@@ -40,7 +40,7 @@ class AuthorizationCitizenController extends Controller
         // заполняем модель данными из запроса
         // $citizenInputToValidate->attributes = $request->post();
 
-        $citizenInputToValidate->name = "";
+        $citizenInputToValidate->name = "name";
         $citizenInputToValidate->email = $request->post('email');
         $citizenInputToValidate->password = $request->post('password');
         $citizenInputToValidate->password_repeat = $request->post('password');
@@ -55,31 +55,34 @@ class AuthorizationCitizenController extends Controller
 
         ];
 
-
+        
         
         // если модель валидна
         if ($citizenInputToValidate->validate()) {
-
+            
             // ищем, есть ли нужный нам email
-            $emailCheck = EmailDB::find()
+            $emailCheck = EmailDB::find()                
                 ->where(['email' => $citizenInputToValidate->email])
-                ->all();
-                               
+                ->all();                                    
+
+
+        // return json_encode(["1" => $emailCheck[0]["id"]]);
+
             if (count($emailCheck) !== 0) {
 
+                // $resolveToUser = $emailCheck;               
+
                 $passCheck = UserDB::find()
-                    ->where(['email' => $emailCheck->id])
+                    ->where(['email' => $emailCheck[0]["id"]])
                     ->all();
+                
 
                 $passCheckInput = md5($citizenInputToValidate->password);
 
-                if ($passCheckInput === $passCheck["password"]) {
-                    $resolveToUser['errors']['isCorrect'] = false;
-                }
-                                
-                else {
+                if ($passCheckInput !== $passCheck[0]["password"]) {
                     $resolveToUser['errors']['isCorrect'] = true;
                 }
+                                
             }
 
             else {
@@ -101,12 +104,13 @@ class AuthorizationCitizenController extends Controller
 
                 
             if ($f){
-                $resolveToUs1er['errors']['isEmpty'] = true;
+                $resolveToUser['errors']['isEmpty'] = true;
             }
             else {
                 $resolveToUser['errors']['isCorrect'] = true;
             }
             
+            // $resolveToUser = $errors;
         }
             
         // {

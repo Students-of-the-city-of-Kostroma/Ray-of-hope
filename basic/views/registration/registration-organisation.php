@@ -41,7 +41,7 @@ use yii\widgets\ActiveForm;
             <div class="wrapper-textbox">
                 <input name="password_2" type="password" placeholder="Повторите пароль">
             </div>
-            <input type="button" id="registr-org-button" value="Зарегистрироваться">
+            <input type="button" id="registr-organisation-button" value="Зарегистрироваться">
         </form>
     </div>
 </section>
