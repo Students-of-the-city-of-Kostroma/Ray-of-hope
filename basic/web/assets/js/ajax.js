@@ -8,7 +8,7 @@ $(document).ready(function() {
         }
     );
     
-    $("#registr-org-button").click(
+    $("#registr-organisation-button").click(
         function() {
             hide_hints();
             sendAjaxOrgReg('ajax_form', "/index.php?r=registration-organisation%2Fcreate");
