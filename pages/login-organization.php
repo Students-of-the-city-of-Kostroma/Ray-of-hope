@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="/assets/css/normalize.css" rel="stylesheet">
     <link href="/assets/css/styles.css" rel="stylesheet">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/assets/js/jquery-3.4.1.min.js"></script>
     <script src="/assets/js/script2.js"></script>
 	<script src="/assets/js/nav-mark2.js"></script>
     <script src="/assets/js/ajax.js"></script>

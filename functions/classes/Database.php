@@ -3,8 +3,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/functions/classes/System.php";
 class Database
 {
     private $host  = 'localhost';
-    private $user  = 'u238693555_ahel';
-    private $password  = 'eRaQyTuteg';
+    private $user  = 'root';
+    private $password  = 'root';
     private $BD  = 'u238693555_ahel';
     private $mysqli = null;
 
@@ -323,9 +323,9 @@ class Database
 
     public function getPosts($count, $start_id = null)
     {
-        $query = 'SELECT note.id AS id, note.author AS author, note.publication_date AS date, note.description AS text, CASE note.type_note WHEN 1 THEN \'event\' WHEN 2 THEN \'need\' WHEN 3 THEN \'occurrence\' END AS type, need.need_count AS need_count, need.collected_count AS need_collected_count, event.start_date AS start_date, event.end_date AS end_date, event.address AS event_address FROM note left join need ON need.note=note.id left join event ON event.note=note.id ORDER BY id DESC LIMIT '.$count;
+        $query = 'SELECT note.id AS id, note.author AS author, note.publication_date AS date, note.description AS text, CASE note.type_note WHEN 1 THEN \'event\' WHEN 2 THEN \'need\' WHEN 3 THEN \'occurrence\' END AS type, need.need_count AS need_count, need.collected_count AS need_collected_count, event.start_date AS start_date, event.end_date AS end_date, event.address AS event_address FROM note left join need ON need.note=note.id left join event ON event.note=note.id ORDER BY id DESC LIMIT ' . $count;
         if (!is_null($start_id)) {
-            $query = 'SELECT note.id AS id, note.author AS author, note.publication_date AS date, note.description AS text, CASE note.type_note WHEN 1 THEN \'event\' WHEN 2 THEN \'need\' WHEN 3 THEN \'occurrence\' END AS type, need.need_count AS need_count, need.collected_count AS need_collected_count, event.start_date AS start_date, event.end_date AS end_date, event.address AS event_address FROM note left join need ON need.note=note.id left join event ON event.note=note.id ORDER BY id DESC LIMIT '.$start_id.', '.$count;
+            $query = 'SELECT note.id AS id, note.author AS author, note.publication_date AS date, note.description AS text, CASE note.type_note WHEN 1 THEN \'event\' WHEN 2 THEN \'need\' WHEN 3 THEN \'occurrence\' END AS type, need.need_count AS need_count, need.collected_count AS need_collected_count, event.start_date AS start_date, event.end_date AS end_date, event.address AS event_address FROM note left join need ON need.note=note.id left join event ON event.note=note.id ORDER BY id DESC LIMIT ' . $start_id . ', ' . $count;
         }
         $this->connect();
         $result = $this->mysqli->query($query) or die("Ошибка sql запроса: " . $this->mysqli->error . " Запрос: " . $query);
@@ -347,7 +347,7 @@ class Database
     public function deletePost($id)
     {
         $this->connect();
-        $query = 'DELETE FROM note WHERE note.id='.$id;
+        $query = 'DELETE FROM note WHERE note.id=' . $id;
         $result = ($this->mysqli->query($query) or die("Ошибка sql запроса: " . $this->mysqli->error . " Запрос: " . $query));
         return $result;
     }
@@ -361,7 +361,7 @@ class Database
 
         $uploaddir = '/user_data/org/' . $_SESSION['logged_org'] . '/posts/' . $note_id . '/images/';
         if (!is_dir($_SERVER['DOCUMENT_ROOT'] . $uploaddir)) mkdir($_SERVER['DOCUMENT_ROOT'] . $uploaddir, 0777, true);
-        $files = $_FILES; 
+        $files = $_FILES;
         $done_files = array();
         foreach ($files as $file) {
             $file_name = $file['name'];
@@ -373,19 +373,19 @@ class Database
             $this->mysqli->query('INSERT INTO image (url, note) VALUES (\'' . $url_to_img . '\', ' . $note_id . ')');
         }
 
-        $queryResult = 'SELECT CASE note.type_note WHEN 1 THEN \'event\' WHEN 2 THEN \'need\' WHEN 3 THEN \'occurrence\' END AS type, note.id AS id, note.publication_date AS date, note.description AS text, organization.name AS author, CONCAT(\'/user_data/avatar/\', user.avatar, \'.jpg\') AS avatar FROM note, user, organization, type_note WHERE user.id = note.author AND user.id = organization.user_id AND type_note.id = note.type_note AND note.id = '.$note_id;
-        
+        $queryResult = 'SELECT CASE note.type_note WHEN 1 THEN \'event\' WHEN 2 THEN \'need\' WHEN 3 THEN \'occurrence\' END AS type, note.id AS id, note.publication_date AS date, note.description AS text, organization.name AS author, CONCAT(\'/user_data/avatar/\', user.avatar, \'.jpg\') AS avatar FROM note, user, organization, type_note WHERE user.id = note.author AND user.id = organization.user_id AND type_note.id = note.type_note AND note.id = ' . $note_id;
+
 
         switch ($_POST['typepost']) {
             case '2': //нужда
                 $query2 = 'INSERT INTO need (note, need_items, need_count, collected_count) VALUES (' . $note_id . ', \'' . 'какой-то предмет' . '\', ' . $_POST['countnuzhd'] . ', 0' . ')';
                 $result2 = ($this->mysqli->query($query2) or die("Ошибка sql запроса: " . $this->mysqli->error . " Запрос: " . $query2));
-                $queryResult = 'SELECT note.id AS id, CASE note.type_note WHEN 1 THEN \'event\' WHEN 2 THEN \'need\' WHEN 3 THEN \'occurrence\' END AS type, note.publication_date AS date, note.description AS text, need.need_items AS need_items, need.need_count AS need_count, need.collected_count AS need_collected_count FROM note, need WHERE need.note=note.id AND need.id=' .$this->mysqli->insert_id;
+                $queryResult = 'SELECT note.id AS id, CASE note.type_note WHEN 1 THEN \'event\' WHEN 2 THEN \'need\' WHEN 3 THEN \'occurrence\' END AS type, note.publication_date AS date, note.description AS text, need.need_items AS need_items, need.need_count AS need_count, need.collected_count AS need_collected_count FROM note, need WHERE need.note=note.id AND need.id=' . $this->mysqli->insert_id;
                 break;
             case '1': //мероприятие
                 $query2 = 'INSERT INTO event (note, start_date, end_date, address) VALUES (' . $note_id . ', STR_TO_DATE(\'' . $_POST['date-start'] . '\', \'%d/%m/%Y\'), STR_TO_DATE(\'' . $_POST['date-end'] . '\', \'%d/%m/%Y\'), \'' . $_POST['address'] . '\')';
                 $result2 = ($this->mysqli->query($query2) or die("Ошибка sql запроса: " . $this->mysqli->error . " Запрос: " . $query2));
-                $queryResult = 'SELECT note.id AS id, CASE note.type_note WHEN 1 THEN \'event\' WHEN 2 THEN \'need\' WHEN 3 THEN \'occurrence\' END AS type, note.publication_date AS date, note.description AS text, event.start_date AS start_date, event.end_date AS end_date, event.address AS event_address FROM note, event WHERE event.note=note.id AND event.id=' .$this->mysqli->insert_id;
+                $queryResult = 'SELECT note.id AS id, CASE note.type_note WHEN 1 THEN \'event\' WHEN 2 THEN \'need\' WHEN 3 THEN \'occurrence\' END AS type, note.publication_date AS date, note.description AS text, event.start_date AS start_date, event.end_date AS end_date, event.address AS event_address FROM note, event WHERE event.note=note.id AND event.id=' . $this->mysqli->insert_id;
                 break;
         }
         $images = ($this->mysqli->query('SELECT image.url AS post_image FROM image WHERE image.note=' . $note_id));
@@ -393,7 +393,7 @@ class Database
         while ($row = mysqli_fetch_assoc($images)) {
             $imagesList[] = stripcslashes($row['post_image']);
         }
-        $post =$this->mysqli->query($queryResult)->fetch_assoc();
+        $post = $this->mysqli->query($queryResult)->fetch_assoc();
         $post['images'] = $imagesList;
         return $post;
     }

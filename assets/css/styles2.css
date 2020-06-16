@@ -125,29 +125,23 @@ a:hover {
 
 .sub-menu {
     position: absolute;
-    padding: 0;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 100%;
     display: none;
     flex-direction: column;
-    -webkit-margin-before: 0.885416667vw;
-    margin-block-start: 0.885416667vw;
-    -webkit-margin-after: 0;
-    margin-block-end: 0;
-    -webkit-margin-start: 0;
-    margin-inline-start: 0;
-    -webkit-margin-end: 0;
-    margin-inline-end: 0;
-    -webkit-padding-start: 0;
-    padding-inline-start: 0;
-    width: 11.1979167vw;
-    padding-bottom: 1.30208333vw;
+    padding: 20px;
+    margin: 0;
+    margin-top: 10px;
+    background: white;
+    box-shadow: 0 0.0520833333vw 0.46875vw 0 rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    grid-gap: 15px;
 }
 
 .sub-menu>a {
     text-transform: none;
     letter-spacing: normal;
-    text-align: center;
-    margin-left: 1.30208333vw;
-    margin-top: 1.30208333vw;
 }
 
 .nav-wrapper {
