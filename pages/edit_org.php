@@ -14,7 +14,6 @@ if (isset($_SESSION['logged_org'])) : ?>
     <link href="/assets/css/styles2.css" rel="stylesheet">
     <script src="/assets/js/jquery-3.4.1.min.js"></script>
     <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
-    <script src="/assets/js/nav-mark.js"></script>
     <script src="/assets/js/edit_org.js"></script>
     <title>Редактирование профиля</title>
 </head>

@@ -10,7 +10,6 @@ if (isset($_SESSION['logged_org'])) : ?>
     <link href="/assets/css/normalize.css" rel="stylesheet">
     <link href="/assets/css/styles2.css" rel="stylesheet">
     <script src="/assets/js/jquery-3.4.1.min.js"></script>
-    <script src="/assets/js/nav-mark.js"></script>
     <title>Редактирование профиля</title>
 </head>
 <body>
