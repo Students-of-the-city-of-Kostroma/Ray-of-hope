@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Launch Chrome against localhost",
             "port": 9222,
-            "url": "http://rayofhope.com/index.php?r=registration%2Forganisation",
+            "url": "http://rayofhope.com/index.php?r=profile%2Fprofile-organisation",
             "webRoot": "${workspaceFolder}/assets/js/ajax.js"
         }
     ]

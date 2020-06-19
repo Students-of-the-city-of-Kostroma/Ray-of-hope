@@ -21,15 +21,15 @@ class RegistrationCitizenController extends Controller
     //     return $this ->render('../registration/registration-citizen');
     // }
 
-    public function actionProfile()
-    {
-        // do some session
+    // public function actionProfile()
+    // {
+    //     // do some session
 
-        return $this->render('succesfuly');
+    //     return $this->render('succesfuly');
 
 
-        # return $this ->render('../registration/registration-citizen');
-    }
+    //     # return $this ->render('../registration/registration-citizen');
+    // }
 
 
     public function actionCreate()
@@ -100,7 +100,16 @@ class RegistrationCitizenController extends Controller
                 //$json = $this->formatJson( false, true, false, "/index.php?r=registration-citizen%2Fprofile");
 
                 // перенаправляем на нужную страницу
-                $resolveToUser['newUrl'] = "/index.php?r=registration-citizen%2Fprofile";
+                $email = $citizenInputToValidate->email;
+
+                $name = $citizenInputToValidate->name;
+
+                Yii::$app->session->open();
+                Yii::$app->session->set("email", $email);
+                Yii::$app->session->set("id", $newCitizenAllInfo->id);
+                Yii::$app->session->set("type", "1");
+
+                $resolveToUser['newUrl'] = "/index.php?r=profile%2Fprofile-citizen";
 
                 $json = json_encode($resolveToUser);
 
@@ -117,8 +126,7 @@ class RegistrationCitizenController extends Controller
         // модель не валидна
         else
         {
-            $errors = $citizenInputToValidate->errors;
-
+           
             /**
              * Типы ошибок в последовательности
              *
@@ -140,18 +148,28 @@ class RegistrationCitizenController extends Controller
              * isPassEquals = true
              */
 
-            // заполните все поля
+            // заполните все поля 
+
+            $errors = $citizenInputToValidate->errors;
+
+            $file =  fopen("../web/logs/errors_post.txt","a");
+
+            $text = json_encode($errors)."\n\n";//serialize($errors)."\n"; // (($isValidate) ? "yes" : 'no')."\n";////$errors["INN"][0]."\n";
+
+            fwrite($file, $text);
+            fclose($file);     
+
             $f = false;
             foreach ($errors as $value){
                 if (strripos($value[0], 'blank') !== false)
                     $f = true;
             }
 
-
             if (!$f){
                 if (!(array_key_exists('email', $errors))){
-                    if ($errors['password'][0] !== "Password should contain at least 6 characters."){
-                        $resolveToUser['errors']['isPassEquals'] = true;
+                    if ($errors['password'][0] !== "Password should contain at least 8 characters." and $errors['password'][0] !== "Password should contain at most 32 characters."){
+                        
+                        $resolveToUser['errors']['isPassEqual'] = true;
                     }
                     else {
                         $resolveToUser['errors']['isPassCorrected'] = true;

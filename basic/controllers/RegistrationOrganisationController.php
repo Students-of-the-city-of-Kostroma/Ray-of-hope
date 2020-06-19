@@ -17,13 +17,13 @@ class RegistrationOrganisationController extends Controller
     public $layout = 'outside';
 
 
-    public function actionProfile()
-    {
-        // do some session
+    // public function actionProfile()
+    // {
+    //     // do some session
 
-        return $this->render('succesfuly');
+    //     return $this->render('succesfuly');
 
-    }
+    // }
 
     public function isInnExist()
     {
@@ -56,31 +56,31 @@ class RegistrationOrganisationController extends Controller
                 'isEmailCorrected' =>   false,
                 'isINNCorrected' =>     false,
                 'isINNinFNS' =>         false,
-                'isINNRegistered'=>          false,
+                'isINNRegistered'=>     false,
                 'isPassCorrected' =>    false,
                 'isPassEqual' =>        false,
                 'isRegistered' =>       false,
+                'isNameLen' =>          false,
             ],
 
         ];
 
         // если модель валидна
 
-        $isValidate = $orgInputToValidate->validate(); 
+        $isValidate = $orgInputToValidate->validate();                    
+        
 
-        if ($isValidate and  $this->IsInnExist($orgInputToValidate->INN)) {                    
-            
+        if ($isValidate and $this->IsInnExist($orgInputToValidate->INN)) {                                       
+
             // ищем, есть ли нужный нам email
             $emailCheck = EmailDB::find()
                 ->where(['email' => $orgInputToValidate->email])
                 ->all();
-
-
             
-
             // если email не найден -- можно продолжать регаться
             if (count($emailCheck) === 0) {
 
+                
                 $INNCheck = OrganisationDB::find()
                     ->where(['INN' => $orgInputToValidate->INN])
                     ->all();
@@ -112,9 +112,17 @@ class RegistrationOrganisationController extends Controller
                     $newOrg->INN = $orgInputToValidate->INN;
 
                     $newOrg->save();
+                    
+                    $email = $orgInputToValidate->email;
+                    $name = $orgInputToValidate->name;
 
                     // перенаправляем на нужную страницу
-                    $resolveToUser['newUrl'] = "/index.php?r=registration-citizen%2Fprofile";
+                    $resolveToUser['newUrl'] = "/index.php?r=profile%2Fprofile-organisation";
+                    Yii::$app->session->open();
+                    Yii::$app->session->set("email", $email);
+                    Yii::$app->session->set("id", $newOrgAllInfo->id);
+                    Yii::$app->session->set("type", "2");
+                    
 
                     $json = json_encode($resolveToUser);
 
@@ -138,9 +146,13 @@ class RegistrationOrganisationController extends Controller
 
         }
 
+
+           
+
         // модель не валидна
         else
         {
+            
 
             
             $errors = $orgInputToValidate->errors;
@@ -158,24 +170,32 @@ class RegistrationOrganisationController extends Controller
                     $f = true;
             }
             
+            
+
             if (!$f){
 
                 if (!(array_key_exists('email', $errors))){                    
 
                     if (!(array_key_exists('INN', $errors))){                        
                         
-                        if (!$isValidate){         
+                        if (!(array_key_exists('name', $errors))){                        
+                        
+                            if (!$isValidate){   
 
-                            if ($errors['password'][0] !== "Password should contain at least 6 characters."){
-
-                                $resolveToUser['errors']['isPassEqual'] = true;
-                            }                        
+                                if ($errors['password'][0] !== "Password should contain at least 8 characters." and $errors['password'][0] !== "Password is invalid." and $errors['password'][0] !== "Password should contain at most 32 characters."){
+                                    
+                                    $resolveToUser['errors']['isPassEqual'] = true;
+                                }                        
+                                else {
+                                    $resolveToUser['errors']['isPassCorrected'] = true;
+                                }
+                            }
                             else {
-                                $resolveToUser['errors']['isPassCorrected'] = true;
+                                $resolveToUser['errors']['isINNinFNS'] = true;
                             }
                         }
                         else{
-                            $resolveToUser['errors']['isINNinFNS'] = true;
+                            $resolveToUser['errors']['isNameLen'] = true;
                         }
                     }
                     else {
@@ -186,7 +206,7 @@ class RegistrationOrganisationController extends Controller
                     $resolveToUser['errors']['isEmailCorrected'] = true;
                 }
             }
-            else {
+            else {                
                 $resolveToUser['errors']['isEmpty'] = true;
             }
 

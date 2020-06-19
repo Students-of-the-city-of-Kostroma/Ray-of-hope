@@ -47,7 +47,7 @@ function open_dialog(title, message) {
 }
 
 function hide_dialog() {
-    $(".dialog-wrapper").css({ "display": "none" });
+    $(".dialog-wrapper").css({ "display": "none" });  <input type="hidden" name="_csrf" value="<?= \Yii::$app->request->getCsrfToken()?>"></input>
     $(".dialog-title").html("");
     $(".dialog-message").html("");
 }
@@ -129,7 +129,7 @@ function sendAjaxLoginCityzen(ajax_form, url) {
                 //                         open_dialog("Ошибка", "Пароли не совпадают");
                 //                     }
                 //                 } else {
-                //                     open_dialog("Ошибка", "Пароль некорректен");
+                //                     open_dialog("Ошибка", "Некорректный пароль");
                 //                 }
                 //             }else {
                 //                 open_dialog("Ошибка", "ИНН не зарегистрирован");
@@ -138,7 +138,7 @@ function sendAjaxLoginCityzen(ajax_form, url) {
                 //             open_dialog("Ошибка", "ИНН некорректен");
                 //         }
                 //     } else {
-                //         open_dialog("Ошибка", "Email некорректен");
+                //         open_dialog("Ошибка", "Некорректный email");
                 //     }
                 // } else {
                 //     open_dialog("Ошибка", "Заполните все поля");
@@ -212,9 +212,18 @@ function sendAjaxLogin(ajax_form, url) {
                 },1000);
 
             }
+            // 1111111144@mail.ru
             else {
                 if (result['errors']['isEmpty'] == false) {
-                    open_dialog("Ошибка", "Неверно указан логин или пароль");
+
+                    if (result['errors']['isCorrect'] == false) {
+                    
+                        open_dialog("Ошибка", "Неверный пароль");
+
+                    }
+                    else {
+                        open_dialog("Ошибка", "Неверный email или ИНН");
+                    }
                 }
 
                 else {
@@ -283,15 +292,16 @@ function sendAjaxCitizenReg(ajax_form, url) {
                             if (result['errors']['isPassCorrected'] == false) {
                                 // если пароли совпадают
                                 if (result['errors']['isPassEqual'] == false) {
+
                                     open_dialog("Ошибка", "Email уже зарегистрирован");
                                 } else {
                                     open_dialog("Ошибка", "Пароли не совпадают");
                                 }
                             } else {
-                                open_dialog("Ошибка", "Пароль некорректен");
+                                open_dialog("Ошибка", "Некорректный пароль");
                             }
                         } else {
-                            open_dialog("Ошибка", "Email некорректен");
+                            open_dialog("Ошибка", "Некорректный email");
                         }
                     } else {
                         open_dialog("Ошибка", "Заполните все поля");
@@ -413,25 +423,30 @@ function sendAjaxOrgReg(ajax_form, url) {
 
                                             if (result['errors']['isINNRegistered'] == false) {
 
-                                                open_dialog("Ошибка", "Email уже зарегистрирован");
-
+                                                if (result['errors']['isNameLen'] == false) {
+                                                                                               
+                                                    open_dialog("Ошибка", "Email уже зарегистрирован");
+                                                }
+                                                else {
+                                                    open_dialog("Ошибка", "Название слишком длинное");
+                                                }
                                             } else {
-                                                open_dialog("Ошибка", "ИНН уже зарегистрирован в системе");
+                                                open_dialog("Ошибка", "Организация с данным ИНН уже зарегистрирована");
                                             }                
                                         } else {
                                             open_dialog("Ошибка", "Пароли не совпадают");
                                         }
                                     } else {
-                                        open_dialog("Ошибка", "Пароль некорректен");
+                                        open_dialog("Ошибка", "Некорректный пароль");
                                     }
                                 }else {
                                     open_dialog("Ошибка", "ИНН не зарегистрирован");
                                 }
                             } else {
-                                open_dialog("Ошибка", "ИНН некорректен");
+                                open_dialog("Ошибка", "Некорректный ИНН");
                             }
                         } else {
-                            open_dialog("Ошибка", "Email некорректен");
+                            open_dialog("Ошибка", "Некорректный email");
                         }
                     } else {
                         open_dialog("Ошибка", "Заполните все поля");

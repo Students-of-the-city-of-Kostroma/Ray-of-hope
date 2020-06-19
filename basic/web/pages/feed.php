@@ -1,4 +1,5 @@
 <?php
+aaa
 require_once $_SERVER['DOCUMENT_ROOT']."/functions/functions.php";
 
 if (isset($_SESSION['logged_org'])) : ?>

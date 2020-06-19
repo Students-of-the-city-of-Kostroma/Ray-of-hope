@@ -26,8 +26,10 @@ AppAsset::register($this);
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
 </head>
+<link rel="shortcut icon" href="/assets/img/ray_of_hope.ico" type="image/x-icon">
 <body>
 <?php $this->beginBody() ?>
+
 
 
 <div class="navbar-wrapper">

@@ -105,13 +105,13 @@ $(document).ready(function() {
     );
 });
 
-function getAddresList() {
+function getAddresListPost() {
     globalTimeout = null;
     var ajax;
     var data = new FormData();
     data.append('city_hints', 1);
     data.append('request_city', $("#address").val());
-
+alert()
     ajax = $.ajax({
         type: "POST",
         url: "../../functions/functions.php",

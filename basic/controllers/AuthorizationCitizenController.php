@@ -20,15 +20,15 @@ class AuthorizationCitizenController extends Controller
     //     return $this ->render('../registration/registration-citizen');
     // }
 
-    public function actionProfile()
-    {
-        // do some session
+    // public function actionProfile()
+    // {
+    //     // do some session
 
-        return $this->render('succesfuly');
+    //     return $this->render('succesfuly');
 
 
-        # return $this ->render('../registration/registration-citizen');
-    }
+    //     # return $this ->render('../registration/registration-citizen');
+    // }
 
 
     public function actionCreate()
@@ -157,8 +157,28 @@ class AuthorizationCitizenController extends Controller
 
         // }
 
-        if ($resolveToUser['errors']['isCorrect'] === false and $resolveToUser['errors']['isEmpty'] === false)
-            $resolveToUser['newUrl'] = "/index.php?r=authorization-citizen%2Fprofile";
+        if ($resolveToUser['errors']['isCorrect'] === false and $resolveToUser['errors']['isEmpty'] === false) {
+
+            $email = $citizenInputToValidate->email;
+
+            $resolveToUser['newUrl'] = "/index.php?r=profile%2Fprofile-citizen";
+
+            $toEmail = EmailDB::find()
+                    ->where(['email' => $email])
+                    ->all();
+
+            $toUser = UserDB::find()
+                    ->where(['email' => $toEmail[0]["id"]])
+                    ->all();
+
+            $id = $toUser[0]["id"];
+            
+            Yii::$app->session->open();
+            Yii::$app->session->set("email", $email);
+            Yii::$app->session->set("id", $id);
+            Yii::$app->session->set("type", "1");
+        }
+            
 
         $json = json_encode($resolveToUser);
         

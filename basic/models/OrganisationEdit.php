@@ -4,10 +4,10 @@ namespace app\models;
 
 use yii\base\Model;
 
-class Organisation extends Model
+class OrganisationEdit extends Model
 {
-    public $name;
-    public $email;
+    public $address;
+    public $city;
     public $INN;
     public $password;
     public $password_repeat;

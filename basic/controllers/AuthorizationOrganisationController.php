@@ -15,23 +15,7 @@ class AuthorizationOrganisationController extends Controller
 
     public $layout = 'outside';
 
-
-     // public function actionIndex()
-     // {
-     //     return $this ->render('../registration/registration-citizen');
-    // }
-
-    public function actionProfile()
-    {
-        // do some session
-
-        return $this->render('succesfuly');
-
-
-        # return $this ->render('../registration/registration-citizen');
-    }
-
-
+    
     public function actionCreate()
     {
         
@@ -56,17 +40,21 @@ class AuthorizationOrganisationController extends Controller
             'newUrl' => null,
             'errors' => [
                 'isEmpty' => false,
-                'isCorrect' => false,            
+                'isCorrect' => false,         
+                'isPassCorrect' => false,
             ],
 
         ];
+        
+        $id = 0;
         
         
 
         // если модель валидна
         if ($organisationInputToValidate->validate()) {
-        
-
+            
+            
+            
             $check = [];
 
             if (strripos($organisationInputToValidate->emailOrInn, "@") === FALSE) {
@@ -83,14 +71,21 @@ class AuthorizationOrganisationController extends Controller
 
                 $email = $organisationInputToValidate->emailOrInn;
                 $name = "id";
+                
 
                 $check = EmailDB::find()
                     ->where(['email' => $organisationInputToValidate->emailOrInn])                                
-                    ->all();                            
+                    ->all();     
+                                           
             }                     
 
-                               
+            
+           
+
+            
             if (count($check) !== 0) {
+                
+                $id = $check[0][$name];
 
                 $passCheck = UserDB::find()
                     ->where(['email' => $check[0][$name]])
@@ -98,23 +93,31 @@ class AuthorizationOrganisationController extends Controller
 
                 $passCheckInput = md5($organisationInputToValidate->password);
 
-                if ($passCheckInput !== $passCheck[0]["password"]) {
+
+                if (strval($passCheck[0]["type_of_account"]) !== '2') {
                     $resolveToUser['errors']['isCorrect'] = true;
                 }
-                
-            }
 
+                else if ($passCheckInput !== $passCheck[0]["password"]) {
+                    $resolveToUser['errors']['isPassCorrect'] = true;
+                }                
+            }
             else {
                 $resolveToUser['errors']['isCorrect'] = true;
             }
         }
 
-
-
         // модель не валидна
         else {
                         
             $errors = $organisationInputToValidate->errors;
+
+            $file =  fopen("../web/logs/errors_post.txt","a");
+
+            $text = json_encode($errors)."\n\n";
+
+            fwrite($file, $text);
+            fclose($file);     
 
             $f = false;
                 foreach ($errors as $value){
@@ -126,57 +129,31 @@ class AuthorizationOrganisationController extends Controller
                 $resolveToUser['errors']['isEmpty'] = true;
             }
             else {
-                $resolveToUser['errors']['isCorrect'] = true;
-            }
-            
+                if (!(array_key_exists('password', $errors))){   
+                    $resolveToUser['errors']['isCorrect'] = true;
+                }
+                else {
+                    $resolveToUser['errors']['isPassCorrect'] = true;
+                }            
+            }            
+        }
+     
+        if ($resolveToUser['errors']['isCorrect'] === false and $resolveToUser['errors']['isEmpty'] === false and $resolveToUser['errors']['isPassCorrect'] === false){
+
+            $resolveToUser['newUrl'] = "/index.php?r=profile%2Fprofile-organisation";
+
+            $toEmail = EmailDB::find()
+                    ->where(['id' => $id])
+                    ->all();
+
+            $email = $toEmail[0]["email"];            
+
+            Yii::$app->session->open();                    
+            Yii::$app->session->set("email", $email);
+            Yii::$app->session->set("id", $id);
+            Yii::$app->session->set("type", "2");
         }
             
-        // {
-
-        //     $errors = $organisationInputToValidate->errors;
-
-        //     /**
-        //      * Типы ошибок в последовательности
-        //      *
-        //      * Заполните все поля
-        //      * Возникает когда хоть в одном есть слово blank
-        //      * email password password_repeat name
-        //      * isEmpty = true
-        //      *
-        //      * Неверно указан логин или пароль
-        //      * Свойство email это "Email is not a valid email address." или свойство password это "Password should contain at least 6 characters."
-        //      * isCorrect = true             
-        //      */
-
-        //     // заполните все поля
-        //     $f = false;
-        //     foreach ($errors as $value){
-        //         if (strripos($value[0], 'blank') !== false)
-        //             $f = true;
-        //     }
-
-
-        //     if (!$f){
-        //         if (!(array_key_exists('email', $errors))){
-        //             if ($errors['password'][0] !== "Password should contain at least 6 characters."){
-        //                 $resolveToUser['errors']['isPassEquals'] = true;
-        //             }
-        //             else {
-        //                 $resolveToUser['errors']['isPassCorrected'] = true;
-        //             }
-        //         }
-        //         else {
-        //             $resolveToUser['errors']['isEmailCorrected'] = true;
-        //         }
-        //     }
-        //     else {
-        //         $resolveToUser['errors']['isEmpty'] = true;
-        //     }
-
-        // }
-
-        if ($resolveToUser['errors']['isCorrect'] === false and $resolveToUser['errors']['isEmpty'] === false)
-            $resolveToUser['newUrl'] = "/index.php?r=authorization-organisation%2Fprofile";
 
         $json = json_encode($resolveToUser);
         

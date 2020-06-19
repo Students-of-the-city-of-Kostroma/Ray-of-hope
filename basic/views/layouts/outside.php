@@ -28,6 +28,8 @@ AppAsset::register($this);
     </dialog>
 </div>
 
+<link rel="shortcut icon" href="/assets/img/ray_of_hope.ico" type="image/x-icon">
+
 
 
 <?= $content ?>

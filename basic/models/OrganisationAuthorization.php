@@ -19,7 +19,7 @@ class OrganisationAuthorization extends Model
             } ],
 
             #['INN', 'match', 'pattern' => '/\d{10}/'],    
-            ['password', 'string', 'length' => [6, 32]],
+            ['password', 'string', 'length' => [8, 32]],
         ];
     }
 }

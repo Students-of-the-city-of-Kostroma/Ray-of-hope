@@ -1,4 +1,5 @@
 <?php
+aaa
 require_once $_SERVER['DOCUMENT_ROOT'] . "/functions/functions.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/functions/classes/Database.php";
 if (isset($_SESSION['logged_org']) && isset($_GET['id_view_org'])) : ?>

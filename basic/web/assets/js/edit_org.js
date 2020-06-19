@@ -186,8 +186,11 @@ $(document).ready(function () {
     
     // обработка и отправка AJAX запроса 
     $('.saveButton').on( 'click', function( event ){
+
         var data = new FormData();
         data.append( 'address', ($('#address').val()==="" || $('#address').val()===null)?null:$('#address').val());
+
+        
         var name = $('input.name').val().trim()==='' ? null : $('input.name').val();
         if (name===null){open_dialog("Ошибка","Введите название");return;}
         var city= $('input.city')[0].hasAttribute("id_city") ? $('input.city').attr("id_city") : null;
@@ -197,8 +200,9 @@ $(document).ready(function () {
         var activity = $('select.activity').val();
         var description=$('textarea.description').val();
         var number_phone=$('input.phone').val()==""?null:$('input.phone').val();
-        
-        
+        var csrfToken = $('meta[name="csrf-token"]').attr("content");
+                
+        // console.log(csrfToken);
         
         //заполняем массив документов из очереди 
         for (var id in queue) {
@@ -216,9 +220,11 @@ $(document).ready(function () {
         data.append( 'activity', activity );
         data.append( 'description', description );
         data.append( 'number_phone', number_phone );
-        
+        data.append( '_csrf', csrfToken);
+
+
         $.ajax({
-            url: '../../functions/functions.php',
+            url: '/index.php?r=profile%2Fprofile-organisation-save-edit',
             type: 'POST',
             data: data,
             cache: false,
@@ -227,22 +233,14 @@ $(document).ready(function () {
             contentType : false,
             success     : function( response )
             {
-                if (response.length !== 0){
-                    if (jQuery.inArray("description", response) != -1){
-                        open_dialog("Ошибка", "Максимальная длинна описания: 255 символов");
-                    }
-                    else{
-                        open_dialog("Ошибка", response);
-                    }
-                }
-                else{
-                    queue={};
-                    previewQueue={};
-                    open_dialog("Готово","Информация успешно изменена");
-                }
+                //var result = $.parseJSON(response);
+                var result = JSON.parse(JSON.stringify(response))
+                console.log(result);
             },
             error: function(request)
             {
+                console.log(request);
+                
                 //Не все файлы прошли проверку расширения и mime-типа на сервере 
                 if (request.status==666){ 
                     open_dialog("Ошибка","Один или несколько загруженных файлов повреждены");
@@ -257,17 +255,18 @@ $(document).ready(function () {
 	        $(this).removeAttr("id_city");
 	        if(globalTimeout !== null) clearTimeout(globalTimeout); 
 	        if ($(this).val().length >= 1){
-	            lobalTimeout =setTimeout(getSityList,250); 
+	            globalTimeout =setTimeout(getSityList,250); 
 	        }
 	    }
 	);
 	
 	$("#address").keyup(
 	    function () {
+            
 	        $(this).removeAttr("id_addressArrayElem");
 	        if(globalTimeout !== null) clearTimeout(globalTimeout); 
 	        if ($(this).val().length >= 1){
-	            lobalTimeout = setTimeout(getAddresList,250); 
+	            globalTimeout = setTimeout(getAddresList,250); 
 	        }
 	    }
 	);
@@ -310,6 +309,7 @@ $(document).on('click','.city-item', function(){
     hideCityList();
 });
 $(document).on('click','.address-item', function(){
+    // alert()
     var select_addres_id = $(this).attr("data-addressarrayelemid");
     address=addressArray[select_addres_id];
     $('input.address').attr({"data-addressarrayelemid":select_addres_id});
@@ -336,16 +336,18 @@ function openCityList(){
     $('input.city').css({"border": "none","padding":"1px calc(0.9375vw + 0.0520833333vw)"});
     $('.city.wrapper').addClass('line-city-list');
 }
+
 function getAddresList(){
+    
     globalTimeout = null;
     var ajax;
     var data = new FormData();
     data.append( 'city_hints', 1 );
     data.append( 'request_city',  $("#address").val());
-    
+    // alert("");
     ajax = $.ajax ({    
         type: "POST",
-        url:"../../functions/functions.php",
+        url:"/index.php?r=profile%2Fprofile-organisation-save-edit-address",
         processData: false,
         contentType: false,
         dataType: 'json',
@@ -359,16 +361,18 @@ function getAddresList(){
             showAddressList(results);
         },
         error: function(xhr, status, error) {
+            console.log(error);
             (xhr.responseText + '|\n' + status + '|\n' +error);
         }
     });
 }
 function getSityList(){
     globalTimeout = null;
+    console.log('hello')
     var ajax;
     ajax = $.ajax ({    
         type: "POST",
-        url:"../../functions/functions.php",
+        url:"/index.php?r=profile%2Fprofile-organisation-save-edit-city",
         dataType: 'json',
         data: {request : $("#city").val()},
         beforeSend: function(){
@@ -385,9 +389,10 @@ function getSityList(){
     });
 }
 function showCityList(json){
+    console.log(json);
     $('.city-list').empty();
     for (var i in json){
-        $('.city-list').append("<div data-city_id='" + json[i].city_id + "' class='city-item'><span class='city-name'>" + json[i].city_name + "</span><span class='city-region'>" + json[i].region_name + "</span></div>");
+        $('.city-list').append("<div data-city_id='" + json[i]['city_id'] + "' class='city-item'><span class='city-name'>" + json[i]['city_name'] + "</span><span class='city-region'>" + json[i]['region_name'] + "</span></div>");
         }
     if ($('.city-list').html()!==''){
         openCityList();
