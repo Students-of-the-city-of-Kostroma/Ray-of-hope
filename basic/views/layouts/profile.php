@@ -54,7 +54,7 @@ AppAsset::register($this);
         <link href="/assets/css/styles2_copy4.css" rel="stylesheet">
         <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        
+     
         
 
         <title><?= Html::encode($this->title) ?></title>
@@ -85,8 +85,8 @@ AppAsset::register($this);
 		</li>
 		<li id="nav-more" class="nav-link sub">
 			<a href="#">Ещё</a>
-			<ul class="sub-menu" style="display:block">
-                <a href="#">Кооментарии</a>
+			<ul class="sub-menu" >
+                <a href="#">Коментарии</a>
                 <a href="#">Закладки</a>
                 <a href="#">F.A.Q</a>
                 <a href="#">Настройки</a>
@@ -97,6 +97,8 @@ AppAsset::register($this);
     <input class="nav-search" type="search" placeholder="Поиск">
     </div>
 </div>
+
+<script src="/assets/js/header.js"></script>
 
 <div class="dialog-wrapper">
     <dialog class="dialog-window">

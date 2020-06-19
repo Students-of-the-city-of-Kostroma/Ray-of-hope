@@ -27481,3 +27481,3804 @@ array (
   ),
 )
 
+{"name":["Name cannot be blank."],"email":["Email cannot be blank."],"password":["Password cannot be blank."],"password_repeat":["Password Repeat cannot be blank."]}
+
+
+--------------------------
+array (
+  0 => 
+  array (
+    'city_id' => '368',
+    'city_name' => 'Кадников',
+    'region_name' => 'Вологодская область',
+  ),
+  1 => 
+  array (
+    'city_id' => '124',
+    'city_name' => 'Казань',
+    'region_name' => 'Республика Татарстан (Татарстан)',
+  ),
+  2 => 
+  array (
+    'city_id' => '383',
+    'city_name' => 'Калач',
+    'region_name' => 'Воронежская область',
+  ),
+  3 => 
+  array (
+    'city_id' => '347',
+    'city_name' => 'Калач-на-Дону',
+    'region_name' => 'Волгоградская область',
+  ),
+  4 => 
+  array (
+    'city_id' => '756',
+    'city_name' => 'Калачинск',
+    'region_name' => 'Омская область',
+  ),
+  5 => 
+  array (
+    'city_id' => '439',
+    'city_name' => 'Калининград',
+    'region_name' => 'Калининградская область',
+  ),
+  6 => 
+  array (
+    'city_id' => '886',
+    'city_name' => 'Калининск',
+    'region_name' => 'Саратовская область',
+  ),
+  7 => 
+  array (
+    'city_id' => '487',
+    'city_name' => 'Калтан',
+    'region_name' => 'Кемеровская область',
+  ),
+  8 => 
+  array (
+    'city_id' => '462',
+    'city_name' => 'Калуга',
+    'region_name' => 'Калужская область',
+  ),
+  9 => 
+  array (
+    'city_id' => '994',
+    'city_name' => 'Калязин',
+    'region_name' => 'Тверская область',
+  ),
+  10 => 
+  array (
+    'city_id' => '143',
+    'city_name' => 'Камбарка',
+    'region_name' => 'Удмуртская Республика',
+  ),
+  11 => 
+  array (
+    'city_id' => '783',
+    'city_name' => 'Каменка',
+    'region_name' => 'Пензенская область',
+  ),
+  12 => 
+  array (
+    'city_id' => '560',
+    'city_name' => 'Каменногорск',
+    'region_name' => 'Ленинградская область',
+  ),
+  13 => 
+  array (
+    'city_id' => '932',
+    'city_name' => 'Каменск-Уральский',
+    'region_name' => 'Свердловская область',
+  ),
+  14 => 
+  array (
+    'city_id' => '842',
+    'city_name' => 'Каменск-Шахтинский',
+    'region_name' => 'Ростовская область',
+  ),
+  15 => 
+  array (
+    'city_id' => '172',
+    'city_name' => 'Камень-на-Оби',
+    'region_name' => 'Алтайский край',
+  ),
+  16 => 
+  array (
+    'city_id' => '325',
+    'city_name' => 'Камешково',
+    'region_name' => 'Владимирская область',
+  ),
+  17 => 
+  array (
+    'city_id' => '290',
+    'city_name' => 'Камызяк',
+    'region_name' => 'Астраханская область',
+  ),
+  18 => 
+  array (
+    'city_id' => '348',
+    'city_name' => 'Камышин',
+    'region_name' => 'Волгоградская область',
+  ),
+  19 => 
+  array (
+    'city_id' => '933',
+    'city_name' => 'Камышлов',
+    'region_name' => 'Свердловская область',
+  ),
+  20 => 
+  array (
+    'city_id' => '157',
+    'city_name' => 'Канаш',
+    'region_name' => 'Чувашская Республика - Чувашия',
+  ),
+  21 => 
+  array (
+    'city_id' => '686',
+    'city_name' => 'Кандалакша',
+    'region_name' => 'Мурманская область',
+  ),
+  22 => 
+  array (
+    'city_id' => '215',
+    'city_name' => 'Канск',
+    'region_name' => 'Красноярский край',
+  ),
+  23 => 
+  array (
+    'city_id' => '326',
+    'city_name' => 'Карабаново',
+    'region_name' => 'Владимирская область',
+  ),
+  24 => 
+  array (
+    'city_id' => '1051',
+    'city_name' => 'Карабаш',
+    'region_name' => 'Челябинская область',
+  ),
+  25 => 
+  array (
+    'city_id' => '41',
+    'city_name' => 'Карабулак',
+    'region_name' => 'Республика Ингушетия',
+  ),
+  26 => 
+  array (
+    'city_id' => '744',
+    'city_name' => 'Карасук',
+    'region_name' => 'Новосибирская область',
+  ),
+  27 => 
+  array (
+    'city_id' => '56',
+    'city_name' => 'Карачаевск',
+    'region_name' => 'Карачаево-Черкесская Республика',
+  ),
+  28 => 
+  array (
+    'city_id' => '308',
+    'city_name' => 'Карачев',
+    'region_name' => 'Брянская область',
+  ),
+  29 => 
+  array (
+    'city_id' => '745',
+    'city_name' => 'Каргат',
+    'region_name' => 'Новосибирская область',
+  ),
+  30 => 
+  array (
+    'city_id' => '275',
+    'city_name' => 'Каргополь',
+    'region_name' => 'Архангельская область',
+  ),
+  31 => 
+  array (
+    'city_id' => '934',
+    'city_name' => 'Карпинск',
+    'region_name' => 'Свердловская область',
+  ),
+  32 => 
+  array (
+    'city_id' => '1052',
+    'city_name' => 'Карталы',
+    'region_name' => 'Челябинская область',
+  ),
+  33 => 
+  array (
+    'city_id' => '856',
+    'city_name' => 'Касимов',
+    'region_name' => 'Рязанская область',
+  ),
+  34 => 
+  array (
+    'city_id' => '1053',
+    'city_name' => 'Касли',
+    'region_name' => 'Челябинская область',
+  ),
+  35 => 
+  array (
+    'city_id' => '35',
+    'city_name' => 'Каспийск',
+    'region_name' => 'Республика Дагестан',
+  ),
+  36 => 
+  array (
+    'city_id' => '1054',
+    'city_name' => 'Катав-Ивановск',
+    'region_name' => 'Челябинская область',
+  ),
+  37 => 
+  array (
+    'city_id' => '534',
+    'city_name' => 'Катайск',
+    'region_name' => 'Курганская область',
+  ),
+  38 => 
+  array (
+    'city_id' => '935',
+    'city_name' => 'Качканар',
+    'region_name' => 'Свердловская область',
+  ),
+  39 => 
+  array (
+    'city_id' => '995',
+    'city_name' => 'Кашин',
+    'region_name' => 'Тверская область',
+  ),
+  40 => 
+  array (
+    'city_id' => '618',
+    'city_name' => 'Кашира',
+    'region_name' => 'Московская область',
+  ),
+  41 => 
+  array (
+    'city_id' => '619',
+    'city_name' => 'Кашира-8',
+    'region_name' => 'Московская область',
+  ),
+  42 => 
+  array (
+    'city_id' => '1010',
+    'city_name' => 'Кедровый',
+    'region_name' => 'Томская область',
+  ),
+  43 => 
+  array (
+    'city_id' => '488',
+    'city_name' => 'Кемерово',
+    'region_name' => 'Кемеровская область',
+  ),
+  44 => 
+  array (
+    'city_id' => '61',
+    'city_name' => 'Кемь',
+    'region_name' => 'Республика Карелия',
+  ),
+  45 => 
+  array (
+    'city_id' => '1152',
+    'city_name' => 'Керчь',
+    'region_name' => 'Республика Крым',
+  ),
+  46 => 
+  array (
+    'city_id' => '800',
+    'city_name' => 'Кизел',
+    'region_name' => 'Пермский край',
+  ),
+  47 => 
+  array (
+    'city_id' => '36',
+    'city_name' => 'Кизилюрт',
+    'region_name' => 'Республика Дагестан',
+  ),
+  48 => 
+  array (
+    'city_id' => '37',
+    'city_name' => 'Кизляр',
+    'region_name' => 'Республика Дагестан',
+  ),
+  49 => 
+  array (
+    'city_id' => '1022',
+    'city_name' => 'Кимовск',
+    'region_name' => 'Тульская область',
+  ),
+  50 => 
+  array (
+    'city_id' => '996',
+    'city_name' => 'Кимры',
+    'region_name' => 'Тверская область',
+  ),
+  51 => 
+  array (
+    'city_id' => '561',
+    'city_name' => 'Кингисепп',
+    'region_name' => 'Ленинградская область',
+  ),
+  52 => 
+  array (
+    'city_id' => '869',
+    'city_name' => 'Кинель',
+    'region_name' => 'Самарская область',
+  ),
+  53 => 
+  array (
+    'city_id' => '397',
+    'city_name' => 'Кинешма',
+    'region_name' => 'Ивановская область',
+  ),
+  54 => 
+  array (
+    'city_id' => '1023',
+    'city_name' => 'Киреевск',
+    'region_name' => 'Тульская область',
+  ),
+  55 => 
+  array (
+    'city_id' => '421',
+    'city_name' => 'Киренск',
+    'region_name' => 'Иркутская область',
+  ),
+  56 => 
+  array (
+    'city_id' => '327',
+    'city_name' => 'Киржач',
+    'region_name' => 'Владимирская область',
+  ),
+  57 => 
+  array (
+    'city_id' => '369',
+    'city_name' => 'Кириллов',
+    'region_name' => 'Вологодская область',
+  ),
+  58 => 
+  array (
+    'city_id' => '562',
+    'city_name' => 'Кириши',
+    'region_name' => 'Ленинградская область',
+  ),
+  59 => 
+  array (
+    'city_id' => '463',
+    'city_name' => 'Киров',
+    'region_name' => 'Калужская область',
+  ),
+  60 => 
+  array (
+    'city_id' => '506',
+    'city_name' => 'Киров',
+    'region_name' => 'Кировская область',
+  ),
+  61 => 
+  array (
+    'city_id' => '936',
+    'city_name' => 'Кировград',
+    'region_name' => 'Свердловская область',
+  ),
+  62 => 
+  array (
+    'city_id' => '507',
+    'city_name' => 'Кирово-Чепецк',
+    'region_name' => 'Кировская область',
+  ),
+  63 => 
+  array (
+    'city_id' => '687',
+    'city_name' => 'Кировск',
+    'region_name' => 'Мурманская область',
+  ),
+  64 => 
+  array (
+    'city_id' => '563',
+    'city_name' => 'Кировск',
+    'region_name' => 'Ленинградская область',
+  ),
+  65 => 
+  array (
+    'city_id' => '508',
+    'city_name' => 'Кирс',
+    'region_name' => 'Кировская область',
+  ),
+  66 => 
+  array (
+    'city_id' => '979',
+    'city_name' => 'Кирсанов',
+    'region_name' => 'Тамбовская область',
+  ),
+  67 => 
+  array (
+    'city_id' => '489',
+    'city_name' => 'Киселевск',
+    'region_name' => 'Кемеровская область',
+  ),
+  68 => 
+  array (
+    'city_id' => '246',
+    'city_name' => 'Кисловодск',
+    'region_name' => 'Ставропольский край',
+  ),
+  69 => 
+  array (
+    'city_id' => '620',
+    'city_name' => 'Климовск',
+    'region_name' => 'Московская область',
+  ),
+  70 => 
+  array (
+    'city_id' => '621',
+    'city_name' => 'Клин',
+    'region_name' => 'Московская область',
+  ),
+  71 => 
+  array (
+    'city_id' => '309',
+    'city_name' => 'Клинцы',
+    'region_name' => 'Брянская область',
+  ),
+  72 => 
+  array (
+    'city_id' => '713',
+    'city_name' => 'Княгинино',
+    'region_name' => 'Нижегородская область',
+  ),
+  73 => 
+  array (
+    'city_id' => '688',
+    'city_name' => 'Ковдор',
+    'region_name' => 'Мурманская область',
+  ),
+  74 => 
+  array (
+    'city_id' => '328',
+    'city_name' => 'Ковров',
+    'region_name' => 'Владимирская область',
+  ),
+  75 => 
+  array (
+    'city_id' => '89',
+    'city_name' => 'Ковылкино',
+    'region_name' => 'Республика Мордовия',
+  ),
+  76 => 
+  array (
+    'city_id' => '1117',
+    'city_name' => 'Когалым',
+    'region_name' => 'Ханты-Мансийский автономный округ - Югра',
+  ),
+  77 => 
+  array (
+    'city_id' => '216',
+    'city_name' => 'Кодинск',
+    'region_name' => 'Красноярский край',
+  ),
+  78 => 
+  array (
+    'city_id' => '464',
+    'city_name' => 'Козельск',
+    'region_name' => 'Калужская область',
+  ),
+  79 => 
+  array (
+    'city_id' => '158',
+    'city_name' => 'Козловка',
+    'region_name' => 'Чувашская Республика - Чувашия',
+  ),
+  80 => 
+  array (
+    'city_id' => '86',
+    'city_name' => 'Козьмодемьянск',
+    'region_name' => 'Республика Марий Эл',
+  ),
+  81 => 
+  array (
+    'city_id' => '689',
+    'city_name' => 'Кола',
+    'region_name' => 'Мурманская область',
+  ),
+  82 => 
+  array (
+    'city_id' => '524',
+    'city_name' => 'Кологрив',
+    'region_name' => 'Костромская область',
+  ),
+  83 => 
+  array (
+    'city_id' => '622',
+    'city_name' => 'Коломна',
+    'region_name' => 'Московская область',
+  ),
+  84 => 
+  array (
+    'city_id' => '1011',
+    'city_name' => 'Колпашево',
+    'region_name' => 'Томская область',
+  ),
+  85 => 
+  array (
+    'city_id' => '1104',
+    'city_name' => 'Колпино',
+    'region_name' => 'Санкт-Петербург',
+  ),
+  86 => 
+  array (
+    'city_id' => '329',
+    'city_name' => 'Кольчугино',
+    'region_name' => 'Владимирская область',
+  ),
+  87 => 
+  array (
+    'city_id' => '564',
+    'city_name' => 'Коммунар',
+    'region_name' => 'Ленинградская область',
+  ),
+  88 => 
+  array (
+    'city_id' => '398',
+    'city_name' => 'Комсомольск',
+    'region_name' => 'Ивановская область',
+  ),
+  89 => 
+  array (
+    'city_id' => '260',
+    'city_name' => 'Комсомольск-на-Амуре',
+    'region_name' => 'Хабаровский край',
+  ),
+  90 => 
+  array (
+    'city_id' => '997',
+    'city_name' => 'Конаково',
+    'region_name' => 'Тверская область',
+  ),
+  91 => 
+  array (
+    'city_id' => '62',
+    'city_name' => 'Кондопога',
+    'region_name' => 'Республика Карелия',
+  ),
+  92 => 
+  array (
+    'city_id' => '465',
+    'city_name' => 'Кондрово',
+    'region_name' => 'Калужская область',
+  ),
+  93 => 
+  array (
+    'city_id' => '843',
+    'city_name' => 'Константиновск',
+    'region_name' => 'Ростовская область',
+  ),
+  94 => 
+  array (
+    'city_id' => '1055',
+    'city_name' => 'Копейск',
+    'region_name' => 'Челябинская область',
+  ),
+  95 => 
+  array (
+    'city_id' => '857',
+    'city_name' => 'Кораблино',
+    'region_name' => 'Рязанская область',
+  ),
+  96 => 
+  array (
+    'city_id' => '186',
+    'city_name' => 'Кореновск',
+    'region_name' => 'Краснодарский край',
+  ),
+  97 => 
+  array (
+    'city_id' => '1056',
+    'city_name' => 'Коркино',
+    'region_name' => 'Челябинская область',
+  ),
+  98 => 
+  array (
+    'city_id' => '623',
+    'city_name' => 'Королев',
+    'region_name' => 'Московская область',
+  ),
+  99 => 
+  array (
+    'city_id' => '299',
+    'city_name' => 'Короча',
+    'region_name' => 'Белгородская область',
+  ),
+  100 => 
+  array (
+    'city_id' => '903',
+    'city_name' => 'Корсаков',
+    'region_name' => 'Сахалинская область',
+  ),
+  101 => 
+  array (
+    'city_id' => '276',
+    'city_name' => 'Коряжма',
+    'region_name' => 'Архангельская область',
+  ),
+  102 => 
+  array (
+    'city_id' => '330',
+    'city_name' => 'Костерево',
+    'region_name' => 'Владимирская область',
+  ),
+  103 => 
+  array (
+    'city_id' => '63',
+    'city_name' => 'Костомукша',
+    'region_name' => 'Республика Карелия',
+  ),
+  104 => 
+  array (
+    'city_id' => '525',
+    'city_name' => 'Кострома',
+    'region_name' => 'Костромская область',
+  ),
+  105 => 
+  array (
+    'city_id' => '624',
+    'city_name' => 'Котельники',
+    'region_name' => 'Московская область',
+  ),
+  106 => 
+  array (
+    'city_id' => '349',
+    'city_name' => 'Котельниково',
+    'region_name' => 'Волгоградская область',
+  ),
+  107 => 
+  array (
+    'city_id' => '509',
+    'city_name' => 'Котельнич',
+    'region_name' => 'Кировская область',
+  ),
+  108 => 
+  array (
+    'city_id' => '277',
+    'city_name' => 'Котлас',
+    'region_name' => 'Архангельская область',
+  ),
+  109 => 
+  array (
+    'city_id' => '350',
+    'city_name' => 'Котово',
+    'region_name' => 'Волгоградская область',
+  ),
+  110 => 
+  array (
+    'city_id' => '980',
+    'city_name' => 'Котовск',
+    'region_name' => 'Тамбовская область',
+  ),
+  111 => 
+  array (
+    'city_id' => '399',
+    'city_name' => 'Кохма',
+    'region_name' => 'Ивановская область',
+  ),
+  112 => 
+  array (
+    'city_id' => '370',
+    'city_name' => 'Красавино',
+    'region_name' => 'Вологодская область',
+  ),
+  113 => 
+  array (
+    'city_id' => '625',
+    'city_name' => 'Красноармейск',
+    'region_name' => 'Московская область',
+  ),
+  114 => 
+  array (
+    'city_id' => '887',
+    'city_name' => 'Красноармейск',
+    'region_name' => 'Саратовская область',
+  ),
+  115 => 
+  array (
+    'city_id' => '801',
+    'city_name' => 'Красновишерск',
+    'region_name' => 'Пермский край',
+  ),
+  116 => 
+  array (
+    'city_id' => '626',
+    'city_name' => 'Красногорск',
+    'region_name' => 'Московская область',
+  ),
+  117 => 
+  array (
+    'city_id' => '187',
+    'city_name' => 'Краснодар',
+    'region_name' => 'Краснодарский край',
+  ),
+  118 => 
+  array (
+    'city_id' => '1105',
+    'city_name' => 'Красное Село',
+    'region_name' => 'Санкт-Петербург',
+  ),
+  119 => 
+  array (
+    'city_id' => '627',
+    'city_name' => 'Краснозаводск',
+    'region_name' => 'Московская область',
+  ),
+  120 => 
+  array (
+    'city_id' => '440',
+    'city_name' => 'Краснознаменск',
+    'region_name' => 'Калининградская область',
+  ),
+  121 => 
+  array (
+    'city_id' => '628',
+    'city_name' => 'Краснознаменск',
+    'region_name' => 'Московская область',
+  ),
+  122 => 
+  array (
+    'city_id' => '1078',
+    'city_name' => 'Краснокаменск',
+    'region_name' => 'Забайкальский край',
+  ),
+  123 => 
+  array (
+    'city_id' => '802',
+    'city_name' => 'Краснокамск',
+    'region_name' => 'Пермский край',
+  ),
+  124 => 
+  array (
+    'city_id' => '1153',
+    'city_name' => 'Красноперекопск',
+    'region_name' => 'Республика Крым',
+  ),
+  125 => 
+  array (
+    'city_id' => '1154',
+    'city_name' => 'Красноперекопск',
+    'region_name' => 'Республика Крым',
+  ),
+  126 => 
+  array (
+    'city_id' => '90',
+    'city_name' => 'Краснослободск',
+    'region_name' => 'Республика Мордовия',
+  ),
+  127 => 
+  array (
+    'city_id' => '351',
+    'city_name' => 'Краснослободск',
+    'region_name' => 'Волгоградская область',
+  ),
+  128 => 
+  array (
+    'city_id' => '937',
+    'city_name' => 'Краснотурьинск',
+    'region_name' => 'Свердловская область',
+  ),
+  129 => 
+  array (
+    'city_id' => '938',
+    'city_name' => 'Красноуральск',
+    'region_name' => 'Свердловская область',
+  ),
+  130 => 
+  array (
+    'city_id' => '939',
+    'city_name' => 'Красноуфимск',
+    'region_name' => 'Свердловская область',
+  ),
+  131 => 
+  array (
+    'city_id' => '217',
+    'city_name' => 'Красноярск',
+    'region_name' => 'Красноярский край',
+  ),
+  132 => 
+  array (
+    'city_id' => '888',
+    'city_name' => 'Красный Кут',
+    'region_name' => 'Саратовская область',
+  ),
+  133 => 
+  array (
+    'city_id' => '844',
+    'city_name' => 'Красный Сулин',
+    'region_name' => 'Ростовская область',
+  ),
+  134 => 
+  array (
+    'city_id' => '998',
+    'city_name' => 'Красный Холм',
+    'region_name' => 'Тверская область',
+  ),
+  135 => 
+  array (
+    'city_id' => '466',
+    'city_name' => 'Кременки',
+    'region_name' => 'Калужская область',
+  ),
+  136 => 
+  array (
+    'city_id' => '1106',
+    'city_name' => 'Кронштадт',
+    'region_name' => 'Санкт-Петербург',
+  ),
+  137 => 
+  array (
+    'city_id' => '188',
+    'city_name' => 'Кропоткин',
+    'region_name' => 'Краснодарский край',
+  ),
+  138 => 
+  array (
+    'city_id' => '189',
+    'city_name' => 'Крымск',
+    'region_name' => 'Краснодарский край',
+  ),
+  139 => 
+  array (
+    'city_id' => '714',
+    'city_name' => 'Кстово',
+    'region_name' => 'Нижегородская область',
+  ),
+  140 => 
+  array (
+    'city_id' => '629',
+    'city_name' => 'Кубинка',
+    'region_name' => 'Московская область',
+  ),
+  141 => 
+  array (
+    'city_id' => '765',
+    'city_name' => 'Кувандык',
+    'region_name' => 'Оренбургская область',
+  ),
+  142 => 
+  array (
+    'city_id' => '999',
+    'city_name' => 'Кувшиново',
+    'region_name' => 'Тверская область',
+  ),
+  143 => 
+  array (
+    'city_id' => '803',
+    'city_name' => 'Кудымкар',
+    'region_name' => 'Пермский край',
+  ),
+  144 => 
+  array (
+    'city_id' => '784',
+    'city_name' => 'Кузнецк',
+    'region_name' => 'Пензенская область',
+  ),
+  145 => 
+  array (
+    'city_id' => '785',
+    'city_name' => 'Кузнецк-12',
+    'region_name' => 'Пензенская область',
+  ),
+  146 => 
+  array (
+    'city_id' => '786',
+    'city_name' => 'Кузнецк-8',
+    'region_name' => 'Пензенская область',
+  ),
+  147 => 
+  array (
+    'city_id' => '746',
+    'city_name' => 'Куйбышев',
+    'region_name' => 'Новосибирская область',
+  ),
+  148 => 
+  array (
+    'city_id' => '715',
+    'city_name' => 'Кулебаки',
+    'region_name' => 'Нижегородская область',
+  ),
+  149 => 
+  array (
+    'city_id' => '12',
+    'city_name' => 'Кумертау',
+    'region_name' => 'Республика Башкортостан',
+  ),
+  150 => 
+  array (
+    'city_id' => '804',
+    'city_name' => 'Кунгур',
+    'region_name' => 'Пермский край',
+  ),
+  151 => 
+  array (
+    'city_id' => '747',
+    'city_name' => 'Купино',
+    'region_name' => 'Новосибирская область',
+  ),
+  152 => 
+  array (
+    'city_id' => '535',
+    'city_name' => 'Курган',
+    'region_name' => 'Курганская область',
+  ),
+  153 => 
+  array (
+    'city_id' => '190',
+    'city_name' => 'Курганинск',
+    'region_name' => 'Краснодарский край',
+  ),
+  154 => 
+  array (
+    'city_id' => '904',
+    'city_name' => 'Курильск',
+    'region_name' => 'Сахалинская область',
+  ),
+  155 => 
+  array (
+    'city_id' => '331',
+    'city_name' => 'Курлово',
+    'region_name' => 'Владимирская область',
+  ),
+  156 => 
+  array (
+    'city_id' => '630',
+    'city_name' => 'Куровское',
+    'region_name' => 'Московская область',
+  ),
+  157 => 
+  array (
+    'city_id' => '544',
+    'city_name' => 'Курск',
+    'region_name' => 'Курская область',
+  ),
+  158 => 
+  array (
+    'city_id' => '536',
+    'city_name' => 'Куртамыш',
+    'region_name' => 'Курганская область',
+  ),
+  159 => 
+  array (
+    'city_id' => '545',
+    'city_name' => 'Курчатов',
+    'region_name' => 'Курская область',
+  ),
+  160 => 
+  array (
+    'city_id' => '1057',
+    'city_name' => 'Куса',
+    'region_name' => 'Челябинская область',
+  ),
+  161 => 
+  array (
+    'city_id' => '940',
+    'city_name' => 'Кушва',
+    'region_name' => 'Свердловская область',
+  ),
+  162 => 
+  array (
+    'city_id' => '136',
+    'city_name' => 'Кызыл',
+    'region_name' => 'Республика Тыва',
+  ),
+  163 => 
+  array (
+    'city_id' => '1058',
+    'city_name' => 'Кыштым',
+    'region_name' => 'Челябинская область',
+  ),
+  164 => 
+  array (
+    'city_id' => '27',
+    'city_name' => 'Кяхта',
+    'region_name' => 'Республика Бурятия',
+  ),
+)
+
+
+--------------------------
+array (
+  0 => 
+  array (
+    'city_id' => '688',
+    'city_name' => 'Ковдор',
+    'region_name' => 'Мурманская область',
+  ),
+  1 => 
+  array (
+    'city_id' => '328',
+    'city_name' => 'Ковров',
+    'region_name' => 'Владимирская область',
+  ),
+  2 => 
+  array (
+    'city_id' => '89',
+    'city_name' => 'Ковылкино',
+    'region_name' => 'Республика Мордовия',
+  ),
+  3 => 
+  array (
+    'city_id' => '1117',
+    'city_name' => 'Когалым',
+    'region_name' => 'Ханты-Мансийский автономный округ - Югра',
+  ),
+  4 => 
+  array (
+    'city_id' => '216',
+    'city_name' => 'Кодинск',
+    'region_name' => 'Красноярский край',
+  ),
+  5 => 
+  array (
+    'city_id' => '464',
+    'city_name' => 'Козельск',
+    'region_name' => 'Калужская область',
+  ),
+  6 => 
+  array (
+    'city_id' => '158',
+    'city_name' => 'Козловка',
+    'region_name' => 'Чувашская Республика - Чувашия',
+  ),
+  7 => 
+  array (
+    'city_id' => '86',
+    'city_name' => 'Козьмодемьянск',
+    'region_name' => 'Республика Марий Эл',
+  ),
+  8 => 
+  array (
+    'city_id' => '689',
+    'city_name' => 'Кола',
+    'region_name' => 'Мурманская область',
+  ),
+  9 => 
+  array (
+    'city_id' => '524',
+    'city_name' => 'Кологрив',
+    'region_name' => 'Костромская область',
+  ),
+  10 => 
+  array (
+    'city_id' => '622',
+    'city_name' => 'Коломна',
+    'region_name' => 'Московская область',
+  ),
+  11 => 
+  array (
+    'city_id' => '1011',
+    'city_name' => 'Колпашево',
+    'region_name' => 'Томская область',
+  ),
+  12 => 
+  array (
+    'city_id' => '1104',
+    'city_name' => 'Колпино',
+    'region_name' => 'Санкт-Петербург',
+  ),
+  13 => 
+  array (
+    'city_id' => '329',
+    'city_name' => 'Кольчугино',
+    'region_name' => 'Владимирская область',
+  ),
+  14 => 
+  array (
+    'city_id' => '564',
+    'city_name' => 'Коммунар',
+    'region_name' => 'Ленинградская область',
+  ),
+  15 => 
+  array (
+    'city_id' => '398',
+    'city_name' => 'Комсомольск',
+    'region_name' => 'Ивановская область',
+  ),
+  16 => 
+  array (
+    'city_id' => '260',
+    'city_name' => 'Комсомольск-на-Амуре',
+    'region_name' => 'Хабаровский край',
+  ),
+  17 => 
+  array (
+    'city_id' => '997',
+    'city_name' => 'Конаково',
+    'region_name' => 'Тверская область',
+  ),
+  18 => 
+  array (
+    'city_id' => '62',
+    'city_name' => 'Кондопога',
+    'region_name' => 'Республика Карелия',
+  ),
+  19 => 
+  array (
+    'city_id' => '465',
+    'city_name' => 'Кондрово',
+    'region_name' => 'Калужская область',
+  ),
+  20 => 
+  array (
+    'city_id' => '843',
+    'city_name' => 'Константиновск',
+    'region_name' => 'Ростовская область',
+  ),
+  21 => 
+  array (
+    'city_id' => '1055',
+    'city_name' => 'Копейск',
+    'region_name' => 'Челябинская область',
+  ),
+  22 => 
+  array (
+    'city_id' => '857',
+    'city_name' => 'Кораблино',
+    'region_name' => 'Рязанская область',
+  ),
+  23 => 
+  array (
+    'city_id' => '186',
+    'city_name' => 'Кореновск',
+    'region_name' => 'Краснодарский край',
+  ),
+  24 => 
+  array (
+    'city_id' => '1056',
+    'city_name' => 'Коркино',
+    'region_name' => 'Челябинская область',
+  ),
+  25 => 
+  array (
+    'city_id' => '623',
+    'city_name' => 'Королев',
+    'region_name' => 'Московская область',
+  ),
+  26 => 
+  array (
+    'city_id' => '299',
+    'city_name' => 'Короча',
+    'region_name' => 'Белгородская область',
+  ),
+  27 => 
+  array (
+    'city_id' => '903',
+    'city_name' => 'Корсаков',
+    'region_name' => 'Сахалинская область',
+  ),
+  28 => 
+  array (
+    'city_id' => '276',
+    'city_name' => 'Коряжма',
+    'region_name' => 'Архангельская область',
+  ),
+  29 => 
+  array (
+    'city_id' => '330',
+    'city_name' => 'Костерево',
+    'region_name' => 'Владимирская область',
+  ),
+  30 => 
+  array (
+    'city_id' => '63',
+    'city_name' => 'Костомукша',
+    'region_name' => 'Республика Карелия',
+  ),
+  31 => 
+  array (
+    'city_id' => '525',
+    'city_name' => 'Кострома',
+    'region_name' => 'Костромская область',
+  ),
+  32 => 
+  array (
+    'city_id' => '624',
+    'city_name' => 'Котельники',
+    'region_name' => 'Московская область',
+  ),
+  33 => 
+  array (
+    'city_id' => '349',
+    'city_name' => 'Котельниково',
+    'region_name' => 'Волгоградская область',
+  ),
+  34 => 
+  array (
+    'city_id' => '509',
+    'city_name' => 'Котельнич',
+    'region_name' => 'Кировская область',
+  ),
+  35 => 
+  array (
+    'city_id' => '277',
+    'city_name' => 'Котлас',
+    'region_name' => 'Архангельская область',
+  ),
+  36 => 
+  array (
+    'city_id' => '350',
+    'city_name' => 'Котово',
+    'region_name' => 'Волгоградская область',
+  ),
+  37 => 
+  array (
+    'city_id' => '980',
+    'city_name' => 'Котовск',
+    'region_name' => 'Тамбовская область',
+  ),
+  38 => 
+  array (
+    'city_id' => '399',
+    'city_name' => 'Кохма',
+    'region_name' => 'Ивановская область',
+  ),
+)
+
+
+--------------------------
+array (
+  0 => 
+  array (
+    'city_id' => '330',
+    'city_name' => 'Костерево',
+    'region_name' => 'Владимирская область',
+  ),
+  1 => 
+  array (
+    'city_id' => '63',
+    'city_name' => 'Костомукша',
+    'region_name' => 'Республика Карелия',
+  ),
+  2 => 
+  array (
+    'city_id' => '525',
+    'city_name' => 'Кострома',
+    'region_name' => 'Костромская область',
+  ),
+)
+
+array (
+  'url' => NULL,
+  'errors' => 
+  array (
+    'isAddressCorrected' => false,
+    'isNameCorrected' => false,
+    'isDescriptionCorrected' => false,
+    'isPhoneCorrected' => false,
+  ),
+)
+
+{"name":["Name cannot be blank."],"email":["Email cannot be blank."],"INN":["Inn cannot be blank."],"password":["Password cannot be blank."],"password_repeat":["Password Repeat cannot be blank."]}
+
+{"name":["Name cannot be blank."],"email":["Email cannot be blank."],"INN":["Inn cannot be blank."],"password":["Password cannot be blank."],"password_repeat":["Password Repeat cannot be blank."]}
+
+{"name":["Name cannot be blank."],"email":["Email cannot be blank."],"INN":["Inn cannot be blank."],"password":["Password cannot be blank."],"password_repeat":["Password Repeat cannot be blank."]}
+
+{"name":["Name cannot be blank."],"email":["Email cannot be blank."],"INN":["Inn cannot be blank."],"password":["Password cannot be blank."],"password_repeat":["Password Repeat cannot be blank."]}
+
+{"INN":["Inn should contain 10 characters."]}
+
+{"password":["Password cannot be blank."],"emailOrInn":["Email Or Inn cannot be blank."]}
+
+{"password":["Password cannot be blank."],"emailOrInn":["Email Or Inn cannot be blank."]}
+
+array (
+  'url' => NULL,
+  'errors' => 
+  array (
+    'isAddressCorrected' => false,
+    'isNameCorrected' => false,
+    'isDescriptionCorrected' => false,
+    'isPhoneCorrected' => false,
+  ),
+)
+
+array (
+  'url' => NULL,
+  'errors' => 
+  array (
+    'isAddressCorrected' => false,
+    'isNameCorrected' => false,
+    'isDescriptionCorrected' => false,
+    'isPhoneCorrected' => false,
+  ),
+)
+
+{"password":["Password should contain at least 8 characters."]}
+
+array (
+  'url' => NULL,
+  'errors' => 
+  array (
+    'isAddressCorrected' => false,
+    'isNameCorrected' => false,
+    'isDescriptionCorrected' => false,
+    'isPhoneCorrected' => false,
+  ),
+)
+
+array (
+  'url' => NULL,
+  'errors' => 
+  array (
+    'isAddressCorrected' => false,
+    'isNameCorrected' => false,
+    'isDescriptionCorrected' => false,
+    'isPhoneCorrected' => false,
+  ),
+)
+
+array (
+  'url' => NULL,
+  'errors' => 
+  array (
+    'isAddressCorrected' => false,
+    'isNameCorrected' => false,
+    'isDescriptionCorrected' => false,
+    'isPhoneCorrected' => false,
+  ),
+)
+
+array (
+  'url' => NULL,
+  'errors' => 
+  array (
+    'isAddressCorrected' => false,
+    'isNameCorrected' => false,
+    'isDescriptionCorrected' => false,
+    'isPhoneCorrected' => false,
+  ),
+)
+
+array (
+  'url' => NULL,
+  'errors' => 
+  array (
+    'isAddressCorrected' => false,
+    'isNameCorrected' => false,
+    'isDescriptionCorrected' => false,
+    'isPhoneCorrected' => false,
+  ),
+)
+
+
+--------------------------
+array (
+  0 => 
+  array (
+    'city_id' => '368',
+    'city_name' => 'Кадников',
+    'region_name' => 'Вологодская область',
+  ),
+  1 => 
+  array (
+    'city_id' => '124',
+    'city_name' => 'Казань',
+    'region_name' => 'Республика Татарстан (Татарстан)',
+  ),
+  2 => 
+  array (
+    'city_id' => '383',
+    'city_name' => 'Калач',
+    'region_name' => 'Воронежская область',
+  ),
+  3 => 
+  array (
+    'city_id' => '347',
+    'city_name' => 'Калач-на-Дону',
+    'region_name' => 'Волгоградская область',
+  ),
+  4 => 
+  array (
+    'city_id' => '756',
+    'city_name' => 'Калачинск',
+    'region_name' => 'Омская область',
+  ),
+  5 => 
+  array (
+    'city_id' => '439',
+    'city_name' => 'Калининград',
+    'region_name' => 'Калининградская область',
+  ),
+  6 => 
+  array (
+    'city_id' => '886',
+    'city_name' => 'Калининск',
+    'region_name' => 'Саратовская область',
+  ),
+  7 => 
+  array (
+    'city_id' => '487',
+    'city_name' => 'Калтан',
+    'region_name' => 'Кемеровская область',
+  ),
+  8 => 
+  array (
+    'city_id' => '462',
+    'city_name' => 'Калуга',
+    'region_name' => 'Калужская область',
+  ),
+  9 => 
+  array (
+    'city_id' => '994',
+    'city_name' => 'Калязин',
+    'region_name' => 'Тверская область',
+  ),
+  10 => 
+  array (
+    'city_id' => '143',
+    'city_name' => 'Камбарка',
+    'region_name' => 'Удмуртская Республика',
+  ),
+  11 => 
+  array (
+    'city_id' => '783',
+    'city_name' => 'Каменка',
+    'region_name' => 'Пензенская область',
+  ),
+  12 => 
+  array (
+    'city_id' => '560',
+    'city_name' => 'Каменногорск',
+    'region_name' => 'Ленинградская область',
+  ),
+  13 => 
+  array (
+    'city_id' => '932',
+    'city_name' => 'Каменск-Уральский',
+    'region_name' => 'Свердловская область',
+  ),
+  14 => 
+  array (
+    'city_id' => '842',
+    'city_name' => 'Каменск-Шахтинский',
+    'region_name' => 'Ростовская область',
+  ),
+  15 => 
+  array (
+    'city_id' => '172',
+    'city_name' => 'Камень-на-Оби',
+    'region_name' => 'Алтайский край',
+  ),
+  16 => 
+  array (
+    'city_id' => '325',
+    'city_name' => 'Камешково',
+    'region_name' => 'Владимирская область',
+  ),
+  17 => 
+  array (
+    'city_id' => '290',
+    'city_name' => 'Камызяк',
+    'region_name' => 'Астраханская область',
+  ),
+  18 => 
+  array (
+    'city_id' => '348',
+    'city_name' => 'Камышин',
+    'region_name' => 'Волгоградская область',
+  ),
+  19 => 
+  array (
+    'city_id' => '933',
+    'city_name' => 'Камышлов',
+    'region_name' => 'Свердловская область',
+  ),
+  20 => 
+  array (
+    'city_id' => '157',
+    'city_name' => 'Канаш',
+    'region_name' => 'Чувашская Республика - Чувашия',
+  ),
+  21 => 
+  array (
+    'city_id' => '686',
+    'city_name' => 'Кандалакша',
+    'region_name' => 'Мурманская область',
+  ),
+  22 => 
+  array (
+    'city_id' => '215',
+    'city_name' => 'Канск',
+    'region_name' => 'Красноярский край',
+  ),
+  23 => 
+  array (
+    'city_id' => '326',
+    'city_name' => 'Карабаново',
+    'region_name' => 'Владимирская область',
+  ),
+  24 => 
+  array (
+    'city_id' => '1051',
+    'city_name' => 'Карабаш',
+    'region_name' => 'Челябинская область',
+  ),
+  25 => 
+  array (
+    'city_id' => '41',
+    'city_name' => 'Карабулак',
+    'region_name' => 'Республика Ингушетия',
+  ),
+  26 => 
+  array (
+    'city_id' => '744',
+    'city_name' => 'Карасук',
+    'region_name' => 'Новосибирская область',
+  ),
+  27 => 
+  array (
+    'city_id' => '56',
+    'city_name' => 'Карачаевск',
+    'region_name' => 'Карачаево-Черкесская Республика',
+  ),
+  28 => 
+  array (
+    'city_id' => '308',
+    'city_name' => 'Карачев',
+    'region_name' => 'Брянская область',
+  ),
+  29 => 
+  array (
+    'city_id' => '745',
+    'city_name' => 'Каргат',
+    'region_name' => 'Новосибирская область',
+  ),
+  30 => 
+  array (
+    'city_id' => '275',
+    'city_name' => 'Каргополь',
+    'region_name' => 'Архангельская область',
+  ),
+  31 => 
+  array (
+    'city_id' => '934',
+    'city_name' => 'Карпинск',
+    'region_name' => 'Свердловская область',
+  ),
+  32 => 
+  array (
+    'city_id' => '1052',
+    'city_name' => 'Карталы',
+    'region_name' => 'Челябинская область',
+  ),
+  33 => 
+  array (
+    'city_id' => '856',
+    'city_name' => 'Касимов',
+    'region_name' => 'Рязанская область',
+  ),
+  34 => 
+  array (
+    'city_id' => '1053',
+    'city_name' => 'Касли',
+    'region_name' => 'Челябинская область',
+  ),
+  35 => 
+  array (
+    'city_id' => '35',
+    'city_name' => 'Каспийск',
+    'region_name' => 'Республика Дагестан',
+  ),
+  36 => 
+  array (
+    'city_id' => '1054',
+    'city_name' => 'Катав-Ивановск',
+    'region_name' => 'Челябинская область',
+  ),
+  37 => 
+  array (
+    'city_id' => '534',
+    'city_name' => 'Катайск',
+    'region_name' => 'Курганская область',
+  ),
+  38 => 
+  array (
+    'city_id' => '935',
+    'city_name' => 'Качканар',
+    'region_name' => 'Свердловская область',
+  ),
+  39 => 
+  array (
+    'city_id' => '995',
+    'city_name' => 'Кашин',
+    'region_name' => 'Тверская область',
+  ),
+  40 => 
+  array (
+    'city_id' => '618',
+    'city_name' => 'Кашира',
+    'region_name' => 'Московская область',
+  ),
+  41 => 
+  array (
+    'city_id' => '619',
+    'city_name' => 'Кашира-8',
+    'region_name' => 'Московская область',
+  ),
+  42 => 
+  array (
+    'city_id' => '1010',
+    'city_name' => 'Кедровый',
+    'region_name' => 'Томская область',
+  ),
+  43 => 
+  array (
+    'city_id' => '488',
+    'city_name' => 'Кемерово',
+    'region_name' => 'Кемеровская область',
+  ),
+  44 => 
+  array (
+    'city_id' => '61',
+    'city_name' => 'Кемь',
+    'region_name' => 'Республика Карелия',
+  ),
+  45 => 
+  array (
+    'city_id' => '1152',
+    'city_name' => 'Керчь',
+    'region_name' => 'Республика Крым',
+  ),
+  46 => 
+  array (
+    'city_id' => '800',
+    'city_name' => 'Кизел',
+    'region_name' => 'Пермский край',
+  ),
+  47 => 
+  array (
+    'city_id' => '36',
+    'city_name' => 'Кизилюрт',
+    'region_name' => 'Республика Дагестан',
+  ),
+  48 => 
+  array (
+    'city_id' => '37',
+    'city_name' => 'Кизляр',
+    'region_name' => 'Республика Дагестан',
+  ),
+  49 => 
+  array (
+    'city_id' => '1022',
+    'city_name' => 'Кимовск',
+    'region_name' => 'Тульская область',
+  ),
+  50 => 
+  array (
+    'city_id' => '996',
+    'city_name' => 'Кимры',
+    'region_name' => 'Тверская область',
+  ),
+  51 => 
+  array (
+    'city_id' => '561',
+    'city_name' => 'Кингисепп',
+    'region_name' => 'Ленинградская область',
+  ),
+  52 => 
+  array (
+    'city_id' => '869',
+    'city_name' => 'Кинель',
+    'region_name' => 'Самарская область',
+  ),
+  53 => 
+  array (
+    'city_id' => '397',
+    'city_name' => 'Кинешма',
+    'region_name' => 'Ивановская область',
+  ),
+  54 => 
+  array (
+    'city_id' => '1023',
+    'city_name' => 'Киреевск',
+    'region_name' => 'Тульская область',
+  ),
+  55 => 
+  array (
+    'city_id' => '421',
+    'city_name' => 'Киренск',
+    'region_name' => 'Иркутская область',
+  ),
+  56 => 
+  array (
+    'city_id' => '327',
+    'city_name' => 'Киржач',
+    'region_name' => 'Владимирская область',
+  ),
+  57 => 
+  array (
+    'city_id' => '369',
+    'city_name' => 'Кириллов',
+    'region_name' => 'Вологодская область',
+  ),
+  58 => 
+  array (
+    'city_id' => '562',
+    'city_name' => 'Кириши',
+    'region_name' => 'Ленинградская область',
+  ),
+  59 => 
+  array (
+    'city_id' => '506',
+    'city_name' => 'Киров',
+    'region_name' => 'Кировская область',
+  ),
+  60 => 
+  array (
+    'city_id' => '463',
+    'city_name' => 'Киров',
+    'region_name' => 'Калужская область',
+  ),
+  61 => 
+  array (
+    'city_id' => '936',
+    'city_name' => 'Кировград',
+    'region_name' => 'Свердловская область',
+  ),
+  62 => 
+  array (
+    'city_id' => '507',
+    'city_name' => 'Кирово-Чепецк',
+    'region_name' => 'Кировская область',
+  ),
+  63 => 
+  array (
+    'city_id' => '687',
+    'city_name' => 'Кировск',
+    'region_name' => 'Мурманская область',
+  ),
+  64 => 
+  array (
+    'city_id' => '563',
+    'city_name' => 'Кировск',
+    'region_name' => 'Ленинградская область',
+  ),
+  65 => 
+  array (
+    'city_id' => '508',
+    'city_name' => 'Кирс',
+    'region_name' => 'Кировская область',
+  ),
+  66 => 
+  array (
+    'city_id' => '979',
+    'city_name' => 'Кирсанов',
+    'region_name' => 'Тамбовская область',
+  ),
+  67 => 
+  array (
+    'city_id' => '489',
+    'city_name' => 'Киселевск',
+    'region_name' => 'Кемеровская область',
+  ),
+  68 => 
+  array (
+    'city_id' => '246',
+    'city_name' => 'Кисловодск',
+    'region_name' => 'Ставропольский край',
+  ),
+  69 => 
+  array (
+    'city_id' => '620',
+    'city_name' => 'Климовск',
+    'region_name' => 'Московская область',
+  ),
+  70 => 
+  array (
+    'city_id' => '621',
+    'city_name' => 'Клин',
+    'region_name' => 'Московская область',
+  ),
+  71 => 
+  array (
+    'city_id' => '309',
+    'city_name' => 'Клинцы',
+    'region_name' => 'Брянская область',
+  ),
+  72 => 
+  array (
+    'city_id' => '713',
+    'city_name' => 'Княгинино',
+    'region_name' => 'Нижегородская область',
+  ),
+  73 => 
+  array (
+    'city_id' => '688',
+    'city_name' => 'Ковдор',
+    'region_name' => 'Мурманская область',
+  ),
+  74 => 
+  array (
+    'city_id' => '328',
+    'city_name' => 'Ковров',
+    'region_name' => 'Владимирская область',
+  ),
+  75 => 
+  array (
+    'city_id' => '89',
+    'city_name' => 'Ковылкино',
+    'region_name' => 'Республика Мордовия',
+  ),
+  76 => 
+  array (
+    'city_id' => '1117',
+    'city_name' => 'Когалым',
+    'region_name' => 'Ханты-Мансийский автономный округ - Югра',
+  ),
+  77 => 
+  array (
+    'city_id' => '216',
+    'city_name' => 'Кодинск',
+    'region_name' => 'Красноярский край',
+  ),
+  78 => 
+  array (
+    'city_id' => '464',
+    'city_name' => 'Козельск',
+    'region_name' => 'Калужская область',
+  ),
+  79 => 
+  array (
+    'city_id' => '158',
+    'city_name' => 'Козловка',
+    'region_name' => 'Чувашская Республика - Чувашия',
+  ),
+  80 => 
+  array (
+    'city_id' => '86',
+    'city_name' => 'Козьмодемьянск',
+    'region_name' => 'Республика Марий Эл',
+  ),
+  81 => 
+  array (
+    'city_id' => '689',
+    'city_name' => 'Кола',
+    'region_name' => 'Мурманская область',
+  ),
+  82 => 
+  array (
+    'city_id' => '524',
+    'city_name' => 'Кологрив',
+    'region_name' => 'Костромская область',
+  ),
+  83 => 
+  array (
+    'city_id' => '622',
+    'city_name' => 'Коломна',
+    'region_name' => 'Московская область',
+  ),
+  84 => 
+  array (
+    'city_id' => '1011',
+    'city_name' => 'Колпашево',
+    'region_name' => 'Томская область',
+  ),
+  85 => 
+  array (
+    'city_id' => '1104',
+    'city_name' => 'Колпино',
+    'region_name' => 'Санкт-Петербург',
+  ),
+  86 => 
+  array (
+    'city_id' => '329',
+    'city_name' => 'Кольчугино',
+    'region_name' => 'Владимирская область',
+  ),
+  87 => 
+  array (
+    'city_id' => '564',
+    'city_name' => 'Коммунар',
+    'region_name' => 'Ленинградская область',
+  ),
+  88 => 
+  array (
+    'city_id' => '398',
+    'city_name' => 'Комсомольск',
+    'region_name' => 'Ивановская область',
+  ),
+  89 => 
+  array (
+    'city_id' => '260',
+    'city_name' => 'Комсомольск-на-Амуре',
+    'region_name' => 'Хабаровский край',
+  ),
+  90 => 
+  array (
+    'city_id' => '997',
+    'city_name' => 'Конаково',
+    'region_name' => 'Тверская область',
+  ),
+  91 => 
+  array (
+    'city_id' => '62',
+    'city_name' => 'Кондопога',
+    'region_name' => 'Республика Карелия',
+  ),
+  92 => 
+  array (
+    'city_id' => '465',
+    'city_name' => 'Кондрово',
+    'region_name' => 'Калужская область',
+  ),
+  93 => 
+  array (
+    'city_id' => '843',
+    'city_name' => 'Константиновск',
+    'region_name' => 'Ростовская область',
+  ),
+  94 => 
+  array (
+    'city_id' => '1055',
+    'city_name' => 'Копейск',
+    'region_name' => 'Челябинская область',
+  ),
+  95 => 
+  array (
+    'city_id' => '857',
+    'city_name' => 'Кораблино',
+    'region_name' => 'Рязанская область',
+  ),
+  96 => 
+  array (
+    'city_id' => '186',
+    'city_name' => 'Кореновск',
+    'region_name' => 'Краснодарский край',
+  ),
+  97 => 
+  array (
+    'city_id' => '1056',
+    'city_name' => 'Коркино',
+    'region_name' => 'Челябинская область',
+  ),
+  98 => 
+  array (
+    'city_id' => '623',
+    'city_name' => 'Королев',
+    'region_name' => 'Московская область',
+  ),
+  99 => 
+  array (
+    'city_id' => '299',
+    'city_name' => 'Короча',
+    'region_name' => 'Белгородская область',
+  ),
+  100 => 
+  array (
+    'city_id' => '903',
+    'city_name' => 'Корсаков',
+    'region_name' => 'Сахалинская область',
+  ),
+  101 => 
+  array (
+    'city_id' => '276',
+    'city_name' => 'Коряжма',
+    'region_name' => 'Архангельская область',
+  ),
+  102 => 
+  array (
+    'city_id' => '330',
+    'city_name' => 'Костерево',
+    'region_name' => 'Владимирская область',
+  ),
+  103 => 
+  array (
+    'city_id' => '63',
+    'city_name' => 'Костомукша',
+    'region_name' => 'Республика Карелия',
+  ),
+  104 => 
+  array (
+    'city_id' => '525',
+    'city_name' => 'Кострома',
+    'region_name' => 'Костромская область',
+  ),
+  105 => 
+  array (
+    'city_id' => '624',
+    'city_name' => 'Котельники',
+    'region_name' => 'Московская область',
+  ),
+  106 => 
+  array (
+    'city_id' => '349',
+    'city_name' => 'Котельниково',
+    'region_name' => 'Волгоградская область',
+  ),
+  107 => 
+  array (
+    'city_id' => '509',
+    'city_name' => 'Котельнич',
+    'region_name' => 'Кировская область',
+  ),
+  108 => 
+  array (
+    'city_id' => '277',
+    'city_name' => 'Котлас',
+    'region_name' => 'Архангельская область',
+  ),
+  109 => 
+  array (
+    'city_id' => '350',
+    'city_name' => 'Котово',
+    'region_name' => 'Волгоградская область',
+  ),
+  110 => 
+  array (
+    'city_id' => '980',
+    'city_name' => 'Котовск',
+    'region_name' => 'Тамбовская область',
+  ),
+  111 => 
+  array (
+    'city_id' => '399',
+    'city_name' => 'Кохма',
+    'region_name' => 'Ивановская область',
+  ),
+  112 => 
+  array (
+    'city_id' => '370',
+    'city_name' => 'Красавино',
+    'region_name' => 'Вологодская область',
+  ),
+  113 => 
+  array (
+    'city_id' => '625',
+    'city_name' => 'Красноармейск',
+    'region_name' => 'Московская область',
+  ),
+  114 => 
+  array (
+    'city_id' => '887',
+    'city_name' => 'Красноармейск',
+    'region_name' => 'Саратовская область',
+  ),
+  115 => 
+  array (
+    'city_id' => '801',
+    'city_name' => 'Красновишерск',
+    'region_name' => 'Пермский край',
+  ),
+  116 => 
+  array (
+    'city_id' => '626',
+    'city_name' => 'Красногорск',
+    'region_name' => 'Московская область',
+  ),
+  117 => 
+  array (
+    'city_id' => '187',
+    'city_name' => 'Краснодар',
+    'region_name' => 'Краснодарский край',
+  ),
+  118 => 
+  array (
+    'city_id' => '1105',
+    'city_name' => 'Красное Село',
+    'region_name' => 'Санкт-Петербург',
+  ),
+  119 => 
+  array (
+    'city_id' => '627',
+    'city_name' => 'Краснозаводск',
+    'region_name' => 'Московская область',
+  ),
+  120 => 
+  array (
+    'city_id' => '440',
+    'city_name' => 'Краснознаменск',
+    'region_name' => 'Калининградская область',
+  ),
+  121 => 
+  array (
+    'city_id' => '628',
+    'city_name' => 'Краснознаменск',
+    'region_name' => 'Московская область',
+  ),
+  122 => 
+  array (
+    'city_id' => '1078',
+    'city_name' => 'Краснокаменск',
+    'region_name' => 'Забайкальский край',
+  ),
+  123 => 
+  array (
+    'city_id' => '802',
+    'city_name' => 'Краснокамск',
+    'region_name' => 'Пермский край',
+  ),
+  124 => 
+  array (
+    'city_id' => '1153',
+    'city_name' => 'Красноперекопск',
+    'region_name' => 'Республика Крым',
+  ),
+  125 => 
+  array (
+    'city_id' => '1154',
+    'city_name' => 'Красноперекопск',
+    'region_name' => 'Республика Крым',
+  ),
+  126 => 
+  array (
+    'city_id' => '90',
+    'city_name' => 'Краснослободск',
+    'region_name' => 'Республика Мордовия',
+  ),
+  127 => 
+  array (
+    'city_id' => '351',
+    'city_name' => 'Краснослободск',
+    'region_name' => 'Волгоградская область',
+  ),
+  128 => 
+  array (
+    'city_id' => '937',
+    'city_name' => 'Краснотурьинск',
+    'region_name' => 'Свердловская область',
+  ),
+  129 => 
+  array (
+    'city_id' => '938',
+    'city_name' => 'Красноуральск',
+    'region_name' => 'Свердловская область',
+  ),
+  130 => 
+  array (
+    'city_id' => '939',
+    'city_name' => 'Красноуфимск',
+    'region_name' => 'Свердловская область',
+  ),
+  131 => 
+  array (
+    'city_id' => '217',
+    'city_name' => 'Красноярск',
+    'region_name' => 'Красноярский край',
+  ),
+  132 => 
+  array (
+    'city_id' => '888',
+    'city_name' => 'Красный Кут',
+    'region_name' => 'Саратовская область',
+  ),
+  133 => 
+  array (
+    'city_id' => '844',
+    'city_name' => 'Красный Сулин',
+    'region_name' => 'Ростовская область',
+  ),
+  134 => 
+  array (
+    'city_id' => '998',
+    'city_name' => 'Красный Холм',
+    'region_name' => 'Тверская область',
+  ),
+  135 => 
+  array (
+    'city_id' => '466',
+    'city_name' => 'Кременки',
+    'region_name' => 'Калужская область',
+  ),
+  136 => 
+  array (
+    'city_id' => '1106',
+    'city_name' => 'Кронштадт',
+    'region_name' => 'Санкт-Петербург',
+  ),
+  137 => 
+  array (
+    'city_id' => '188',
+    'city_name' => 'Кропоткин',
+    'region_name' => 'Краснодарский край',
+  ),
+  138 => 
+  array (
+    'city_id' => '189',
+    'city_name' => 'Крымск',
+    'region_name' => 'Краснодарский край',
+  ),
+  139 => 
+  array (
+    'city_id' => '714',
+    'city_name' => 'Кстово',
+    'region_name' => 'Нижегородская область',
+  ),
+  140 => 
+  array (
+    'city_id' => '629',
+    'city_name' => 'Кубинка',
+    'region_name' => 'Московская область',
+  ),
+  141 => 
+  array (
+    'city_id' => '765',
+    'city_name' => 'Кувандык',
+    'region_name' => 'Оренбургская область',
+  ),
+  142 => 
+  array (
+    'city_id' => '999',
+    'city_name' => 'Кувшиново',
+    'region_name' => 'Тверская область',
+  ),
+  143 => 
+  array (
+    'city_id' => '803',
+    'city_name' => 'Кудымкар',
+    'region_name' => 'Пермский край',
+  ),
+  144 => 
+  array (
+    'city_id' => '784',
+    'city_name' => 'Кузнецк',
+    'region_name' => 'Пензенская область',
+  ),
+  145 => 
+  array (
+    'city_id' => '785',
+    'city_name' => 'Кузнецк-12',
+    'region_name' => 'Пензенская область',
+  ),
+  146 => 
+  array (
+    'city_id' => '786',
+    'city_name' => 'Кузнецк-8',
+    'region_name' => 'Пензенская область',
+  ),
+  147 => 
+  array (
+    'city_id' => '746',
+    'city_name' => 'Куйбышев',
+    'region_name' => 'Новосибирская область',
+  ),
+  148 => 
+  array (
+    'city_id' => '715',
+    'city_name' => 'Кулебаки',
+    'region_name' => 'Нижегородская область',
+  ),
+  149 => 
+  array (
+    'city_id' => '12',
+    'city_name' => 'Кумертау',
+    'region_name' => 'Республика Башкортостан',
+  ),
+  150 => 
+  array (
+    'city_id' => '804',
+    'city_name' => 'Кунгур',
+    'region_name' => 'Пермский край',
+  ),
+  151 => 
+  array (
+    'city_id' => '747',
+    'city_name' => 'Купино',
+    'region_name' => 'Новосибирская область',
+  ),
+  152 => 
+  array (
+    'city_id' => '535',
+    'city_name' => 'Курган',
+    'region_name' => 'Курганская область',
+  ),
+  153 => 
+  array (
+    'city_id' => '190',
+    'city_name' => 'Курганинск',
+    'region_name' => 'Краснодарский край',
+  ),
+  154 => 
+  array (
+    'city_id' => '904',
+    'city_name' => 'Курильск',
+    'region_name' => 'Сахалинская область',
+  ),
+  155 => 
+  array (
+    'city_id' => '331',
+    'city_name' => 'Курлово',
+    'region_name' => 'Владимирская область',
+  ),
+  156 => 
+  array (
+    'city_id' => '630',
+    'city_name' => 'Куровское',
+    'region_name' => 'Московская область',
+  ),
+  157 => 
+  array (
+    'city_id' => '544',
+    'city_name' => 'Курск',
+    'region_name' => 'Курская область',
+  ),
+  158 => 
+  array (
+    'city_id' => '536',
+    'city_name' => 'Куртамыш',
+    'region_name' => 'Курганская область',
+  ),
+  159 => 
+  array (
+    'city_id' => '545',
+    'city_name' => 'Курчатов',
+    'region_name' => 'Курская область',
+  ),
+  160 => 
+  array (
+    'city_id' => '1057',
+    'city_name' => 'Куса',
+    'region_name' => 'Челябинская область',
+  ),
+  161 => 
+  array (
+    'city_id' => '940',
+    'city_name' => 'Кушва',
+    'region_name' => 'Свердловская область',
+  ),
+  162 => 
+  array (
+    'city_id' => '136',
+    'city_name' => 'Кызыл',
+    'region_name' => 'Республика Тыва',
+  ),
+  163 => 
+  array (
+    'city_id' => '1058',
+    'city_name' => 'Кыштым',
+    'region_name' => 'Челябинская область',
+  ),
+  164 => 
+  array (
+    'city_id' => '27',
+    'city_name' => 'Кяхта',
+    'region_name' => 'Республика Бурятия',
+  ),
+)
+
+array (
+  'url' => NULL,
+  'errors' => 
+  array (
+    'isAddressCorrected' => false,
+    'isNameCorrected' => false,
+    'isDescriptionCorrected' => false,
+    'isPhoneCorrected' => false,
+  ),
+)
+
+array (
+  'url' => NULL,
+  'errors' => 
+  array (
+    'isAddressCorrected' => false,
+    'isNameCorrected' => false,
+    'isDescriptionCorrected' => false,
+    'isPhoneCorrected' => false,
+  ),
+)
+
+array (
+  'url' => NULL,
+  'errors' => 
+  array (
+    'isAddressCorrected' => false,
+    'isNameCorrected' => false,
+    'isDescriptionCorrected' => false,
+    'isPhoneCorrected' => false,
+  ),
+)
+
+array (
+  'url' => NULL,
+  'errors' => 
+  array (
+    'isAddressCorrected' => false,
+    'isNameCorrected' => false,
+    'isDescriptionCorrected' => false,
+    'isPhoneCorrected' => false,
+  ),
+)
+
+array (
+  'url' => NULL,
+  'errors' => 
+  array (
+    'isAddressCorrected' => false,
+    'isNameCorrected' => false,
+    'isDescriptionCorrected' => false,
+    'isPhoneCorrected' => false,
+  ),
+)
+
+{"INN":["Inn cannot be blank."],"password":["Password cannot be blank."],"password_repeat":["Password Repeat cannot be blank."],"email":["Email is not a valid email address."]}
+
+{"email":["Email is not a valid email address."],"INN":["Inn should contain 10 characters."],"password":["Password should contain at least 8 characters."]}
+
+{"password":["Password cannot be blank."],"email":["Email is not a valid email address."],"INN":["Inn should contain 10 characters."]}
+
+{"email":["Email is not a valid email address."],"INN":["Inn should contain 10 characters."],"password":["Password should contain at least 8 characters."]}
+
+{"INN":["Inn should contain 10 characters."],"password":["Password should contain at least 8 characters."]}
+
+{"INN":["Inn should contain 10 characters."],"password":["Password should contain at least 8 characters."]}
+
+{"password":["Password should contain at least 8 characters."]}
+
+{"password":["Password must be equal to \"Password Repeat\"."]}
+
+
+--------------------------
+array (
+)
+
+
+--------------------------
+array (
+  0 => 
+  array (
+    'city_id' => '146',
+    'city_name' => 'Абаза',
+    'region_name' => 'Республика Хакасия',
+  ),
+  1 => 
+  array (
+    'city_id' => '147',
+    'city_name' => 'Абакан',
+    'region_name' => 'Республика Хакасия',
+  ),
+  2 => 
+  array (
+    'city_id' => '761',
+    'city_name' => 'Абдулино',
+    'region_name' => 'Оренбургская область',
+  ),
+  3 => 
+  array (
+    'city_id' => '177',
+    'city_name' => 'Абинск',
+    'region_name' => 'Краснодарский край',
+  ),
+  4 => 
+  array (
+    'city_id' => '3',
+    'city_name' => 'Агидель',
+    'region_name' => 'Республика Башкортостан',
+  ),
+  5 => 
+  array (
+    'city_id' => '113',
+    'city_name' => 'Агрыз',
+    'region_name' => 'Республика Татарстан (Татарстан)',
+  ),
+  6 => 
+  array (
+    'city_id' => '1',
+    'city_name' => 'Адыгейск',
+    'region_name' => 'Республика Адыгея (Адыгея)',
+  ),
+  7 => 
+  array (
+    'city_id' => '114',
+    'city_name' => 'Азнакаево',
+    'region_name' => 'Республика Татарстан (Татарстан)',
+  ),
+  8 => 
+  array (
+    'city_id' => '833',
+    'city_name' => 'Азов',
+    'region_name' => 'Ростовская область',
+  ),
+  9 => 
+  array (
+    'city_id' => '135',
+    'city_name' => 'Ак-Довурак',
+    'region_name' => 'Республика Тыва',
+  ),
+  10 => 
+  array (
+    'city_id' => '834',
+    'city_name' => 'Аксай',
+    'region_name' => 'Ростовская область',
+  ),
+  11 => 
+  array (
+    'city_id' => '107',
+    'city_name' => 'Алагир',
+    'region_name' => 'Республика Северная Осетия - Алания',
+  ),
+  12 => 
+  array (
+    'city_id' => '915',
+    'city_name' => 'Алапаевск',
+    'region_name' => 'Свердловская область',
+  ),
+  13 => 
+  array (
+    'city_id' => '156',
+    'city_name' => 'Алатырь',
+    'region_name' => 'Чувашская Республика - Чувашия',
+  ),
+  14 => 
+  array (
+    'city_id' => '94',
+    'city_name' => 'Алдан',
+    'region_name' => 'Республика Саха (Якутия)',
+  ),
+  15 => 
+  array (
+    'city_id' => '165',
+    'city_name' => 'Алейск',
+    'region_name' => 'Алтайский край',
+  ),
+  16 => 
+  array (
+    'city_id' => '320',
+    'city_name' => 'Александров',
+    'region_name' => 'Владимирская область',
+  ),
+  17 => 
+  array (
+    'city_id' => '793',
+    'city_name' => 'Александровск',
+    'region_name' => 'Пермский край',
+  ),
+  18 => 
+  array (
+    'city_id' => '900',
+    'city_name' => 'Александровск-Сахалинский',
+    'region_name' => 'Сахалинская область',
+  ),
+  19 => 
+  array (
+    'city_id' => '293',
+    'city_name' => 'Алексеевка',
+    'region_name' => 'Белгородская область',
+  ),
+  20 => 
+  array (
+    'city_id' => '1015',
+    'city_name' => 'Алексин',
+    'region_name' => 'Тульская область',
+  ),
+  21 => 
+  array (
+    'city_id' => '410',
+    'city_name' => 'Алзамай',
+    'region_name' => 'Иркутская область',
+  ),
+  22 => 
+  array (
+    'city_id' => '1143',
+    'city_name' => 'Алупка',
+    'region_name' => 'Республика Крым',
+  ),
+  23 => 
+  array (
+    'city_id' => '1144',
+    'city_name' => 'Алушта',
+    'region_name' => 'Республика Крым',
+  ),
+  24 => 
+  array (
+    'city_id' => '115',
+    'city_name' => 'Альметьевск',
+    'region_name' => 'Республика Татарстан (Татарстан)',
+  ),
+  25 => 
+  array (
+    'city_id' => '257',
+    'city_name' => 'Амурск',
+    'region_name' => 'Хабаровский край',
+  ),
+  26 => 
+  array (
+    'city_id' => '1132',
+    'city_name' => 'Анадырь',
+    'region_name' => 'Чукотский автономный округ',
+  ),
+  27 => 
+  array (
+    'city_id' => '178',
+    'city_name' => 'Анапа',
+    'region_name' => 'Краснодарский край',
+  ),
+  28 => 
+  array (
+    'city_id' => '411',
+    'city_name' => 'Ангарск',
+    'region_name' => 'Иркутская область',
+  ),
+  29 => 
+  array (
+    'city_id' => '986',
+    'city_name' => 'Андреаполь',
+    'region_name' => 'Тверская область',
+  ),
+  30 => 
+  array (
+    'city_id' => '483',
+    'city_name' => 'Анжеро-Судженск',
+    'region_name' => 'Кемеровская область',
+  ),
+  31 => 
+  array (
+    'city_id' => '901',
+    'city_name' => 'Анива',
+    'region_name' => 'Сахалинская область',
+  ),
+  32 => 
+  array (
+    'city_id' => '682',
+    'city_name' => 'Апатиты',
+    'region_name' => 'Мурманская область',
+  ),
+  33 => 
+  array (
+    'city_id' => '593',
+    'city_name' => 'Апрелевка',
+    'region_name' => 'Московская область',
+  ),
+  34 => 
+  array (
+    'city_id' => '179',
+    'city_name' => 'Апшеронск',
+    'region_name' => 'Краснодарский край',
+  ),
+  35 => 
+  array (
+    'city_id' => '916',
+    'city_name' => 'Арамиль',
+    'region_name' => 'Свердловская область',
+  ),
+  36 => 
+  array (
+    'city_id' => '151',
+    'city_name' => 'Аргун',
+    'region_name' => 'Чеченская Республика',
+  ),
+  37 => 
+  array (
+    'city_id' => '87',
+    'city_name' => 'Ардатов',
+    'region_name' => 'Республика Мордовия',
+  ),
+  38 => 
+  array (
+    'city_id' => '108',
+    'city_name' => 'Ардон',
+    'region_name' => 'Республика Северная Осетия - Алания',
+  ),
+  39 => 
+  array (
+    'city_id' => '701',
+    'city_name' => 'Арзамас',
+    'region_name' => 'Нижегородская область',
+  ),
+  40 => 
+  array (
+    'city_id' => '879',
+    'city_name' => 'Аркадак',
+    'region_name' => 'Саратовская область',
+  ),
+  41 => 
+  array (
+    'city_id' => '180',
+    'city_name' => 'Армавир',
+    'region_name' => 'Краснодарский край',
+  ),
+  42 => 
+  array (
+    'city_id' => '1145',
+    'city_name' => 'Армянск',
+    'region_name' => 'Республика Крым',
+  ),
+  43 => 
+  array (
+    'city_id' => '1146',
+    'city_name' => 'Армянськ',
+    'region_name' => 'Республика Крым',
+  ),
+  44 => 
+  array (
+    'city_id' => '226',
+    'city_name' => 'Арсеньев',
+    'region_name' => 'Приморский край',
+  ),
+  45 => 
+  array (
+    'city_id' => '116',
+    'city_name' => 'Арск',
+    'region_name' => 'Республика Татарстан (Татарстан)',
+  ),
+  46 => 
+  array (
+    'city_id' => '227',
+    'city_name' => 'Артем',
+    'region_name' => 'Приморский край',
+  ),
+  47 => 
+  array (
+    'city_id' => '203',
+    'city_name' => 'Артемовск',
+    'region_name' => 'Красноярский край',
+  ),
+  48 => 
+  array (
+    'city_id' => '917',
+    'city_name' => 'Артемовский',
+    'region_name' => 'Свердловская область',
+  ),
+  49 => 
+  array (
+    'city_id' => '273',
+    'city_name' => 'Архангельск',
+    'region_name' => 'Архангельская область',
+  ),
+  50 => 
+  array (
+    'city_id' => '918',
+    'city_name' => 'Асбест',
+    'region_name' => 'Свердловская область',
+  ),
+  51 => 
+  array (
+    'city_id' => '1009',
+    'city_name' => 'Асино',
+    'region_name' => 'Томская область',
+  ),
+  52 => 
+  array (
+    'city_id' => '286',
+    'city_name' => 'Астрахань',
+    'region_name' => 'Астраханская область',
+  ),
+  53 => 
+  array (
+    'city_id' => '880',
+    'city_name' => 'Аткарск',
+    'region_name' => 'Саратовская область',
+  ),
+  54 => 
+  array (
+    'city_id' => '287',
+    'city_name' => 'Ахтубинск',
+    'region_name' => 'Астраханская область',
+  ),
+  55 => 
+  array (
+    'city_id' => '288',
+    'city_name' => 'Ахтубинск-7',
+    'region_name' => 'Астраханская область',
+  ),
+  56 => 
+  array (
+    'city_id' => '204',
+    'city_name' => 'Ачинск',
+    'region_name' => 'Красноярский край',
+  ),
+  57 => 
+  array (
+    'city_id' => '1045',
+    'city_name' => 'Аша',
+    'region_name' => 'Челябинская область',
+  ),
+)
+
+
+--------------------------
+array (
+  0 => 
+  array (
+    'city_id' => '146',
+    'city_name' => 'Абаза',
+    'region_name' => 'Республика Хакасия',
+  ),
+  1 => 
+  array (
+    'city_id' => '147',
+    'city_name' => 'Абакан',
+    'region_name' => 'Республика Хакасия',
+  ),
+  2 => 
+  array (
+    'city_id' => '761',
+    'city_name' => 'Абдулино',
+    'region_name' => 'Оренбургская область',
+  ),
+  3 => 
+  array (
+    'city_id' => '177',
+    'city_name' => 'Абинск',
+    'region_name' => 'Краснодарский край',
+  ),
+  4 => 
+  array (
+    'city_id' => '3',
+    'city_name' => 'Агидель',
+    'region_name' => 'Республика Башкортостан',
+  ),
+  5 => 
+  array (
+    'city_id' => '113',
+    'city_name' => 'Агрыз',
+    'region_name' => 'Республика Татарстан (Татарстан)',
+  ),
+  6 => 
+  array (
+    'city_id' => '1',
+    'city_name' => 'Адыгейск',
+    'region_name' => 'Республика Адыгея (Адыгея)',
+  ),
+  7 => 
+  array (
+    'city_id' => '114',
+    'city_name' => 'Азнакаево',
+    'region_name' => 'Республика Татарстан (Татарстан)',
+  ),
+  8 => 
+  array (
+    'city_id' => '833',
+    'city_name' => 'Азов',
+    'region_name' => 'Ростовская область',
+  ),
+  9 => 
+  array (
+    'city_id' => '135',
+    'city_name' => 'Ак-Довурак',
+    'region_name' => 'Республика Тыва',
+  ),
+  10 => 
+  array (
+    'city_id' => '834',
+    'city_name' => 'Аксай',
+    'region_name' => 'Ростовская область',
+  ),
+  11 => 
+  array (
+    'city_id' => '107',
+    'city_name' => 'Алагир',
+    'region_name' => 'Республика Северная Осетия - Алания',
+  ),
+  12 => 
+  array (
+    'city_id' => '915',
+    'city_name' => 'Алапаевск',
+    'region_name' => 'Свердловская область',
+  ),
+  13 => 
+  array (
+    'city_id' => '156',
+    'city_name' => 'Алатырь',
+    'region_name' => 'Чувашская Республика - Чувашия',
+  ),
+  14 => 
+  array (
+    'city_id' => '94',
+    'city_name' => 'Алдан',
+    'region_name' => 'Республика Саха (Якутия)',
+  ),
+  15 => 
+  array (
+    'city_id' => '165',
+    'city_name' => 'Алейск',
+    'region_name' => 'Алтайский край',
+  ),
+  16 => 
+  array (
+    'city_id' => '320',
+    'city_name' => 'Александров',
+    'region_name' => 'Владимирская область',
+  ),
+  17 => 
+  array (
+    'city_id' => '793',
+    'city_name' => 'Александровск',
+    'region_name' => 'Пермский край',
+  ),
+  18 => 
+  array (
+    'city_id' => '900',
+    'city_name' => 'Александровск-Сахалинский',
+    'region_name' => 'Сахалинская область',
+  ),
+  19 => 
+  array (
+    'city_id' => '293',
+    'city_name' => 'Алексеевка',
+    'region_name' => 'Белгородская область',
+  ),
+  20 => 
+  array (
+    'city_id' => '1015',
+    'city_name' => 'Алексин',
+    'region_name' => 'Тульская область',
+  ),
+  21 => 
+  array (
+    'city_id' => '410',
+    'city_name' => 'Алзамай',
+    'region_name' => 'Иркутская область',
+  ),
+  22 => 
+  array (
+    'city_id' => '1143',
+    'city_name' => 'Алупка',
+    'region_name' => 'Республика Крым',
+  ),
+  23 => 
+  array (
+    'city_id' => '1144',
+    'city_name' => 'Алушта',
+    'region_name' => 'Республика Крым',
+  ),
+  24 => 
+  array (
+    'city_id' => '115',
+    'city_name' => 'Альметьевск',
+    'region_name' => 'Республика Татарстан (Татарстан)',
+  ),
+  25 => 
+  array (
+    'city_id' => '257',
+    'city_name' => 'Амурск',
+    'region_name' => 'Хабаровский край',
+  ),
+  26 => 
+  array (
+    'city_id' => '1132',
+    'city_name' => 'Анадырь',
+    'region_name' => 'Чукотский автономный округ',
+  ),
+  27 => 
+  array (
+    'city_id' => '178',
+    'city_name' => 'Анапа',
+    'region_name' => 'Краснодарский край',
+  ),
+  28 => 
+  array (
+    'city_id' => '411',
+    'city_name' => 'Ангарск',
+    'region_name' => 'Иркутская область',
+  ),
+  29 => 
+  array (
+    'city_id' => '986',
+    'city_name' => 'Андреаполь',
+    'region_name' => 'Тверская область',
+  ),
+  30 => 
+  array (
+    'city_id' => '483',
+    'city_name' => 'Анжеро-Судженск',
+    'region_name' => 'Кемеровская область',
+  ),
+  31 => 
+  array (
+    'city_id' => '901',
+    'city_name' => 'Анива',
+    'region_name' => 'Сахалинская область',
+  ),
+  32 => 
+  array (
+    'city_id' => '682',
+    'city_name' => 'Апатиты',
+    'region_name' => 'Мурманская область',
+  ),
+  33 => 
+  array (
+    'city_id' => '593',
+    'city_name' => 'Апрелевка',
+    'region_name' => 'Московская область',
+  ),
+  34 => 
+  array (
+    'city_id' => '179',
+    'city_name' => 'Апшеронск',
+    'region_name' => 'Краснодарский край',
+  ),
+  35 => 
+  array (
+    'city_id' => '916',
+    'city_name' => 'Арамиль',
+    'region_name' => 'Свердловская область',
+  ),
+  36 => 
+  array (
+    'city_id' => '151',
+    'city_name' => 'Аргун',
+    'region_name' => 'Чеченская Республика',
+  ),
+  37 => 
+  array (
+    'city_id' => '87',
+    'city_name' => 'Ардатов',
+    'region_name' => 'Республика Мордовия',
+  ),
+  38 => 
+  array (
+    'city_id' => '108',
+    'city_name' => 'Ардон',
+    'region_name' => 'Республика Северная Осетия - Алания',
+  ),
+  39 => 
+  array (
+    'city_id' => '701',
+    'city_name' => 'Арзамас',
+    'region_name' => 'Нижегородская область',
+  ),
+  40 => 
+  array (
+    'city_id' => '879',
+    'city_name' => 'Аркадак',
+    'region_name' => 'Саратовская область',
+  ),
+  41 => 
+  array (
+    'city_id' => '180',
+    'city_name' => 'Армавир',
+    'region_name' => 'Краснодарский край',
+  ),
+  42 => 
+  array (
+    'city_id' => '1145',
+    'city_name' => 'Армянск',
+    'region_name' => 'Республика Крым',
+  ),
+  43 => 
+  array (
+    'city_id' => '1146',
+    'city_name' => 'Армянськ',
+    'region_name' => 'Республика Крым',
+  ),
+  44 => 
+  array (
+    'city_id' => '226',
+    'city_name' => 'Арсеньев',
+    'region_name' => 'Приморский край',
+  ),
+  45 => 
+  array (
+    'city_id' => '116',
+    'city_name' => 'Арск',
+    'region_name' => 'Республика Татарстан (Татарстан)',
+  ),
+  46 => 
+  array (
+    'city_id' => '227',
+    'city_name' => 'Артем',
+    'region_name' => 'Приморский край',
+  ),
+  47 => 
+  array (
+    'city_id' => '203',
+    'city_name' => 'Артемовск',
+    'region_name' => 'Красноярский край',
+  ),
+  48 => 
+  array (
+    'city_id' => '917',
+    'city_name' => 'Артемовский',
+    'region_name' => 'Свердловская область',
+  ),
+  49 => 
+  array (
+    'city_id' => '273',
+    'city_name' => 'Архангельск',
+    'region_name' => 'Архангельская область',
+  ),
+  50 => 
+  array (
+    'city_id' => '918',
+    'city_name' => 'Асбест',
+    'region_name' => 'Свердловская область',
+  ),
+  51 => 
+  array (
+    'city_id' => '1009',
+    'city_name' => 'Асино',
+    'region_name' => 'Томская область',
+  ),
+  52 => 
+  array (
+    'city_id' => '286',
+    'city_name' => 'Астрахань',
+    'region_name' => 'Астраханская область',
+  ),
+  53 => 
+  array (
+    'city_id' => '880',
+    'city_name' => 'Аткарск',
+    'region_name' => 'Саратовская область',
+  ),
+  54 => 
+  array (
+    'city_id' => '287',
+    'city_name' => 'Ахтубинск',
+    'region_name' => 'Астраханская область',
+  ),
+  55 => 
+  array (
+    'city_id' => '288',
+    'city_name' => 'Ахтубинск-7',
+    'region_name' => 'Астраханская область',
+  ),
+  56 => 
+  array (
+    'city_id' => '204',
+    'city_name' => 'Ачинск',
+    'region_name' => 'Красноярский край',
+  ),
+  57 => 
+  array (
+    'city_id' => '1045',
+    'city_name' => 'Аша',
+    'region_name' => 'Челябинская область',
+  ),
+)
+
+
+--------------------------
+array (
+)
+
+
+--------------------------
+array (
+)
+
+
+--------------------------
+array (
+)
+
+
+--------------------------
+array (
+)
+
+
+--------------------------
+array (
+)
+
+
+--------------------------
+array (
+)
+
+
+--------------------------
+array (
+)
+
+
+--------------------------
+array (
+)
+
+
+--------------------------
+array (
+)
+
+
+--------------------------
+array (
+  0 => 
+  array (
+    'city_id' => '146',
+    'city_name' => 'Абаза',
+    'region_name' => 'Республика Хакасия',
+  ),
+  1 => 
+  array (
+    'city_id' => '147',
+    'city_name' => 'Абакан',
+    'region_name' => 'Республика Хакасия',
+  ),
+  2 => 
+  array (
+    'city_id' => '761',
+    'city_name' => 'Абдулино',
+    'region_name' => 'Оренбургская область',
+  ),
+  3 => 
+  array (
+    'city_id' => '177',
+    'city_name' => 'Абинск',
+    'region_name' => 'Краснодарский край',
+  ),
+  4 => 
+  array (
+    'city_id' => '3',
+    'city_name' => 'Агидель',
+    'region_name' => 'Республика Башкортостан',
+  ),
+  5 => 
+  array (
+    'city_id' => '113',
+    'city_name' => 'Агрыз',
+    'region_name' => 'Республика Татарстан (Татарстан)',
+  ),
+  6 => 
+  array (
+    'city_id' => '1',
+    'city_name' => 'Адыгейск',
+    'region_name' => 'Республика Адыгея (Адыгея)',
+  ),
+  7 => 
+  array (
+    'city_id' => '114',
+    'city_name' => 'Азнакаево',
+    'region_name' => 'Республика Татарстан (Татарстан)',
+  ),
+  8 => 
+  array (
+    'city_id' => '833',
+    'city_name' => 'Азов',
+    'region_name' => 'Ростовская область',
+  ),
+  9 => 
+  array (
+    'city_id' => '135',
+    'city_name' => 'Ак-Довурак',
+    'region_name' => 'Республика Тыва',
+  ),
+  10 => 
+  array (
+    'city_id' => '834',
+    'city_name' => 'Аксай',
+    'region_name' => 'Ростовская область',
+  ),
+  11 => 
+  array (
+    'city_id' => '107',
+    'city_name' => 'Алагир',
+    'region_name' => 'Республика Северная Осетия - Алания',
+  ),
+  12 => 
+  array (
+    'city_id' => '915',
+    'city_name' => 'Алапаевск',
+    'region_name' => 'Свердловская область',
+  ),
+  13 => 
+  array (
+    'city_id' => '156',
+    'city_name' => 'Алатырь',
+    'region_name' => 'Чувашская Республика - Чувашия',
+  ),
+  14 => 
+  array (
+    'city_id' => '94',
+    'city_name' => 'Алдан',
+    'region_name' => 'Республика Саха (Якутия)',
+  ),
+  15 => 
+  array (
+    'city_id' => '165',
+    'city_name' => 'Алейск',
+    'region_name' => 'Алтайский край',
+  ),
+  16 => 
+  array (
+    'city_id' => '320',
+    'city_name' => 'Александров',
+    'region_name' => 'Владимирская область',
+  ),
+  17 => 
+  array (
+    'city_id' => '793',
+    'city_name' => 'Александровск',
+    'region_name' => 'Пермский край',
+  ),
+  18 => 
+  array (
+    'city_id' => '900',
+    'city_name' => 'Александровск-Сахалинский',
+    'region_name' => 'Сахалинская область',
+  ),
+  19 => 
+  array (
+    'city_id' => '293',
+    'city_name' => 'Алексеевка',
+    'region_name' => 'Белгородская область',
+  ),
+  20 => 
+  array (
+    'city_id' => '1015',
+    'city_name' => 'Алексин',
+    'region_name' => 'Тульская область',
+  ),
+  21 => 
+  array (
+    'city_id' => '410',
+    'city_name' => 'Алзамай',
+    'region_name' => 'Иркутская область',
+  ),
+  22 => 
+  array (
+    'city_id' => '1143',
+    'city_name' => 'Алупка',
+    'region_name' => 'Республика Крым',
+  ),
+  23 => 
+  array (
+    'city_id' => '1144',
+    'city_name' => 'Алушта',
+    'region_name' => 'Республика Крым',
+  ),
+  24 => 
+  array (
+    'city_id' => '115',
+    'city_name' => 'Альметьевск',
+    'region_name' => 'Республика Татарстан (Татарстан)',
+  ),
+  25 => 
+  array (
+    'city_id' => '257',
+    'city_name' => 'Амурск',
+    'region_name' => 'Хабаровский край',
+  ),
+  26 => 
+  array (
+    'city_id' => '1132',
+    'city_name' => 'Анадырь',
+    'region_name' => 'Чукотский автономный округ',
+  ),
+  27 => 
+  array (
+    'city_id' => '178',
+    'city_name' => 'Анапа',
+    'region_name' => 'Краснодарский край',
+  ),
+  28 => 
+  array (
+    'city_id' => '411',
+    'city_name' => 'Ангарск',
+    'region_name' => 'Иркутская область',
+  ),
+  29 => 
+  array (
+    'city_id' => '986',
+    'city_name' => 'Андреаполь',
+    'region_name' => 'Тверская область',
+  ),
+  30 => 
+  array (
+    'city_id' => '483',
+    'city_name' => 'Анжеро-Судженск',
+    'region_name' => 'Кемеровская область',
+  ),
+  31 => 
+  array (
+    'city_id' => '901',
+    'city_name' => 'Анива',
+    'region_name' => 'Сахалинская область',
+  ),
+  32 => 
+  array (
+    'city_id' => '682',
+    'city_name' => 'Апатиты',
+    'region_name' => 'Мурманская область',
+  ),
+  33 => 
+  array (
+    'city_id' => '593',
+    'city_name' => 'Апрелевка',
+    'region_name' => 'Московская область',
+  ),
+  34 => 
+  array (
+    'city_id' => '179',
+    'city_name' => 'Апшеронск',
+    'region_name' => 'Краснодарский край',
+  ),
+  35 => 
+  array (
+    'city_id' => '916',
+    'city_name' => 'Арамиль',
+    'region_name' => 'Свердловская область',
+  ),
+  36 => 
+  array (
+    'city_id' => '151',
+    'city_name' => 'Аргун',
+    'region_name' => 'Чеченская Республика',
+  ),
+  37 => 
+  array (
+    'city_id' => '87',
+    'city_name' => 'Ардатов',
+    'region_name' => 'Республика Мордовия',
+  ),
+  38 => 
+  array (
+    'city_id' => '108',
+    'city_name' => 'Ардон',
+    'region_name' => 'Республика Северная Осетия - Алания',
+  ),
+  39 => 
+  array (
+    'city_id' => '701',
+    'city_name' => 'Арзамас',
+    'region_name' => 'Нижегородская область',
+  ),
+  40 => 
+  array (
+    'city_id' => '879',
+    'city_name' => 'Аркадак',
+    'region_name' => 'Саратовская область',
+  ),
+  41 => 
+  array (
+    'city_id' => '180',
+    'city_name' => 'Армавир',
+    'region_name' => 'Краснодарский край',
+  ),
+  42 => 
+  array (
+    'city_id' => '1145',
+    'city_name' => 'Армянск',
+    'region_name' => 'Республика Крым',
+  ),
+  43 => 
+  array (
+    'city_id' => '1146',
+    'city_name' => 'Армянськ',
+    'region_name' => 'Республика Крым',
+  ),
+  44 => 
+  array (
+    'city_id' => '226',
+    'city_name' => 'Арсеньев',
+    'region_name' => 'Приморский край',
+  ),
+  45 => 
+  array (
+    'city_id' => '116',
+    'city_name' => 'Арск',
+    'region_name' => 'Республика Татарстан (Татарстан)',
+  ),
+  46 => 
+  array (
+    'city_id' => '227',
+    'city_name' => 'Артем',
+    'region_name' => 'Приморский край',
+  ),
+  47 => 
+  array (
+    'city_id' => '203',
+    'city_name' => 'Артемовск',
+    'region_name' => 'Красноярский край',
+  ),
+  48 => 
+  array (
+    'city_id' => '917',
+    'city_name' => 'Артемовский',
+    'region_name' => 'Свердловская область',
+  ),
+  49 => 
+  array (
+    'city_id' => '273',
+    'city_name' => 'Архангельск',
+    'region_name' => 'Архангельская область',
+  ),
+  50 => 
+  array (
+    'city_id' => '918',
+    'city_name' => 'Асбест',
+    'region_name' => 'Свердловская область',
+  ),
+  51 => 
+  array (
+    'city_id' => '1009',
+    'city_name' => 'Асино',
+    'region_name' => 'Томская область',
+  ),
+  52 => 
+  array (
+    'city_id' => '286',
+    'city_name' => 'Астрахань',
+    'region_name' => 'Астраханская область',
+  ),
+  53 => 
+  array (
+    'city_id' => '880',
+    'city_name' => 'Аткарск',
+    'region_name' => 'Саратовская область',
+  ),
+  54 => 
+  array (
+    'city_id' => '287',
+    'city_name' => 'Ахтубинск',
+    'region_name' => 'Астраханская область',
+  ),
+  55 => 
+  array (
+    'city_id' => '288',
+    'city_name' => 'Ахтубинск-7',
+    'region_name' => 'Астраханская область',
+  ),
+  56 => 
+  array (
+    'city_id' => '204',
+    'city_name' => 'Ачинск',
+    'region_name' => 'Красноярский край',
+  ),
+  57 => 
+  array (
+    'city_id' => '1045',
+    'city_name' => 'Аша',
+    'region_name' => 'Челябинская область',
+  ),
+)
+
+
+--------------------------
+array (
+  0 => 
+  array (
+    'city_id' => '688',
+    'city_name' => 'Ковдор',
+    'region_name' => 'Мурманская область',
+  ),
+  1 => 
+  array (
+    'city_id' => '328',
+    'city_name' => 'Ковров',
+    'region_name' => 'Владимирская область',
+  ),
+  2 => 
+  array (
+    'city_id' => '89',
+    'city_name' => 'Ковылкино',
+    'region_name' => 'Республика Мордовия',
+  ),
+  3 => 
+  array (
+    'city_id' => '1117',
+    'city_name' => 'Когалым',
+    'region_name' => 'Ханты-Мансийский автономный округ - Югра',
+  ),
+  4 => 
+  array (
+    'city_id' => '216',
+    'city_name' => 'Кодинск',
+    'region_name' => 'Красноярский край',
+  ),
+  5 => 
+  array (
+    'city_id' => '464',
+    'city_name' => 'Козельск',
+    'region_name' => 'Калужская область',
+  ),
+  6 => 
+  array (
+    'city_id' => '158',
+    'city_name' => 'Козловка',
+    'region_name' => 'Чувашская Республика - Чувашия',
+  ),
+  7 => 
+  array (
+    'city_id' => '86',
+    'city_name' => 'Козьмодемьянск',
+    'region_name' => 'Республика Марий Эл',
+  ),
+  8 => 
+  array (
+    'city_id' => '689',
+    'city_name' => 'Кола',
+    'region_name' => 'Мурманская область',
+  ),
+  9 => 
+  array (
+    'city_id' => '524',
+    'city_name' => 'Кологрив',
+    'region_name' => 'Костромская область',
+  ),
+  10 => 
+  array (
+    'city_id' => '622',
+    'city_name' => 'Коломна',
+    'region_name' => 'Московская область',
+  ),
+  11 => 
+  array (
+    'city_id' => '1011',
+    'city_name' => 'Колпашево',
+    'region_name' => 'Томская область',
+  ),
+  12 => 
+  array (
+    'city_id' => '1104',
+    'city_name' => 'Колпино',
+    'region_name' => 'Санкт-Петербург',
+  ),
+  13 => 
+  array (
+    'city_id' => '329',
+    'city_name' => 'Кольчугино',
+    'region_name' => 'Владимирская область',
+  ),
+  14 => 
+  array (
+    'city_id' => '564',
+    'city_name' => 'Коммунар',
+    'region_name' => 'Ленинградская область',
+  ),
+  15 => 
+  array (
+    'city_id' => '398',
+    'city_name' => 'Комсомольск',
+    'region_name' => 'Ивановская область',
+  ),
+  16 => 
+  array (
+    'city_id' => '260',
+    'city_name' => 'Комсомольск-на-Амуре',
+    'region_name' => 'Хабаровский край',
+  ),
+  17 => 
+  array (
+    'city_id' => '997',
+    'city_name' => 'Конаково',
+    'region_name' => 'Тверская область',
+  ),
+  18 => 
+  array (
+    'city_id' => '62',
+    'city_name' => 'Кондопога',
+    'region_name' => 'Республика Карелия',
+  ),
+  19 => 
+  array (
+    'city_id' => '465',
+    'city_name' => 'Кондрово',
+    'region_name' => 'Калужская область',
+  ),
+  20 => 
+  array (
+    'city_id' => '843',
+    'city_name' => 'Константиновск',
+    'region_name' => 'Ростовская область',
+  ),
+  21 => 
+  array (
+    'city_id' => '1055',
+    'city_name' => 'Копейск',
+    'region_name' => 'Челябинская область',
+  ),
+  22 => 
+  array (
+    'city_id' => '857',
+    'city_name' => 'Кораблино',
+    'region_name' => 'Рязанская область',
+  ),
+  23 => 
+  array (
+    'city_id' => '186',
+    'city_name' => 'Кореновск',
+    'region_name' => 'Краснодарский край',
+  ),
+  24 => 
+  array (
+    'city_id' => '1056',
+    'city_name' => 'Коркино',
+    'region_name' => 'Челябинская область',
+  ),
+  25 => 
+  array (
+    'city_id' => '623',
+    'city_name' => 'Королев',
+    'region_name' => 'Московская область',
+  ),
+  26 => 
+  array (
+    'city_id' => '299',
+    'city_name' => 'Короча',
+    'region_name' => 'Белгородская область',
+  ),
+  27 => 
+  array (
+    'city_id' => '903',
+    'city_name' => 'Корсаков',
+    'region_name' => 'Сахалинская область',
+  ),
+  28 => 
+  array (
+    'city_id' => '276',
+    'city_name' => 'Коряжма',
+    'region_name' => 'Архангельская область',
+  ),
+  29 => 
+  array (
+    'city_id' => '330',
+    'city_name' => 'Костерево',
+    'region_name' => 'Владимирская область',
+  ),
+  30 => 
+  array (
+    'city_id' => '63',
+    'city_name' => 'Костомукша',
+    'region_name' => 'Республика Карелия',
+  ),
+  31 => 
+  array (
+    'city_id' => '525',
+    'city_name' => 'Кострома',
+    'region_name' => 'Костромская область',
+  ),
+  32 => 
+  array (
+    'city_id' => '624',
+    'city_name' => 'Котельники',
+    'region_name' => 'Московская область',
+  ),
+  33 => 
+  array (
+    'city_id' => '349',
+    'city_name' => 'Котельниково',
+    'region_name' => 'Волгоградская область',
+  ),
+  34 => 
+  array (
+    'city_id' => '509',
+    'city_name' => 'Котельнич',
+    'region_name' => 'Кировская область',
+  ),
+  35 => 
+  array (
+    'city_id' => '277',
+    'city_name' => 'Котлас',
+    'region_name' => 'Архангельская область',
+  ),
+  36 => 
+  array (
+    'city_id' => '350',
+    'city_name' => 'Котово',
+    'region_name' => 'Волгоградская область',
+  ),
+  37 => 
+  array (
+    'city_id' => '980',
+    'city_name' => 'Котовск',
+    'region_name' => 'Тамбовская область',
+  ),
+  38 => 
+  array (
+    'city_id' => '399',
+    'city_name' => 'Кохма',
+    'region_name' => 'Ивановская область',
+  ),
+)
+
+array (
+  'url' => NULL,
+  'errors' => 
+  array (
+    'isAddressCorrected' => false,
+    'isNameCorrected' => false,
+    'isDescriptionCorrected' => false,
+    'isPhoneCorrected' => false,
+  ),
+)
+
+array (
+  'url' => NULL,
+  'errors' => 
+  array (
+    'isAddressCorrected' => false,
+    'isNameCorrected' => false,
+    'isDescriptionCorrected' => false,
+    'isPhoneCorrected' => false,
+  ),
+)
+
+[]
+

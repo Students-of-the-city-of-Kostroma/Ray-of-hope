@@ -150,7 +150,13 @@ class AuthorizationOrganisationController extends Controller
 
             Yii::$app->session->open();                    
             Yii::$app->session->set("email", $email);
-            Yii::$app->session->set("id", $id);
+
+
+            $userid = UserDB::find()
+            ->where(['email' => $id])
+            ->all()[0]['id'];
+
+            Yii::$app->session->set("id", $userid);
             Yii::$app->session->set("type", "2");
         }
             

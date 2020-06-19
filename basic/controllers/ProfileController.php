@@ -201,7 +201,7 @@ class ProfileController extends Controller
         $resolveToUser['errors']['isNameCorrected'] == false and
         $resolveToUser['errors']['isDescriptionCorrected'] == false and 
         $resolveToUser['errors']['isPhoneCorrected'] == false){
-            $resolveToUser['newUrl'] = "ok";
+            $resolveToUser['newUrl'] = "/index.php?r=profile%2Fprofile-organisation";
 
             $editOrg->update();
             $user->update();

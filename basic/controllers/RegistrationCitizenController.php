@@ -106,7 +106,12 @@ class RegistrationCitizenController extends Controller
 
                 Yii::$app->session->open();
                 Yii::$app->session->set("email", $email);
-                Yii::$app->session->set("id", $newCitizenAllInfo->id);
+
+                $userid = UserDB::find()
+                    ->where(['email' => $newCitizenEmail->id])
+                    ->all()[0]['id'];
+
+                Yii::$app->session->set("id", $userid);
                 Yii::$app->session->set("type", "1");
 
                 $resolveToUser['newUrl'] = "/index.php?r=profile%2Fprofile-citizen";

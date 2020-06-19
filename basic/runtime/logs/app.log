@@ -58158,3 +58158,814 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1592407183.708
     'REQUEST_TIME' => 1592407183
 ]
+2020-06-19 11:16:18 [127.0.0.1][-][39b876724838704eb5223afe8f37ea0c][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined offset: 0 in /opt/lampp/htdocs/basic/views/profile/profile-org.php:25
+Stack trace:
+#0 /opt/lampp/htdocs/basic/views/profile/profile-org.php(25): yii\base\ErrorHandler->handleError(8, 'Undefined offse...', '/opt/lampp/htdo...', 25, Array)
+#1 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/View.php(348): require('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/opt/lampp/htdo...', Array)
+#3 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/opt/lampp/htdo...', Array, Object(app\controllers\ProfileController))
+#4 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->render('profile-org', Array, Object(app\controllers\ProfileController))
+#5 /opt/lampp/htdocs/basic/controllers/ProfileController.php(23): yii\base\Controller->render('profile-org')
+#6 [internal function]: app\controllers\ProfileController->actionProfileOrganisation()
+#7 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('profile-organis...', Array)
+#10 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('profile/profile...', Array)
+#11 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /opt/lampp/htdocs/basic/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2020-06-19 11:16:18 [127.0.0.1][-][39b876724838704eb5223afe8f37ea0c][info][application] $_GET = [
+    'r' => 'profile/profile-organisation'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '7a7b514df7ad8142f5f8ec964874b557d22cb054ad1ba1c382116c06e37b30c1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"B-yZ77pHMM6AjyrMQkK_oqtz9ePl7DMb\";}'
+    'PHPSESSID' => '39b876724838704eb5223afe8f37ea0c'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'email' => 'myemail@mail.com'
+    'id' => 91
+    'type' => '2'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'XuyCYnTwztZv6VHxMPvwRwAAAAM'
+    'HTTP_HOST' => 'rayofhope.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://rayofhope.com/index.php?r=authorization%2Forganisation'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru,en-US;q=0.9,en;q=0.8,ru-RU;q=0.7'
+    'HTTP_COOKIE' => '_csrf=7a7b514df7ad8142f5f8ec964874b557d22cb054ad1ba1c382116c06e37b30c1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22B-yZ77pHMM6AjyrMQkK_oqtz9ePl7DMb%22%3B%7D; PHPSESSID=39b876724838704eb5223afe8f37ea0c'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Unix) OpenSSL/1.1.1d PHP/7.3.15 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'rayofhope.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/basic/web/index.php'
+    'REMOTE_PORT' => '51396'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=profile%2Fprofile-organisation'
+    'REQUEST_URI' => '/index.php?r=profile%2Fprofile-organisation'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1592558178.13
+    'REQUEST_TIME' => 1592558178
+]
+2020-06-19 11:16:18 [127.0.0.1][-][39b876724838704eb5223afe8f37ea0c][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined offset: 0 in /opt/lampp/htdocs/basic/views/profile/profile-org.php:25
+Stack trace:
+#0 /opt/lampp/htdocs/basic/views/profile/profile-org.php(25): yii\base\ErrorHandler->handleError(8, 'Undefined offse...', '/opt/lampp/htdo...', 25, Array)
+#1 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/View.php(348): require('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/opt/lampp/htdo...', Array)
+#3 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/opt/lampp/htdo...', Array, Object(app\controllers\ProfileController))
+#4 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->render('profile-org', Array, Object(app\controllers\ProfileController))
+#5 /opt/lampp/htdocs/basic/controllers/ProfileController.php(23): yii\base\Controller->render('profile-org')
+#6 [internal function]: app\controllers\ProfileController->actionProfileOrganisation()
+#7 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('profile-organis...', Array)
+#10 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('profile/profile...', Array)
+#11 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /opt/lampp/htdocs/basic/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2020-06-19 11:16:18 [127.0.0.1][-][39b876724838704eb5223afe8f37ea0c][info][application] $_GET = [
+    'r' => 'profile/profile-organisation'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '7a7b514df7ad8142f5f8ec964874b557d22cb054ad1ba1c382116c06e37b30c1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"B-yZ77pHMM6AjyrMQkK_oqtz9ePl7DMb\";}'
+    'PHPSESSID' => '39b876724838704eb5223afe8f37ea0c'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'email' => 'myemail@mail.com'
+    'id' => 91
+    'type' => '2'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'XuyCYgy4NMyyBy7Tr9HbkwAAAAU'
+    'HTTP_HOST' => 'rayofhope.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru,en-US;q=0.9,en;q=0.8,ru-RU;q=0.7'
+    'HTTP_COOKIE' => '_csrf=7a7b514df7ad8142f5f8ec964874b557d22cb054ad1ba1c382116c06e37b30c1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22B-yZ77pHMM6AjyrMQkK_oqtz9ePl7DMb%22%3B%7D; PHPSESSID=39b876724838704eb5223afe8f37ea0c'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Unix) OpenSSL/1.1.1d PHP/7.3.15 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'rayofhope.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/basic/web/index.php'
+    'REMOTE_PORT' => '51398'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=profile%2Fprofile-organisation'
+    'REQUEST_URI' => '/index.php?r=profile%2Fprofile-organisation'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1592558178.596
+    'REQUEST_TIME' => 1592558178
+]
+2020-06-19 11:27:18 [127.0.0.1][-][39b876724838704eb5223afe8f37ea0c][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined offset: 0 in /opt/lampp/htdocs/basic/views/profile/profile-org.php:141
+Stack trace:
+#0 /opt/lampp/htdocs/basic/views/profile/profile-org.php(141): yii\base\ErrorHandler->handleError(8, 'Undefined offse...', '/opt/lampp/htdo...', 141, Array)
+#1 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/View.php(348): require('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/opt/lampp/htdo...', Array)
+#3 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/opt/lampp/htdo...', Array, Object(app\controllers\ProfileController))
+#4 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->render('profile-org', Array, Object(app\controllers\ProfileController))
+#5 /opt/lampp/htdocs/basic/controllers/ProfileController.php(23): yii\base\Controller->render('profile-org')
+#6 [internal function]: app\controllers\ProfileController->actionProfileOrganisation()
+#7 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('profile-organis...', Array)
+#10 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('profile/profile...', Array)
+#11 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /opt/lampp/htdocs/basic/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2020-06-19 11:27:18 [127.0.0.1][-][39b876724838704eb5223afe8f37ea0c][info][application] $_GET = [
+    'r' => 'profile/profile-organisation'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '7a7b514df7ad8142f5f8ec964874b557d22cb054ad1ba1c382116c06e37b30c1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"B-yZ77pHMM6AjyrMQkK_oqtz9ePl7DMb\";}'
+    'PHPSESSID' => '39b876724838704eb5223afe8f37ea0c'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'email' => 'qqq@qq.qq'
+    'id' => 91
+    'type' => '2'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'XuyE9t4WUYWzJ-HE32oZ9gAAAAc'
+    'HTTP_HOST' => 'rayofhope.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://rayofhope.com/index.php?r=registration%2Forganisation'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru,en-US;q=0.9,en;q=0.8,ru-RU;q=0.7'
+    'HTTP_COOKIE' => '_csrf=7a7b514df7ad8142f5f8ec964874b557d22cb054ad1ba1c382116c06e37b30c1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22B-yZ77pHMM6AjyrMQkK_oqtz9ePl7DMb%22%3B%7D; PHPSESSID=39b876724838704eb5223afe8f37ea0c'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Unix) OpenSSL/1.1.1d PHP/7.3.15 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'rayofhope.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/basic/web/index.php'
+    'REMOTE_PORT' => '51808'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=profile%2Fprofile-organisation'
+    'REQUEST_URI' => '/index.php?r=profile%2Fprofile-organisation'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1592558838.038
+    'REQUEST_TIME' => 1592558838
+]
+2020-06-19 11:27:18 [127.0.0.1][-][39b876724838704eb5223afe8f37ea0c][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined offset: 0 in /opt/lampp/htdocs/basic/views/profile/profile-org.php:141
+Stack trace:
+#0 /opt/lampp/htdocs/basic/views/profile/profile-org.php(141): yii\base\ErrorHandler->handleError(8, 'Undefined offse...', '/opt/lampp/htdo...', 141, Array)
+#1 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/View.php(348): require('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/opt/lampp/htdo...', Array)
+#3 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/opt/lampp/htdo...', Array, Object(app\controllers\ProfileController))
+#4 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->render('profile-org', Array, Object(app\controllers\ProfileController))
+#5 /opt/lampp/htdocs/basic/controllers/ProfileController.php(23): yii\base\Controller->render('profile-org')
+#6 [internal function]: app\controllers\ProfileController->actionProfileOrganisation()
+#7 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('profile-organis...', Array)
+#10 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('profile/profile...', Array)
+#11 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /opt/lampp/htdocs/basic/web/index.php(12): yii\base\Application->run()
+#13 {main}
+2020-06-19 11:27:18 [127.0.0.1][-][39b876724838704eb5223afe8f37ea0c][info][application] $_GET = [
+    'r' => 'profile/profile-organisation'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '7a7b514df7ad8142f5f8ec964874b557d22cb054ad1ba1c382116c06e37b30c1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"B-yZ77pHMM6AjyrMQkK_oqtz9ePl7DMb\";}'
+    'PHPSESSID' => '39b876724838704eb5223afe8f37ea0c'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'email' => 'qqq@qq.qq'
+    'id' => 91
+    'type' => '2'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'XuyE9saShW2yzog1ZSLdbgAAAAQ'
+    'HTTP_HOST' => 'rayofhope.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru,en-US;q=0.9,en;q=0.8,ru-RU;q=0.7'
+    'HTTP_COOKIE' => '_csrf=7a7b514df7ad8142f5f8ec964874b557d22cb054ad1ba1c382116c06e37b30c1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22B-yZ77pHMM6AjyrMQkK_oqtz9ePl7DMb%22%3B%7D; PHPSESSID=39b876724838704eb5223afe8f37ea0c'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Unix) OpenSSL/1.1.1d PHP/7.3.15 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'rayofhope.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/basic/web/index.php'
+    'REMOTE_PORT' => '51850'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=profile%2Fprofile-organisation'
+    'REQUEST_URI' => '/index.php?r=profile%2Fprofile-organisation'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1592558838.254
+    'REQUEST_TIME' => 1592558838
+]
+2020-06-19 11:28:42 [127.0.0.1][-][39b876724838704eb5223afe8f37ea0c][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined offset: 0 in /opt/lampp/htdocs/basic/controllers/RegistrationOrganisationController.php:126
+Stack trace:
+#0 /opt/lampp/htdocs/basic/controllers/RegistrationOrganisationController.php(126): yii\base\ErrorHandler->handleError(8, 'Undefined offse...', '/opt/lampp/htdo...', 126, Array)
+#1 [internal function]: app\controllers\RegistrationOrganisationController->actionCreate()
+#2 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#5 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('registration-or...', Array)
+#6 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /opt/lampp/htdocs/basic/web/index.php(12): yii\base\Application->run()
+#8 {main}
+2020-06-19 11:28:42 [127.0.0.1][-][39b876724838704eb5223afe8f37ea0c][info][application] $_GET = [
+    'r' => 'registration-organisation/create'
+]
+
+$_POST = [
+    '_csrf' => 'ds8zIu9r_vyL6S_nLy-vwmcfPCq-Kr3v269E67VJulQ04kp42FyOtMakGaZFVt2PNnR3ddFbyZXiyhSHgg33Ng=='
+    'name' => 'urec_programmec'
+    'email' => '1231231232@mail.ru'
+    'INN' => '1112223331'
+    'password' => '11111111'
+    'password_2' => '11111111'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '7a7b514df7ad8142f5f8ec964874b557d22cb054ad1ba1c382116c06e37b30c1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"B-yZ77pHMM6AjyrMQkK_oqtz9ePl7DMb\";}'
+    'PHPSESSID' => '39b876724838704eb5223afe8f37ea0c'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'email' => '1231231232@mail.ru'
+    'id' => 91
+    'type' => '2'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'XuyFSpyeFrIfN9VtUUtQlAAAAAg'
+    'HTTP_HOST' => 'rayofhope.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '199'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ORIGIN' => 'http://rayofhope.com'
+    'HTTP_REFERER' => 'http://rayofhope.com/index.php?r=registration%2Forganisation'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru,en-US;q=0.9,en;q=0.8,ru-RU;q=0.7'
+    'HTTP_COOKIE' => '_csrf=7a7b514df7ad8142f5f8ec964874b557d22cb054ad1ba1c382116c06e37b30c1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22B-yZ77pHMM6AjyrMQkK_oqtz9ePl7DMb%22%3B%7D; PHPSESSID=39b876724838704eb5223afe8f37ea0c'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Unix) OpenSSL/1.1.1d PHP/7.3.15 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'rayofhope.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/basic/web/index.php'
+    'REMOTE_PORT' => '52542'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=registration-organisation%2Fcreate'
+    'REQUEST_URI' => '/index.php?r=registration-organisation%2Fcreate'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1592558922.468
+    'REQUEST_TIME' => 1592558922
+]
+2020-06-19 11:29:26 [127.0.0.1][-][39b876724838704eb5223afe8f37ea0c][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined offset: 0 in /opt/lampp/htdocs/basic/controllers/RegistrationOrganisationController.php:126
+Stack trace:
+#0 /opt/lampp/htdocs/basic/controllers/RegistrationOrganisationController.php(126): yii\base\ErrorHandler->handleError(8, 'Undefined offse...', '/opt/lampp/htdo...', 126, Array)
+#1 [internal function]: app\controllers\RegistrationOrganisationController->actionCreate()
+#2 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#5 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('registration-or...', Array)
+#6 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /opt/lampp/htdocs/basic/web/index.php(12): yii\base\Application->run()
+#8 {main}
+2020-06-19 11:29:25 [127.0.0.1][-][39b876724838704eb5223afe8f37ea0c][info][application] $_GET = [
+    'r' => 'registration-organisation/create'
+]
+
+$_POST = [
+    '_csrf' => 'RlxDtuzZfh8dcRHuHEFLlOwhVmKV7Zi7ue-IfT-3Y-sEcTrs2-4OV1A8J692ODnZvUodPfqc7MGAitgRCPMuiQ=='
+    'name' => '1'
+    'email' => '1231231234@mail.ru'
+    'INN' => '1112223336'
+    'password' => '11111111'
+    'password_2' => '11111111'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '7a7b514df7ad8142f5f8ec964874b557d22cb054ad1ba1c382116c06e37b30c1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"B-yZ77pHMM6AjyrMQkK_oqtz9ePl7DMb\";}'
+    'PHPSESSID' => '39b876724838704eb5223afe8f37ea0c'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'email' => '1231231234@mail.ru'
+    'id' => 91
+    'type' => '2'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'XuyFdXyefzMBkfmhtX-gTQAAAAI'
+    'HTTP_HOST' => 'rayofhope.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '185'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ORIGIN' => 'http://rayofhope.com'
+    'HTTP_REFERER' => 'http://rayofhope.com/index.php?r=registration%2Forganisation'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru,en-US;q=0.9,en;q=0.8,ru-RU;q=0.7'
+    'HTTP_COOKIE' => '_csrf=7a7b514df7ad8142f5f8ec964874b557d22cb054ad1ba1c382116c06e37b30c1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22B-yZ77pHMM6AjyrMQkK_oqtz9ePl7DMb%22%3B%7D; PHPSESSID=39b876724838704eb5223afe8f37ea0c'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Unix) OpenSSL/1.1.1d PHP/7.3.15 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'rayofhope.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/basic/web/index.php'
+    'REMOTE_PORT' => '52918'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=registration-organisation%2Fcreate'
+    'REQUEST_URI' => '/index.php?r=registration-organisation%2Fcreate'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1592558965.916
+    'REQUEST_TIME' => 1592558965
+]
+2020-06-19 11:31:11 [127.0.0.1][-][39b876724838704eb5223afe8f37ea0c][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined offset: 0 in /opt/lampp/htdocs/basic/controllers/RegistrationOrganisationController.php:126
+Stack trace:
+#0 /opt/lampp/htdocs/basic/controllers/RegistrationOrganisationController.php(126): yii\base\ErrorHandler->handleError(8, 'Undefined offse...', '/opt/lampp/htdo...', 126, Array)
+#1 [internal function]: app\controllers\RegistrationOrganisationController->actionCreate()
+#2 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#5 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('registration-or...', Array)
+#6 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /opt/lampp/htdocs/basic/web/index.php(12): yii\base\Application->run()
+#8 {main}
+2020-06-19 11:31:11 [127.0.0.1][-][39b876724838704eb5223afe8f37ea0c][info][application] $_GET = [
+    'r' => 'registration-organisation/create'
+]
+
+$_POST = [
+    '_csrf' => 'RlxDtuzZfh8dcRHuHEFLlOwhVmKV7Zi7ue-IfT-3Y-sEcTrs2-4OV1A8J692ODnZvUodPfqc7MGAitgRCPMuiQ=='
+    'name' => '1'
+    'email' => '12312381234@mail.ru'
+    'INN' => '0080080088'
+    'password' => '11111111'
+    'password_2' => '11111111'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '7a7b514df7ad8142f5f8ec964874b557d22cb054ad1ba1c382116c06e37b30c1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"B-yZ77pHMM6AjyrMQkK_oqtz9ePl7DMb\";}'
+    'PHPSESSID' => '39b876724838704eb5223afe8f37ea0c'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'email' => '12312381234@mail.ru'
+    'id' => 91
+    'type' => '2'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'XuyF394WUYWzJ-HE32oZ@gAAAAc'
+    'HTTP_HOST' => 'rayofhope.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '186'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ORIGIN' => 'http://rayofhope.com'
+    'HTTP_REFERER' => 'http://rayofhope.com/index.php?r=registration%2Forganisation'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru,en-US;q=0.9,en;q=0.8,ru-RU;q=0.7'
+    'HTTP_COOKIE' => '_csrf=7a7b514df7ad8142f5f8ec964874b557d22cb054ad1ba1c382116c06e37b30c1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22B-yZ77pHMM6AjyrMQkK_oqtz9ePl7DMb%22%3B%7D; PHPSESSID=39b876724838704eb5223afe8f37ea0c'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Unix) OpenSSL/1.1.1d PHP/7.3.15 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'rayofhope.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/basic/web/index.php'
+    'REMOTE_PORT' => '53736'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=registration-organisation%2Fcreate'
+    'REQUEST_URI' => '/index.php?r=registration-organisation%2Fcreate'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1592559071.813
+    'REQUEST_TIME' => 1592559071
+]
+2020-06-19 11:35:00 [127.0.0.1][-][39b876724838704eb5223afe8f37ea0c][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined offset: 0 in /opt/lampp/htdocs/basic/controllers/AuthorizationOrganisationController.php:157
+Stack trace:
+#0 /opt/lampp/htdocs/basic/controllers/AuthorizationOrganisationController.php(157): yii\base\ErrorHandler->handleError(8, 'Undefined offse...', '/opt/lampp/htdo...', 157, Array)
+#1 [internal function]: app\controllers\AuthorizationOrganisationController->actionCreate()
+#2 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#3 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#5 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('authorization-o...', Array)
+#6 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 /opt/lampp/htdocs/basic/web/index.php(12): yii\base\Application->run()
+#8 {main}
+2020-06-19 11:34:59 [127.0.0.1][-][39b876724838704eb5223afe8f37ea0c][info][application] $_GET = [
+    'r' => 'authorization-organisation/create'
+]
+
+$_POST = [
+    '_csrf' => 'Kb49x3Yr-9fE-RwNcRvR30vL0QQws2u8w7-YjI24ejZrk0SdQRyLn4m0KkwbYqOSGqCaW1_CH8b62sjguvw3VA=='
+    'email_or_inn' => '123123125@mail.ru'
+    'password' => '11111111'
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '7a7b514df7ad8142f5f8ec964874b557d22cb054ad1ba1c382116c06e37b30c1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"B-yZ77pHMM6AjyrMQkK_oqtz9ePl7DMb\";}'
+    'PHPSESSID' => '39b876724838704eb5223afe8f37ea0c'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'email' => '123123125@mail.ru'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'XuyGw3TwztZv6VHxMPvwTwAAAAM'
+    'HTTP_HOST' => 'rayofhope.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '149'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ORIGIN' => 'http://rayofhope.com'
+    'HTTP_REFERER' => 'http://rayofhope.com/index.php?r=authorization%2Forganisation'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru,en-US;q=0.9,en;q=0.8,ru-RU;q=0.7'
+    'HTTP_COOKIE' => '_csrf=7a7b514df7ad8142f5f8ec964874b557d22cb054ad1ba1c382116c06e37b30c1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22B-yZ77pHMM6AjyrMQkK_oqtz9ePl7DMb%22%3B%7D; PHPSESSID=39b876724838704eb5223afe8f37ea0c'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Unix) OpenSSL/1.1.1d PHP/7.3.15 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'rayofhope.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/basic/web/index.php'
+    'REMOTE_PORT' => '55652'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=authorization-organisation%2Fcreate'
+    'REQUEST_URI' => '/index.php?r=authorization-organisation%2Fcreate'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1592559299.942
+    'REQUEST_TIME' => 1592559299
+]
+2020-06-19 13:20:54 [127.0.0.1][-][39b876724838704eb5223afe8f37ea0c][error][yii\db\Exception] PDOException: SQLSTATE[22003]: Numeric value out of range: 1264 Out of range value for column 'number_phone' at row 1 in /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/Command.php:1290
+Stack trace:
+#0 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/Command.php(1290): PDOStatement->execute()
+#1 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/Command.php(1091): yii\db\Command->internalExecute('UPDATE `organiz...')
+#2 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/ActiveRecord.php(332): yii\db\Command->execute()
+#3 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/BaseActiveRecord.php(810): yii\db\ActiveRecord::updateAll(Array, Array)
+#4 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/ActiveRecord.php(676): yii\db\BaseActiveRecord->updateInternal(NULL)
+#5 /opt/lampp/htdocs/basic/controllers/ProfileController.php(206): yii\db\ActiveRecord->update()
+#6 [internal function]: app\controllers\ProfileController->actionProfileOrganisationSaveEdit()
+#7 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('profile-organis...', Array)
+#10 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('profile/profile...', Array)
+#11 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /opt/lampp/htdocs/basic/web/index.php(12): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\Exception: SQLSTATE[22003]: Numeric value out of range: 1264 Out of range value for column 'number_phone' at row 1
+The SQL being executed was: UPDATE `organization` SET `address`='Респ Северная Осетия - Алания, Пригородный р-н', `number_phone`=89159154088, `city`=368, `type_of_activity`=2 WHERE `user_id`=73 in /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/Schema.php:674
+Stack trace:
+#0 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/Command.php(1295): yii\db\Schema->convertException(Object(PDOException), 'UPDATE `organiz...')
+#1 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/Command.php(1091): yii\db\Command->internalExecute('UPDATE `organiz...')
+#2 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/ActiveRecord.php(332): yii\db\Command->execute()
+#3 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/BaseActiveRecord.php(810): yii\db\ActiveRecord::updateAll(Array, Array)
+#4 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/ActiveRecord.php(676): yii\db\BaseActiveRecord->updateInternal(NULL)
+#5 /opt/lampp/htdocs/basic/controllers/ProfileController.php(206): yii\db\ActiveRecord->update()
+#6 [internal function]: app\controllers\ProfileController->actionProfileOrganisationSaveEdit()
+#7 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('profile-organis...', Array)
+#10 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('profile/profile...', Array)
+#11 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /opt/lampp/htdocs/basic/web/index.php(12): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 22003
+    [1] => 1264
+    [2] => Out of range value for column 'number_phone' at row 1
+)
+
+2020-06-19 13:20:54 [127.0.0.1][-][39b876724838704eb5223afe8f37ea0c][info][application] $_GET = [
+    'r' => 'profile/profile-organisation-save-edit'
+]
+
+$_POST = [
+    'address' => 'Респ Северная Осетия - Алания, Пригородный р-н'
+    'edit_profile_org' => '1'
+    'name' => 'Не 12'
+    'city' => '368'
+    'city_name' => 'Кадников'
+    'activity' => '2'
+    'description' => 'ооп'
+    'number_phone' => '89159154088'
+    '_csrf' => 'DzdE-eRYvqFCYmkK8-GTjhQPD3mDTQrairh90iIH0lxNGj2j02_O6Q8vX0uZmOHDRWREJuw8fqCz3S2-FUOfPg=='
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '7a7b514df7ad8142f5f8ec964874b557d22cb054ad1ba1c382116c06e37b30c1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"B-yZ77pHMM6AjyrMQkK_oqtz9ePl7DMb\";}'
+    'PHPSESSID' => '39b876724838704eb5223afe8f37ea0c'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'email' => '1111111142@mail.ru'
+    'id' => 73
+    'type' => '2'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'XuyflknvRXvdfehNP2SiRQAAAAs'
+    'HTTP_HOST' => 'rayofhope.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1119'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_X_CSRF_TOKEN' => 'DzdE-eRYvqFCYmkK8-GTjhQPD3mDTQrairh90iIH0lxNGj2j02_O6Q8vX0uZmOHDRWREJuw8fqCz3S2-FUOfPg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundarysiOYIb8FR0i1Wwz1'
+    'HTTP_ORIGIN' => 'http://rayofhope.com'
+    'HTTP_REFERER' => 'http://rayofhope.com/index.php?r=profile%2Fprofile-organisation-edit'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru,en-US;q=0.9,en;q=0.8,ru-RU;q=0.7'
+    'HTTP_COOKIE' => '_csrf=7a7b514df7ad8142f5f8ec964874b557d22cb054ad1ba1c382116c06e37b30c1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22B-yZ77pHMM6AjyrMQkK_oqtz9ePl7DMb%22%3B%7D; PHPSESSID=39b876724838704eb5223afe8f37ea0c'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Unix) OpenSSL/1.1.1d PHP/7.3.15 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'rayofhope.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/basic/web/index.php'
+    'REMOTE_PORT' => '58746'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=profile%2Fprofile-organisation-save-edit'
+    'REQUEST_URI' => '/index.php?r=profile%2Fprofile-organisation-save-edit'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1592565654.874
+    'REQUEST_TIME' => 1592565654
+]
+2020-06-19 13:20:58 [127.0.0.1][-][39b876724838704eb5223afe8f37ea0c][error][yii\db\Exception] PDOException: SQLSTATE[22003]: Numeric value out of range: 1264 Out of range value for column 'number_phone' at row 1 in /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/Command.php:1290
+Stack trace:
+#0 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/Command.php(1290): PDOStatement->execute()
+#1 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/Command.php(1091): yii\db\Command->internalExecute('UPDATE `organiz...')
+#2 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/ActiveRecord.php(332): yii\db\Command->execute()
+#3 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/BaseActiveRecord.php(810): yii\db\ActiveRecord::updateAll(Array, Array)
+#4 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/ActiveRecord.php(676): yii\db\BaseActiveRecord->updateInternal(NULL)
+#5 /opt/lampp/htdocs/basic/controllers/ProfileController.php(206): yii\db\ActiveRecord->update()
+#6 [internal function]: app\controllers\ProfileController->actionProfileOrganisationSaveEdit()
+#7 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('profile-organis...', Array)
+#10 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('profile/profile...', Array)
+#11 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /opt/lampp/htdocs/basic/web/index.php(12): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\Exception: SQLSTATE[22003]: Numeric value out of range: 1264 Out of range value for column 'number_phone' at row 1
+The SQL being executed was: UPDATE `organization` SET `address`='Респ Северная Осетия - Алания, Пригородный р-н', `number_phone`=89159154088, `city`=368, `type_of_activity`=2 WHERE `user_id`=73 in /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/Schema.php:674
+Stack trace:
+#0 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/Command.php(1295): yii\db\Schema->convertException(Object(PDOException), 'UPDATE `organiz...')
+#1 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/Command.php(1091): yii\db\Command->internalExecute('UPDATE `organiz...')
+#2 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/ActiveRecord.php(332): yii\db\Command->execute()
+#3 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/BaseActiveRecord.php(810): yii\db\ActiveRecord::updateAll(Array, Array)
+#4 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/db/ActiveRecord.php(676): yii\db\BaseActiveRecord->updateInternal(NULL)
+#5 /opt/lampp/htdocs/basic/controllers/ProfileController.php(206): yii\db\ActiveRecord->update()
+#6 [internal function]: app\controllers\ProfileController->actionProfileOrganisationSaveEdit()
+#7 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('profile-organis...', Array)
+#10 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('profile/profile...', Array)
+#11 /opt/lampp/htdocs/basic/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /opt/lampp/htdocs/basic/web/index.php(12): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 22003
+    [1] => 1264
+    [2] => Out of range value for column 'number_phone' at row 1
+)
+
+2020-06-19 13:20:58 [127.0.0.1][-][39b876724838704eb5223afe8f37ea0c][info][application] $_GET = [
+    'r' => 'profile/profile-organisation-save-edit'
+]
+
+$_POST = [
+    'address' => 'Респ Северная Осетия - Алания, Пригородный р-н'
+    'edit_profile_org' => '1'
+    'name' => 'Не 12'
+    'city' => '368'
+    'city_name' => 'Кадников'
+    'activity' => '2'
+    'description' => 'ооп'
+    'number_phone' => '89159154088'
+    '_csrf' => 'DzdE-eRYvqFCYmkK8-GTjhQPD3mDTQrairh90iIH0lxNGj2j02_O6Q8vX0uZmOHDRWREJuw8fqCz3S2-FUOfPg=='
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '7a7b514df7ad8142f5f8ec964874b557d22cb054ad1ba1c382116c06e37b30c1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"B-yZ77pHMM6AjyrMQkK_oqtz9ePl7DMb\";}'
+    'PHPSESSID' => '39b876724838704eb5223afe8f37ea0c'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'email' => '1111111142@mail.ru'
+    'id' => 73
+    'type' => '2'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'XuyfmvXv8idl1xatLj5kcQAAAAg'
+    'HTTP_HOST' => 'rayofhope.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1119'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_X_CSRF_TOKEN' => 'DzdE-eRYvqFCYmkK8-GTjhQPD3mDTQrairh90iIH0lxNGj2j02_O6Q8vX0uZmOHDRWREJuw8fqCz3S2-FUOfPg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryyMHU2JBKjrOswmB0'
+    'HTTP_ORIGIN' => 'http://rayofhope.com'
+    'HTTP_REFERER' => 'http://rayofhope.com/index.php?r=profile%2Fprofile-organisation-edit'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru,en-US;q=0.9,en;q=0.8,ru-RU;q=0.7'
+    'HTTP_COOKIE' => '_csrf=7a7b514df7ad8142f5f8ec964874b557d22cb054ad1ba1c382116c06e37b30c1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22B-yZ77pHMM6AjyrMQkK_oqtz9ePl7DMb%22%3B%7D; PHPSESSID=39b876724838704eb5223afe8f37ea0c'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Unix) OpenSSL/1.1.1d PHP/7.3.15 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'rayofhope.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs/basic/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/basic/web/index.php'
+    'REMOTE_PORT' => '58808'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=profile%2Fprofile-organisation-save-edit'
+    'REQUEST_URI' => '/index.php?r=profile%2Fprofile-organisation-save-edit'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1592565658.548
+    'REQUEST_TIME' => 1592565658
+]

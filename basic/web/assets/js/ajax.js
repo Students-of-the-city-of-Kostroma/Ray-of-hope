@@ -33,6 +33,11 @@ $(document).ready(function() {
     );
 });
 
+
+
+
+
+
 function hide_hints() {
     $('.ico-in-textbox.znak').fadeOut(50);
     $('.hint').css({ "display": "none" });
@@ -47,7 +52,7 @@ function open_dialog(title, message) {
 }
 
 function hide_dialog() {
-    $(".dialog-wrapper").css({ "display": "none" });  <input type="hidden" name="_csrf" value="<?= \Yii::$app->request->getCsrfToken()?>"></input>
+    $(".dialog-wrapper").css({ "display": "none" }); 
     $(".dialog-title").html("");
     $(".dialog-message").html("");
 }

@@ -172,6 +172,7 @@ function previewDOC(file, item_id){
 
 window.JsFile;
     
+
 $(document).ready(function () {
     var pdfjsLib = window['pdfjs-dist/build/pdf'];
     pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
@@ -235,7 +236,12 @@ $(document).ready(function () {
             {
                 //var result = $.parseJSON(response);
                 var result = JSON.parse(JSON.stringify(response))
-                console.log(result);
+                if (result['newUrl'] !== null) {
+                    open_dialog("Успех", "Изменения сохранены");
+                    setTimeout(function () {
+                        document.location.href = result['newUrl'];
+                    },1000);
+                }
             },
             error: function(request)
             {
