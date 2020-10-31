@@ -5,8 +5,12 @@ import java.util.List;
 
 public class C_Events extends ControllerPost{
 
-    List<M_Event> ListEvent=new ArrayList<M_Event>();
+    static public  List<M_Event> ListEvent=new ArrayList<M_Event>();
+
     public C_Events() { }
+    static public void C_Ev() {
+        //ListEvent.add(new M_Event("0","Абвг","блаблаблаблаблаблаблаблаблаба","2020-06-10","2020-06-08","йцу"));
+    }
 
     @Override
     public M_Event Add(M_Post Events) {

@@ -6,9 +6,14 @@ import java.util.List;
 public class C_Citizen extends ControllerUser{
 
 
-    List<M_Citizen> ListCitizen=new ArrayList<M_Citizen>();
-    public C_Citizen() { }
-
+    static List<M_Citizen> ListCitizen=new ArrayList<M_Citizen>();
+    static  M_Citizen mecit=new M_Citizen("1","q@cd.com","блаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблабла", "","1234567890","Иван","Иванович","Кострома");
+    public C_Citizen() {
+        ListCitizen.add(mecit);
+    }
+    static public void C_Cit() {
+        ListCitizen.add(mecit);
+    }
     @Override
     public M_Citizen Update(M_User Citizen) { return null; }
     @Override

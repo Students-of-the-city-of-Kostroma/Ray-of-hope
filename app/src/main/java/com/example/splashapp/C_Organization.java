@@ -8,8 +8,18 @@ import java.util.List;
 public class C_Organization extends ControllerUser {
 
 
-    List<M_Organization> ListOrganization=new ArrayList<M_Organization>();
-    public C_Organization(){ }
+    static List<M_Organization> ListOrganization=new ArrayList<M_Organization>();
+    static List<String> s=new ArrayList<String>();
+    static M_Organization morg=new M_Organization("0","Кострома","блаблабла", "0987654321","Название","","ул. Такая-то", "Животные", s,s);
+    static M_Organization morg1=new M_Organization("1","Кострома","блаблаблаблаблаблаблаблабла", "0987654321","Название2","","ул. Такая-то", "Животные", s,s);
+
+    public C_Organization(){
+
+    }
+    static public void C_Org(){
+        ListOrganization.add(morg);
+        ListOrganization.add(morg1);
+    }
 
     @Override
     public M_User Update(M_User Organization) {

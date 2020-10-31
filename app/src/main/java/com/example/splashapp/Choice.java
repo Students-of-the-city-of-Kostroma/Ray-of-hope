@@ -20,6 +20,11 @@ public class Choice extends AppCompatActivity {
         {
             //citezen=true;
             //Perehod();
+            citezen=true;
+            //Perehod();
+            Intent intent = new Intent(this, LoginCitizenActivity.class);
+            startActivity(intent);
+            finish();
         }
         public void OrgChoice(View view)
         {
@@ -29,6 +34,7 @@ public class Choice extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+
     public  void Perehod()
     {
         Intent intent = new Intent(this, AboutView.class);

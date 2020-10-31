@@ -49,7 +49,13 @@ public class MenuView extends AppCompatActivity {
         Intent intent = new Intent(this, AboutView.class);
         startActivity(intent);
     }
-    public  void goToListOfOrg(View view)
+    public  void ToChats(View view)
+    {
+        Intent intent = new Intent(this, ListOfChats.class);
+        startActivity(intent);
+        finish();
+    }
+    public  void ToListOfOrg(View view)
     {
         Intent intent = new Intent(this, ListOfOrg.class);
         startActivity(intent);

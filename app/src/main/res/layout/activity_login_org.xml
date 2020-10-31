@@ -59,7 +59,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText10" />
+        app:layout_constraintTop_toBottomOf="@+id/etemail" />
 
     <Button
         android:id="@+id/button11"
@@ -84,7 +84,7 @@
         tools:text="Войти" />
 
     <EditText
-        android:id="@+id/editText10"
+        android:id="@+id/etemail"
         android:layout_width="212dp"
         android:layout_height="38dp"
         android:layout_gravity="center"
@@ -111,7 +111,7 @@
         android:layout_width="253dp"
         android:layout_height="139dp"
         android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText10"
+        app:layout_constraintBottom_toTopOf="@+id/etemail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

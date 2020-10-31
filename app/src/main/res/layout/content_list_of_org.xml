@@ -1,188 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TabHost
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".ListOfOrg"
-    android:background="@color/colorGrey"
-    tools:showIn="@layout/app_bar_list_of_org">
-    
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp"
-        >
+    android:background="@color/colorSYellow"
+    tools:showIn="@layout/app_bar_list_of_org"
+
+android:id="@+id/tabHost"
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_gravity="center_horizontal">
+
 <LinearLayout
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical">
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:padding="10dp"
-        android:text="Список организаций"
-        android:gravity="center"
-        android:textColor="@color/colorBlue"
-        android:textSize="30dp"
-        />
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center"
-        android:onClick="ChoiceOrg"
-        android:background="@color/colorGrey"
-        android:textColor="@color/colorBlue"
-        android:text="Тестовая организация 1" />
+    <TabWidget
+        android:id="@android:id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </TabWidget>
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center"
-        android:onClick="ChoiceOrg"
-        android:background="@color/colorGrey"
-        android:textColor="@color/colorBlue"
-        android:text="Тестовая организация 2" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_edittext"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center"
-        android:onClick="ChoiceOrg"
-        android:background="@color/colorGrey"
-        android:textColor="@color/colorBlue"
-        android:text="Тестовая организация 3" />
+        <SearchView
+            android:id="@+id/search_view1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            app:actionViewClass=" android.support.v7.widget.SearchView"
+            android:layout_weight="1"
+            app:queryHint="  Поиск">
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center"
-        android:onClick="ChoiceOrg"
-        android:background="@color/colorGrey"
-        android:textColor="@color/colorBlue"
-        android:text="Тестовая организация 4" />
+        </SearchView>
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center"
-        android:onClick="ChoiceOrg"
-        android:background="@color/colorGrey"
-        android:textColor="@color/colorBlue"
-        android:text="Тестовая организация 5" />
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="OnParamClick"
+            app:srcCompat="@mipmap/param" />
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center"
-        android:background="@color/colorGrey"
-        android:textColor="@color/colorBlue"
-        android:onClick="ChoiceOrg"
-        android:text="Тестовая организация 6" />
+    </LinearLayout>
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center"
-        android:onClick="ChoiceOrg"
-        android:background="@color/colorGrey"
-        android:textColor="@color/colorBlue"
-        android:text="Тестовая организация 7" />
+    <FrameLayout
+        android:id="@android:id/tabcontent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center"
-        android:onClick="ChoiceOrg"
-        android:background="@color/colorGrey"
-        android:textColor="@color/colorBlue"
-        android:text="Тестовая организация 8" />
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center"
-        android:onClick="ChoiceOrg"
-        android:background="@color/colorGrey"
-        android:textColor="@color/colorBlue"
-        android:text="Тестовая организация 9" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/frameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/buttonOrgEdit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent">
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center"
-        android:onClick="ChoiceOrg"
-        android:background="@color/colorGrey"
-        android:textColor="@color/colorBlue"
-        android:text="Тестовая организация 10" />
+            </android.support.v7.widget.RecyclerView>
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center"
-        android:onClick="ChoiceOrg"
-        android:background="@color/colorGrey"
-        android:textColor="@color/colorBlue"
-        android:text="Тестовая организация 11" />
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center"
-        android:onClick="ChoiceOrg"
-        android:background="@color/colorGrey"
-        android:textColor="@color/colorBlue"
-        android:text="Тестовая организация 12" />
+        </LinearLayout>
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center"
-        android:onClick="ChoiceOrg"
-        android:background="@color/colorGrey"
-        android:textColor="@color/colorBlue"
-        android:text="Тестовая организация 13" />
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center"
-        android:background="@color/colorGrey"
-        android:textColor="@color/colorBlue"
-        android:onClick="ChoiceOrg"
-        android:text="Тестовая организация 14" />
-
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center"
-        android:onClick="ChoiceOrg"
-        android:background="@color/colorGrey"
-        android:textColor="@color/colorBlue"
-        android:text="Тестовая организация 15" />
-
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center"
-        android:onClick="ChoiceOrg"
-        android:background="@color/colorGrey"
-        android:textColor="@color/colorBlue"
-        android:text="Тестовая организация 16" />
-
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center"
-        android:onClick="ChoiceOrg"
-        android:background="@color/colorGrey"
-        android:textColor="@color/colorBlue"
-        android:text="Особая тестовая организация (нет)" />
+        </LinearLayout>
+    </FrameLayout>
 
 </LinearLayout>
-    </ScrollView>
 
-</android.support.constraint.ConstraintLayout>
+</TabHost>

@@ -20,6 +20,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         OnlineChek();
+
+        C_Organization.C_Org();
+        C_Citizen.C_Cit();
+        C_Activitisms.C_Act();
+        C_Chat.C_Ch();
     }
 
     protected  void OnlineChek()

@@ -35,7 +35,8 @@ public class CallDB_LoginOrg extends AsyncTask<String , Void ,String> {
         OutputStream out = null;
         try {
 
-            URL url = new URL("http:///192.168.1.56/functions/functions.php");//ip-шник своей машины
+            URL url = new URL("http://darapana.beget.tech/pos");//ip-шник своей машины
+            //URL url = new URL("http:///192.168.1.56/functions/functions.php");//ip-шник своей машины
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setReadTimeout(10000);
             conn.setConnectTimeout(15000);
@@ -45,9 +46,7 @@ public class CallDB_LoginOrg extends AsyncTask<String , Void ,String> {
 
 
             Uri.Builder builder = new Uri.Builder()
-                    .appendQueryParameter("login_org", "1")
-                    .appendQueryParameter("email_or_inn", params[0])
-                    .appendQueryParameter("password", params[1]);
+                    .appendQueryParameter("search", "горошек");
             String query = builder.build().getEncodedQuery();
 
             OutputStream os = conn.getOutputStream();
@@ -85,3 +84,9 @@ public class CallDB_LoginOrg extends AsyncTask<String , Void ,String> {
 
     }
 }
+/*  Uri.Builder builder = new Uri.Builder()
+                    .appendQueryParameter("login_org", "1")
+                    .appendQueryParameter("email_or_inn", params[0])
+                    .appendQueryParameter("password", params[1]);
+            String query = builder.build().getEncodedQuery();
+*/

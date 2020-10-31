@@ -10,9 +10,30 @@
         android:supportsRtl="true"
         android:testOnly="false"
         android:theme="@style/AppTheme">
+        <activity android:name=".ListOfChats"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".ThisChat"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LentaActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CitProf"
+            android:label="@string/title_activity_cit_prof"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PassworldRes"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RegCitizen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoginCitizenActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MenuView"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".DownMenu" />
         <activity
             android:name=".LoginOrgActivity"
@@ -42,19 +63,12 @@
             android:label="@string/title_activity_list_of_org"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Citedit"
+            android:name=".CitEdit"
             android:label="@string/title_activity_citedit"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".CitProf"
-            android:label="@string/title_activity_cit_prof"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Q_A"
             android:label="@string/title_activity_menu2"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".About"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AboutView"
@@ -75,8 +89,8 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
