@@ -31,12 +31,14 @@ public class LoginOrgActivity extends AppCompatActivity {
         edit = (EditText)findViewById(R.id.editText13);
         input[1] = edit.getText().toString();
 
-        CallDB_LoginOrg RO=new CallDB_LoginOrg();
-        RO.execute(input);
-        String Ret = "";
-
+        C_Organization.MyOrg=new Network().LoginOrg(input);
+        if (C_Organization.MyOrg!=null) {
+            Intent intent = new Intent(this, MyOrgProf.class);
+            startActivity(intent);
+            finish();
+        }
+        /*
         try {
-            Ret = RO.get(5, TimeUnit.SECONDS);
 
             boolean errors = Ret.contains("not_found_org");
             if (errors == true) {
@@ -88,7 +90,7 @@ public class LoginOrgActivity extends AppCompatActivity {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        } */
 
     }
 

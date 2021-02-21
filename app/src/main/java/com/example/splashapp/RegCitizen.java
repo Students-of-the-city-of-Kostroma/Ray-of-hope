@@ -23,7 +23,7 @@ public class RegCitizen extends AppCompatActivity {
         finish();
     }
     public void Registr(View view)
-    {String[] input=new String[4];
+    {String[] input=new String[6];
         boolean Error = false;
 
         EditText edit = (EditText)findViewById(R.id.edtname);
@@ -32,11 +32,17 @@ public class RegCitizen extends AppCompatActivity {
         edit = (EditText)findViewById(R.id.etfam);
         input[1] = edit.getText().toString();
 
-        edit = (EditText)findViewById(R.id.etemail);
+        edit = (EditText)findViewById(R.id.edtoname);
         input[2] = edit.getText().toString();
 
-        edit = (EditText)findViewById(R.id.etpas);
+        edit = (EditText)findViewById(R.id.etemail);
         input[3] = edit.getText().toString();
+
+        edit = (EditText)findViewById(R.id.etpas);
+        input[4] = edit.getText().toString();
+
+        edit = (EditText)findViewById(R.id.etpas2);
+        input[5] = edit.getText().toString();
 
 
         if (input[0].isEmpty()||input[1].isEmpty()||input[2].isEmpty()||input[3].isEmpty()) {
@@ -46,14 +52,14 @@ public class RegCitizen extends AppCompatActivity {
             Error=true;
         }
 
-        if (input[3].length()<7&&!Error) {
+        if (input[4].length()<7&&!Error) {
             OkDialog okDialog = new OkDialog();
             okDialog.setMess("Пароль должен быть длиннее 6 символов");
             okDialog.show(getFragmentManager(), "okDialog");
             Error=true;
         }
 
-        if (!input[2].contains("@")&&!Error) {
+        if (!input[3].contains("@")&&!Error) {
             OkDialog okDialog = new OkDialog();
             okDialog.setMess("Неверный формат E-mail");
             okDialog.show(getFragmentManager(), "okDialog");
@@ -62,9 +68,25 @@ public class RegCitizen extends AppCompatActivity {
 
 
         if (!Error) {
+
+            M_Citizen mc= new Network().RegCit(input);
+
+            if (mc!=null)
+            {
+                OkDialog okDialog = new OkDialog();
+                okDialog.setHead("Успех");
+                okDialog.setMess("Регистрация прошла успешно");
+                okDialog.show(getFragmentManager(), "okDialog");
+
             Intent intent = new Intent(this, LoginCitizenActivity.class);
             startActivity(intent);
             finish();
+            }
+            else {
+                OkDialog okDialog = new OkDialog();
+                okDialog.setMess("Не удалось зарегистрироваться");
+                okDialog.show(getFragmentManager(), "okDialog");
+            }
         }
     }
 }

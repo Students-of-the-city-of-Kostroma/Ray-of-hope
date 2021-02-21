@@ -42,9 +42,9 @@
             android:layout_width="wrap_content"
             android:layout_height="38dp"
             android:layout_marginStart="20dp"
-            android:layout_marginLeft="32dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginRight="32dp"
+            android:layout_marginRight="8dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_edittext"
             android:ems="10"
@@ -56,13 +56,27 @@
             android:layout_width="wrap_content"
             android:layout_height="38dp"
             android:layout_marginStart="20dp"
-            android:layout_marginLeft="32dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginRight="32dp"
+            android:layout_marginRight="8dp"
             android:layout_weight="1"
             android:background="@drawable/rounded_edittext"
             android:ems="10"
             android:hint="   Фамилия"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editTextO"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_edittext"
+            android:ems="10"
+            android:hint="   Отчество"
             android:inputType="textPersonName" />
     </LinearLayout>
 

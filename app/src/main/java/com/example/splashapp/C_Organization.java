@@ -10,6 +10,7 @@ public class C_Organization extends ControllerUser {
 
     static List<M_Organization> ListOrganization=new ArrayList<M_Organization>();
     static List<String> s=new ArrayList<String>();
+    public static M_Organization MyOrg;
     static M_Organization morg=new M_Organization("0","Кострома","блаблабла", "0987654321","Название","","ул. Такая-то", "Животные", s,s);
     static M_Organization morg1=new M_Organization("1","Кострома","блаблаблаблаблаблаблаблабла", "0987654321","Название2","","ул. Такая-то", "Животные", s,s);
 

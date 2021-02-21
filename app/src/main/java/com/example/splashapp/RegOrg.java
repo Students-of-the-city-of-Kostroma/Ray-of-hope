@@ -1,18 +1,13 @@
 package com.example.splashapp;
 
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 
 public class RegOrg extends AppCompatActivity {
@@ -34,32 +29,29 @@ public class RegOrg extends AppCompatActivity {
     {
 
 
-        String[] input=new String[4];
+        String[] input=new String[5];
         EditText edit = (EditText)findViewById(R.id.editText6);
         boolean Error = false;
 
         EditText edit1=(EditText)findViewById(R.id.editText11);
-        String PW = edit1.getText().toString();
+        input[4] = edit1.getText().toString();
 
         input[0] = edit.getText().toString();
 
         edit = (EditText)findViewById(R.id.editText7);
-        input[2] = edit.getText().toString();
+        input[1] = edit.getText().toString();
 
         edit = (EditText)findViewById(R.id.editText8);
-        input[1] = edit.getText().toString();
+        input[2] = edit.getText().toString();
 
         edit = (EditText)findViewById(R.id.editText9);
         input[3] = edit.getText().toString();
-        CallDB_RegOrg RO=new CallDB_RegOrg();
+        new Network().RegOrg(input);
 
 
-        if(PW.equals(input[3])) {
-
-            RO.execute(input);
-            String Ret = " ";
+        if(input[4].equals(input[3])) {
+/*
             try {
-                Ret = RO.get(5, TimeUnit.SECONDS);
 
                 boolean errors = Ret.contains("name");
                 if (errors == true) {
@@ -120,7 +112,7 @@ public class RegOrg extends AppCompatActivity {
                 e.printStackTrace();
             } catch (TimeoutException e) {
                 e.printStackTrace();
-            }
+            } */
         }
         else
         {

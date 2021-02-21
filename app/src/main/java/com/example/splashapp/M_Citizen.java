@@ -4,32 +4,41 @@ import javax.validation.constraints.NotNull;
 
 public class M_Citizen extends M_User {
 
-    private String firstName, lastName, city;
+    private String name, f_name, o_name, city=" ";
 
     public M_Citizen(@NotNull String id, @NotNull String email, @NotNull String about,
                      String image, String number,
-                     @NotNull String firstName, @NotNull String lastName,
+                     @NotNull String firstName, @NotNull String lastName, String o_name,
                      String city) {
         super(id, about, image, number);
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.name = firstName;
+        this.f_name = lastName;
+        this.o_name = o_name;
         this.city = city;
     }
 
     public String getFirstName() {
-        return firstName;
+        return name;
     }
 
     public void setFirstName(@NotNull String firstName) {
-        this.firstName = firstName;
+        this.name = firstName;
     }
 
     public String getLastName() {
-        return lastName;
+        return f_name;
     }
 
     public void setLastName(@NotNull String lastName) {
-        this.lastName = lastName;
+        this.f_name = lastName;
+    }
+
+    public String getOName() {
+        return o_name;
+    }
+
+    public void setOtName(@NotNull String o_name) {
+        this.o_name = o_name;
     }
 
     public String getCity() {

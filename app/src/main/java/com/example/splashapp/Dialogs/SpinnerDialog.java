@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.Spinner;
 
+import com.example.splashapp.C_Organization;
 import com.example.splashapp.ListOfOrg;
 import com.example.splashapp.MyOrgProf;
 import com.example.splashapp.R;
@@ -20,7 +21,7 @@ public class SpinnerDialog extends DialogFragment {
     public void onClick(View view) {
         currenttype=spinner.getSelectedItem().toString();
         if (mycity)
-            ListOfOrg.forsCity= MyOrgProf.MyOrg.getCity();
+            ListOfOrg.forsCity= C_Organization.MyOrg.getCity();
         else ListOfOrg.forsCity="";
         if (currenttype=="Любое")
             ListOfOrg.forsCity="";

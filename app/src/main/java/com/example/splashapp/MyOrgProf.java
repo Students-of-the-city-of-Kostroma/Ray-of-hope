@@ -31,7 +31,6 @@ public class MyOrgProf extends AppCompatActivity
         implements GalleryAdapter.ItemClickListener  {
 
     private GalleryAdapter adapter;
-    public static M_Organization MyOrg;
     SharedPreferences sPref;
     final String sv_id = "";
 
@@ -41,56 +40,44 @@ public class MyOrgProf extends AppCompatActivity
         setContentView(R.layout.content_my_org_prof);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        C_Organization.MyOrg=new Network().LсOrg(C_Organization.MyOrg.getId());
+        String moID=C_Organization.MyOrg.getId();
 
-        String moID=LoginOrgActivity.MyOrgId;
 
-
-        CallDB_ProfOrg RO=new CallDB_ProfOrg();
         if (moID==null) {
             loadId();
             moID=LoginOrgActivity.MyOrgId;
         }
         else saveId();
 
-
-        RO.execute(moID);
-        String Ret = "";
         try {
-            Ret = RO.get(5, TimeUnit.SECONDS);
-
-            MyOrg=C_Organization.decodeJSON(Ret,moID);
 
             TextView textview= (TextView) findViewById(R.id.textView25);
-            textview.setText(MyOrg.getName());
+            textview.setText(C_Organization.MyOrg.getName());
 
             textview= (TextView) findViewById(R.id.textView22);
-            textview.setText(MyOrg.getAbout());
+            textview.setText(C_Organization.MyOrg.getAbout());
 
             textview= (TextView) findViewById(R.id.textView20);
-            textview.setText(MyOrg.getAdress()+"\n"+MyOrg.getNumber());
+            textview.setText(C_Organization.MyOrg.getAdress()+"\n"+C_Organization.MyOrg.getNumber());
 
             textview= (TextView) findViewById(R.id.textView24);
-            textview.setText(MyOrg.getCity());
+            textview.setText(C_Organization.MyOrg.getCity());
 
             textview= (TextView) findViewById(R.id.textView16);
-            textview.setText(MyOrg.getTypeActivity());
+            textview.setText(C_Organization.MyOrg.getTypeActivity());
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView12);
-            Picasso.get().load(MyOrg.getImageName()).into(imageView);
+            Picasso.get().load(C_Organization.MyOrg.getImageName()).into(imageView);
 
 
             RecyclerView recyclerView = findViewById(R.id.frameLayout);
             LinearLayoutManager horizontalLayoutManager
                     = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
             recyclerView.setLayoutManager(horizontalLayoutManager);
-            adapter = new GalleryAdapter(this, MyOrg.getDocumentsP(), MyOrg.getDocumentsL());
+            adapter = new GalleryAdapter(this, C_Organization.MyOrg.getDocumentsP(), C_Organization.MyOrg.getDocumentsL());
             adapter.setClickListener(this);
             recyclerView.setAdapter(adapter);
-
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }

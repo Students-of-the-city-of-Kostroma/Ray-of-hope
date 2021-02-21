@@ -7,12 +7,13 @@ public class C_Citizen extends ControllerUser{
 
 
     static List<M_Citizen> ListCitizen=new ArrayList<M_Citizen>();
-    static  M_Citizen mecit=new M_Citizen("1","q@cd.com","блаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблабла", "","1234567890","Иван","Иванович","Кострома");
+    public static M_Citizen Iam;
+    //static  M_Citizen mecit=new M_Citizen("1","q@cd.com","блаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблаблабла", "","1234567890","Иван","Иванович","Кострома");
     public C_Citizen() {
-        ListCitizen.add(mecit);
+        //ListCitizen.add(mecit);
     }
     static public void C_Cit() {
-        ListCitizen.add(mecit);
+        //ListCitizen.add(mecit);
     }
     @Override
     public M_Citizen Update(M_User Citizen) { return null; }

@@ -49,7 +49,7 @@ public class ViewOrg extends AppCompatActivity
 
         String orgId=ListOfOrg.testId;
 
-        Org=C_Organization.ListOrganization.get(Integer.parseInt(orgId));
+        Org=new Network().LсOrg("23");
 
 
             TextView textview= (TextView) findViewById(R.id.textView25);

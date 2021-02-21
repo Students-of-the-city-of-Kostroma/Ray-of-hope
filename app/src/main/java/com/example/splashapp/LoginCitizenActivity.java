@@ -35,61 +35,16 @@ public class LoginCitizenActivity extends AppCompatActivity {
         edit = (EditText)findViewById(R.id.etpas);
         input[1] = edit.getText().toString();
 
-        CallDB_LoginCitizen RO=new CallDB_LoginCitizen();
-        RO.execute(input);
-        String Ret = "";
+        C_Citizen.Iam=new Network().LoginCit(input);
 
         try {
-            Ret = RO.get(5, TimeUnit.SECONDS);
 
-            boolean errors = Ret.contains("not_citizen_org");
-            if (errors == true) {
+            if (C_Citizen.Iam!=null) {
 
-                OkDialog okDialog = new OkDialog();
-                okDialog.setMess("Пользователь не найден");
-                okDialog.show(getFragmentManager(), "okDialog");
-                Error = true;
-            }
-
-            errors = Ret.contains("empty");
-            if (errors == true) {
-                OkDialog okDialog = new OkDialog();
-                okDialog.setMess("Заполните все поля");
-                okDialog.show(getFragmentManager(), "okDialog");
-                Error = true;
-            }
-
-            errors = Ret.contains("password_error");
-            if (errors == true) {
-                OkDialog okDialog = new OkDialog();
-                okDialog.setMess("Неверный пароль");
-                okDialog.show(getFragmentManager(), "okDialog");
-                Error = true;
-            }
-
-            errors = Ret.contains("Error");
-            if (errors == true) {
-                OkDialog okDialog = new OkDialog();
-                okDialog.setMess(Ret);
-                okDialog.show(getFragmentManager(), "okDialog");
-                Error = true;
-            }
-
-            if (Error == false) {
-
-                Intent intent = new Intent(this, MyOrgProf.class);
-                JSONObject json = new JSONObject(Ret);
-                MyOrgId=json.get("id").toString();
+                Intent intent = new Intent(this, CitProf.class);
                 startActivity(intent);
                 finish();
             }
-
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (TimeoutException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -124,11 +79,13 @@ public class LoginCitizenActivity extends AppCompatActivity {
                 okDialog.show(getFragmentManager(), "okDialog");
             }
             else {
-                Intent intent = new Intent(this, CitProf.class);
-                startActivity(intent);
-                finish();
+                C_Citizen.Iam = new Network().LoginCit(input);
+                if (C_Citizen.Iam != null) {
+                    Intent intent = new Intent(this, CitProf.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
-
     }
 
     public void CitizenRegisrt(View view)
@@ -144,3 +101,37 @@ public class LoginCitizenActivity extends AppCompatActivity {
         finish();
     }
 }
+  /*
+            boolean errors = Ret.contains("not_citizen_org");
+            if (errors == true) {
+
+                OkDialog okDialog = new OkDialog();
+                okDialog.setMess("Пользователь не найден");
+                okDialog.show(getFragmentManager(), "okDialog");
+                Error = true;
+            }
+
+            errors = Ret.contains("empty");
+            if (errors == true) {
+                OkDialog okDialog = new OkDialog();
+                okDialog.setMess("Заполните все поля");
+                okDialog.show(getFragmentManager(), "okDialog");
+                Error = true;
+            }
+
+            errors = Ret.contains("password_error");
+            if (errors == true) {
+                OkDialog okDialog = new OkDialog();
+                okDialog.setMess("Неверный пароль");
+                okDialog.show(getFragmentManager(), "okDialog");
+                Error = true;
+            }
+
+            errors = Ret.contains("Error");
+            if (errors == true) {
+                OkDialog okDialog = new OkDialog();
+                okDialog.setMess(Ret);
+                okDialog.show(getFragmentManager(), "okDialog");
+                Error = true;
+            }
+            */

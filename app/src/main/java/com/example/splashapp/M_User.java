@@ -4,17 +4,17 @@ import android.media.Image;
 import javax.validation.constraints.NotNull;
 
 public abstract class M_User  {
-    private String email, about,
-            number;
+    private String email, description,
+            tel=" ";
     String image;
     private String id;
 
-    public M_User(@NotNull String id, @NotNull String about,
-                  String image, String number) {
+    public M_User(@NotNull String id, @NotNull String description,
+                  String image, String tel) {
         this.id=id;
         this.image = image;
-        this.about = about.replaceAll("null", " ");
-        this.number = number.replaceAll("null", " ");
+        this.description = description.replaceAll("null", " ");
+        this.tel = tel.replaceAll("null", " ");
     }
 
     public String getId() {
@@ -34,11 +34,11 @@ public abstract class M_User  {
     }
 
     public String getAbout() {
-        return about;
+        return description;
     }
 
     public void setAbout(@NotNull String about) {
-        this.about = about;
+        this.description = about;
     }
 
     public String getImageName() {
@@ -48,11 +48,11 @@ public abstract class M_User  {
     public void setImageName(String imageName) { this.image = imageName; }
 
     public String getNumber() {
-        return number;
+        return tel;
     }
 
     public void setNumber(String number) {
-        this.number = number;
+        this.tel = number;
     }
 
     public boolean ValidationEmail(String email)
