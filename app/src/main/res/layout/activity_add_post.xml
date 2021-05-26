@@ -4,122 +4,122 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".CitEdit"
-    android:background="@color/colorSYellow"
-    tools:showIn="@layout/activity_citedit">
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imageView12"
+    tools:context=".AddPostActivity">
+
+
+    <EditText
+        android:id="@+id/editText15"
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:hint="      Заголовок"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/editText16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText16"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        app:civ_border_color="#FFFF"
-        app:civ_border_width="2dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView23"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:gravity="top|left"
+        android:hint="   Текст поста"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/photoll"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/about_logo"
-        tools:srcCompat="@mipmap/about_logo"
-        android:onClick="PhotoEdit"/>
+        app:layout_constraintTop_toBottomOf="@+id/editText15" />
 
     <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:id="@+id/photoll"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/editText5"
+        app:layout_constraintBottom_toTopOf="@+id/buttonll"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView12">
+        app:layout_constraintTop_toBottomOf="@+id/editText16">
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="wrap_content"
-            android:layout_height="38dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="8dp"
-            android:layout_weight="1"
-            android:background="@drawable/rounded_edittext"
-            android:ems="10"
-            android:hint="   Имя"
-            android:inputType="textPersonName" />
+        <ImageView
+            android:id="@+id/p1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            tools:srcCompat="@tools:sample/avatars" />
 
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="wrap_content"
-            android:layout_height="38dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="8dp"
-            android:layout_weight="1"
-            android:background="@drawable/rounded_edittext"
-            android:ems="10"
-            android:hint="   Фамилия"
-            android:inputType="textPersonName" />
+        <ImageView
+            android:id="@+id/p2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            tools:srcCompat="@tools:sample/avatars" />
 
-        <EditText
-            android:id="@+id/editTextO"
-            android:layout_width="wrap_content"
-            android:layout_height="38dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="8dp"
-            android:layout_weight="1"
-            android:background="@drawable/rounded_edittext"
-            android:ems="10"
-            android:hint="   Отчество"
-            android:inputType="textPersonName" />
+        <ImageView
+            android:id="@+id/p3"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@tools:sample/avatars" />
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="0dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/rounded_edittext"
-        android:ems="10"
-        android:hint="   Телефон"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editText10"
+    <LinearLayout
+        android:id="@+id/buttonll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+        app:layout_constraintTop_toBottomOf="@+id/photoll"
+        app:layout_constraintVertical_bias="1.0">
 
-    <EditText
-        android:id="@+id/editText10"
-        android:layout_width="wrap_content"
-        android:layout_height="38dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/rounded_edittext"
-        android:ems="10"
-        android:hint="   Город"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        <Button
+            android:id="@+id/button17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:onClick="AddPhoto"
+            android:background="@drawable/buttonstyle"
+            android:text="Добавить фото"
+            android:textColor="@color/colorSYellow" />
+
+        <Button
+            android:id="@+id/button16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/buttonstyle"
+            android:onClick="createPost"
+            android:text="Новый пост"
+            android:textColor="@color/colorSYellow" />
+    </LinearLayout>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="415dp"
         android:layout_height="40dp"
+        android:layout_marginTop="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonll">
 
         <ImageView
             android:id="@+id/imageView5"
@@ -209,44 +209,5 @@
             app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@mipmap/downmenu5" />
     </android.support.constraint.ConstraintLayout>
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/buttonstyle"
-        android:onClick="CitEditSave"
-        android:text="Сохранить"
-        android:textColor="@color/colorSYellow"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText12" />
-
-    <EditText
-        android:id="@+id/editText12"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/rounded_edittext"
-        android:ems="10"
-        android:gravity="top|left"
-        android:hint="О себе"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText10" />
 
 </android.support.constraint.ConstraintLayout>

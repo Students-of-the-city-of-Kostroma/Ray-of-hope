@@ -26,7 +26,8 @@ public class LentaActivity extends AppCompatActivity implements LentaAdapter.Ite
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lenta);
-
+        Network.numberpost=0;
+        ListPost=new Network().ListPosts(0, C_Citizen.Iam.getId());
         setTitle("TabHost");
 
         TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
@@ -46,6 +47,19 @@ public class LentaActivity extends AppCompatActivity implements LentaAdapter.Ite
         LinearLayoutManager horizontalLayoutManager
                 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(horizontalLayoutManager);
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if (!Network.isload) {
+                    List<M_Activism> Posts1 = new Network().ListPosts(Network.numberpost,C_Citizen.Iam.getId());
+                    if (Posts1 != null) {
+                        ListPost.addAll(Posts1);
+                        adapter.notifyDataSetChanged();
+                    }
+                }
+            }
+        });
         adapter = new LentaAdapter(this, ListPost);
         adapter.setClickListener(this);
         try {        recyclerView.setAdapter(adapter);}
@@ -95,13 +109,6 @@ public class LentaActivity extends AppCompatActivity implements LentaAdapter.Ite
         }
     }
 
-    public  void ToChoice(boolean b)
-    {
-        if (b){
-            Intent intent = new Intent(this, Choice.class);
-            startActivity(intent);
-            finish();}
-    }
     public void ChoicePost(View view)
     {
         Intent intent = new Intent(this, ViewOrg.class);

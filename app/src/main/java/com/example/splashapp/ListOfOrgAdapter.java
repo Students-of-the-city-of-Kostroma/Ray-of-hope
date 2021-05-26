@@ -25,6 +25,7 @@ public class ListOfOrgAdapter extends RecyclerView.Adapter<ListOfOrgAdapter.View
     {
         this.Org=Org;
         this.context=context;
+        if (Org!=null)
         itemsCopy.addAll(Org);
     }
 
@@ -42,12 +43,20 @@ public class ListOfOrgAdapter extends RecyclerView.Adapter<ListOfOrgAdapter.View
         holder.id=or.getId();
         holder.name.setText(or.getName());
         holder.about.setText(or.getAbout());
-        Picasso.get().load(R.mipmap.about_logo).into(holder.imageView);
+        try {
+            Picasso.get().load(or.getImageName()).into(holder.imageView);
+        }
+        catch (Exception e)
+        {
+            Picasso.get().load(R.mipmap.about_logo).into(holder.imageView);
+        }
     }
 
     @Override
     public int getItemCount() {
+        if (Org!=null)
         return Org.size();
+        else return 0;
     }
 
     public void filter(String text, String city, String activ) {

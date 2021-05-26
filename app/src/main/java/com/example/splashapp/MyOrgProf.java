@@ -68,7 +68,13 @@ public class MyOrgProf extends AppCompatActivity
             textview.setText(C_Organization.MyOrg.getTypeActivity());
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView12);
-            Picasso.get().load(C_Organization.MyOrg.getImageName()).into(imageView);
+            try {
+                Picasso.get().load(C_Organization.MyOrg.getImageName()).into(imageView);
+            }
+            catch (Exception e)
+            {
+                Picasso.get().load(R.mipmap.about_logo).into(imageView);
+            }
 
 
             RecyclerView recyclerView = findViewById(R.id.frameLayout);
@@ -138,37 +144,33 @@ public class MyOrgProf extends AppCompatActivity
     }
 
     boolean ch=false;
-    public  void Close()
-    {
-        AlertDialog.Builder buil = new AlertDialog.Builder(MyOrgProf.this);
-        buil.setMessage("Вы действительно хотите выйти из аккаунта?");
-        buil.setCancelable(false);
-        buil.setPositiveButton("Да", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
 
-                        ch=true;
-                        ToChoice(ch);
-                        dialog.cancel();
-                    }
-                }
-        );
-        buil.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-        AlertDialog al=buil.create();
-        al.show();
-    }
-    public  void ToChoice(boolean b)
+    public  void toOrgPost(View view)
     {
-        if (b){
-            Intent intent = new Intent(this, Choice.class);
-            startActivity(intent);
-            finish();}
+        Intent intent = new Intent(this, MenuView.class);
+        startActivity(intent);
+        finish();
     }
+
+    public  void editInfo(View view)
+    {
+        Intent intent = new Intent(this, OrgEditActivity.class);
+        startActivity(intent);
+    }
+
+    public  void toNewPost(View view)
+    {
+        Intent intent = new Intent(this, AddPostActivity.class);
+        startActivity(intent);
+    }
+
+    public void ToLenta(View view)
+    {
+        Intent intent = new Intent(this, LentaActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     public  void openMenu(View view)
     {
         Intent intent = new Intent(this, MenuView.class);

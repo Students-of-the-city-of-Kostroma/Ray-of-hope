@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
-public class ViewOrg extends AppCompatActivity
+public class ViewOrg<region, regionend> extends AppCompatActivity
         implements GalleryAdapter.ItemClickListener  {
 
     private GalleryAdapter adapter;
@@ -49,7 +49,7 @@ public class ViewOrg extends AppCompatActivity
 
         String orgId=ListOfOrg.testId;
 
-        Org=new Network().LсOrg("23");
+        Org=new Network().AnotherOrg(orgId);
 
 
             TextView textview= (TextView) findViewById(R.id.textView25);
@@ -68,7 +68,13 @@ public class ViewOrg extends AppCompatActivity
             textview.setText(Org.getTypeActivity());
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView12);
+        try {
+            Picasso.get().load(Org.getImageName()).into(imageView);
+        }
+        catch (Exception e)
+        {
             Picasso.get().load(R.mipmap.about_logo).into(imageView);
+        }
 
 
             RecyclerView recyclerView = findViewById(R.id.frameLayout);
@@ -94,49 +100,15 @@ public class ViewOrg extends AppCompatActivity
         textview2.setMovementMethod(LinkMovementMethod.getInstance());
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
     }
+    public void saveFav(View view) {
 
-    private void decodeJSON(String Ret, String id)
-    {
-        try {
-            JSONObject json = new JSONObject(Ret);
-            String name = json.get("name").toString();
-            String avatar = json.get("avatar").toString();
-            String city = json.get("region_name").toString()+" "  + json.get("city_name").toString();
-            String activity = json.get("type_of_activity_name").toString();
-            String description = json.get("description").toString();
-            String contacts = "Телефон: " + json.get("number_phone").toString();
-            String adress = "Адрес: " + json.get("address").toString();
-
-            String docslink1 = json.get("docs_links").toString();
-            docslink1 = docslink1.substring(1);
-            docslink1 = docslink1.substring(0, docslink1.length() - 1);
-            String[] docslink = docslink1.split(",", -1);
-
-            String docsprev1 = json.get("docs_preview").toString();
-            docsprev1 = docsprev1.substring(1);
-            docsprev1 = docsprev1.substring(0, docsprev1.length() - 1);
-            String[] docsprev = docsprev1.split(",", -1);
-
-            ArrayList<String> dcprev = new ArrayList<>();
-            ArrayList<String> dclink = new ArrayList<>();
-            try {
-                for (int i = 0; i < docslink.length; i++) {
-                    docslink[i] = docslink[i].substring(1);
-                    docslink[i] = docslink[i].substring(0, docslink[i].length() - 1);
-                    dclink.add("http://"+docslink[i]);
-                    docsprev[i] = docsprev[i].substring(1);
-                    docsprev[i] = docsprev[i].substring(0, docsprev[i].length() - 1);
-                    dcprev.add("http://"+docsprev[i]);
-                }
-            }catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            Org = new M_Organization(id, city, description, contacts, name, avatar, adress, activity ,dclink, dcprev);
-        }catch (Exception e) {
-            e.printStackTrace();
+        if (null==null) {
+            ((ImageView) findViewById(R.id.imgfav)).setImageResource(android.R.drawable.star_big_on);
+            //showToast("Save in Fav");
+        } else {
+            ((ImageView) findViewById(R.id.imgfav)).setImageResource(android.R.drawable.star_big_off);
+            //showToast("Delete from Fav");
         }
-
     }
 
 
@@ -158,8 +130,6 @@ public class ViewOrg extends AppCompatActivity
         saveId();
     }
 
-
-
     @Override
     public void onItemClick(View view, int position) {
         try{
@@ -171,15 +141,6 @@ public class ViewOrg extends AppCompatActivity
             e.printStackTrace();
         }
     }
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
 
     public void Activisms (View view)
     {
@@ -187,50 +148,7 @@ public class ViewOrg extends AppCompatActivity
         startActivity(intent);
         finish();
     }
-    public void Need (View view)
-    {
-        Intent intent = new Intent(this, NeedView.class);
-        startActivity(intent);
-        finish();
-    }
-    public void Event (View view)
-    {
-        Intent intent = new Intent(this, EventView.class);
-        startActivity(intent);
-        finish();
-    }
-    boolean ch=false;
-    public  void Close()
-    {
-        AlertDialog.Builder buil = new AlertDialog.Builder(ViewOrg.this);
-        buil.setMessage("Вы действительно хотите выйти из аккаунта?");
-        buil.setCancelable(false);
-        buil.setPositiveButton("Да", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
 
-                        ch=true;
-                        ToChoice(ch);
-                        dialog.cancel();
-                    }
-                }
-        );
-        buil.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-        AlertDialog al=buil.create();
-        al.show();
-    }
-    public  void ToChoice(boolean b)
-    {
-        if (b){
-            Intent intent = new Intent(this, Choice.class);
-            startActivity(intent);
-            finish();}
-    }
     public  void ToMyProf(View view)
     {
         boolean cit=Choice.citezen;

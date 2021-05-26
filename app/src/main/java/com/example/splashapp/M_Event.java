@@ -10,7 +10,7 @@ public class M_Event extends M_Activism {
     public M_Event(@NotNull String id, @NotNull String name, @NotNull String description, @NotNull Date postDate,
                    @NotNull Date date,
                    List<M_User> willGo) {
-        super(id, name, description, postDate, date);
+        super(id, name, description, "");
         this.willGo = willGo;
     }
 

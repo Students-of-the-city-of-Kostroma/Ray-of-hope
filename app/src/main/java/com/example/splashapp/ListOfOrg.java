@@ -27,7 +27,9 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
     public static String testId;
     private M_Organization OrgTest;
     private ListOfOrgAdapter adapter;
+    private ListOfOrgAdapter adapter2;
     private List<M_Organization> Orgs=C_Organization.ListOrganization;//потом перенести в контроллер
+    private List<M_Organization> FavOrgs=new ArrayList<M_Organization>();
     SearchView searchView;
     public static String forsCity="", forsAct="";
 
@@ -37,8 +39,8 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
         setContentView(R.layout.activity_list_of_org);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        //OrgTest=MyOrgProf.MyOrg;
-                //Orgs.add(OrgTest);
+        Network.numberorglist=0;
+        Orgs=new Network().ListOrgs(0, "all");
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -72,6 +74,19 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
         LinearLayoutManager horizontalLayoutManager
                 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(horizontalLayoutManager);
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if (!Network.isload) {
+                    List<M_Organization> Orgs1 = new Network().ListOrgs(Network.numberorglist, "all");
+                    if (Orgs1 != null) {
+                        Orgs.addAll(Orgs1);
+                        adapter.notifyDataSetChanged();
+                    }
+                }
+            }
+        });
         adapter = new ListOfOrgAdapter(this, Orgs);
         adapter.setClickListener(this);
         try {        recyclerView.setAdapter(adapter);}
@@ -103,7 +118,6 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
             testId=(adapter.getOrg(position)).getId();
             Intent intent = new Intent(this, ViewOrg.class);
             startActivity(intent);
-            finish();
         }catch (Exception e) {
             e.printStackTrace();
         }
@@ -119,38 +133,6 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
         }
     }
 
-    boolean ch=false;
-    public  void Close()
-    {
-        AlertDialog.Builder buil = new AlertDialog.Builder(ListOfOrg.this);
-        buil.setMessage("Вы действительно хотите выйти из аккаунта?");
-        buil.setCancelable(false);
-        buil.setPositiveButton("Да", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        ch=true;
-                        ToChoice(ch);
-                        dialog.cancel();
-                    }
-                }
-        );
-        buil.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-        AlertDialog al=buil.create();
-        al.show();
-    }
-    public  void ToChoice(boolean b)
-    {
-        if (b){
-            Intent intent = new Intent(this, Choice.class);
-            startActivity(intent);
-            finish();}
-    }
     public void ChoiceOrg(View view)
     {
         Intent intent = new Intent(this, ViewOrg.class);
@@ -158,6 +140,13 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
         testId=b.getText().toString();
         int k=testId.lastIndexOf(" ")+1;
         testId=testId.substring(k);
+        startActivity(intent);
+        finish();
+    }
+
+    public void ToLenta(View view)
+    {
+        Intent intent = new Intent(this, LentaActivity.class);
         startActivity(intent);
         finish();
     }

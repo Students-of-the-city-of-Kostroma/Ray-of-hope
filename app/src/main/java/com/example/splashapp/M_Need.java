@@ -8,7 +8,7 @@ public class M_Need extends M_Post {
 
     public M_Need(@NotNull String id, @NotNull String name, @NotNull String description, @NotNull Date postDate,
                   @NotNull String whatNeed, @NotNull int percent) {
-        super(id, name, description, postDate);
+        super(id, name, description,"");
         this.whatNeed = whatNeed;
         this.percent = percent;
     }
