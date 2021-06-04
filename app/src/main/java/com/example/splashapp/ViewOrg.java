@@ -32,13 +32,12 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
-public class ViewOrg<region, regionend> extends AppCompatActivity
-        implements GalleryAdapter.ItemClickListener  {
+public class ViewOrg extends AppCompatActivity {
 
-    private GalleryAdapter adapter;
-    public static M_Organization Org;
     SharedPreferences sPref;
     final String sv_id = "";
+    String orgId;
+    boolean fav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,43 +46,40 @@ public class ViewOrg<region, regionend> extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        String orgId=ListOfOrg.testId;
+        orgId=ListOfOrg.testId;
 
-        Org=new Network().AnotherOrg(orgId);
+        C_Organization.current=new Network().AnotherOrg(orgId);
 
 
             TextView textview= (TextView) findViewById(R.id.textView25);
-            textview.setText(Org.getName());
+            textview.setText(C_Organization.current.getName());
 
             textview= (TextView) findViewById(R.id.textView22);
-            textview.setText(Org.getAbout());
+            textview.setText(C_Organization.current.getAbout());
 
             textview= (TextView) findViewById(R.id.textView20);
-            textview.setText(Org.getAdress()+"\n"+Org.getNumber());
+            textview.setText(C_Organization.current.getAdress()+"\n"+C_Organization.current.getNumber());
 
             textview= (TextView) findViewById(R.id.textView24);
-            textview.setText(Org.getCity());
+            textview.setText(C_Organization.current.getCity());
 
             textview= (TextView) findViewById(R.id.textView16);
-            textview.setText(Org.getTypeActivity());
+            textview.setText(C_Organization.current.getTypeActivity());
+            fav=inFav(orgId);
+
+            if (fav)
+            {((ImageView) findViewById(R.id.imgfav)).setImageResource(android.R.drawable.star_big_on);}
+            else { ((ImageView) findViewById(R.id.imgfav)).setImageResource(android.R.drawable.star_big_off);}
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView12);
         try {
-            Picasso.get().load(Org.getImageName()).into(imageView);
+            imageView.setImageBitmap(C_Citizen.Iam.getImageHash());
+            //Picasso.get().load(C_Organization.current.getImageName()).into(imageView);
         }
         catch (Exception e)
         {
             Picasso.get().load(R.mipmap.about_logo).into(imageView);
         }
-
-
-            RecyclerView recyclerView = findViewById(R.id.frameLayout);
-            LinearLayoutManager horizontalLayoutManager
-                    = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-            recyclerView.setLayoutManager(horizontalLayoutManager);
-            adapter = new GalleryAdapter(this, Org.getDocumentsP(), Org.getDocumentsL());
-            adapter.setClickListener(this);
-            recyclerView.setAdapter(adapter);
 
 
         TextView textview3= (TextView) findViewById(R.id.textView24);
@@ -100,14 +96,42 @@ public class ViewOrg<region, regionend> extends AppCompatActivity
         textview2.setMovementMethod(LinkMovementMethod.getInstance());
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
     }
-    public void saveFav(View view) {
 
-        if (null==null) {
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, ListOfOrg.class);
+        startActivity(intent);
+        finish();
+    }
+
+
+    public boolean inFav(String id)
+    {
+        if (C_Organization.FavOrg==null)
+            return false;
+        for (int i=0; i<C_Organization.FavOrg.size();i++)
+        {
+            if (C_Organization.FavOrg.get(i).getId().equals(id))
+                return true;
+        }
+        return false;
+    }
+
+    public void FavClick(View view) {
+        String [] param=new String[4];
+        param[0]=C_Citizen.Iam.getId();
+        param[1]=orgId;
+        fav=!fav;
+        if (fav) {
             ((ImageView) findViewById(R.id.imgfav)).setImageResource(android.R.drawable.star_big_on);
-            //showToast("Save in Fav");
+            param[2]="id_citizen";
+            param[3]="id_organization";
+            new Network().SaveDelFavOrg(param,fav);
         } else {
             ((ImageView) findViewById(R.id.imgfav)).setImageResource(android.R.drawable.star_big_off);
-            //showToast("Delete from Fav");
+            param[2]="id_cit";
+            param[3]="id_org";
+            new Network().SaveDelFavOrg(param,fav);
         }
     }
 
@@ -130,23 +154,11 @@ public class ViewOrg<region, regionend> extends AppCompatActivity
         saveId();
     }
 
-    @Override
-    public void onItemClick(View view, int position) {
-        try{
-            String url=adapter.getLink(position);
-            Intent browserIntent = new
-                    Intent(Intent.ACTION_VIEW, Uri.parse(url));
-            this.startActivity(browserIntent);
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     public void Activisms (View view)
     {
-        Intent intent = new Intent(this, ActivView.class);
+        Intent intent = new Intent(this, OrgPostLentaActivity.class);
         startActivity(intent);
-        finish();
+        //finish();
     }
 
     public  void ToMyProf(View view)

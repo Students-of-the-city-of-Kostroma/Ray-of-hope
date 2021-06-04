@@ -4,11 +4,10 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 
-public abstract class M_Post {
+public class M_Post {
     private String title, text, org_name, date_added;
     private String id;
     private String[] photo;
-    //private Date date;
     public List<M_Comment> linkComment;
 
     public M_Post(String id, @NotNull String name, @NotNull String description, @NotNull String org_name) {
@@ -18,12 +17,6 @@ public abstract class M_Post {
         this.org_name = org_name;
         //this.date_added = postDate;
     }
-
-    public class ImageClass
-    {
-        String photo;
-    }
-
     public String getId() {
         return id;
     }

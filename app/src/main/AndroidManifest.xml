@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:testOnly="false"
         android:theme="@style/AppTheme">
-        <activity android:name=".OrgPostLentaActivity"></activity>
+        <activity android:name=".OrgPostLentaActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".EditOrgActivity" />
         <activity
             android:name=".ListOfChats"

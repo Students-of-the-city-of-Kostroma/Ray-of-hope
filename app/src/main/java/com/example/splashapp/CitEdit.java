@@ -38,9 +38,16 @@ public class CitEdit extends AppCompatActivity {
         imageView = (ImageView) findViewById(R.id.imageView12);
 
 
-        try {
-            Picasso.get().load(C_Citizen.Iam.picture).into(imageView);
-        } catch (Exception e) {
+        ImageView imageView = (ImageView) findViewById(R.id.imageView12);
+        if (C_Citizen.Iam.getImageName()!=null) {
+            try {
+                imageView.setImageBitmap(C_Citizen.Iam.getImageHash());
+                //Picasso.get().load(C_Citizen.Iam.getImageName()).into(imageView);
+            } catch (Exception e) {
+                Picasso.get().load(R.mipmap.about_logo).into(imageView);
+            }
+        }
+        else {
             Picasso.get().load(R.mipmap.about_logo).into(imageView);
         }
 

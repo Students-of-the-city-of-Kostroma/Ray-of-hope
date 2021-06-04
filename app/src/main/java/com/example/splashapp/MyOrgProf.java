@@ -28,9 +28,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
 public class MyOrgProf extends AppCompatActivity
-        implements GalleryAdapter.ItemClickListener  {
+      {
 
-    private GalleryAdapter adapter;
+
     SharedPreferences sPref;
     final String sv_id = "";
 
@@ -41,7 +41,7 @@ public class MyOrgProf extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         C_Organization.MyOrg=new Network().LсOrg(C_Organization.MyOrg.getId());
-        String moID=C_Organization.MyOrg.getId();
+        String moID=LoginOrgActivity.MyOrgId;
 
 
         if (moID==null) {
@@ -69,7 +69,8 @@ public class MyOrgProf extends AppCompatActivity
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView12);
             try {
-                Picasso.get().load(C_Organization.MyOrg.getImageName()).into(imageView);
+                imageView.setImageBitmap(C_Citizen.Iam.getImageHash());
+                //Picasso.get().load(C_Organization.MyOrg.getImageName()).into(imageView);
             }
             catch (Exception e)
             {
@@ -77,13 +78,6 @@ public class MyOrgProf extends AppCompatActivity
             }
 
 
-            RecyclerView recyclerView = findViewById(R.id.frameLayout);
-            LinearLayoutManager horizontalLayoutManager
-                    = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-            recyclerView.setLayoutManager(horizontalLayoutManager);
-            adapter = new GalleryAdapter(this, C_Organization.MyOrg.getDocumentsP(), C_Organization.MyOrg.getDocumentsL());
-            adapter.setClickListener(this);
-            recyclerView.setAdapter(adapter);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -123,27 +117,13 @@ public class MyOrgProf extends AppCompatActivity
         saveId();
     }
 
-
-
-    @Override
-    public void onItemClick(View view, int position) {
-        String url=adapter.getLink(position);
-        Intent browserIntent = new
-                Intent(Intent.ACTION_VIEW, Uri.parse(url));
-        this.startActivity(browserIntent);
-        }
-
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-    boolean ch=false;
+          public void Activisms (View view)
+          {
+              C_Organization.current=C_Organization.MyOrg;
+              Intent intent = new Intent(this, OrgPostLentaActivity.class);
+              startActivity(intent);
+              //finish();
+          }
 
     public  void toOrgPost(View view)
     {

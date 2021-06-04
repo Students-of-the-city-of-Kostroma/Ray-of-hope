@@ -1,5 +1,11 @@
 package com.example.splashapp;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
+
+import java.io.ByteArrayOutputStream;
+
 import javax.validation.constraints.NotNull;
 
 public abstract class M_User  {
@@ -44,6 +50,16 @@ public abstract class M_User  {
 
         if (picture !=null)
         return "http://darapana.beget.tech/storage/app/"+ picture;
+        else return null;
+    }
+
+    public Bitmap getImageHash() {
+
+        if (picture !=null)
+        {
+            byte[] decodedString = Base64.decode(picture, Base64.DEFAULT);
+            return BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+        }
         else return null;
     }
 

@@ -40,7 +40,8 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Network.numberorglist=0;
-        Orgs=new Network().ListOrgs(0, "all");
+        Orgs=new Network().ListOrgs(0, C_Organization.filter);
+        C_Organization.FavOrg=new Network().ListFavOrgs(C_Citizen.Iam.getId());
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -48,8 +49,6 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
-
 
         setTitle("TabHost");
 
@@ -93,23 +92,16 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
         catch (Exception e) {
             e.printStackTrace();
         }
-        searchView=(SearchView) findViewById(R.id.search_view1);
-        try {
-            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                adapter.filter(query, forsCity, forsAct);
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                adapter.filter(newText,forsCity, forsAct);
-                return true;
-            }
-        });} catch (Exception e) {
-                e.printStackTrace();
-            }
+        RecyclerView recyclerView2 = findViewById(R.id.frameLayout2);
+        LinearLayoutManager horizontalLayoutManager2
+                = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        recyclerView2.setLayoutManager(horizontalLayoutManager2);
+        adapter2 = new ListOfOrgAdapter(this, C_Organization.FavOrg);
+        adapter2.setClickListener(this);
+        try {        recyclerView2.setAdapter(adapter2);}
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -118,6 +110,7 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
             testId=(adapter.getOrg(position)).getId();
             Intent intent = new Intent(this, ViewOrg.class);
             startActivity(intent);
+            finish();
         }catch (Exception e) {
             e.printStackTrace();
         }
@@ -171,9 +164,33 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
     }
     public void OnParamClick (View view)
     {
-        SpinnerDialog sDialog = new SpinnerDialog();
-        sDialog.show(getFragmentManager(), "SpinnerDialog");
+        //SpinnerDialog sDialog = new SpinnerDialog();
+        //sDialog.show(getFragmentManager(), "SpinnerDialog");
+
+
+        String[] colors = {"red", "green", "blue", "black"};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Pick a color");
+        builder.setItems(colors, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // the user clicked on colors[which]
+            }
+        });
+        builder.show();
     }
+
+
+
+    public void CloseDialog ()
+    {   Orgs.clear();
+        adapter.notifyDataSetChanged();
+        Orgs.addAll(new Network().ListOrgs(0, C_Organization.filter));
+        adapter.notifyDataSetChanged();
+    }
+
+
     public  void ToMyProf(View view)
     {
         boolean cit=Choice.citezen;

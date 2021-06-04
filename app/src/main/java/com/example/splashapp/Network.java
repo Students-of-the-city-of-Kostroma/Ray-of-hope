@@ -197,6 +197,7 @@ public class Network {
         AsyncTask fpl = new Connection().executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
         try {
             String orgs = fpl.get().toString();
+            orgs=orgs.replace(",\"image\":[",",\"photo\":[");
             String result = orgs;//orgs.substring(orgs.indexOf("data")+6, orgs.indexOf("message") -2);
             json=new JSONObject(result);
             GsonBuilder builder = new GsonBuilder();
@@ -347,24 +348,27 @@ public class Network {
         }
         return null;
     }
-    public List<M_Organization> ListFavOrgs(int param) {
+
+    public List<M_Organization> ListFavOrgs(String param) {
         link = listfavorgs;
         isload=true;
         formBody = new FormBody.Builder()
-                .add("id_cit", Integer.toString(param))
+                .add("id_cit", param)
                 .build();
 
         AsyncTask fpl = new Connection().executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
         try {
             String orgs = fpl.get().toString();
-            orgs=orgs.replace("[],","");
-            String result = orgs.substring(orgs.lastIndexOf("},")+2, orgs.length() -1);
-            orgs=orgs.replace("},"+result,"},");
+            orgs=orgs.replace("\"id\"","\"fav_id\"");
+            orgs=orgs.replace("id_organization","id");
+            orgs=orgs.replace("org_name","name");
+            orgs=orgs.replace("org_photo","picture");
+            String result = orgs.substring(orgs.indexOf("data")+6, orgs.indexOf("message") -2);
             GsonBuilder builder = new GsonBuilder();
             Gson gson = builder.create();
-            List<M_Organization> orgslist = gson.fromJson(orgs, new TypeToken<List<M_Organization>>(){}.getType());
+            List<M_Organization> orgslist = gson.fromJson(result, new TypeToken<List<M_Organization>>(){}.getType());
             orgslist.removeAll(Collections.singleton(null));
-            numberpost=Integer.parseInt(result);
+            //numberpost=Integer.parseInt(result);
             return orgslist;
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -378,6 +382,35 @@ public class Network {
         }
         return null;
     }
+
+    public boolean SaveDelFavOrg(String[] param, boolean save)
+    {
+        if (save) {
+            link = "http://darapana.beget.tech/api/add_fav";
+        }
+            else {
+            link = "http://darapana.beget.tech/api/del_fav_by_id";}
+
+
+        formBody = new FormBody.Builder()
+                .add(param[2], param[0])
+                .add(param[3], param[1])
+                .build();
+        AsyncTask fpl = new Connection().executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
+        try {
+            String answ = fpl.get().toString();
+            return true;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            Log.d("Exe", e.getMessage());
+        }
+        return false;
+    }
+
+
     public List<M_Activism> ListPosts(int param, String id) {
         link = posts;
         isload=true;
