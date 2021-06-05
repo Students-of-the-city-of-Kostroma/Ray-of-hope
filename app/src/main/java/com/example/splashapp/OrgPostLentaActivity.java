@@ -13,7 +13,7 @@ public class OrgPostLentaActivity extends AppCompatActivity implements LentaAdap
 
     String psId;
     private LentaAdapter adapter;
-    private List<M_Activism> ListPost=C_Organization.current.posts;
+    private List<M_Post> ListPost=C_Organization.current.posts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

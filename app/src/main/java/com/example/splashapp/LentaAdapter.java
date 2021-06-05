@@ -15,12 +15,12 @@ import java.util.List;
 
 public class LentaAdapter extends RecyclerView.Adapter<LentaAdapter.ViewHolder>  {
 
-    private List<M_Activism> Post;
-    private List<M_Activism> itemsCopy=new ArrayList<M_Activism>();
+    private List<M_Post> Post;
+    private List<M_Post> itemsCopy=new ArrayList<M_Post>();
     private Context context;
     private LentaAdapter.ItemClickListener mClickListener;
 
-    public LentaAdapter(Context context,List<M_Activism> Post)
+    public LentaAdapter(Context context,List<M_Post> Post)
     {
         this.Post=Post;
         this.context=context;
@@ -37,7 +37,7 @@ public class LentaAdapter extends RecyclerView.Adapter<LentaAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(LentaAdapter.ViewHolder holder, int position) {
-        M_Activism or=Post.get(position);
+        M_Post or=Post.get(position);
         if (or.getId().equals("13"))
         {
             String st="test";
@@ -76,7 +76,7 @@ public class LentaAdapter extends RecyclerView.Adapter<LentaAdapter.ViewHolder> 
             Post.addAll(itemsCopy);
         } else{
             text = text.toLowerCase();
-            for(M_Activism item: itemsCopy){
+            for(M_Post item: itemsCopy){
                 if(item.getName().toLowerCase().contains(text)){
                     Post.add(item);
                 }
@@ -125,7 +125,7 @@ public class LentaAdapter extends RecyclerView.Adapter<LentaAdapter.ViewHolder> 
         }
     }
 
-    public M_Activism getOrg(int id) {
+    public M_Post getOrg(int id) {
         return Post.get(id);
     }
 

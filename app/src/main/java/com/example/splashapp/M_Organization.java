@@ -7,7 +7,7 @@ import java.util.List;
 
 public class M_Organization extends M_User {
     private String name,location, adress, type_active, id_citizen, fav_id;
-    public List<M_Activism> posts=new ArrayList<M_Activism>();
+    public List<M_Post> posts=new ArrayList<M_Post>();
 
     public M_Organization(@NotNull String id, String location, String about,
                           String number,

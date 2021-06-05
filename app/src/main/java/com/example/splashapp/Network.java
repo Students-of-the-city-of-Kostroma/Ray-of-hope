@@ -411,7 +411,7 @@ public class Network {
     }
 
 
-    public List<M_Activism> ListPosts(int param, String id) {
+    public List<M_Post> ListPosts(int param, String id) {
         link = posts;
         isload=true;
         formBody = new FormBody.Builder()
@@ -430,7 +430,7 @@ public class Network {
             orgs=orgs.replace("},"+result,"}");
             GsonBuilder builder = new GsonBuilder();
             Gson gson = builder.create();
-            List<M_Activism> orgslist = gson.fromJson(orgs, new TypeToken<List<M_Activism>>(){}.getType());
+            List<M_Post> orgslist = gson.fromJson(orgs, new TypeToken<List<M_Post>>(){}.getType());
             orgslist.removeAll(Collections.singleton(null));
             numberpost=Integer.parseInt(result);
             return orgslist;
@@ -461,9 +461,7 @@ public class Network {
                 encoded[i] = "";
             }
         }
-
         formBody = new FormBody.Builder()
-                .add("Authorzation", "")
                 .add("id_organizations", params[3])
                 .add("title", params[0])
                 .add("text", params[1])

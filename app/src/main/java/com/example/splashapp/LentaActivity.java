@@ -20,7 +20,7 @@ public class LentaActivity extends AppCompatActivity implements LentaAdapter.Ite
 
     String psId;
     private LentaAdapter adapter;
-    private List<M_Activism> ListPost=C_Activitisms.ListActivism;//потом перенести в контроллер
+    private List<M_Post> ListPost=ControllerPost.ListActivism;//потом перенести в контроллер
     SearchView searchView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +52,7 @@ public class LentaActivity extends AppCompatActivity implements LentaAdapter.Ite
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
                 if (!Network.isload) {
-                    List<M_Activism> Posts1 = new Network().ListPosts(Network.numberpost,C_Citizen.Iam.getId());
+                    List<M_Post> Posts1 = new Network().ListPosts(Network.numberpost,C_Citizen.Iam.getId());
                     if (Posts1 != null) {
                         ListPost.addAll(Posts1);
                         adapter.notifyDataSetChanged();
