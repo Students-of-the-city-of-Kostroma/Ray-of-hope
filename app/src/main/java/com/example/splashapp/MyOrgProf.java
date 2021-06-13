@@ -41,7 +41,7 @@ public class MyOrgProf extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         C_Organization.MyOrg=new Network().LсOrg(C_Organization.MyOrg.getId());
-        String moID=LoginOrgActivity.MyOrgId;
+        String moID=C_Organization.MyOrg.getId();
 
 
         if (moID==null) {

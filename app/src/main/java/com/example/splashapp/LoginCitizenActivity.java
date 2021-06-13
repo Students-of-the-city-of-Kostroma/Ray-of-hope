@@ -64,7 +64,6 @@ public class LoginCitizenActivity extends AppCompatActivity {
 
 
 
-
 //            if () {
 //
 //                OkDialog okDialog = new OkDialog();
@@ -84,6 +83,11 @@ public class LoginCitizenActivity extends AppCompatActivity {
                     Intent intent = new Intent(this, CitProf.class);
                     startActivity(intent);
                     finish();
+                }
+                else {
+                    OkDialog okDialog = new OkDialog();
+                    okDialog.setMess("Неверные логин/пароль");
+                    okDialog.show(getFragmentManager(), "okDialog");
                 }
             }
     }

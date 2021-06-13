@@ -53,7 +53,7 @@ public class Network {
     private static String link;
     private JSONObject json;
     public static RequestBody formBody;
-    public String RegOrg(String [] params) {
+    public boolean RegOrg(String [] params) {
         link = regorg;
                 formBody = new FormBody.Builder()
                 .add("name", params[0])
@@ -65,8 +65,12 @@ public class Network {
 
         AsyncTask fpl = new Connection().executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
         try {
-            String orgs = fpl.get().toString();
-            return orgs;
+            String cits = fpl.get().toString();
+            json=new JSONObject(cits);
+            String answer=json.getString("Message");
+            if (answer.equals("User register successfully"))
+            return true;
+            else return false;
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
@@ -74,7 +78,7 @@ public class Network {
         } catch (Exception e) {
             Log.d("Exe", e.getMessage());
         }
-        return null;
+        return false;
     }
 
     public M_Citizen RegCit(String [] params) {
@@ -447,13 +451,13 @@ public class Network {
         return null;
     }
 
-    public boolean AddPost(String [] params, Bitmap[] bmp) {
+    public boolean AddPost(String [] params, List<Bitmap> bmp) {
         link = postsadd;
         String[] encoded=new String[3];
-        for (int i=0; i<bmp.length;i++) {
-            if (bmp[i]!=null) {
+        for (int i=0; i<bmp.size();i++) {
+            if (bmp.get(i)!=null) {
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                bmp[i].compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+                bmp.get(i).compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
                 byte[] byteArray = byteArrayOutputStream.toByteArray();
                 encoded[i] = Base64.encodeToString(byteArray, Base64.DEFAULT);
             }

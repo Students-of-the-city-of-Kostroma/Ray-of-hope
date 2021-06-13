@@ -24,6 +24,7 @@ public class LentaAdapter extends RecyclerView.Adapter<LentaAdapter.ViewHolder> 
     {
         this.Post=Post;
         this.context=context;
+        if (Post!=null)
         itemsCopy.addAll(Post);
     }
 

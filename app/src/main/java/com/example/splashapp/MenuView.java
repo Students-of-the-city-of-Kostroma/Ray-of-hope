@@ -40,25 +40,44 @@ public class MenuView extends AppCompatActivity {
     }
     public  void goToFAQ(View view)
     {
-        Intent intent = new Intent(this, Q_A.class);
-        startActivity(intent);
-        finish();
+       // Intent intent = new Intent(this, Q_A.class);
+       // startActivity(intent);
+        //finish();
     }
     public  void goToAbout(View view)
     {
         Intent intent = new Intent(this, AboutView.class);
         startActivity(intent);
     }
-    public  void ToChats(View view)
+
+    public  void ToListOfOrg(View view)
+    {
+        Intent intent = new Intent(this, ListOfOrg.class);
+        startActivity(intent);
+        finish();
+    }
+    public void ToLenta(View view)
+    {
+        Intent intent = new Intent(this, LentaActivity.class);
+        startActivity(intent);
+        finish();
+    }
+    public void ToChats(View view)
     {
         Intent intent = new Intent(this, ListOfChats.class);
         startActivity(intent);
         finish();
     }
-    public  void ToListOfOrg(View view)
+    public  void ToMyProf(View view)
     {
-        Intent intent = new Intent(this, ListOfOrg.class);
-        startActivity(intent);
+        boolean cit=Choice.citezen;
+        if (cit) {
+            Intent intent = new Intent(this, CitProf.class);
+            startActivity(intent);
+        }
+        else { Intent intent = new Intent(this, MyOrgProf.class);
+            startActivity(intent);}
+
         finish();
     }
 

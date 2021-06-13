@@ -32,16 +32,19 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
     private List<M_Organization> FavOrgs=new ArrayList<M_Organization>();
     SearchView searchView;
     public static String forsCity="", forsAct="";
+    Button search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_of_org);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        search=findViewById(R.id.searchbutton);
         setSupportActionBar(toolbar);
         Network.numberorglist=0;
         Orgs=new Network().ListOrgs(0, C_Organization.filter);
-        C_Organization.FavOrg=new Network().ListFavOrgs(C_Citizen.Iam.getId());
+        if (C_Citizen.Iam!=null)
+        {C_Organization.FavOrg=new Network().ListFavOrgs(C_Citizen.Iam.getId());}
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -62,10 +65,12 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
         tabSpec.setIndicator("Все");
         tabHost.addTab(tabSpec);
 
-        tabSpec = tabHost.newTabSpec("tag2");
-        tabSpec.setContent(R.id.linearLayout2);
-        tabSpec.setIndicator("Любимые");
-        tabHost.addTab(tabSpec);
+        if (C_Citizen.Iam!=null) {
+            tabSpec = tabHost.newTabSpec("tag2");
+            tabSpec.setContent(R.id.linearLayout2);
+            tabSpec.setIndicator("Любимые");
+            tabHost.addTab(tabSpec);
+        }
 
         tabHost.setCurrentTab(0);
 
@@ -92,15 +97,18 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
         catch (Exception e) {
             e.printStackTrace();
         }
-        RecyclerView recyclerView2 = findViewById(R.id.frameLayout2);
-        LinearLayoutManager horizontalLayoutManager2
-                = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        recyclerView2.setLayoutManager(horizontalLayoutManager2);
-        adapter2 = new ListOfOrgAdapter(this, C_Organization.FavOrg);
-        adapter2.setClickListener(this);
-        try {        recyclerView2.setAdapter(adapter2);}
-        catch (Exception e) {
-            e.printStackTrace();
+        if (C_Citizen.Iam!=null) {
+            RecyclerView recyclerView2 = findViewById(R.id.frameLayout2);
+            LinearLayoutManager horizontalLayoutManager2
+                    = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+            recyclerView2.setLayoutManager(horizontalLayoutManager2);
+            adapter2 = new ListOfOrgAdapter(this, C_Organization.FavOrg);
+            adapter2.setClickListener(this);
+            try {
+                recyclerView2.setAdapter(adapter2);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -137,22 +145,70 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
         finish();
     }
 
-    public void ToLenta(View view)
+    public void OnParamClick (View view)
     {
-        Intent intent = new Intent(this, LentaActivity.class);
-        startActivity(intent);
-        finish();
+        //SpinnerDialog sDialog = new SpinnerDialog();
+        //sDialog.show(getFragmentManager(), "SpinnerDialog");
+
+
+        String[] colors = {"все", "дети","бездомные","животные", "инвалиды", "пенсионеры"};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Выберите тип");
+        builder.setItems(colors, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case 0: C_Organization.filter="all";
+                        search.setText("Тип организации: все");
+                        break;
+                    case 1:C_Organization.filter="child";
+                        search.setText("Тип организации: дети");
+                        break;
+                    case 2: C_Organization.filter="homeless";
+                        search.setText("Тип организации: бездомные");
+                        break;
+                    case 3: C_Organization.filter="animals";
+                        search.setText("Тип организации: животные");
+                        break;
+                    case 4:C_Organization.filter="disabled";
+                        search.setText("Тип организации: инвалиды");
+                        break;
+                    case 5: C_Organization.filter="pensioners";
+                        search.setText("Тип организации: пенсионеры");
+                        break;
+                    default:
+                        break;
+                }
+                CloseDialog();
+            }
+        });
+        builder.show();
     }
+
+
+
+    public void CloseDialog ()
+    {
+        Orgs.clear();
+        adapter.notifyDataSetChanged();
+        List<M_Organization> filterorg=new Network().ListOrgs(0, C_Organization.filter);
+        if (filterorg!=null) {
+            Orgs.addAll(filterorg);
+            adapter.notifyDataSetChanged();
+        }
+    }
+
+
     public  void openMenu(View view)
     {
         Intent intent = new Intent(this, MenuView.class);
         startActivity(intent);
         finish();
     }
-
-    public  void ToListOfOrg(View view)
+    public void ToLenta(View view)
     {
-        Intent intent = new Intent(this, ListOfOrg.class);
+        Intent intent = new Intent(this, LentaActivity.class);
         startActivity(intent);
         finish();
     }
@@ -162,35 +218,6 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
         startActivity(intent);
         finish();
     }
-    public void OnParamClick (View view)
-    {
-        //SpinnerDialog sDialog = new SpinnerDialog();
-        //sDialog.show(getFragmentManager(), "SpinnerDialog");
-
-
-        String[] colors = {"red", "green", "blue", "black"};
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Pick a color");
-        builder.setItems(colors, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // the user clicked on colors[which]
-            }
-        });
-        builder.show();
-    }
-
-
-
-    public void CloseDialog ()
-    {   Orgs.clear();
-        adapter.notifyDataSetChanged();
-        Orgs.addAll(new Network().ListOrgs(0, C_Organization.filter));
-        adapter.notifyDataSetChanged();
-    }
-
-
     public  void ToMyProf(View view)
     {
         boolean cit=Choice.citezen;

@@ -1,37 +1,43 @@
 package com.example.splashapp;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class AddPostActivity extends AppCompatActivity {
 
     ImageView imageView;
     Bitmap selectedImage;
     int photocounter=0;
-    Bitmap[] bmp=new Bitmap[3];
-    ImageView[] iv=new ImageView[3];
+    List<Bitmap> bmp=new ArrayList<Bitmap>();
+    List<ImageView> iv=new ArrayList<ImageView>();
     final String DATE_FORMAT_NOW = "yyyy-MM-dd HH:mm:ss";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_post);
-        iv[0] = (ImageView) findViewById(R.id.p1);
-        iv[1] = (ImageView) findViewById(R.id.p2);
-        iv[2] = (ImageView) findViewById(R.id.p3);
+        iv.add((ImageView) findViewById(R.id.p1));
+        iv.add((ImageView) findViewById(R.id.p2));
+        iv.add((ImageView) findViewById(R.id.p3));
     }
 
     public  void createPost(View view)
@@ -52,11 +58,52 @@ public class AddPostActivity extends AppCompatActivity {
     }
 
     public void AddPhoto(View view) {
-        if (photocounter>2)
+        if (photocounter>2) {
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "Можно приложить не больше трех изображений", Toast.LENGTH_SHORT);
+            toast.show();
             return;
+        }
         Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
         photoPickerIntent.setType("image/*");
         startActivityForResult(photoPickerIntent, 0);
+    }
+
+    public void DelPhoto(View view)
+    {
+
+        AlertDialog.Builder adb = new AlertDialog.Builder(this);
+        adb.setMessage("Удалить фото?");
+        adb.setNegativeButton("Нет", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface d, int arg1) {
+                return;
+            };
+        });
+        final View v=view;
+        adb.setPositiveButton("Да", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface d, int arg1) {
+                photocounter--;
+
+                if (v==findViewById(R.id.p1))
+                    bmp.remove(0);
+                if (v==findViewById(R.id.p2))
+                    bmp.remove(1);
+                if (v==findViewById(R.id.p3))
+                    bmp.remove(3);
+
+
+                iv.get(0).setImageDrawable(null);
+                iv.get(1).setImageDrawable(null);
+                iv.get(2).setImageDrawable(null);
+                    for (int i = 0; i < bmp.size(); i++) { iv.get(i).setImageBitmap(bmp.get(i));
+                }
+
+            };
+        });
+
+        adb.show();
     }
 
 
@@ -69,8 +116,8 @@ public class AddPostActivity extends AppCompatActivity {
             try {
                 final Uri imageUri = data.getData();
                 final InputStream imageStream = getContentResolver().openInputStream(imageUri);
-                bmp[photocounter] = BitmapFactory.decodeStream(imageStream);
-                iv[photocounter].setImageBitmap(bmp[photocounter]);
+                bmp.add(BitmapFactory.decodeStream(imageStream));
+                iv.get(photocounter).setImageBitmap(bmp.get(photocounter));
                 photocounter++;
             } catch (FileNotFoundException e) {
                 e.printStackTrace();

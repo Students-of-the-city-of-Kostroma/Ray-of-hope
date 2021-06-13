@@ -59,18 +59,21 @@
             android:id="@+id/p1"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:onClick="DelPhoto"
             tools:srcCompat="@tools:sample/avatars" />
 
         <ImageView
             android:id="@+id/p2"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:onClick="DelPhoto"
             tools:srcCompat="@tools:sample/avatars" />
 
         <ImageView
             android:id="@+id/p3"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:onClick="DelPhoto"
             tools:srcCompat="@tools:sample/avatars" />
     </LinearLayout>
 

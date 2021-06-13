@@ -118,8 +118,7 @@ public class LentaActivity extends AppCompatActivity implements LentaAdapter.Ite
         psId=psId.substring(k);
         startActivity(intent);
         finish();
-    }
-    public  void openMenu(View view)
+    }public  void openMenu(View view)
     {
         Intent intent = new Intent(this, MenuView.class);
         startActivity(intent);
@@ -132,10 +131,22 @@ public class LentaActivity extends AppCompatActivity implements LentaAdapter.Ite
         startActivity(intent);
         finish();
     }
-
-    public void OnParamClick (View view)
+    public void ToChats(View view)
     {
-        SpinnerDialog sDialog = new SpinnerDialog();
-        sDialog.show(getFragmentManager(), "SpinnerDialog");
+        Intent intent = new Intent(this, ListOfChats.class);
+        startActivity(intent);
+        finish();
+    }
+    public  void ToMyProf(View view)
+    {
+        boolean cit=Choice.citezen;
+        if (cit) {
+            Intent intent = new Intent(this, CitProf.class);
+            startActivity(intent);
+        }
+        else { Intent intent = new Intent(this, MyOrgProf.class);
+            startActivity(intent);}
+
+        finish();
     }
 }

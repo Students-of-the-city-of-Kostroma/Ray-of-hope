@@ -1,10 +1,13 @@
 package com.example.splashapp;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 
 import com.example.splashapp.Dialogs.OkDialog;
 
@@ -73,14 +76,25 @@ public class RegCitizen extends AppCompatActivity {
 
             if (mc!=null)
             {
-                OkDialog okDialog = new OkDialog();
+                AlertDialog.Builder adb = new AlertDialog.Builder(this);
+                adb.setTitle("Успех");
+                adb.setMessage("Регистрация прошла успешно");
+                adb.setNegativeButton("ОК", new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface d, int arg1) {
+                        GoBack();
+                    };
+                });
+                adb.show();
+
+                /* OkDialog okDialog = new OkDialog();
                 okDialog.setHead("Успех");
                 okDialog.setMess("Регистрация прошла успешно");
-                okDialog.show(getFragmentManager(), "okDialog");
+                okDialog.show(getFragmentManager(), "okDialog"); */
 
-            Intent intent = new Intent(this, LoginCitizenActivity.class);
-            startActivity(intent);
-            finish();
+            //Intent intent = new Intent(this, LoginCitizenActivity.class);
+            //startActivity(intent);
+            //finish();
             }
             else {
                 OkDialog okDialog = new OkDialog();
@@ -88,5 +102,11 @@ public class RegCitizen extends AppCompatActivity {
                 okDialog.show(getFragmentManager(), "okDialog");
             }
         }
+    }
+    public  void GoBack()
+    {
+        Intent intent = new Intent(this, LoginCitizenActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
