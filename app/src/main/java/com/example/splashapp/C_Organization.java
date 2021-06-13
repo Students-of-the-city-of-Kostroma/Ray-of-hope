@@ -9,10 +9,12 @@ public class C_Organization extends ControllerUser {
 
 
     static List<M_Organization> ListOrganization=new ArrayList<M_Organization>();
-    static List<String> s=new ArrayList<String>();
+    static List<M_Organization> FavOrg=new ArrayList<M_Organization>();
     public static M_Organization MyOrg;
-    static M_Organization morg=new M_Organization("0","Кострома","блаблабла", "0987654321","Название","","ул. Такая-то", "Животные", s,s);
-    static M_Organization morg1=new M_Organization("1","Кострома","блаблаблаблаблаблаблаблабла", "0987654321","Название2","","ул. Такая-то", "Животные", s,s);
+    static M_Organization morg=new M_Organization("0","Кострома","блаблабла", "0987654321","Название","","ул. Такая-то", "Животные");
+    static M_Organization morg1=new M_Organization("1","Кострома","блаблаблаблаблаблаблаблабла", "0987654321","Название2","","ул. Такая-то", "Животные");
+    static M_Organization current;
+    public static String filter="all";
 
     public C_Organization(){
 
@@ -21,6 +23,7 @@ public class C_Organization extends ControllerUser {
         ListOrganization.add(morg);
         ListOrganization.add(morg1);
     }
+
 
     @Override
     public M_User Update(M_User Organization) {
@@ -74,7 +77,7 @@ public class C_Organization extends ControllerUser {
                 e.printStackTrace();
             }
 
-            return new M_Organization(id, city, description, contacts, name, avatar, adress, activity ,dclink, dcprev);
+            return new M_Organization(id, city, description, contacts, name, avatar, adress, activity);
         }catch (Exception e) {
             e.printStackTrace();
             return null;

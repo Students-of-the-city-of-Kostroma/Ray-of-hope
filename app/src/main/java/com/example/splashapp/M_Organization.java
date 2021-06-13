@@ -6,19 +6,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class M_Organization extends M_User {
-    private String name,location, adress, type_active;
-    private List<String> documentsL=new ArrayList<String>(), documentsP=new ArrayList<String>();
+    private String name,location, adress, type_active, id_citizen, fav_id;
+    public List<M_Post> posts=new ArrayList<M_Post>();
 
     public M_Organization(@NotNull String id, String location, String about,
                           String number,
-                          @NotNull String name, String avatar, String adress, String typeactivity, List<String> documentsL, List<String> documentsP) {
+                          @NotNull String name, String avatar, String adress, String typeactivity) {
         super(id, about, avatar, number);
         this.name = name;
         this.location = location;
         this.adress = adress.replaceAll("null", "");;
         this.type_active = typeactivity;
-        this.documentsP = documentsP;
-        this.documentsL = documentsL;
     }
 
     public String getName() {
@@ -53,15 +51,10 @@ public class M_Organization extends M_User {
         this.location = location;
     }
 
-    public List<String> getDocumentsL() { return documentsL; }
-
-    public void setDocumentsL(@NotNull List<String> documentsL) { this.documentsL = documentsL; }
-
-    public List<String> getDocumentsP() {
-        return documentsP;
+    public String getСID() {
+        return id_citizen;
     }
-
-    public void setDocumentsP(@NotNull List<String> documentsP) {
-        this.documentsP = documentsP;
+    public String getFID() {
+        return fav_id;
     }
 }

@@ -16,16 +16,16 @@ public class ListOfChats extends AppCompatActivity implements ListOfChatsAdapter
     public static String testId;
     private M_Organization OrgTest;
     private ListOfChatsAdapter adapter;
-    private List<M_Chat> Orgs=C_Chat.ListChat;//потом перенести в контроллер
+    private List<M_Chat> Orgs=C_Chat.ListChat;
     SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_of_chats);
+        setContentView(R.layout.chats_blank);
 
 
-        setTitle("TabHost");
+        /*setTitle("TabHost");
 
         TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
 
@@ -49,7 +49,7 @@ public class ListOfChats extends AppCompatActivity implements ListOfChatsAdapter
         catch (Exception e) {
             e.printStackTrace();
         }
-        searchView=(SearchView) findViewById(R.id.search_view1);
+        searchView=(SearchView) findViewById(R.id.search_view1); */
 
     }
 

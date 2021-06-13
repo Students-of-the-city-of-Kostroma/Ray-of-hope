@@ -31,7 +31,17 @@ public class CitProf extends AppCompatActivity {
         textview.setText(C_Citizen.Iam.getAbout());
 
         ImageView imageView = (ImageView) findViewById(R.id.imageView12);
-        Picasso.get().load(R.mipmap.about_logo).into(imageView);
+        if (C_Citizen.Iam.getImageName()!=null) {
+            try {
+                imageView.setImageBitmap(C_Citizen.Iam.getImageHash());
+                //Picasso.get().load(C_Citizen.Iam.getImageName()).into(imageView);
+            } catch (Exception e) {
+                Picasso.get().load(R.mipmap.about_logo).into(imageView);
+            }
+        }
+        else {
+            Picasso.get().load(R.mipmap.about_logo).into(imageView);
+        }
     }
 
     public void CitEdit(View view)

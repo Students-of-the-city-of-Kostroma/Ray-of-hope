@@ -32,13 +32,12 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
-public class ViewOrg extends AppCompatActivity
-        implements GalleryAdapter.ItemClickListener  {
+public class ViewOrg extends AppCompatActivity {
 
-    private GalleryAdapter adapter;
-    public static M_Organization Org;
     SharedPreferences sPref;
     final String sv_id = "";
+    String orgId;
+    boolean fav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,37 +46,40 @@ public class ViewOrg extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        String orgId=ListOfOrg.testId;
+        orgId=ListOfOrg.testId;
 
-        Org=new Network().LсOrg("23");
+        C_Organization.current=new Network().AnotherOrg(orgId);
 
 
             TextView textview= (TextView) findViewById(R.id.textView25);
-            textview.setText(Org.getName());
+            textview.setText(C_Organization.current.getName());
 
             textview= (TextView) findViewById(R.id.textView22);
-            textview.setText(Org.getAbout());
+            textview.setText(C_Organization.current.getAbout());
 
             textview= (TextView) findViewById(R.id.textView20);
-            textview.setText(Org.getAdress()+"\n"+Org.getNumber());
+            textview.setText(C_Organization.current.getAdress()+"\n"+C_Organization.current.getNumber());
 
             textview= (TextView) findViewById(R.id.textView24);
-            textview.setText(Org.getCity());
+            textview.setText(C_Organization.current.getCity());
 
             textview= (TextView) findViewById(R.id.textView16);
-            textview.setText(Org.getTypeActivity());
+            textview.setText(C_Organization.current.getTypeActivity());
+            fav=inFav(orgId);
+
+            if (fav)
+            {((ImageView) findViewById(R.id.imgfav)).setImageResource(android.R.drawable.star_big_on);}
+            else { ((ImageView) findViewById(R.id.imgfav)).setImageResource(android.R.drawable.star_big_off);}
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView12);
+        try {
+            imageView.setImageBitmap(C_Citizen.Iam.getImageHash());
+            //Picasso.get().load(C_Organization.current.getImageName()).into(imageView);
+        }
+        catch (Exception e)
+        {
             Picasso.get().load(R.mipmap.about_logo).into(imageView);
-
-
-            RecyclerView recyclerView = findViewById(R.id.frameLayout);
-            LinearLayoutManager horizontalLayoutManager
-                    = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-            recyclerView.setLayoutManager(horizontalLayoutManager);
-            adapter = new GalleryAdapter(this, Org.getDocumentsP(), Org.getDocumentsL());
-            adapter.setClickListener(this);
-            recyclerView.setAdapter(adapter);
+        }
 
 
         TextView textview3= (TextView) findViewById(R.id.textView24);
@@ -95,48 +97,42 @@ public class ViewOrg extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
     }
 
-    private void decodeJSON(String Ret, String id)
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, ListOfOrg.class);
+        startActivity(intent);
+        finish();
+    }
+
+
+    public boolean inFav(String id)
     {
-        try {
-            JSONObject json = new JSONObject(Ret);
-            String name = json.get("name").toString();
-            String avatar = json.get("avatar").toString();
-            String city = json.get("region_name").toString()+" "  + json.get("city_name").toString();
-            String activity = json.get("type_of_activity_name").toString();
-            String description = json.get("description").toString();
-            String contacts = "Телефон: " + json.get("number_phone").toString();
-            String adress = "Адрес: " + json.get("address").toString();
-
-            String docslink1 = json.get("docs_links").toString();
-            docslink1 = docslink1.substring(1);
-            docslink1 = docslink1.substring(0, docslink1.length() - 1);
-            String[] docslink = docslink1.split(",", -1);
-
-            String docsprev1 = json.get("docs_preview").toString();
-            docsprev1 = docsprev1.substring(1);
-            docsprev1 = docsprev1.substring(0, docsprev1.length() - 1);
-            String[] docsprev = docsprev1.split(",", -1);
-
-            ArrayList<String> dcprev = new ArrayList<>();
-            ArrayList<String> dclink = new ArrayList<>();
-            try {
-                for (int i = 0; i < docslink.length; i++) {
-                    docslink[i] = docslink[i].substring(1);
-                    docslink[i] = docslink[i].substring(0, docslink[i].length() - 1);
-                    dclink.add("http://"+docslink[i]);
-                    docsprev[i] = docsprev[i].substring(1);
-                    docsprev[i] = docsprev[i].substring(0, docsprev[i].length() - 1);
-                    dcprev.add("http://"+docsprev[i]);
-                }
-            }catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            Org = new M_Organization(id, city, description, contacts, name, avatar, adress, activity ,dclink, dcprev);
-        }catch (Exception e) {
-            e.printStackTrace();
+        if (C_Organization.FavOrg==null)
+            return false;
+        for (int i=0; i<C_Organization.FavOrg.size();i++)
+        {
+            if (C_Organization.FavOrg.get(i).getId().equals(id))
+                return true;
         }
+        return false;
+    }
 
+    public void FavClick(View view) {
+        String [] param=new String[4];
+        param[0]=C_Citizen.Iam.getId();
+        param[1]=orgId;
+        fav=!fav;
+        if (fav) {
+            ((ImageView) findViewById(R.id.imgfav)).setImageResource(android.R.drawable.star_big_on);
+            param[2]="id_citizen";
+            param[3]="id_organization";
+            new Network().SaveDelFavOrg(param,fav);
+        } else {
+            ((ImageView) findViewById(R.id.imgfav)).setImageResource(android.R.drawable.star_big_off);
+            param[2]="id_cit";
+            param[3]="id_org";
+            new Network().SaveDelFavOrg(param,fav);
+        }
     }
 
 
@@ -158,79 +154,13 @@ public class ViewOrg extends AppCompatActivity
         saveId();
     }
 
-
-
-    @Override
-    public void onItemClick(View view, int position) {
-        try{
-            String url=adapter.getLink(position);
-            Intent browserIntent = new
-                    Intent(Intent.ACTION_VIEW, Uri.parse(url));
-            this.startActivity(browserIntent);
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
-
     public void Activisms (View view)
     {
-        Intent intent = new Intent(this, ActivView.class);
+        Intent intent = new Intent(this, OrgPostLentaActivity.class);
         startActivity(intent);
-        finish();
+        //finish();
     }
-    public void Need (View view)
-    {
-        Intent intent = new Intent(this, NeedView.class);
-        startActivity(intent);
-        finish();
-    }
-    public void Event (View view)
-    {
-        Intent intent = new Intent(this, EventView.class);
-        startActivity(intent);
-        finish();
-    }
-    boolean ch=false;
-    public  void Close()
-    {
-        AlertDialog.Builder buil = new AlertDialog.Builder(ViewOrg.this);
-        buil.setMessage("Вы действительно хотите выйти из аккаунта?");
-        buil.setCancelable(false);
-        buil.setPositiveButton("Да", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
 
-                        ch=true;
-                        ToChoice(ch);
-                        dialog.cancel();
-                    }
-                }
-        );
-        buil.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-        AlertDialog al=buil.create();
-        al.show();
-    }
-    public  void ToChoice(boolean b)
-    {
-        if (b){
-            Intent intent = new Intent(this, Choice.class);
-            startActivity(intent);
-            finish();}
-    }
     public  void ToMyProf(View view)
     {
         boolean cit=Choice.citezen;

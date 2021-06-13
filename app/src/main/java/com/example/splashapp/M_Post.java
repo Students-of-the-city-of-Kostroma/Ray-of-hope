@@ -4,19 +4,19 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 
-public abstract class M_Post {
-    private String name, description;
+public class M_Post {
+    private String title, text, org_name, date_added;
     private String id;
-    private Date postDate;
+    private String[] photo;
     public List<M_Comment> linkComment;
 
-    public M_Post(String id, @NotNull String name, @NotNull String description, @NotNull Date postDate) {
+    public M_Post(String id, @NotNull String name, @NotNull String description, @NotNull String org_name) {
         this.id=id;
-        this.name = name;
-        this.description = description;
-        this.postDate = postDate;
+        this.title = name;
+        this.text = description;
+        this.org_name = org_name;
+        //this.date_added = postDate;
     }
-
     public String getId() {
         return id;
     }
@@ -26,28 +26,47 @@ public abstract class M_Post {
     }
 
     public String getName() {
-        return name;
+        return title;
     }
 
     public void setName(@NotNull String name) {
-        this.name = name;
+        this.title = name;
     }
 
     public String getDescription() {
-        return description;
+        return text;
     }
 
     public void setDescription(@NotNull String description) {
-        this.description = description;
+        this.text = description;
     }
 
-    public Date getPostDate() {
-        return postDate;
+    public String getOrgName() {
+        return org_name;
     }
 
-    public void setPostDate(@NotNull Date postDate) {
-        this.postDate = postDate;
+    public void setOrg_name(@NotNull String name) {
+        this.org_name = name;
     }
+
+    public String getPostDate() {
+        return date_added;
+    }
+
+    public void setPostDate(@NotNull String postDate) {
+        this.date_added = postDate;
+    }
+
+    public String getImage(int i)
+    {
+        if (photo[i] !=null)
+            return "http://darapana.beget.tech/storage/app/"+ photo[i];
+        else return null;
+    }
+    public int getCountImage()
+    { if (photo!=null)
+        return photo.length;
+    else return 0;}
 
     public boolean CreateComment (String text)
     {

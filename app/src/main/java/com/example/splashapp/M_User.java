@@ -1,18 +1,23 @@
 package com.example.splashapp;
-import android.media.Image;
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
+
+import java.io.ByteArrayOutputStream;
 
 import javax.validation.constraints.NotNull;
 
 public abstract class M_User  {
     private String email, description,
             tel=" ";
-    String image;
+    String picture;
     private String id;
 
     public M_User(@NotNull String id, @NotNull String description,
-                  String image, String tel) {
+                  String picture, String tel) {
         this.id=id;
-        this.image = image;
+        this.picture = picture;
         this.description = description.replaceAll("null", " ");
         this.tel = tel.replaceAll("null", " ");
     }
@@ -42,10 +47,23 @@ public abstract class M_User  {
     }
 
     public String getImageName() {
-        return image;
+
+        if (picture !=null)
+        return "http://darapana.beget.tech/storage/app/"+ picture;
+        else return null;
     }
 
-    public void setImageName(String imageName) { this.image = imageName; }
+    public Bitmap getImageHash() {
+
+        if (picture !=null)
+        {
+            byte[] decodedString = Base64.decode(picture, Base64.DEFAULT);
+            return BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+        }
+        else return null;
+    }
+
+    public void setImageName(String imageName) { this.picture = imageName; }
 
     public String getNumber() {
         return tel;

@@ -20,13 +20,14 @@ public class LentaActivity extends AppCompatActivity implements LentaAdapter.Ite
 
     String psId;
     private LentaAdapter adapter;
-    private List<M_Activism> ListPost=C_Activitisms.ListActivism;//потом перенести в контроллер
+    private List<M_Post> ListPost=ControllerPost.ListActivism;//потом перенести в контроллер
     SearchView searchView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lenta);
-
+        Network.numberpost=0;
+        ListPost=new Network().ListPosts(0, C_Citizen.Iam.getId());
         setTitle("TabHost");
 
         TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
@@ -46,6 +47,19 @@ public class LentaActivity extends AppCompatActivity implements LentaAdapter.Ite
         LinearLayoutManager horizontalLayoutManager
                 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(horizontalLayoutManager);
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if (!Network.isload) {
+                    List<M_Post> Posts1 = new Network().ListPosts(Network.numberpost,C_Citizen.Iam.getId());
+                    if (Posts1 != null) {
+                        ListPost.addAll(Posts1);
+                        adapter.notifyDataSetChanged();
+                    }
+                }
+            }
+        });
         adapter = new LentaAdapter(this, ListPost);
         adapter.setClickListener(this);
         try {        recyclerView.setAdapter(adapter);}
@@ -95,13 +109,6 @@ public class LentaActivity extends AppCompatActivity implements LentaAdapter.Ite
         }
     }
 
-    public  void ToChoice(boolean b)
-    {
-        if (b){
-            Intent intent = new Intent(this, Choice.class);
-            startActivity(intent);
-            finish();}
-    }
     public void ChoicePost(View view)
     {
         Intent intent = new Intent(this, ViewOrg.class);
@@ -111,8 +118,7 @@ public class LentaActivity extends AppCompatActivity implements LentaAdapter.Ite
         psId=psId.substring(k);
         startActivity(intent);
         finish();
-    }
-    public  void openMenu(View view)
+    }public  void openMenu(View view)
     {
         Intent intent = new Intent(this, MenuView.class);
         startActivity(intent);
@@ -125,10 +131,22 @@ public class LentaActivity extends AppCompatActivity implements LentaAdapter.Ite
         startActivity(intent);
         finish();
     }
-
-    public void OnParamClick (View view)
+    public void ToChats(View view)
     {
-        SpinnerDialog sDialog = new SpinnerDialog();
-        sDialog.show(getFragmentManager(), "SpinnerDialog");
+        Intent intent = new Intent(this, ListOfChats.class);
+        startActivity(intent);
+        finish();
+    }
+    public  void ToMyProf(View view)
+    {
+        boolean cit=Choice.citezen;
+        if (cit) {
+            Intent intent = new Intent(this, CitProf.class);
+            startActivity(intent);
+        }
+        else { Intent intent = new Intent(this, MyOrgProf.class);
+            startActivity(intent);}
+
+        finish();
     }
 }

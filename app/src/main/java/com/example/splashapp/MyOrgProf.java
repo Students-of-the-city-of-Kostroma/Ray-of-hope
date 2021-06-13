@@ -28,9 +28,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
 public class MyOrgProf extends AppCompatActivity
-        implements GalleryAdapter.ItemClickListener  {
+      {
 
-    private GalleryAdapter adapter;
+
     SharedPreferences sPref;
     final String sv_id = "";
 
@@ -68,16 +68,16 @@ public class MyOrgProf extends AppCompatActivity
             textview.setText(C_Organization.MyOrg.getTypeActivity());
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView12);
-            Picasso.get().load(C_Organization.MyOrg.getImageName()).into(imageView);
+            try {
+                imageView.setImageBitmap(C_Citizen.Iam.getImageHash());
+                //Picasso.get().load(C_Organization.MyOrg.getImageName()).into(imageView);
+            }
+            catch (Exception e)
+            {
+                Picasso.get().load(R.mipmap.about_logo).into(imageView);
+            }
 
 
-            RecyclerView recyclerView = findViewById(R.id.frameLayout);
-            LinearLayoutManager horizontalLayoutManager
-                    = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-            recyclerView.setLayoutManager(horizontalLayoutManager);
-            adapter = new GalleryAdapter(this, C_Organization.MyOrg.getDocumentsP(), C_Organization.MyOrg.getDocumentsL());
-            adapter.setClickListener(this);
-            recyclerView.setAdapter(adapter);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -117,58 +117,40 @@ public class MyOrgProf extends AppCompatActivity
         saveId();
     }
 
+          public void Activisms (View view)
+          {
+              C_Organization.current=C_Organization.MyOrg;
+              Intent intent = new Intent(this, OrgPostLentaActivity.class);
+              startActivity(intent);
+              //finish();
+          }
 
-
-    @Override
-    public void onItemClick(View view, int position) {
-        String url=adapter.getLink(position);
-        Intent browserIntent = new
-                Intent(Intent.ACTION_VIEW, Uri.parse(url));
-        this.startActivity(browserIntent);
-        }
-
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-    boolean ch=false;
-    public  void Close()
+    public  void toOrgPost(View view)
     {
-        AlertDialog.Builder buil = new AlertDialog.Builder(MyOrgProf.this);
-        buil.setMessage("Вы действительно хотите выйти из аккаунта?");
-        buil.setCancelable(false);
-        buil.setPositiveButton("Да", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
+        Intent intent = new Intent(this, MenuView.class);
+        startActivity(intent);
+        finish();
+    }
 
-                        ch=true;
-                        ToChoice(ch);
-                        dialog.cancel();
-                    }
-                }
-        );
-        buil.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-        AlertDialog al=buil.create();
-        al.show();
-    }
-    public  void ToChoice(boolean b)
+    public  void editInfo(View view)
     {
-        if (b){
-            Intent intent = new Intent(this, Choice.class);
-            startActivity(intent);
-            finish();}
+        Intent intent = new Intent(this, OrgEditActivity.class);
+        startActivity(intent);
     }
+
+    public  void toNewPost(View view)
+    {
+        Intent intent = new Intent(this, AddPostActivity.class);
+        startActivity(intent);
+    }
+
+    public void ToLenta(View view)
+    {
+        Intent intent = new Intent(this, LentaActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     public  void openMenu(View view)
     {
         Intent intent = new Intent(this, MenuView.class);

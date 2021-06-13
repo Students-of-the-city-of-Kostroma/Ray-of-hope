@@ -1,0 +1,839 @@
+@startuml
+
+title __SPLASHAPP's Class Diagram__\n
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.AboutView {
+        ~ ch : boolean
+        + Close()
+        + GoBack()
+        + ToChoice()
+        + onBackPressed()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.ActivView {
+        ~ ch : boolean
+        + Close()
+        + RetToOrg()
+        + ToChoice()
+        + onBackPressed()
+        + openMenu()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.AddPostActivity {
+        ~ DATE_FORMAT_NOW : String
+        ~ bmp : Bitmap[]
+        ~ imageView : ImageView
+        ~ iv : ImageView[]
+        ~ photocounter : int
+        ~ selectedImage : Bitmap
+        + AddPhoto()
+        + ToChat()
+        + ToChats()
+        + ToLenta()
+        + ToListOfOrg()
+        + ToMyProf()
+        + createPost()
+        + openMenu()
+        # onActivityResult()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.C_Chat {
+        {static} + ListChat : List<M_Chat>
+        {static} ~ TestId : int
+        {static} ~ m_chat : M_Chat
+        {static} ~ m_message : M_Message
+        {static} ~ m_message1 : M_Message
+        {static} + C_Ch()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.C_Citizen {
+        {static} + Iam : M_Citizen
+        {static} ~ ListCitizen : List<M_Citizen>
+        + Autorization()
+        {static} + C_Cit()
+        + C_Citizen()
+        + RefreshList()
+        + Registration()
+        + Update()
+        + getDateProfile()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.C_Organization {
+        {static} + MyOrg : M_Organization
+        {static} + filter : String
+        {static} ~ FavOrg : List<M_Organization>
+        {static} ~ ListOrganization : List<M_Organization>
+        {static} ~ current : M_Organization
+        {static} ~ morg : M_Organization
+        {static} ~ morg1 : M_Organization
+        + Autorization()
+        {static} + C_Org()
+        + C_Organization()
+        + RefreshList()
+        + Registration()
+        + Update()
+        {static} + decodeJSON()
+        + getDateProfile()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.ChatAdapter {
+        - Mes : List<M_Message>
+        - context : Context
+        - itemsCopy : List<M_Message>
+        + ChatAdapter()
+        + getItemCount()
+        + getOrg()
+        + onBindViewHolder()
+        + onCreateViewHolder()
+        + setClickListener()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    interface com.example.splashapp.ChatAdapter.ItemClickListener {
+        {abstract} + onItemClick()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.ChatAdapter.ViewHolder {
+        + about : TextView
+        + date : TextView
+        + id : int
+        + ln : LinearLayout
+        + ln1 : ConstraintLayout
+        + ViewHolder()
+        + onClick()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.Choice {
+        {static} + citezen : boolean
+        + AboutCit()
+        + AboutOrg()
+        + AboutUs()
+        + CitChoice()
+        + OrgChoice()
+        + Perehod()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.CitEdit {
+        ~ imageView : ImageView
+        ~ pe : Boolean
+        ~ selectedImage : Bitmap
+        + CitEditSave()
+        + PhotoEdit()
+        + ToListOfOrg()
+        + ToMyProf()
+        + openMenu()
+        # onActivityResult()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.CitProf {
+        + CitEdit()
+        + ToChats()
+        + ToChoice()
+        + ToLenta()
+        + ToListOfOrg()
+        + openMenu()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.ControllerPost {
+        {static} + ListActivism : List<M_Post>
+        {static} ~ d : Date
+        + Add()
+        + AddComment()
+        {static} + C_Act()
+        + ControllerPost()
+        + Delete()
+        + DeleteComment()
+        + RefreshList()
+        + Update()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    abstract class com.example.splashapp.ControllerUser {
+        {abstract} + Autorization()
+        + ControllerUser()
+        {abstract} + Registration()
+        {abstract} + Update()
+        {abstract} + getDateProfile()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.EditOrgActivity {
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.GalleryAdapter {
+        - Image : List<String>
+        - Link : List<String>
+        - context : Context
+        + GalleryAdapter()
+        + getImage()
+        + getItemCount()
+        + getLink()
+        + onBindViewHolder()
+        + onCreateViewHolder()
+        + setClickListener()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    interface com.example.splashapp.GalleryAdapter.ItemClickListener {
+        {abstract} + onItemClick()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.GalleryAdapter.ViewHolder {
+        + imageView : ImageView
+        + link : String
+        + ViewHolder()
+        + onClick()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.LentaActivity {
+        ~ psId : String
+        ~ searchView : SearchView
+        - ListPost : List<M_Post>
+        + ChoicePost()
+        + OnParamClick()
+        + ToListOfOrg()
+        + onBackPressed()
+        + onItemClick()
+        + openMenu()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.LentaAdapter {
+        - Post : List<M_Post>
+        - context : Context
+        - itemsCopy : List<M_Post>
+        + LentaAdapter()
+        + filter()
+        + getItemCount()
+        + getOrg()
+        + onBindViewHolder()
+        + onCreateViewHolder()
+        + setClickListener()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    interface com.example.splashapp.LentaAdapter.ItemClickListener {
+        {abstract} + onItemClick()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.LentaAdapter.ViewHolder {
+        + about : TextView
+        + date : TextView
+        + id : String
+        + imageView : ImageView
+        + imageViews : ImageView[]
+        + name : TextView
+        + title : TextView
+        + ViewHolder()
+        + onClick()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.ListOfChats {
+        {static} + testId : String
+        ~ searchView : SearchView
+        - Orgs : List<M_Chat>
+        + ToChats()
+        + ToLenta()
+        + ToListOfOrg()
+        + ToMyProf()
+        + onItemClick()
+        + openMenu()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.ListOfChatsAdapter {
+        - Org : List<M_Chat>
+        - context : Context
+        - itemsCopy : List<M_Chat>
+        + ListOfChatsAdapter()
+        + getItemCount()
+        + getOrg()
+        + onBindViewHolder()
+        + onCreateViewHolder()
+        + setClickListener()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    interface com.example.splashapp.ListOfChatsAdapter.ItemClickListener {
+        {abstract} + onItemClick()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.ListOfChatsAdapter.ViewHolder {
+        + about : TextView
+        + id : String
+        + imageView : ImageView
+        + name : TextView
+        + ViewHolder()
+        + onClick()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.ListOfOrg {
+        {static} + forsAct : String
+        {static} + forsCity : String
+        {static} + testId : String
+        ~ searchView : SearchView
+        - FavOrgs : List<M_Organization>
+        - Orgs : List<M_Organization>
+        + ChoiceOrg()
+        + CloseDialog()
+        + OnParamClick()
+        + ToChats()
+        + ToLenta()
+        + ToListOfOrg()
+        + ToMyProf()
+        + onBackPressed()
+        + onItemClick()
+        + openMenu()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.ListOfOrgAdapter {
+        - Org : List<M_Organization>
+        - context : Context
+        - itemsCopy : List<M_Organization>
+        + ListOfOrgAdapter()
+        + filter()
+        + getItemCount()
+        + getOrg()
+        + onBindViewHolder()
+        + onCreateViewHolder()
+        + setClickListener()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    interface com.example.splashapp.ListOfOrgAdapter.ItemClickListener {
+        {abstract} + onItemClick()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.ListOfOrgAdapter.ViewHolder {
+        + about : TextView
+        + id : String
+        + imageView : ImageView
+        + name : TextView
+        + ViewHolder()
+        + onClick()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.LoginCitizenActivity {
+        {static} + MyOrgId : String
+        + CitizenRegisrt()
+        + ForgetPas()
+        + LoginCitizen()
+        + LoginCitizen1()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.LoginOrgActivity {
+        {static} + MyOrgId : String
+        + LoginOrg()
+        + OrgRegisrt()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.M_Chat {
+        ~ ListMessage : List<M_Message>
+        ~ id : String
+        + CreateMessage()
+        + M_Chat()
+        + M_Chat()
+        + getId()
+        + getLastMessage()
+        + getWithWho()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.M_Citizen {
+        - city : String
+        - f_name : String
+        - name : String
+        - o_name : String
+        + M_Citizen()
+        + getCity()
+        + getFirstName()
+        + getLastName()
+        + getOName()
+        + setCity()
+        + setFirstName()
+        + setLastName()
+        + setOtName()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.M_Comment {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.M_Message {
+        ~ id : int
+        ~ me : boolean
+        ~ text : String
+        ~ time : Date
+        + getId()
+        + getMe()
+        + getText()
+        + getTime()
+        ~ M_Message()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.M_Organization {
+        + posts : List<M_Post>
+        - adress : String
+        - fav_id : String
+        - id_citizen : String
+        - location : String
+        - name : String
+        - type_active : String
+        + M_Organization()
+        + getAdress()
+        + getCity()
+        + getFID()
+        + getName()
+        + getTypeActivity()
+        + get—ID()
+        + setAdress()
+        + setCity()
+        + setName()
+        + setTypeActivity()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.M_Post {
+        + linkComment : List<M_Comment>
+        - date_added : String
+        - id : String
+        - org_name : String
+        - photo : String[]
+        - text : String
+        - title : String
+        + CreateComment()
+        + M_Post()
+        + getCountImage()
+        + getDescription()
+        + getId()
+        + getImage()
+        + getLinkComment()
+        + getName()
+        + getOrgName()
+        + getPostDate()
+        + setDescription()
+        + setId()
+        + setName()
+        + setOrg_name()
+        + setPostDate()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    abstract class com.example.splashapp.M_User {
+        ~ picture : String
+        - description : String
+        - email : String
+        - id : String
+        - tel : String
+        + M_User()
+        + ValidationEmail()
+        + ValidationPassword()
+        + getAbout()
+        + getEmail()
+        + getId()
+        + getImageHash()
+        + getImageName()
+        + getNumber()
+        + setAbout()
+        + setEmail()
+        + setId()
+        + setImageName()
+        + setNumber()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.MainActivity {
+        # OnlineChek()
+        # isOnline()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.MenuView {
+        + ToChats()
+        + ToListOfOrg()
+        + goToAbout()
+        + goToComment()
+        + goToFAQ()
+        + goToMarker()
+        + goToMyProfile()
+        + goToSetting()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.MyOrgProf {
+        ~ sPref : SharedPreferences
+        ~ sv_id : String
+        + Activisms()
+        + ToLenta()
+        + ToListOfOrg()
+        + editInfo()
+        + openMenu()
+        + toNewPost()
+        + toOrgPost()
+        # onCreate()
+        # onDestroy()
+        ~ loadId()
+        ~ saveId()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.Network {
+        {static} + formBody : RequestBody
+        {static} + isload : boolean
+        {static} + numberorglist : int
+        {static} + numberpost : int
+        - anotherlcorg : String
+        - json : JSONObject
+        {static} - lastlistorgnum : int
+        {static} - lastpostnum : int
+        - lccit : String
+        - lcorg : String
+        {static} - link : String
+        - listfavorgs : String
+        - listorgs : String
+        - logincit : String
+        - loginorg : String
+        - posts : String
+        - postsadd : String
+        - regcit : String
+        - regorg : String
+        - updcit : String
+        - updorg : String
+        + AddPost()
+        + AnotherOrg()
+        + ListFavOrgs()
+        + ListOrgs()
+        + ListPosts()
+        + LoginCit()
+        + LoginOrg()
+        + LÒCit()
+        + LÒOrg()
+        + RegCit()
+        + RegOrg()
+        + SaveDelFavOrg()
+        + UpdCit()
+        + UpdOrg()
+        + updImgae()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.Network.Connection {
+        # doInBackground()
+        # onPostExecute()
+        # onPreExecute()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.OrgEditActivity {
+        ~ imageView : ImageView
+        ~ pe : Boolean
+        ~ selectedImage : Bitmap
+        + OrgEditSave()
+        + PhotoEdit()
+        # onActivityResult()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.OrgPostLentaActivity {
+        ~ psId : String
+        - ListPost : List<M_Post>
+        + onItemClick()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.PassworldRes {
+        + ResetPas()
+        + ToLogin()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.Q_A {
+        ~ ch : boolean
+        - answer1Array : String[]
+        - answer2Array : String[]
+        - answer3Array : String[]
+        - qArray : String[]
+        + Close()
+        + ToChoice()
+        + onBackPressed()
+        + onCreateOptionsMenu()
+        + onNavigationItemSelected()
+        + onOptionsItemSelected()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.RegCitizen {
+        + EnterToCitizen()
+        + Registr()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.RegOrg {
+        + EnterToOrg()
+        + Registr()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.ThisChat {
+        ~ psId : String
+        - ListPost : List<M_Message>
+        + Back()
+        + Send()
+        # onCreate()
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.ViewOrg {
+        ~ fav : boolean
+        ~ orgId : String
+        ~ sPref : SharedPreferences
+        ~ sv_id : String
+        + Activisms()
+        + FavClick()
+        + ToChat()
+        + ToChats()
+        + ToLenta()
+        + ToListOfOrg()
+        + ToMyProf()
+        + inFav()
+        + onBackPressed()
+        + openMenu()
+        # onCreate()
+        # onDestroy()
+        ~ loadId()
+        ~ saveId()
+    }
+  }
+  
+
+  com.example.splashapp.AboutView -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.ActivView -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.AddPostActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.C_Citizen -up-|> com.example.splashapp.ControllerUser
+  com.example.splashapp.C_Organization -up-|> com.example.splashapp.ControllerUser
+  com.example.splashapp.ChatAdapter -up-|> android.support.v7.widget.RecyclerView.Adapter
+  com.example.splashapp.ChatAdapter o-- com.example.splashapp.ChatAdapter.ItemClickListener : mClickListener
+  com.example.splashapp.ChatAdapter +-down- com.example.splashapp.ChatAdapter.ItemClickListener
+  com.example.splashapp.ChatAdapter +-down- com.example.splashapp.ChatAdapter.ViewHolder
+  com.example.splashapp.ChatAdapter.ViewHolder .up.|> android.view.View.OnClickListener
+  com.example.splashapp.ChatAdapter.ViewHolder -up-|> android.support.v7.widget.RecyclerView.ViewHolder
+  com.example.splashapp.Choice -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.CitEdit -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.CitProf -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.EditOrgActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.GalleryAdapter -up-|> android.support.v7.widget.RecyclerView.Adapter
+  com.example.splashapp.GalleryAdapter o-- com.example.splashapp.GalleryAdapter.ItemClickListener : mClickListener
+  com.example.splashapp.GalleryAdapter +-down- com.example.splashapp.GalleryAdapter.ItemClickListener
+  com.example.splashapp.GalleryAdapter +-down- com.example.splashapp.GalleryAdapter.ViewHolder
+  com.example.splashapp.GalleryAdapter.ViewHolder .up.|> android.view.View.OnClickListener
+  com.example.splashapp.GalleryAdapter.ViewHolder -up-|> android.support.v7.widget.RecyclerView.ViewHolder
+  com.example.splashapp.LentaActivity .up.|> com.example.splashapp.LentaAdapter.ItemClickListener
+  com.example.splashapp.LentaActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.LentaActivity o-- com.example.splashapp.LentaAdapter : adapter
+  com.example.splashapp.LentaAdapter -up-|> android.support.v7.widget.RecyclerView.Adapter
+  com.example.splashapp.LentaAdapter o-- com.example.splashapp.LentaAdapter.ItemClickListener : mClickListener
+  com.example.splashapp.LentaAdapter +-down- com.example.splashapp.LentaAdapter.ItemClickListener
+  com.example.splashapp.LentaAdapter +-down- com.example.splashapp.LentaAdapter.ViewHolder
+  com.example.splashapp.LentaAdapter.ViewHolder .up.|> android.view.View.OnClickListener
+  com.example.splashapp.LentaAdapter.ViewHolder -up-|> android.support.v7.widget.RecyclerView.ViewHolder
+  com.example.splashapp.ListOfChats .up.|> com.example.splashapp.ListOfChatsAdapter.ItemClickListener
+  com.example.splashapp.ListOfChats -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.ListOfChats o-- com.example.splashapp.M_Organization : OrgTest
+  com.example.splashapp.ListOfChats o-- com.example.splashapp.ListOfChatsAdapter : adapter
+  com.example.splashapp.ListOfChatsAdapter -up-|> android.support.v7.widget.RecyclerView.Adapter
+  com.example.splashapp.ListOfChatsAdapter o-- com.example.splashapp.ListOfChatsAdapter.ItemClickListener : mClickListener
+  com.example.splashapp.ListOfChatsAdapter +-down- com.example.splashapp.ListOfChatsAdapter.ItemClickListener
+  com.example.splashapp.ListOfChatsAdapter +-down- com.example.splashapp.ListOfChatsAdapter.ViewHolder
+  com.example.splashapp.ListOfChatsAdapter.ViewHolder .up.|> android.view.View.OnClickListener
+  com.example.splashapp.ListOfChatsAdapter.ViewHolder -up-|> android.support.v7.widget.RecyclerView.ViewHolder
+  com.example.splashapp.ListOfOrg .up.|> com.example.splashapp.ListOfOrgAdapter.ItemClickListener
+  com.example.splashapp.ListOfOrg -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.ListOfOrg o-- com.example.splashapp.M_Organization : OrgTest
+  com.example.splashapp.ListOfOrg o-- com.example.splashapp.ListOfOrgAdapter : adapter
+  com.example.splashapp.ListOfOrg o-- com.example.splashapp.ListOfOrgAdapter : adapter2
+  com.example.splashapp.ListOfOrgAdapter -up-|> android.support.v7.widget.RecyclerView.Adapter
+  com.example.splashapp.ListOfOrgAdapter o-- com.example.splashapp.ListOfOrgAdapter.ItemClickListener : mClickListener
+  com.example.splashapp.ListOfOrgAdapter +-down- com.example.splashapp.ListOfOrgAdapter.ItemClickListener
+  com.example.splashapp.ListOfOrgAdapter +-down- com.example.splashapp.ListOfOrgAdapter.ViewHolder
+  com.example.splashapp.ListOfOrgAdapter.ViewHolder .up.|> android.view.View.OnClickListener
+  com.example.splashapp.ListOfOrgAdapter.ViewHolder -up-|> android.support.v7.widget.RecyclerView.ViewHolder
+  com.example.splashapp.LoginCitizenActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.LoginOrgActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.M_Chat o-- com.example.splashapp.M_User : withWho
+  com.example.splashapp.M_Citizen -up-|> com.example.splashapp.M_User
+  com.example.splashapp.M_Organization -up-|> com.example.splashapp.M_User
+  com.example.splashapp.MainActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.MenuView -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.MyOrgProf -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.Network +-down- com.example.splashapp.Network.Connection
+  com.example.splashapp.Network.Connection -up-|> android.os.AsyncTask
+  com.example.splashapp.OrgEditActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.OrgPostLentaActivity .up.|> com.example.splashapp.LentaAdapter.ItemClickListener
+  com.example.splashapp.OrgPostLentaActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.OrgPostLentaActivity o-- com.example.splashapp.LentaAdapter : adapter
+  com.example.splashapp.PassworldRes -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.Q_A .up.|> android.support.design.widget.NavigationView.OnNavigationItemSelectedListener
+  com.example.splashapp.Q_A -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.RegCitizen -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.RegOrg -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.ThisChat -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.ThisChat o-- com.example.splashapp.ChatAdapter : adapter
+  com.example.splashapp.ViewOrg -up-|> android.support.v7.app.AppCompatActivity
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         C_Organization.C_Org();
         C_Citizen.C_Cit();
-        C_Activitisms.C_Act();
+        ControllerPost.C_Act();
         C_Chat.C_Ch();
     }
 

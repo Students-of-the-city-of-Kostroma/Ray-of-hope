@@ -28,7 +28,7 @@ public class SpinnerDialog extends DialogFragment {
         else ListOfOrg.forsAct=currenttype;
         dismiss();
 }
-    protected String[] typeof={"Любое", "Дети","Пенсионеры","Животные","Онкобольные"};
+    protected String[] typeof={"all", "child","homeless","animals"};
     protected Spinner spinner;
     protected String currenttype;
     protected boolean mycity=false;
@@ -65,6 +65,7 @@ public class SpinnerDialog extends DialogFragment {
 
             @Override
             public void onClick(View v) {
+                C_Organization.filter = spinner.getSelectedItem().toString();
 
                 if (((CheckBox) v).isChecked()) {
                     mycity = true;

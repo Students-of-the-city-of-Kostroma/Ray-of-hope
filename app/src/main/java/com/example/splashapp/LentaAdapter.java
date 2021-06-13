@@ -15,15 +15,16 @@ import java.util.List;
 
 public class LentaAdapter extends RecyclerView.Adapter<LentaAdapter.ViewHolder>  {
 
-    private List<M_Activism> Post;
-    private List<M_Activism> itemsCopy=new ArrayList<M_Activism>();
+    private List<M_Post> Post;
+    private List<M_Post> itemsCopy=new ArrayList<M_Post>();
     private Context context;
     private LentaAdapter.ItemClickListener mClickListener;
 
-    public LentaAdapter(Context context,List<M_Activism> Post)
+    public LentaAdapter(Context context,List<M_Post> Post)
     {
         this.Post=Post;
         this.context=context;
+        if (Post!=null)
         itemsCopy.addAll(Post);
     }
 
@@ -37,12 +38,32 @@ public class LentaAdapter extends RecyclerView.Adapter<LentaAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(LentaAdapter.ViewHolder holder, int position) {
-        M_Activism or=Post.get(position);
+        M_Post or=Post.get(position);
+        if (or.getId().equals("13"))
+        {
+            String st="test";
+        }
         holder.id=or.getId();
-        holder.name.setText(or.getName());
-        holder.date.setText(or.getDate().toString());
+        holder.title.setText(or.getName());
+        holder.name.setText(or.getOrgName());
+        holder.date.setText(or.getPostDate());
         holder.about.setText(or.getDescription());
         Picasso.get().load(R.mipmap.about_logo).into(holder.imageView);
+        for (int i=0;i<holder.imageViews.length;i++)
+        {
+                holder.imageViews[i].setVisibility(View.GONE);
+        }
+        for (int i=0;i<or.getCountImage();i++)
+        {
+            try {
+                Picasso.get().load(or.getImage(i)).into(holder.imageViews[i]);
+                holder.imageViews[i].setVisibility(View.VISIBLE);
+            }
+            catch (Exception e)
+            {
+               break;
+            }
+        }
     }
 
     @Override
@@ -56,7 +77,7 @@ public class LentaAdapter extends RecyclerView.Adapter<LentaAdapter.ViewHolder> 
             Post.addAll(itemsCopy);
         } else{
             text = text.toLowerCase();
-            for(M_Activism item: itemsCopy){
+            for(M_Post item: itemsCopy){
                 if(item.getName().toLowerCase().contains(text)){
                     Post.add(item);
                 }
@@ -71,6 +92,9 @@ public class LentaAdapter extends RecyclerView.Adapter<LentaAdapter.ViewHolder> 
         public TextView about;
         public ImageView imageView;
         public TextView name;
+        public TextView title;
+
+        public ImageView [] imageViews=new ImageView[10];
 
 
 
@@ -81,6 +105,18 @@ public class LentaAdapter extends RecyclerView.Adapter<LentaAdapter.ViewHolder> 
             name=(TextView) itemView.findViewById(R.id.textView31);
             date=(TextView) itemView.findViewById(R.id.textView32);
             about=(TextView) itemView.findViewById(R.id.textView18);
+            title=(TextView) itemView.findViewById(R.id.titlepost);
+
+            imageViews[0] =(ImageView) itemView.findViewById(R.id.imageView22);
+            imageViews[1] =(ImageView) itemView.findViewById(R.id.imageView23);
+            imageViews[2] =(ImageView) itemView.findViewById(R.id.imageView24);
+            imageViews[3] =(ImageView) itemView.findViewById(R.id.imageView25);
+            imageViews[4] =(ImageView) itemView.findViewById(R.id.imageView26);
+            imageViews[5] =(ImageView) itemView.findViewById(R.id.imageView27);
+            imageViews[6] =(ImageView) itemView.findViewById(R.id.imageView28);
+            imageViews[7] =(ImageView) itemView.findViewById(R.id.imageView29);
+            imageViews[8] =(ImageView) itemView.findViewById(R.id.imageView30);
+            imageViews[9] =(ImageView) itemView.findViewById(R.id.imageView31);
 
             itemView.setOnClickListener(this);
         }
@@ -90,7 +126,7 @@ public class LentaAdapter extends RecyclerView.Adapter<LentaAdapter.ViewHolder> 
         }
     }
 
-    public M_Activism getOrg(int id) {
+    public M_Post getOrg(int id) {
         return Post.get(id);
     }
 

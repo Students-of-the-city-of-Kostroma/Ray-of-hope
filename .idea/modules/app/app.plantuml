@@ -1,0 +1,335 @@
+@startuml
+
+title __RAY-OF-HOPE.APP's Class Diagram__\n
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.AboutView {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.ActivView {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.AddPostActivity {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.BuildConfig {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.C_Chat {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.C_Citizen {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.C_Organization {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.ChatAdapter {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.Choice {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.CitEdit {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.CitProf {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.ControllerPost {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    abstract class com.example.splashapp.ControllerUser {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    namespace Dialogs {
+      class com.example.splashapp.Dialogs.OkDialog {
+      }
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    namespace Dialogs {
+      class com.example.splashapp.Dialogs.SpinnerDialog {
+      }
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.EditOrgActivity {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.GalleryAdapter {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.LentaActivity {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.LentaAdapter {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.ListOfChats {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.ListOfChatsAdapter {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.ListOfOrg {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.ListOfOrgAdapter {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.LoginCitizenActivity {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.LoginOrgActivity {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.M_Chat {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.M_Citizen {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.M_Comment {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.M_Message {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.M_Organization {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.M_Post {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    abstract class com.example.splashapp.M_User {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.MainActivity {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.MenuView {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.MyOrgProf {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.Network {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.OrgEditActivity {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.OrgPostLentaActivity {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.PassworldRes {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.Q_A {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.RegCitizen {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.RegOrg {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.ThisChat {
+    }
+  }
+  
+
+  namespace com.example.splashapp {
+    class com.example.splashapp.ViewOrg {
+    }
+  }
+  
+
+  com.example.splashapp.AboutView -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.ActivView -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.AddPostActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.C_Citizen -up-|> com.example.splashapp.ControllerUser
+  com.example.splashapp.C_Organization -up-|> com.example.splashapp.ControllerUser
+  com.example.splashapp.ChatAdapter -up-|> android.support.v7.widget.RecyclerView.Adapter
+  com.example.splashapp.ChatAdapter o-- com.example.splashapp.ChatAdapter.ItemClickListener : mClickListener
+  com.example.splashapp.Choice -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.CitEdit -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.CitProf -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.Dialogs.OkDialog -up-|> android.app.DialogFragment
+  com.example.splashapp.Dialogs.SpinnerDialog -up-|> android.app.DialogFragment
+  com.example.splashapp.EditOrgActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.GalleryAdapter -up-|> android.support.v7.widget.RecyclerView.Adapter
+  com.example.splashapp.GalleryAdapter o-- com.example.splashapp.GalleryAdapter.ItemClickListener : mClickListener
+  com.example.splashapp.LentaActivity .up.|> com.example.splashapp.LentaAdapter.ItemClickListener
+  com.example.splashapp.LentaActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.LentaActivity o-- com.example.splashapp.LentaAdapter : adapter
+  com.example.splashapp.LentaAdapter -up-|> android.support.v7.widget.RecyclerView.Adapter
+  com.example.splashapp.LentaAdapter o-- com.example.splashapp.LentaAdapter.ItemClickListener : mClickListener
+  com.example.splashapp.ListOfChats .up.|> com.example.splashapp.ListOfChatsAdapter.ItemClickListener
+  com.example.splashapp.ListOfChats -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.ListOfChats o-- com.example.splashapp.M_Organization : OrgTest
+  com.example.splashapp.ListOfChats o-- com.example.splashapp.ListOfChatsAdapter : adapter
+  com.example.splashapp.ListOfChatsAdapter -up-|> android.support.v7.widget.RecyclerView.Adapter
+  com.example.splashapp.ListOfChatsAdapter o-- com.example.splashapp.ListOfChatsAdapter.ItemClickListener : mClickListener
+  com.example.splashapp.ListOfOrg .up.|> com.example.splashapp.ListOfOrgAdapter.ItemClickListener
+  com.example.splashapp.ListOfOrg -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.ListOfOrg o-- com.example.splashapp.M_Organization : OrgTest
+  com.example.splashapp.ListOfOrg o-- com.example.splashapp.ListOfOrgAdapter : adapter
+  com.example.splashapp.ListOfOrg o-- com.example.splashapp.ListOfOrgAdapter : adapter2
+  com.example.splashapp.ListOfOrgAdapter -up-|> android.support.v7.widget.RecyclerView.Adapter
+  com.example.splashapp.ListOfOrgAdapter o-- com.example.splashapp.ListOfOrgAdapter.ItemClickListener : mClickListener
+  com.example.splashapp.LoginCitizenActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.LoginOrgActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.M_Chat o-- com.example.splashapp.M_User : withWho
+  com.example.splashapp.M_Citizen -up-|> com.example.splashapp.M_User
+  com.example.splashapp.M_Organization -up-|> com.example.splashapp.M_User
+  com.example.splashapp.MainActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.MenuView -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.MyOrgProf -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.OrgEditActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.OrgPostLentaActivity .up.|> com.example.splashapp.LentaAdapter.ItemClickListener
+  com.example.splashapp.OrgPostLentaActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.OrgPostLentaActivity o-- com.example.splashapp.LentaAdapter : adapter
+  com.example.splashapp.PassworldRes -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.Q_A .up.|> android.support.design.widget.NavigationView.OnNavigationItemSelectedListener
+  com.example.splashapp.Q_A -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.RegCitizen -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.RegOrg -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.ThisChat -up-|> android.support.v7.app.AppCompatActivity
+  com.example.splashapp.ThisChat o-- com.example.splashapp.ChatAdapter : adapter
+  com.example.splashapp.ViewOrg -up-|> android.support.v7.app.AppCompatActivity
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

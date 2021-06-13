@@ -27,18 +27,24 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
     public static String testId;
     private M_Organization OrgTest;
     private ListOfOrgAdapter adapter;
+    private ListOfOrgAdapter adapter2;
     private List<M_Organization> Orgs=C_Organization.ListOrganization;//потом перенести в контроллер
+    private List<M_Organization> FavOrgs=new ArrayList<M_Organization>();
     SearchView searchView;
     public static String forsCity="", forsAct="";
+    Button search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_of_org);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        search=findViewById(R.id.searchbutton);
         setSupportActionBar(toolbar);
-        //OrgTest=MyOrgProf.MyOrg;
-                //Orgs.add(OrgTest);
+        Network.numberorglist=0;
+        Orgs=new Network().ListOrgs(0, C_Organization.filter);
+        if (C_Citizen.Iam!=null)
+        {C_Organization.FavOrg=new Network().ListFavOrgs(C_Citizen.Iam.getId());}
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -46,8 +52,6 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
-
 
         setTitle("TabHost");
 
@@ -61,10 +65,12 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
         tabSpec.setIndicator("Все");
         tabHost.addTab(tabSpec);
 
-        tabSpec = tabHost.newTabSpec("tag2");
-        tabSpec.setContent(R.id.linearLayout2);
-        tabSpec.setIndicator("Любимые");
-        tabHost.addTab(tabSpec);
+        if (C_Citizen.Iam!=null) {
+            tabSpec = tabHost.newTabSpec("tag2");
+            tabSpec.setContent(R.id.linearLayout2);
+            tabSpec.setIndicator("Любимые");
+            tabHost.addTab(tabSpec);
+        }
 
         tabHost.setCurrentTab(0);
 
@@ -72,29 +78,38 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
         LinearLayoutManager horizontalLayoutManager
                 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(horizontalLayoutManager);
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if (!Network.isload) {
+                    List<M_Organization> Orgs1 = new Network().ListOrgs(Network.numberorglist, "all");
+                    if (Orgs1 != null) {
+                        Orgs.addAll(Orgs1);
+                        adapter.notifyDataSetChanged();
+                    }
+                }
+            }
+        });
         adapter = new ListOfOrgAdapter(this, Orgs);
         adapter.setClickListener(this);
         try {        recyclerView.setAdapter(adapter);}
         catch (Exception e) {
             e.printStackTrace();
         }
-        searchView=(SearchView) findViewById(R.id.search_view1);
-        try {
-            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                adapter.filter(query, forsCity, forsAct);
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                adapter.filter(newText,forsCity, forsAct);
-                return true;
-            }
-        });} catch (Exception e) {
+        if (C_Citizen.Iam!=null) {
+            RecyclerView recyclerView2 = findViewById(R.id.frameLayout2);
+            LinearLayoutManager horizontalLayoutManager2
+                    = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+            recyclerView2.setLayoutManager(horizontalLayoutManager2);
+            adapter2 = new ListOfOrgAdapter(this, C_Organization.FavOrg);
+            adapter2.setClickListener(this);
+            try {
+                recyclerView2.setAdapter(adapter2);
+            } catch (Exception e) {
                 e.printStackTrace();
             }
+        }
     }
 
     @Override
@@ -119,38 +134,6 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
         }
     }
 
-    boolean ch=false;
-    public  void Close()
-    {
-        AlertDialog.Builder buil = new AlertDialog.Builder(ListOfOrg.this);
-        buil.setMessage("Вы действительно хотите выйти из аккаунта?");
-        buil.setCancelable(false);
-        buil.setPositiveButton("Да", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        ch=true;
-                        ToChoice(ch);
-                        dialog.cancel();
-                    }
-                }
-        );
-        buil.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-        AlertDialog al=buil.create();
-        al.show();
-    }
-    public  void ToChoice(boolean b)
-    {
-        if (b){
-            Intent intent = new Intent(this, Choice.class);
-            startActivity(intent);
-            finish();}
-    }
     public void ChoiceOrg(View view)
     {
         Intent intent = new Intent(this, ViewOrg.class);
@@ -161,16 +144,71 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
         startActivity(intent);
         finish();
     }
+
+    public void OnParamClick (View view)
+    {
+        //SpinnerDialog sDialog = new SpinnerDialog();
+        //sDialog.show(getFragmentManager(), "SpinnerDialog");
+
+
+        String[] colors = {"все", "дети","бездомные","животные", "инвалиды", "пенсионеры"};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Выберите тип");
+        builder.setItems(colors, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case 0: C_Organization.filter="all";
+                        search.setText("Тип организации: все");
+                        break;
+                    case 1:C_Organization.filter="child";
+                        search.setText("Тип организации: дети");
+                        break;
+                    case 2: C_Organization.filter="homeless";
+                        search.setText("Тип организации: бездомные");
+                        break;
+                    case 3: C_Organization.filter="animals";
+                        search.setText("Тип организации: животные");
+                        break;
+                    case 4:C_Organization.filter="disabled";
+                        search.setText("Тип организации: инвалиды");
+                        break;
+                    case 5: C_Organization.filter="pensioners";
+                        search.setText("Тип организации: пенсионеры");
+                        break;
+                    default:
+                        break;
+                }
+                CloseDialog();
+            }
+        });
+        builder.show();
+    }
+
+
+
+    public void CloseDialog ()
+    {
+        Orgs.clear();
+        adapter.notifyDataSetChanged();
+        List<M_Organization> filterorg=new Network().ListOrgs(0, C_Organization.filter);
+        if (filterorg!=null) {
+            Orgs.addAll(filterorg);
+            adapter.notifyDataSetChanged();
+        }
+    }
+
+
     public  void openMenu(View view)
     {
         Intent intent = new Intent(this, MenuView.class);
         startActivity(intent);
         finish();
     }
-
-    public  void ToListOfOrg(View view)
+    public void ToLenta(View view)
     {
-        Intent intent = new Intent(this, ListOfOrg.class);
+        Intent intent = new Intent(this, LentaActivity.class);
         startActivity(intent);
         finish();
     }
@@ -179,11 +217,6 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
         Intent intent = new Intent(this, ListOfChats.class);
         startActivity(intent);
         finish();
-    }
-    public void OnParamClick (View view)
-    {
-        SpinnerDialog sDialog = new SpinnerDialog();
-        sDialog.show(getFragmentManager(), "SpinnerDialog");
     }
     public  void ToMyProf(View view)
     {

@@ -1,13 +1,18 @@
 package com.example.splashapp;
 
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import com.example.splashapp.Dialogs.OkDialog;
 
 
 public class RegOrg extends AppCompatActivity {
@@ -46,80 +51,44 @@ public class RegOrg extends AppCompatActivity {
 
         edit = (EditText)findViewById(R.id.editText9);
         input[3] = edit.getText().toString();
-        new Network().RegOrg(input);
 
 
-        if(input[4].equals(input[3])) {
-/*
-            try {
-
-                boolean errors = Ret.contains("name");
-                if (errors == true) {
-                    Toast toast = Toast.makeText(RegOrg.this, "Неккоректное название", Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.RIGHT, 0, -150);
-                    toast.show();
-                    Error = true;
-                }
-                errors = Ret.contains("INN");
-                if (errors == true) {
-                    Toast toast = Toast.makeText(RegOrg.this, "Некорректный ИНН", Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.RIGHT, 0, -70);
-                    toast.show();
-                    Error = true;
-                }
-                errors = Ret.contains("email");
-                if (errors == true) {
-                    Toast toast = Toast.makeText(RegOrg.this, "Неправильный E-mail", Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.RIGHT, 0, -0);
-                    toast.show();
-                    Error = true;
-                }
-
-                errors = Ret.contains("password");
-                if (errors == true) {
-                    Toast toast = Toast.makeText(RegOrg.this, "Минимум 6 знаков:\\nцифры и латинские\\nбуквы\"", Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.RIGHT, 0, 70);
-                    toast.show();
-                    Error = true;
-                }
-                errors = Ret.contains("empty");
-                if (errors == true) {
-                    Toast toast = Toast.makeText(RegOrg.this, "Заполните все поля", Toast.LENGTH_LONG);
-                    toast.setGravity(Gravity.CENTER, 0, 100);
-                    toast.show();
-                    Error = true;
-                }
-
-                if (Error == false) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(RegOrg.this, R.style.AlertDialogCustom);
-                    builder.setMessage("На указанную почту отправленно письмо для подтверждения")
-                            .setTitle("Подтверждение почты")
-                            .setCancelable(false)
-                            .setPositiveButton("ОК",
-                                    new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int id) {
-                                            dialog.cancel();
-
-                                        }
-                                    });
-                    AlertDialog alert = builder.create();
-                    alert.show();
-                }
-
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            } catch (TimeoutException e) {
-                e.printStackTrace();
-            } */
-        }
-        else
+        if(!input[4].equals(input[3]))
         {
             Toast toast = Toast.makeText(RegOrg.this, "Пароли не совпадают", Toast.LENGTH_LONG);
             toast.setGravity(Gravity.RIGHT, 0, 70);
             toast.show();
         }
 
+
+        if (!Error) {
+
+            boolean mc= new Network().RegOrg(input);
+
+            if (mc)
+            {
+                AlertDialog.Builder adb = new AlertDialog.Builder(this);
+                adb.setTitle("Успех");
+                adb.setMessage("Регистрация прошла успешно");
+                adb.setNegativeButton("ОК", new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface d, int arg1) {
+                        GoBack();
+                    };
+                });
+                adb.show();
+            }
+            else {
+                OkDialog okDialog = new OkDialog();
+                okDialog.setMess("Не удалось зарегистрироваться");
+                okDialog.show(getFragmentManager(), "okDialog");
+            }
+        }
+    }
+    public  void GoBack()
+    {
+        Intent intent = new Intent(this, LoginCitizenActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

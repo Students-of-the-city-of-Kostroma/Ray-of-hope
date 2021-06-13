@@ -37,6 +37,11 @@ public class LoginOrgActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+        else {
+            OkDialog okDialog = new OkDialog();
+            okDialog.setMess("Неверные логин/пароль");
+            okDialog.show(getFragmentManager(), "okDialog");
+        }
         /*
         try {
 
