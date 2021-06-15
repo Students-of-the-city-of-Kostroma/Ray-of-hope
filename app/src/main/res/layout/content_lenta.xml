@@ -23,33 +23,6 @@
             android:layout_height="wrap_content">
         </TabWidget>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_edittext"
-            android:orientation="horizontal"
-            android:layout_margin="10dp">
-
-            <SearchView
-                android:id="@+id/search_view1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@android:color/transparent"
-                app:actionViewClass=" android.support.v7.widget.SearchView"
-                android:layout_weight="1"
-                app:queryHint="  Поиск">
-
-            </SearchView>
-
-            <ImageView
-                android:id="@+id/imageView14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:onClick="OnParamClick"
-                app:srcCompat="@mipmap/param" />
-
-        </LinearLayout>
 
         <FrameLayout
             android:id="@android:id/tabcontent"

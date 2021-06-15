@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 public class M_Post {
-    private String title, text, org_name, date_added;
+    private String title, text, org_name, date_added, id_organizations;
     private String id;
     private String[] photo;
     public List<M_Comment> linkComment;
@@ -51,6 +51,9 @@ public class M_Post {
 
     public String getPostDate() {
         return date_added;
+    }
+    public String getIDO() {
+        return id_organizations;
     }
 
     public void setPostDate(@NotNull String postDate) {

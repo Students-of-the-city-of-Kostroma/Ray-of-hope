@@ -59,6 +59,7 @@
             android:id="@+id/p1"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_margin="5dp"
             android:onClick="DelPhoto"
             tools:srcCompat="@tools:sample/avatars" />
 
@@ -66,6 +67,7 @@
             android:id="@+id/p2"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_margin="5dp"
             android:onClick="DelPhoto"
             tools:srcCompat="@tools:sample/avatars" />
 
@@ -73,6 +75,7 @@
             android:id="@+id/p3"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:onClick="DelPhoto"
             tools:srcCompat="@tools:sample/avatars" />
     </LinearLayout>
@@ -119,6 +122,7 @@
         android:layout_width="415dp"
         android:layout_height="40dp"
         android:layout_marginTop="1dp"
+        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -134,6 +138,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="3dp"
+            android:onClick="ToLenta"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/imageView6"
             app:layout_constraintHorizontal_bias="0.0"
@@ -151,6 +156,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="3dp"
+            android:onClick="ToChats"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/imageView7"
             app:layout_constraintStart_toEndOf="@+id/imageView5"

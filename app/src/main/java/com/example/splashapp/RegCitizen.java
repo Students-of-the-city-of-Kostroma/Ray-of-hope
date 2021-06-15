@@ -25,6 +25,12 @@ public class RegCitizen extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, Choice.class);
+        startActivity(intent);
+        finish();
+    }
     public void Registr(View view)
     {String[] input=new String[6];
         boolean Error = false;

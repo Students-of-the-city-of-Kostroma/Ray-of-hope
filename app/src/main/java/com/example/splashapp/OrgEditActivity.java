@@ -1,9 +1,12 @@
 package com.example.splashapp;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,14 +30,19 @@ public class OrgEditActivity extends AppCompatActivity {
         setContentView(R.layout.activity_org_edit);
 
 
-        ImageView imageView = (ImageView) findViewById(R.id.imageView12);
-        try {
-            Picasso.get().load(C_Citizen.Iam.getImageName()).into(imageView);
+        imageView = (ImageView) findViewById(R.id.imageView12);
+        if (C_Organization.MyOrg.getImageName()!=null) {
+            try {
+                imageView.setImageBitmap(C_Organization.MyOrg.getImageHash());
+                //Picasso.get().load(C_Citizen.Iam.getImageName()).into(imageView);
+            } catch (Exception e) {
+                Picasso.get().load(R.mipmap.about_logo).into(imageView);
+            }
         }
-        catch (Exception e)
-        {
+        else {
             Picasso.get().load(R.mipmap.about_logo).into(imageView);
         }
+
 
         TextView textview= (TextView) findViewById(R.id.editText5);
         textview.setText(C_Organization.MyOrg.getNumber());
@@ -44,10 +52,6 @@ public class OrgEditActivity extends AppCompatActivity {
 
         textview= (TextView) findViewById(R.id.editText2);
         textview.setText(C_Organization.MyOrg.getEmail());
-
-
-        textview= (TextView) findViewById(R.id.editTextO);
-        textview.setText(C_Organization.MyOrg.getCity());
 
         textview= (TextView) findViewById(R.id.editText12);
         textview.setText(C_Organization.MyOrg.getAbout());
@@ -84,13 +88,18 @@ public class OrgEditActivity extends AppCompatActivity {
         TextView textview= (TextView) findViewById(R.id.editText5);
         String s=textview.getText().toString();
 
-        //if (!C_Organization.MyOrg.getNumber().equals(s)) {
-            //C_Organization.MyOrg.setNumber(s);
-            //upd.UpdOrg(new String[]{"telephone","tel", s, C_Organization.MyOrg.getId()});
-        //}
-        if (pe) {
-            upd.updImgae(new String[]{C_Citizen.Iam.getId()}, selectedImage);
+        try {
+            if (!C_Organization.MyOrg.getNumber().equals(s)) {
+                C_Organization.MyOrg.setNumber(s);
+                upd.UpdOrg(new String[]{"telephone", "tel", s, C_Organization.MyOrg.getId()});
+            }
         }
+        catch (Exception e)
+        {}
+            if (pe) {
+                upd.updImgae(new String[]{C_Organization.MyOrg.getId()}, selectedImage);
+            }
+
         textview= (TextView) findViewById(R.id.editText10);
         s=textview.getText().toString();
 
@@ -108,15 +117,6 @@ public class OrgEditActivity extends AppCompatActivity {
             upd.UpdOrg(new String[]{"email","email", s, C_Organization.MyOrg.getId()});
         //}
 
-        textview= (TextView) findViewById(R.id.editTextO);
-        textview.setText(C_Organization.MyOrg.getCity());
-        s=textview.getText().toString();
-
-        //if (C_Organization.MyOrg.getCity()!=null &&!C_Organization.MyOrg.getCity().equals(s)) {
-            C_Organization.MyOrg.setCity(s);
-            upd.UpdOrg(new String[]{"city","city", s, C_Organization.MyOrg.getId()});
-       // }
-
 
         textview= (TextView) findViewById(R.id.editText12);
         s=textview.getText().toString();
@@ -130,6 +130,53 @@ public class OrgEditActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MyOrgProf.class);
         startActivity(intent);
         finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Cancel(MyOrgProf.class);
+    }
+
+    public void Cancel(Class<?> t)
+    {
+        Context c=this;
+        Class<?> x=t;
+        AlertDialog.Builder adb = new AlertDialog.Builder(this);
+        adb.setMessage("Отменить изменения?");
+        adb.setNegativeButton("Нет", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface d, int arg1) {
+                return;
+            };
+        });
+        adb.setPositiveButton("Да", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface d, int arg1) {
+                Intent intent = new Intent(c, t);
+                startActivity(intent);
+                finish();
+            };
+        });
+
+        adb.show();
+    }
+
+    public  void ToMyProf(View view)
+    {
+        Cancel(MyOrgProf.class);
+    }
+    public  void openMenu(View view) { Cancel( MenuView.class); }
+    public  void ToListOfOrg(View view)
+    {
+        Cancel(ListOfOrg.class);
+    }
+    public void ToLenta(View view)
+    {
+        Cancel(LentaActivity.class);
+    }
+    public void ToChats(View view)
+    {
+        Cancel(ListOfChats.class);
     }
 
 }

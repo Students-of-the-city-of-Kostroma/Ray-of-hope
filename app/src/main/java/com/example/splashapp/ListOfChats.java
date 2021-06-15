@@ -70,7 +70,6 @@ public class ListOfChats extends AppCompatActivity implements ListOfChatsAdapter
         startActivity(intent);
         finish();
     }
-
     public  void ToListOfOrg(View view)
     {
         Intent intent = new Intent(this, ListOfOrg.class);

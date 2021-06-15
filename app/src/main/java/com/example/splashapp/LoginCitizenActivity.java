@@ -92,6 +92,13 @@ public class LoginCitizenActivity extends AppCompatActivity {
             }
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, Choice.class);
+        startActivity(intent);
+        finish();
+    }
+
     public void CitizenRegisrt(View view)
     {
         Intent intent = new Intent(this, RegCitizen.class);
@@ -100,9 +107,9 @@ public class LoginCitizenActivity extends AppCompatActivity {
     }
     public void ForgetPas(View view)
     {
-        Intent intent = new Intent(this, PassworldRes.class);
+        /* Intent intent = new Intent(this, PassworldRes.class);
         startActivity(intent);
-        finish();
+        finish();*/
     }
 }
   /*

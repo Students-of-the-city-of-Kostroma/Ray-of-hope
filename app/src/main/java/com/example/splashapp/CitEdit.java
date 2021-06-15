@@ -1,5 +1,7 @@
 package com.example.splashapp;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -7,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -116,7 +119,7 @@ public class CitEdit extends AppCompatActivity {
 
         if (!C_Citizen.Iam.getLastName().equals(s)) {
             C_Citizen.Iam.setLastName(s);
-            upd.UpdCit(new String[]{"fname", "f_name", s, C_Citizen.Iam.getId()});
+            upd.UpdCit(new String[]{"fname", "fname", s, C_Citizen.Iam.getId()});
         }
 
         textview = (TextView) findViewById(R.id.editTextO);
@@ -124,11 +127,11 @@ public class CitEdit extends AppCompatActivity {
 
         if ((C_Citizen.Iam.getOName() == null && s != null) || (!C_Citizen.Iam.getOName().equals(s))) {
             C_Citizen.Iam.setOtName(s);
-            upd.UpdCit(new String[]{"oname", "o_name", s, C_Citizen.Iam.getId()});
+            upd.UpdCit(new String[]{"oname", "oname", s, C_Citizen.Iam.getId()});
         }
 
 
-        textview = (TextView) findViewById(R.id.editText5);
+       /* textview = (TextView) findViewById(R.id.editText5);
         s = textview.getText().toString();
 
         if (C_Citizen.Iam.getNumber() != null && !C_Citizen.Iam.getNumber().equals(s)) {
@@ -143,7 +146,7 @@ public class CitEdit extends AppCompatActivity {
         if (C_Citizen.Iam.getCity() != null && !C_Citizen.Iam.getCity().equals(s)) {
             C_Citizen.Iam.setCity(s);
             upd.UpdCit(new String[]{"city", "city", s, C_Citizen.Iam.getId()});
-        }
+        } */
 
 
         textview = (TextView) findViewById(R.id.editText12);
@@ -160,30 +163,53 @@ public class CitEdit extends AppCompatActivity {
         finish();
     }
 
-    public void ToMyProf(View view) {
-        boolean cit = Choice.citezen;
-        if (cit) {
-            Intent intent = new Intent(this, CitProf.class);
-            startActivity(intent);
-        } else {
-            Intent intent = new Intent(this, MyOrgProf.class);
-            startActivity(intent);
-        }
+    @Override
+    public void onBackPressed() {
+        Cancel(CitProf.class);
+    }
 
-        finish();
+    public void Cancel(Class<?> t)
+    {
+        Context c=this;
+        Class<?> x=t;
+        AlertDialog.Builder adb = new AlertDialog.Builder(this);
+        adb.setMessage("Отменить изменения?");
+        adb.setNegativeButton("Нет", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface d, int arg1) {
+                return;
+            };
+        });
+        adb.setPositiveButton("Да", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface d, int arg1) {
+                Intent intent = new Intent(c, t);
+                startActivity(intent);
+                finish();
+            };
+        });
+
+        adb.show();
+    }
+
+    public void ToMyProf(View view) {
+        Cancel(CitProf.class);
     }
 
     public void openMenu(View view) {
-        Intent intent = new Intent(this, MenuView.class);
-        startActivity(intent);
-        finish();
+        Cancel(MenuView.class);
     }
 
     public void ToListOfOrg(View view) {
-        Intent intent = new Intent(this, ListOfOrg.class);
-        startActivity(intent);
-        finish();
+        Cancel(ListOfOrg.class);
     }
+    public void ToLenta(View view) {
+        Cancel(LentaActivity.class);
+    }
+    public void ToChats(View view) {
+        Cancel(ListOfChats.class);
+    }
+
 
 }
 

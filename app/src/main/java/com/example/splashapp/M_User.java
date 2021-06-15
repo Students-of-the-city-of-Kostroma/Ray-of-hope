@@ -48,14 +48,14 @@ public abstract class M_User  {
 
     public String getImageName() {
 
-        if (picture !=null)
+        if (picture !=null&& !picture.equals("") && !picture.equals("null"))
         return "http://darapana.beget.tech/storage/app/"+ picture;
         else return null;
     }
 
     public Bitmap getImageHash() {
 
-        if (picture !=null)
+        if (picture !=null&& !picture.equals("") && !picture.equals("null"))
         {
             byte[] decodedString = Base64.decode(picture, Base64.DEFAULT);
             return BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
@@ -66,7 +66,9 @@ public abstract class M_User  {
     public void setImageName(String imageName) { this.picture = imageName; }
 
     public String getNumber() {
+        if (tel!=null&&tel.equals("")&&tel.equals("null"))
         return tel;
+        else return "";
     }
 
     public void setNumber(String number) {

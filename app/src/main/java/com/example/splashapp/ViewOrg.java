@@ -58,23 +58,30 @@ public class ViewOrg extends AppCompatActivity {
             textview.setText(C_Organization.current.getAbout());
 
             textview= (TextView) findViewById(R.id.textView20);
-            textview.setText(C_Organization.current.getAdress()+"\n"+C_Organization.current.getNumber());
+            textview.setText(C_Organization.current.getNumber());
 
             textview= (TextView) findViewById(R.id.textView24);
-            textview.setText(C_Organization.current.getCity());
+            textview.setText(C_Organization.current.getAdress());
 
             textview= (TextView) findViewById(R.id.textView16);
             textview.setText(C_Organization.current.getTypeActivity());
             fav=inFav(orgId);
 
-            if (fav)
-            {((ImageView) findViewById(R.id.imgfav)).setImageResource(android.R.drawable.star_big_on);}
-            else { ((ImageView) findViewById(R.id.imgfav)).setImageResource(android.R.drawable.star_big_off);}
+            if (C_Citizen.Iam!=null) {
+                if (fav) {
+                    ((ImageView) findViewById(R.id.imgfav)).setImageResource(android.R.drawable.star_big_on);
+                } else {
+                    ((ImageView) findViewById(R.id.imgfav)).setImageResource(android.R.drawable.star_big_off);
+                }
+            }
+            else {
+                findViewById(R.id.imgfav).setVisibility(View.GONE);
+            }
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView12);
         try {
-            imageView.setImageBitmap(C_Citizen.Iam.getImageHash());
-            //Picasso.get().load(C_Organization.current.getImageName()).into(imageView);
+            //imageView.setImageBitmap(C_Citizen.Iam.getImageHash());
+            Picasso.get().load(C_Organization.current.getImageName()).into(imageView);
         }
         catch (Exception e)
         {

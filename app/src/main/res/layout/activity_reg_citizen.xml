@@ -10,7 +10,8 @@
     <LinearLayout
         android:id="@+id/llregcit"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/button11"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +38,7 @@
             app:layout_constraintBottom_toTopOf="@+id/etfam"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:id="@+id/etfam"
@@ -58,7 +59,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtname"/>
+            app:layout_constraintTop_toBottomOf="@+id/edtname" />
 
         <EditText
             android:id="@+id/edtoname"
@@ -99,6 +100,7 @@
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edtoname" />
+
         <EditText
             android:id="@+id/etpas"
             android:layout_width="212dp"
@@ -147,7 +149,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
         android:background="@android:color/transparent"
         android:clickable="true"
         android:onClick="EnterToCitizen"
@@ -160,7 +163,6 @@
         tools:text="Войти" />
 
 
-
     <Button
         android:id="@+id/button11"
         android:layout_width="212dp"
@@ -168,6 +170,7 @@
         android:layout_gravity="center"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/buttonstyle"
@@ -183,12 +186,11 @@
         tools:text="Зарегистрироваться" />
 
 
-
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="253dp"
         android:layout_height="139dp"
-        android:layout_marginBottom="43dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toTopOf="@+id/llregcit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

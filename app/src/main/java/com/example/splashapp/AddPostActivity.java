@@ -1,5 +1,6 @@
 package com.example.splashapp;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -125,47 +126,55 @@ public class AddPostActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        Cancel(MyOrgProf.class);
+    }
+
+    public void Cancel(Class<?> t)
+    {
+        Context c=this;
+        Class<?> x=t;
+        AlertDialog.Builder adb = new AlertDialog.Builder(this);
+        adb.setMessage("Удалить пост?");
+        adb.setNegativeButton("Нет", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface d, int arg1) {
+                return;
+            };
+        });
+        adb.setPositiveButton("Да", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface d, int arg1) {
+                Intent intent = new Intent(c, t);
+                startActivity(intent);
+                finish();
+            };
+        });
+
+        adb.show();
+    }
+
     public  void ToMyProf(View view)
     {
-        boolean cit=Choice.citezen;
-        if (cit) {
-            Intent intent = new Intent(this, CitProf.class);
-            startActivity(intent);
-        }
-        else { Intent intent = new Intent(this, MyOrgProf.class);
-            startActivity(intent);}
-
-        finish();
+        Cancel(MyOrgProf.class);
     }
     public  void openMenu(View view)
     {
-        Intent intent = new Intent(this, MenuView.class);
-        startActivity(intent);
-        finish();
+        Cancel( MenuView.class);
     }
 
 
     public  void ToListOfOrg(View view)
     {
-        Intent intent = new Intent(this, ListOfOrg.class);
-        startActivity(intent);
-        finish();
-    }
-    public  void ToChat(View view)
-    {
-        Intent intent = new Intent(this, ThisChat.class);
-        startActivity(intent);
+        Cancel(ListOfOrg.class);
     }
     public void ToLenta(View view)
     {
-        Intent intent = new Intent(this, LentaActivity.class);
-        startActivity(intent);
-        finish();
+        Cancel(LentaActivity.class);
     }
     public void ToChats(View view)
     {
-        Intent intent = new Intent(this, ListOfChats.class);
-        startActivity(intent);
-        finish();
+        Cancel(ListOfChats.class);
     }
 }

@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.method.LinkMovementMethod;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -40,9 +41,14 @@ public class MyOrgProf extends AppCompatActivity
         setContentView(R.layout.content_my_org_prof);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        C_Organization.MyOrg=new Network().LсOrg(C_Organization.MyOrg.getId());
-        String moID=C_Organization.MyOrg.getId();
-
+        String moID="";
+        try {
+            C_Organization.MyOrg = new Network().LсOrg(C_Organization.MyOrg.getId());
+             moID = C_Organization.MyOrg.getId();
+        }
+        catch (Exception e)
+        {
+            Log.d("","");}
 
         if (moID==null) {
             loadId();
@@ -55,22 +61,22 @@ public class MyOrgProf extends AppCompatActivity
             TextView textview= (TextView) findViewById(R.id.textView25);
             textview.setText(C_Organization.MyOrg.getName());
 
-            textview= (TextView) findViewById(R.id.textView22);
+            textview= (TextView) findViewById(R.id.textView20);
             textview.setText(C_Organization.MyOrg.getAbout());
 
-            textview= (TextView) findViewById(R.id.textView20);
-            textview.setText(C_Organization.MyOrg.getAdress()+"\n"+C_Organization.MyOrg.getNumber());
+            textview= (TextView) findViewById(R.id.textView22);
+            textview.setText(C_Organization.MyOrg.getNumber());
 
             textview= (TextView) findViewById(R.id.textView24);
-            textview.setText(C_Organization.MyOrg.getCity());
+            textview.setText(C_Organization.MyOrg.getAdress());
 
             textview= (TextView) findViewById(R.id.textView16);
             textview.setText(C_Organization.MyOrg.getTypeActivity());
 
             ImageView imageView = (ImageView) findViewById(R.id.imageView12);
             try {
-                imageView.setImageBitmap(C_Citizen.Iam.getImageHash());
-                //Picasso.get().load(C_Organization.MyOrg.getImageName()).into(imageView);
+                //imageView.setImageBitmap(C_Citizen.Iam.getImageHash());
+                Picasso.get().load(C_Organization.MyOrg.getImageName()).into(imageView);
             }
             catch (Exception e)
             {
@@ -122,12 +128,12 @@ public class MyOrgProf extends AppCompatActivity
               C_Organization.current=C_Organization.MyOrg;
               Intent intent = new Intent(this, OrgPostLentaActivity.class);
               startActivity(intent);
-              //finish();
+              finish();
           }
 
     public  void toOrgPost(View view)
     {
-        Intent intent = new Intent(this, MenuView.class);
+        Intent intent = new Intent(this, OrgPostLentaActivity.class);
         startActivity(intent);
         finish();
     }
@@ -149,6 +155,12 @@ public class MyOrgProf extends AppCompatActivity
         Intent intent = new Intent(this, LentaActivity.class);
         startActivity(intent);
         finish();
+    }
+    public void ToChats(View view)
+    {
+              Intent intent = new Intent(this, ListOfChats.class);
+              startActivity(intent);
+              finish();
     }
 
     public  void openMenu(View view)

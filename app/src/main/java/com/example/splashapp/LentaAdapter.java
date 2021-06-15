@@ -68,7 +68,9 @@ public class LentaAdapter extends RecyclerView.Adapter<LentaAdapter.ViewHolder> 
 
     @Override
     public int getItemCount() {
+        if (Post!=null)
         return Post.size();
+        else return 0;
     }
 
     public void filter(String text) {

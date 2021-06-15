@@ -99,7 +99,12 @@ public class LoginOrgActivity extends AppCompatActivity {
 
     }
 
-
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, Choice.class);
+        startActivity(intent);
+        finish();
+    }
     public void OrgRegisrt(View view)
     {
         Intent intent = new Intent(this, RegOrg.class);

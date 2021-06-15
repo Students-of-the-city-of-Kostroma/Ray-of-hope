@@ -34,6 +34,7 @@
                 android:layout_marginStart="0dp"
                 android:layout_marginLeft="0dp"
                 android:layout_marginTop="16dp"
+                android:visibility="invisible"
                 app:civ_border_color="#FFFF"
                 app:civ_border_width="2dp"
                 app:layout_constraintBottom_toTopOf="@+id/textView23"
@@ -46,16 +47,18 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical">
-            <TextView
-                android:id="@+id/textView31"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginLeft="24dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="8dp"
-                android:text="Какая-то организация"
-                android:textColor="@color/colorGrey" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="8dp"
+        android:text="Какая-то организация"
+        android:textColor="@color/colorGrey"
+        android:visibility="gone" />
     <TextView
         android:id="@+id/titlepost"
         android:layout_width="wrap_content"
@@ -83,6 +86,7 @@
             android:id="@+id/textView18"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:text="TextView" />
         <LinearLayout
             android:layout_width="match_parent"
@@ -101,24 +105,27 @@
 
                 <ImageView
                     android:id="@+id/imageView22"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:visibility="gone"
                     app:srcCompat="@mipmap/about_logo" />
 
                 <ImageView
                     android:id="@+id/imageView23"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:visibility="gone"
                     app:srcCompat="@mipmap/about_logo" />
 
                 <ImageView
                     android:id="@+id/imageView24"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:visibility="gone"
                     app:srcCompat="@mipmap/about_logo" />
@@ -130,24 +137,27 @@
 
                 <ImageView
                     android:id="@+id/imageView25"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:visibility="gone"
                     app:srcCompat="@mipmap/about_logo" />
 
                 <ImageView
                     android:id="@+id/imageView26"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:visibility="gone"
                     app:srcCompat="@mipmap/about_logo" />
 
                 <ImageView
                     android:id="@+id/imageView27"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:visibility="gone"
                     app:srcCompat="@mipmap/about_logo" />
@@ -159,32 +169,36 @@
 
                 <ImageView
                     android:id="@+id/imageView28"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:visibility="gone"
                     app:srcCompat="@mipmap/about_logo" />
 
                 <ImageView
                     android:id="@+id/imageView29"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:visibility="gone"
                     app:srcCompat="@mipmap/about_logo" />
 
                 <ImageView
                     android:id="@+id/imageView30"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:visibility="gone"
                     app:srcCompat="@mipmap/about_logo" />
 
                 <ImageView
                     android:id="@+id/imageView31"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:visibility="gone"
                     app:srcCompat="@mipmap/about_logo" />

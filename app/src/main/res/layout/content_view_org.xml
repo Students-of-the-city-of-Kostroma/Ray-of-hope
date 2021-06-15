@@ -82,7 +82,7 @@
                 android:id="@+id/headorg2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -91,7 +91,7 @@
                     android:id="@+id/headorg3"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
+                    android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -102,46 +102,13 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
                         android:layout_marginLeft="32dp"
-                        android:layout_marginBottom="8dp"
                         app:srcCompat="@mipmap/geocity" />
-
-                    <ImageView
-                        android:id="@+id/imageView11"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="32dp"
-                        android:layout_marginLeft="32dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        app:srcCompat="@mipmap/heartorg" />
-
-                    <ImageView
-                        android:id="@+id/imageView13"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="32dp"
-                        android:layout_marginLeft="32dp"
-                        android:layout_marginBottom="8dp"
-                        app:srcCompat="@mipmap/writeto" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/headorg4"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
                     <TextView
                         android:id="@+id/textView24"
                         android:layout_width="112dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:layout_marginEnd="32dp"
                         android:layout_marginRight="32dp"
-                        android:layout_marginBottom="8dp"
                         android:ellipsize="marquee"
                         android:focusable="true"
                         android:focusableInTouchMode="true"
@@ -156,16 +123,54 @@
                         app:layout_constraintTop_toBottomOf="@+id/textView25"
                         tools:text="Город" />
 
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/headorg4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imageView11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginLeft="32dp"
+                        app:srcCompat="@mipmap/heartorg" />
+
                     <TextView
                         android:id="@+id/textView16"
                         android:layout_width="112dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="32dp"
                         android:layout_marginRight="32dp"
-                        android:layout_marginBottom="8dp"
                         android:text="Направленность"
                         tools:text="Направленность" />
 
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/headorg6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <ImageView
+                        android:id="@+id/imageView13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginLeft="32dp"
+                        app:srcCompat="@mipmap/writeto" />
                     <TextView
                         android:id="@+id/textView15"
                         android:layout_width="112dp"
@@ -173,7 +178,7 @@
                         android:layout_marginEnd="32dp"
                         android:layout_marginRight="32dp"
                         android:layout_marginBottom="8dp"
-                        android:onClick="ToChat"
+
                         android:text="Написать"
                         android:textColor="@color/colorButtonBlue"
                         tools:text="Написать" />

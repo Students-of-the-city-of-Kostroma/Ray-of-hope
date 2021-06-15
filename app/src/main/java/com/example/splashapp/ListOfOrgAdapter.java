@@ -43,11 +43,22 @@ public class ListOfOrgAdapter extends RecyclerView.Adapter<ListOfOrgAdapter.View
         holder.id=or.getId();
         holder.name.setText(or.getName());
         holder.about.setText(or.getAbout());
-        try {
+       /* try {
             Picasso.get().load(or.getImageName()).into(holder.imageView);
         }
         catch (Exception e)
         {
+            Picasso.get().load(R.mipmap.about_logo).into(holder.imageView);
+        } */
+        if (C_Organization.MyOrg.getImageName()!=null) {
+            try {
+                //holder.imageView.setImageBitmap(C_Organization.MyOrg.getImageHash());
+                Picasso.get().load(C_Organization.MyOrg.getImageName()).into(holder.imageView);
+            } catch (Exception e) {
+                Picasso.get().load(R.mipmap.about_logo).into(holder.imageView);
+            }
+        }
+        else {
             Picasso.get().load(R.mipmap.about_logo).into(holder.imageView);
         }
     }

@@ -82,7 +82,7 @@ public class ListOfOrg extends AppCompatActivity implements ListOfOrgAdapter.Ite
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-                if (!Network.isload) {
+                if (!Network.isload&&Network.numberorglist!=0) {
                     List<M_Organization> Orgs1 = new Network().ListOrgs(Network.numberorglist, "all");
                     if (Orgs1 != null) {
                         Orgs.addAll(Orgs1);

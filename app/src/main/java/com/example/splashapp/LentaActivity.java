@@ -27,7 +27,12 @@ public class LentaActivity extends AppCompatActivity implements LentaAdapter.Ite
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lenta);
         Network.numberpost=0;
-        ListPost=new Network().ListPosts(0, C_Citizen.Iam.getId());
+        String id="";
+        if (C_Citizen.Iam==null)
+             id=C_Organization.MyOrg.getId();
+        else id=C_Citizen.Iam.getId();
+        ListPost=new Network().ListPosts(0,id);
+        final String idupd=id;
         setTitle("TabHost");
 
         TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
@@ -51,8 +56,8 @@ public class LentaActivity extends AppCompatActivity implements LentaAdapter.Ite
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-                if (!Network.isload) {
-                    List<M_Post> Posts1 = new Network().ListPosts(Network.numberpost,C_Citizen.Iam.getId());
+                if (!Network.isload&&Network.numberpost!=0) {
+                    List<M_Post> Posts1 = new Network().ListPosts(Network.numberpost,idupd);
                     if (Posts1 != null) {
                         ListPost.addAll(Posts1);
                         adapter.notifyDataSetChanged();
@@ -90,7 +95,7 @@ public class LentaActivity extends AppCompatActivity implements LentaAdapter.Ite
     @Override
     public void onItemClick(View view, int position) {
         try{
-            psId=(adapter.getOrg(position)).getId();
+            ListOfOrg.testId=(adapter.getOrg(position)).getIDO();
             Intent intent = new Intent(this, ViewOrg.class);
             startActivity(intent);
             finish();

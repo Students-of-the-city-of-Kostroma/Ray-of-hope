@@ -15,6 +15,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
+        android:onClick="PhotoEdit"
         app:civ_border_color="#FFFF"
         app:civ_border_width="2dp"
         app:layout_constraintBottom_toTopOf="@+id/textView23"
@@ -65,9 +66,13 @@
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/editText12"
         app:layout_constraintEnd_toEndOf="parent"
@@ -88,25 +93,13 @@
             android:hint="   Почта"
             android:inputType="textPersonName" />
 
-        <EditText
-            android:id="@+id/editTextO"
-            android:layout_width="wrap_content"
-            android:layout_height="38dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="8dp"
-            android:layout_weight="1"
-            android:background="@drawable/rounded_edittext"
-            android:ems="10"
-            android:hint="   Город"
-            android:inputType="textPersonName" />
     </LinearLayout>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="415dp"
         android:layout_height="40dp"
+        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -121,6 +114,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="3dp"
+            android:onClick="ToLenta"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/imageView6"
             app:layout_constraintHorizontal_bias="0.0"
@@ -138,6 +132,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="3dp"
+            android:onClick="ToChats"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/imageView7"
             app:layout_constraintStart_toEndOf="@+id/imageView5"
@@ -206,10 +201,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/buttonstyle"
         android:onClick="OrgEditSave"
         android:text="Сохранить"
@@ -221,8 +216,8 @@
 
     <EditText
         android:id="@+id/editText12"
-        android:layout_width="380dp"
-        android:layout_height="141dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"

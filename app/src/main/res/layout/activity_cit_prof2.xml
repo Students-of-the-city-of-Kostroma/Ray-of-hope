@@ -211,6 +211,7 @@
         android:id="@+id/linearLayout3"
         android:layout_width="370dp"
         android:layout_height="wrap_content"
+        android:onClick="CitEdit"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -222,6 +223,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
+            android:onClick="CitEdit"
             app:srcCompat="@mipmap/editprof" />
 
         <Button
@@ -231,7 +233,7 @@
             android:layout_weight="0.5"
             android:background="@android:color/transparent"
             android:onClick="CitEdit"
-            android:text="Редактировать профль"
+            android:text="Редактировать профиль"
             android:textColor="@color/colorButtonBlue" />
 
     </LinearLayout>

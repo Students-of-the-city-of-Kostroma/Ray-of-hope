@@ -453,7 +453,7 @@ public class Network {
 
     public boolean AddPost(String [] params, List<Bitmap> bmp) {
         link = postsadd;
-        String[] encoded=new String[3];
+        String[] encoded=new String[] {"","",""};
         for (int i=0; i<bmp.size();i++) {
             if (bmp.get(i)!=null) {
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
@@ -461,21 +461,18 @@ public class Network {
                 byte[] byteArray = byteArrayOutputStream.toByteArray();
                 encoded[i] = Base64.encodeToString(byteArray, Base64.DEFAULT);
             }
-            else {
-                encoded[i] = "";
-            }
         }
         formBody = new FormBody.Builder()
                 .add("id_organizations", params[3])
                 .add("title", params[0])
                 .add("text", params[1])
-                .add("date_added", params[2])
+                //.add("date_added", params[2])
                 .add("ext1", "png")
                 .add("img1", encoded[0])
                 .add("ext2", "png")
                 .add("img2", encoded[1])
                 .add("ext3", "png")
-                .add("img4", encoded[2])
+                .add("img3", encoded[2])
                 .build();
         AsyncTask fpl = new Connection().executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
         try {
